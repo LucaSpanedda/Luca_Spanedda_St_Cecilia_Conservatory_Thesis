@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage[style=numeric-comp]{biblatex}
+\addbibresource{bibliography.bib}
+\setlength{\columnsep}{4cm} %a djust base on your name length
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+%% Copertina
+\input{cover}
+\newpage
+\ 
+\newpage
+
+%% Dichiarazione di intenti
+\vfill
+\LARGE \textbf{Dichiarazione} \normalsize \newline \newline
+Dichiaro che il sottoscritto nonché autore del
+documento è il responsabile del suo contenuto, 
+e per le parti tratte da altri lavori, 
+queste vengono espressamente dichiarate
+citando le fonti.
+\
+\newline
+Luca Spanedda.
+\ 
+\newpage
+
+%% Ringraziamenti
+\vfill
+\LARGE \textbf{Ringraziamenti} \normalsize \newline \newline
+qui i ringraziamenti.
+\newpage
+\
+\newpage
+
+%% Abstract
+\begin{abstract}
+Il lavoro presentato qui è uno studio analitico, compositivo ed esecutivo
+di tre Sistemi Complessi Adattivi (CASes: Complex Adaptive Systems) creati appositiamente per la performance in Live Electronics. Una prima parte del lavoro tratta l'implementazione e l'analisi di due brani creati rispettivamente da due autori e ricercatori riconosciuti nell'ambito internazionale della Computer Music: Agostino Di Scipio e Dario Sanfilippo. 
+I loro brani vengono trattati qui come caso di studio (case study) per rispondere al “come” e “perché” dei specifici fenomeni si ritrovano all'interno del determinato contesto dei loro lavori, come comportamenti emergenti, principi di autoregolazione, ecc. A partire dal caso di studio, la seconda parte del lavoro tratta l'implementazione di un mio brano che andrà a conclusione del lavoro di ricerca svolto durante il corso della tesi.
+\end{abstract}
+\newpage
+\
+
+% conteggio pagine
+\pagenumbering{arabic}
+
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+
+\pagestyle{fancy}
+
+
+%% --------------------------------------------------- Capitoli ----------------
+%% capitolo TEST
+%%\input{chapters/0_TEST}
+
+\input{chapters/1_introduzione}
+
+\printbibliography
+\appendix 
+\input{chapters/appendix}
+
+\end{document}
