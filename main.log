@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2022.9.26)  30 SEP 2022 10:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2022.9.26)  30 SEP 2022 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,36 +685,46 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2]
-<figures/complexitymap.pdf, id=35, 597.50786pt x 845.04686pt>
+[2] [3]
+<figures/complexitymap.pdf, id=38, 597.50786pt x 845.04686pt>
 File: figures/complexitymap.pdf Graphic file (type pdf)
 <use figures/complexitymap.pdf>
-Package pdftex.def Info: figures/complexitymap.pdf  used on input line 45.
+Package pdftex.def Info: figures/complexitymap.pdf  used on input line 87.
 (pdftex.def)             Requested size: 390.0pt x 551.56915pt.
 
 
-LaTeX Warning: Float too large for page by 29.90247pt on input line 48.
+LaTeX Warning: Float too large for page by 17.56915pt on input line 89.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3 <./figures/complexitymap.pdf>]) [4
+[4 <./figures/complexitymap.pdf>]) [5
 
 
-]
+] [6] [7] (./chapters/2_ecosistemi.tex
+Overfull \hbox (9.09378pt too wide) in paragraph at lines 2--2
+[]\OT1/cmr/bx/n/17.28 La com-po-sizione di in-ter-azioni eco-sis-temiche 
+ []
 
-LaTeX Warning: Empty bibliography on input line 86.
+)
 
-(./chapters/appendix.tex) [5] (./main.aux)
+LaTeX Warning: Empty bibliography on input line 87.
+
+(./chapters/appendix.tex) [8
+
+] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17851 strings out of 494518
- 337601 string characters out of 6176313
- 822318 words of memory out of 5000000
- 21409 multiletter control sequences out of 15000+600000
+ 17856 strings out of 494518
+ 337724 string characters out of 6176313
+ 826326 words of memory out of 5000000
+ 21411 multiletter control sequences out of 15000+600000
  538158 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  40i,10n,63p,826b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -724,10 +734,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsl12.pfb>
-Output written on main.pdf (11 pages, 6375873 bytes).
+Output written on main.pdf (14 pages, 6380994 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
