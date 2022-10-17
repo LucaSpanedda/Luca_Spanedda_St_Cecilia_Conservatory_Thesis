@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2022.9.26)  6 OCT 2022 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2022.9.26)  17 OCT 2022 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,8 +416,6 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'numeric-comp.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count303
@@ -521,11 +519,6 @@ File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
 \c@biburllcpenalty=\count376
 \c@smartand=\count377
 )
-Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.bbx' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
-File: numeric-comp.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
 
@@ -538,14 +531,12 @@ Package biblatex Info: ... file 'standard.bbx' found.
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count378
 \c@bbx:relatedtotal=\count379
-)))
-Package biblatex Info: Trying to load citation style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.cbx' found.
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
-File: numeric-comp.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count380
-\c@cbx@tempcntb=\count381
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -570,35 +561,35 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
-\@quotelevel=\count382
-\@quotereset=\count383
+\@quotelevel=\count380
+\@quotereset=\count381
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count384
+\scratchcounter=\count382
 \scratchdimen=\dimen159
 \scratchbox=\box71
-\nofMPsegments=\count385
-\nofMParguments=\count386
+\nofMPsegments=\count383
+\nofMParguments=\count384
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count387
+\MPscratchCnt=\count385
 \MPscratchDim=\dimen160
-\MPnumerator=\count388
-\makeMPintoPDFobject=\count389
+\MPnumerator=\count386
+\makeMPintoPDFobject=\count387
 \everyMPtoPDFconversion=\toks18
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -626,12 +617,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
+Package biblatex Info: ... file 'main.bbl' found.
 
-No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 12.
-Package biblatex Info: Reference segment=0 on input line 12.
-(./cover.tex
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 13.
+Package biblatex Info: Reference segment=0 on input line 13.
+ (./cover.tex
 <figures/logo-santacecilia-2-1024x351-1024x351.png, id=1, 1027.84pt x 352.31625
 pt>
 File: figures/logo-santacecilia-2-1024x351-1024x351.png Graphic file (type png)
@@ -649,12 +640,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/logo-santacecili
 a-2-1024x351-1024x351.png (PNG copy)>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 23--33
+Underfull \hbox (badness 10000) in paragraph at lines 24--34
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 37--39
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
  []
 
@@ -679,51 +670,45 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1]
 (./chapters/1_introduzione.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--112
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 -
-       come usano l'informazione e come la scambiano gli agenti
-? 
-[3
-
-]
-<figures/complexitymap.pdf, id=38, 597.50786pt x 845.04686pt>
+[2] [3] [4]
+<figures/complexitymap.pdf, id=42, 597.50786pt x 845.04686pt>
 File: figures/complexitymap.pdf Graphic file (type pdf)
 <use figures/complexitymap.pdf>
-Package pdftex.def Info: figures/complexitymap.pdf  used on input line 104.
+Package pdftex.def Info: figures/complexitymap.pdf  used on input line 117.
 (pdftex.def)             Requested size: 390.0pt x 551.56915pt.
 
 
-LaTeX Warning: Float too large for page by 17.56915pt on input line 106.
+LaTeX Warning: Float too large for page by 17.56915pt on input line 119.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./figures/complexitymap.pdf>]) [5
+[5 <./figures/complexitymap.pdf>]) [6
 
 
-] [6] [7] (./chapters/2_ecosistemi.tex
+] [7] [8] (./chapters/2_ecosistemi.tex
 Overfull \hbox (9.09378pt too wide) in paragraph at lines 2--2
 []\OT1/cmr/bx/n/17.28 La com-po-sizione di in-ter-azioni eco-sis-temiche 
  []
 
-)
+) (./chapters/appendix.tex) [9
 
-LaTeX Warning: Empty bibliography on input line 87.
-
-(./chapters/appendix.tex) [8
+] [10
 
 ] (./main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -731,23 +716,26 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17856 strings out of 494518
- 337724 string characters out of 6176313
- 826326 words of memory out of 5000000
- 21411 multiletter control sequences out of 15000+600000
- 538158 words of font info for 43 fonts, out of 8000000 for 9000
+ 18045 strings out of 494518
+ 341404 string characters out of 6176313
+ 825191 words of memory out of 5000000
+ 21599 multiletter control sequences out of 15000+600000
+ 538975 words of font info for 46 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 40i,10n,63p,826b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,10n,63p,826b,1182s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl12.pfb>
-Output written on main.pdf (14 pages, 6380425 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (16 pages, 6407125 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

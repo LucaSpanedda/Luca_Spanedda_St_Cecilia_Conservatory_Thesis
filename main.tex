@@ -5,10 +5,11 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
-\usepackage[style=numeric-comp]{biblatex}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
-\setlength{\columnsep}{4cm} %a djust base on your name length
+\setlength{\columnsep}{4cm} % aggiusta in base alla lunghezza del tuo nome
 
+%% ------------------------------------------------------------------- Inizio --
 \begin{document}
 \pagenumbering{gobble}
 
@@ -18,7 +19,7 @@
 \
 \newpage
 
-%% Dichiarazione di intenti
+%% ----------------------------------------------- Dichiarazione di intenti ----
 \vfill
 \LARGE \textbf{Dichiarazione} \normalsize \newline \newline
 Dichiaro che il sottoscritto nonché autore del
@@ -48,17 +49,22 @@ creati appositiamente per la performance musicale (in Live Electronics),
 la scelta di questi tre sistemi corrisponde a tre diversi casi di studio
 (case study) nell'implementazione di dinamiche nonlineari sfruttate
 per la generazione dei comportamenti emergenti nei Sisitemi Complessi.
-Una prima parte del lavoro tratterà dell'implementazione e l'analisi di due brani,
+Una prima parte del lavoro tratterà dell'implementazione
+e l'analisi di due brani,
 creati rispettivamente da due compositori e ricercatori riconosciuti
-nell'ambito internazionale della Computer Music: Agostino Di Scipio e Dario Sanfilippo.
-Di Agostino di Scipio studieremo un sistema con nonlinearità provenenti dal dominio analogico,
-che sfrutta fenomeni generativi nel mondo fisico riportati all'interno del sistema
+nell'ambito internazionale della Computer Music: Agostino Di Scipio e
+Dario Sanfilippo.
+Di Agostino di Scipio studieremo un sistema con nonlinearità provenenti
+dal dominio analogico,
+che sfrutta fenomeni generativi nel mondo fisico
+riportati all'interno del sistema
 grazie alle conversioni AD/DA (analogico a digitale e viceversa).
 Di Dario Sanfilippo studieremo invece un sistema che sfrutta nonlinearità
-appositamente programmate dal compositore nel mondo digitale DSP (Digital Signal Processing),
-tramite alcuni principi di autoregolazione,
+appositamente programmate dal compositore
+nel mondo digitale DSP (Digital Signal Processing),
+tramite alcuni principi di autoregolazione nel software,
 senza interazioni e perturbazioni provenienti dal mondo esterno.
-Infine la seconda parte del lavoro tratta l'implementazione di un mio brano,
+Infine l'ultima parte del lavoro tratta l'implementazione di un mio brano,
 ibrido fra i due casi di studio presentati qui,
 che andrà a conclusione del lavoro di ricerca, analisi ed implementazione
 svolto durante il corso della tesi.
@@ -83,9 +89,10 @@ svolto durante il corso della tesi.
 \input{chapters/1_introduzione}
 \clearpage
 \input{chapters/2_ecosistemi}
-
-\printbibliography
 \appendix
 \input{chapters/appendix}
-
+%% ---------------------------------------------- Bibliografia -----------------
+\clearpage
+\printbibliography
+%% --------------------------------------------------------------------- Fine --
 \end{document}

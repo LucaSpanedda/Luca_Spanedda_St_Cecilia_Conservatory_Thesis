@@ -2,10 +2,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduzione}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Le cibernetiche nella musica}{5}% 
+\contentsline {subsection}{\numberline {1.1}Le cibernetiche nella musica}{6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}La composizione di interazioni ecosistemiche}{8}% 
+\contentsline {section}{\numberline {2}La composizione di interazioni ecosistemiche}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}First appendix}{8}% 
+\contentsline {section}{\numberline {A}First appendix}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Second appendix}{8}% 
+\contentsline {section}{\numberline {B}Second appendix}{9}% 
