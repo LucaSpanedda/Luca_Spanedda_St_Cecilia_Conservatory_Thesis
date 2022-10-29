@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage[backend=biber,style=verbose]{biblatex}
+\addbibresource{bibliography/bibliography.bib}
+\setlength{\columnsep}{4cm} % aggiusta in base alla lunghezza del tuo nome
+
+%% ------------------------------------------------------------------- Inizio --
+\begin{document}
+\pagenumbering{gobble}
+
+%% Copertina
+\input{cover}
+\newpage
+\
+\newpage
+
+%% ----------------------------------------------- Dichiarazione di intenti ----
+\vfill
+\LARGE \textbf{Dichiarazione} \normalsize \newline \newline
+Dichiaro che il sottoscritto nonché autore del
+documento è il responsabile del suo contenuto,
+e per le parti tratte da altri lavori,
+queste vengono espressamente dichiarate
+citando le fonti. \\  \\
+\
+\hspace*{\fill} \large Luca Spanedda \normalsize
+\
+\newpage
+
+%% Ringraziamenti
+\vfill
+\LARGE \textbf{Ringraziamenti} \normalsize \newline \newline
+qui i ringraziamenti.
+\newpage
+\
+\newpage
+
+%% Abstract
+\begin{abstract}
+Il lavoro qui presentato è uno studio di analisi, implementazione e esecuzione
+di tre Sistemi Complessi Adattivi per la performance musicale in Live Electronics.
+La scelta di questi tre sistemi corrisponde a tre diversi casi di studio
+nell'implementazione di dinamiche nonlineari sfruttate
+per la generazione dei comportamenti emergenti nei Sisitemi Complessi.
+Una prima parte del lavoro tratterà dell'implementazione
+e l'analisi di due brani rispettivamente di Agostino Di Scipio e Dario Sanfilippo.
+Di Agostino di Scipio un sistema con nonlinearità provenenti dal mondo fisico,
+che sfrutta fenomeni generati dalla catena elettroacustica all'interno dell'ambiente
+e riportati poi all'interno del sistema digitale.
+Di Dario Sanfilippo invece un sistema che sfrutta nonlinearità
+appositamente programmate dal compositore
+nel mondo digitale, controllate tramite agenti di autoregolazione scritti nel software.
+Infine l'ultima parte del lavoro è dedicata alla composizione di un mio brano,
+che sfrutta elementi di logica ibridi appresi dai due casi di studio presentati qui,
+e che andrà a conclusione del lavoro di ricerca svolto durante il corso della tesi.
+\end{abstract}
+\newpage
+\
+
+% conteggio pagine
+\pagenumbering{arabic}
+
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+
+\pagestyle{fancy}
+
+%% --------------------------------------------------- Capitoli ----------------
+%% capitolo TEST
+%%\input{chapters/0_TEST}
+
+\input{chapters/1_introduzione}
+\clearpage
+\input{chapters/2_ecosistemi}
+\appendix
+\input{chapters/appendix}
+%% ---------------------------------------------- Bibliografia -----------------
+\clearpage
+\printbibliography
+%% --------------------------------------------------------------------- Fine --
+\end{document}

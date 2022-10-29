@@ -1,0 +1,152 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{EMSColonia}{online}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 17.10.2022)}
+      \field{title}{Electronic Music Studio (Colonia)}
+      \verb{urlraw}
+      \verb https://it.frwiki.wiki/wiki/Studio_de_musique_%C3%A9lectronique_(Cologne)
+      \endverb
+      \verb{url}
+      \verb https://it.frwiki.wiki/wiki/Studio_de_musique_%C3%A9lectronique_(Cologne)
+      \endverb
+      \keyw{colonia,electronicmusic,studio,music}
+    \endentry
+    \entry{Kaynbio}{online}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 17.10.2022)}
+      \field{title}{Roland Kayn biography}
+      \verb{urlraw}
+      \verb https://kayn.nl/biography/
+      \endverb
+      \verb{url}
+      \verb https://kayn.nl/biography/
+      \endverb
+      \keyw{kayn,feedback,music,ginc}
+    \endentry
+    \entry{SanfilippoValle}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
+           family={Sanfilippo},
+           familyi={S\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ee6da4b8182ae5627227cd6cedf36552}{%
+           family={Valle},
+           familyi={V\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Massachusetts Institute of Technology.}%
+      }
+      \strng{namehash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \strng{fullhash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \strng{bibnamehash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \strng{authorbibnamehash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \strng{authornamehash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \strng{authorfullhash}{dfa0b1af09bd10286dd00f6c7e502652}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Music Journal}
+      \field{number}{2}
+      \field{title}{Feedback Systems: An Analytical Framework}
+      \field{volume}{37}
+      \field{year}{2013}
+      \field{pages}{12\bibrangedash 27}
+      \range{pages}{16}
+      \verb{doi}
+      \verb doi:10.1162/COMJ a 00176
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/comj/article-abstract/37/2/12/94420/Feedback-Systems-An-Analytical-Framework?redirectedFrom=PDF
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/comj/article-abstract/37/2/12/94420/Feedback-Systems-An-Analytical-Framework?redirectedFrom=PDF
+      \endverb
+    \endentry
+    \entry{echodiscipio}{online}{}
+      \name{author}{1}{}{%
+        {{hash=cefba2d321800e2fdc3f7baa38fa3d9f}{%
+           family={Scipio},
+           familyi={S\bibinitperiod},
+           given={Agostino\bibnamedelima Di},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{fullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{bibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 17.10.2022)}
+      \field{title}{A Relational Ontology of Feedback}
+      \verb{urlraw}
+      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
+      \endverb
+      \verb{url}
+      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
+      \endverb
+      \keyw{feedback,cybernetic,echo,larsen}
+    \endentry
+    \entry{caosvillani}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8fb3be3661bf79a99ea3fa9db4a69ca0}{%
+           family={Villani},
+           familyi={V\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \strng{fullhash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \strng{bibnamehash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \strng{authorbibnamehash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \strng{authornamehash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \strng{authorfullhash}{8fb3be3661bf79a99ea3fa9db4a69ca0}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 17.10.2022)}
+      \field{title}{Caos e ordine}
+      \verb{urlraw}
+      \verb https://www.scienzainrete.it/articolo/caos-e-ordine/giovanni-villani/2011-03-28
+      \endverb
+      \verb{url}
+      \verb https://www.scienzainrete.it/articolo/caos-e-ordine/giovanni-villani/2011-03-28
+      \endverb
+      \keyw{caos,cosmos,cosmogonia,mitologia,scienza}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
