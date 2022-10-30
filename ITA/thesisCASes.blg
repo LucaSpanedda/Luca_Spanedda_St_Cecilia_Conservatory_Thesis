@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
-[2] Config.pm:310> INFO - Logfile is 'thesisCASes.blg'
-[190] biber:340> INFO - === dom ott 30, 2022, 00:18:40
-[219] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
-[358] Biber.pm:972> INFO - Found 4 citekeys in bib section 0
-[386] Biber.pm:4383> INFO - Processing section 0
-[420] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
-[431] bibtex.pm:1713> INFO - LaTeX decoding ...
-[447] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
-[557] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[557] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[558] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[558] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[580] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
-[585] bbl.pm:757> INFO - Output to thesisCASes.bbl
+[1] Config.pm:310> INFO - Logfile is 'thesisCASes.blg'
+[153] biber:340> INFO - === dom ott 30, 2022, 12:17:41
+[183] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
+[315] Biber.pm:972> INFO - Found 3 citekeys in bib section 0
+[341] Biber.pm:4383> INFO - Processing section 0
+[370] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
+[380] bibtex.pm:1713> INFO - LaTeX decoding ...
+[400] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
+[502] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[502] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[503] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[503] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[518] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
+[523] bbl.pm:757> INFO - Output to thesisCASes.bbl

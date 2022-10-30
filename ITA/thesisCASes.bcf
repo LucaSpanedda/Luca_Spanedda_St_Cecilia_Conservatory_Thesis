@@ -2343,14 +2343,12 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliography/bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">SanfilippoValle</bcf:citekey>
-    <bcf:citekey order="2">Kaynbio</bcf:citekey>
-    <bcf:citekey order="3">EMSColonia</bcf:citekey>
-    <bcf:citekey order="4">echodiscipio</bcf:citekey>
+    <bcf:citekey order="1">EMSColonia</bcf:citekey>
+    <bcf:citekey order="2">SanfilippoValle</bcf:citekey>
+    <bcf:citekey order="3">echodiscipio</bcf:citekey>
+    <bcf:citekey order="4">EMSColonia</bcf:citekey>
     <bcf:citekey order="5">SanfilippoValle</bcf:citekey>
-    <bcf:citekey order="6">Kaynbio</bcf:citekey>
-    <bcf:citekey order="7">EMSColonia</bcf:citekey>
-    <bcf:citekey order="8">echodiscipio</bcf:citekey>
+    <bcf:citekey order="6">echodiscipio</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

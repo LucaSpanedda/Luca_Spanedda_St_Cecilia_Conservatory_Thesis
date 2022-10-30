@@ -33,20 +33,6 @@
       \endverb
       \keyw{colonia,electronicmusic,studio,music}
     \endentry
-    \entry{Kaynbio}{online}{}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 17.10.2022)}
-      \field{title}{Roland Kayn biography}
-      \verb{urlraw}
-      \verb https://kayn.nl/biography/
-      \endverb
-      \verb{url}
-      \verb https://kayn.nl/biography/
-      \endverb
-      \keyw{kayn,feedback,music,ginc}
-    \endentry
     \entry{SanfilippoValle}{article}{}
       \name{author}{2}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
