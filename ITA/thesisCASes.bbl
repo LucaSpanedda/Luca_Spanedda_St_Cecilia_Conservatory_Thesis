@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{poincaréproblema}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9fd3d5f6d5033cf7081b45d9870a6153}{%
+           family={Barrow-Green},
+           familyi={B\bibinithyphendelim G\bibinitperiod},
+           given={June},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \strng{fullhash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \strng{bibnamehash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \strng{authorbibnamehash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \strng{authornamehash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \strng{authorfullhash}{9fd3d5f6d5033cf7081b45d9870a6153}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 03.11.2022)}
+      \field{title}{L'Ottocento: astronomia. Il problema dei tre corpi e la stabilità del Sistema solare}
+      \verb{urlraw}
+      \verb https://www.treccani.it/enciclopedia/l-ottocento-astronomia-il-problema-dei-tre-corpi-e-la-stabilita-del-sistema-solare_%28Storia-della-Scienza%29/#:~:text=La%20formulazione%20del%20problema%20dei,il%20moto%20negli%20istanti%20successivi.
+      \endverb
+      \verb{url}
+      \verb https://www.treccani.it/enciclopedia/l-ottocento-astronomia-il-problema-dei-tre-corpi-e-la-stabilita-del-sistema-solare_%28Storia-della-Scienza%29/#:~:text=La%20formulazione%20del%20problema%20dei,il%20moto%20negli%20istanti%20successivi.
+      \endverb
+      \keyw{astronomia,caos,dynamics}
+    \endentry
     \entry{EMSColonia}{online}{}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
@@ -32,6 +60,34 @@
       \verb https://it.frwiki.wiki/wiki/Studio_de_musique_%C3%A9lectronique_(Cologne)
       \endverb
       \keyw{colonia,electronicmusic,studio,music}
+    \endentry
+    \entry{fabbrisgiustinianocyb}{online}{}
+      \name{author}{1}{}{%
+        {{hash=92e3af488cb37152384f467cbc9b97b0}{%
+           family={Luca\bibnamedelimb Fabbris\bibnamedelimb e\bibnamedelimb Alberto\bibnamedelima Giustiniano},
+           familyi={L\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           prefix={a\bibnamedelima cura\bibnamedelima di},
+           prefixi={a\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{92e3af488cb37152384f467cbc9b97b0}
+      \strng{fullhash}{92e3af488cb37152384f467cbc9b97b0}
+      \strng{bibnamehash}{92e3af488cb37152384f467cbc9b97b0}
+      \strng{authorbibnamehash}{92e3af488cb37152384f467cbc9b97b0}
+      \strng{authornamehash}{92e3af488cb37152384f467cbc9b97b0}
+      \strng{authorfullhash}{92e3af488cb37152384f467cbc9b97b0}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 03.11.2022)}
+      \field{title}{CFP#18 \ CIBERNETICA. SISTEMI, TEORIE, MODELLI}
+      \verb{urlraw}
+      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
+      \endverb
+      \verb{url}
+      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
+      \endverb
+      \keyw{cibernetica,macy Conferences}
     \endentry
     \entry{SanfilippoValle}{article}{}
       \name{author}{2}{}{%
@@ -103,6 +159,102 @@
       \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
       \endverb
       \keyw{feedback,cybernetic,echo,larsen}
+    \endentry
+    \entry{scottsecondordercyb}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6e717391a522713c4530f49c2eb6a559}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Emerald Group Publishing Limited}%
+      }
+      \strng{namehash}{6e717391a522713c4530f49c2eb6a559}
+      \strng{fullhash}{6e717391a522713c4530f49c2eb6a559}
+      \strng{bibnamehash}{6e717391a522713c4530f49c2eb6a559}
+      \strng{authorbibnamehash}{6e717391a522713c4530f49c2eb6a559}
+      \strng{authornamehash}{6e717391a522713c4530f49c2eb6a559}
+      \strng{authorfullhash}{6e717391a522713c4530f49c2eb6a559}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Kybernetes}
+      \field{number}{9.10}
+      \field{title}{Second-order cybernetics: an historical introduction}
+      \field{volume}{33}
+      \field{year}{2003}
+      \field{pages}{1365\bibrangedash 1378}
+      \range{pages}{14}
+      \verb{doi}
+      \verb doi:10.1108/03684920410556007
+      \endverb
+      \verb{urlraw}
+      \verb https://sites.ufpe.br/moinhojuridico/wp-content/uploads/sites/49/2021/10/Ciber-2b-22-out.-second-order-cybernetcs.pdf
+      \endverb
+      \verb{url}
+      \verb https://sites.ufpe.br/moinhojuridico/wp-content/uploads/sites/49/2021/10/Ciber-2b-22-out.-second-order-cybernetcs.pdf
+      \endverb
+    \endentry
+    \entry{wikisecondordercyb}{online}{}
+      \name{author}{1}{}{%
+        {{hash=680b9fd60fec60bdab9ef81def4525d8}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod},
+           given={the\bibnamedelimb free\bibnamedelima encyclopedia},
+           giveni={t\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{fullhash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{bibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authorbibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authornamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authorfullhash}{680b9fd60fec60bdab9ef81def4525d8}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 03.11.2022)}
+      \field{title}{Second-order cybernetics}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Second-order_cybernetics
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Second-order_cybernetics
+      \endverb
+      \keyw{cybernetic,Second-order cybernetics,radical constructivism}
+    \endentry
+    \entry{esiodoteogonia}{online}{}
+      \name{author}{1}{}{%
+        {{hash=680b9fd60fec60bdab9ef81def4525d8}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod},
+           given={the\bibnamedelimb free\bibnamedelima encyclopedia},
+           giveni={t\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{fullhash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{bibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authorbibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authornamehash}{680b9fd60fec60bdab9ef81def4525d8}
+      \strng{authorfullhash}{680b9fd60fec60bdab9ef81def4525d8}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 03.11.2022)}
+      \field{title}{Teogonia (Esiodo)}
+      \verb{urlraw}
+      \verb https://it.wikipedia.org/wiki/Teogonia_(Esiodo)
+      \endverb
+      \verb{url}
+      \verb https://it.wikipedia.org/wiki/Teogonia_(Esiodo)
+      \endverb
+      \keyw{Esiodo,teogonia,caos,cosmos}
     \endentry
   \enddatalist
 \endrefsection
