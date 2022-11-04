@@ -199,6 +199,31 @@
       \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
       \endverb
     \endentry
+    \entry{dariosanfilippophd}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
+           family={Sanfilippo},
+           familyi={S\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Reid School of Music The University of Edinburgh}%
+      }
+      \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{bibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Complex Musical Behaviours via Time-Variant Audio Feedback Networks and Distributed Adaptation: a Study of Autopoietic Infrastructures for Real-Time Performance Systems}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+    \endentry
     \entry{sanfilippovallefeedsys}{article}{}
       \name{author}{2}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
