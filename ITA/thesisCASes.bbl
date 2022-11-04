@@ -47,6 +47,60 @@
       \endverb
       \keyw{astronomia,caos,dynamics}
     \endentry
+    \entry{collinspeasouphist}{article}{}
+      \name{author}{1}{}{%
+        {{hash=286bee662fe31c216d37a7764bc0f0bc}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{286bee662fe31c216d37a7764bc0f0bc}
+      \strng{fullhash}{286bee662fe31c216d37a7764bc0f0bc}
+      \strng{bibnamehash}{286bee662fe31c216d37a7764bc0f0bc}
+      \strng{authorbibnamehash}{286bee662fe31c216d37a7764bc0f0bc}
+      \strng{authornamehash}{286bee662fe31c216d37a7764bc0f0bc}
+      \strng{authorfullhash}{286bee662fe31c216d37a7764bc0f0bc}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{‘Pea Soup’ – A History}
+      \field{year}{September, 2011}
+      \field{pages}{1\bibrangedash 23}
+      \range{pages}{23}
+      \verb{urlraw}
+      \verb http://www.nicolascollins.com/texts/peasouphistoryOLD.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.nicolascollins.com/texts/peasouphistoryOLD.pdf
+      \endverb
+    \endentry
+    \entry{dunbarlisteningcyb}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=7756c88e9f289b9c93586308429ce3ee}{%
+           family={Dunbar-Hester},
+           familyi={D\bibinithyphendelim H\bibinitperiod},
+           given={Christina},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cornell University}%
+      }
+      \strng{namehash}{7756c88e9f289b9c93586308429ce3ee}
+      \strng{fullhash}{7756c88e9f289b9c93586308429ce3ee}
+      \strng{bibnamehash}{7756c88e9f289b9c93586308429ce3ee}
+      \strng{authorbibnamehash}{7756c88e9f289b9c93586308429ce3ee}
+      \strng{authornamehash}{7756c88e9f289b9c93586308429ce3ee}
+      \strng{authorfullhash}{7756c88e9f289b9c93586308429ce3ee}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{re:place conference, Berlin, November 2007}
+      \field{title}{Listening to Cybernetics: Music, Machines, and Nervous Systems, 1950-1980}
+      \field{year}{2007}
+    \endentry
     \entry{EMSColonia}{online}{}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
@@ -89,7 +143,63 @@
       \endverb
       \keyw{cibernetica,macy Conferences}
     \endentry
-    \entry{SanfilippoValle}{article}{}
+    \entry{tudorneuralsynth}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e6b7e0cde6fc6b07b56e0c16a15e9115}{%
+           family={Nitschke},
+           familyi={N\bibinitperiod},
+           given={Mathis},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \strng{fullhash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \strng{bibnamehash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \strng{authorbibnamehash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \strng{authornamehash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \strng{authorfullhash}{e6b7e0cde6fc6b07b56e0c16a15e9115}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 04.11.2022)}
+      \field{title}{Analog Neural Synthesis}
+      \verb{urlraw}
+      \verb https://mlure.art/analog-neural-synthesis/
+      \endverb
+      \verb{url}
+      \verb https://mlure.art/analog-neural-synthesis/
+      \endverb
+      \keyw{neural network,tudor,feedback}
+    \endentry
+    \entry{thomaswpattesonkayn}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e92ee25eee8ce2c8f59ce033319df545}{%
+           family={Patteson},
+           familyi={P\bibinitperiod},
+           given={Thomas\bibnamedelima W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{e92ee25eee8ce2c8f59ce033319df545}
+      \strng{fullhash}{e92ee25eee8ce2c8f59ce033319df545}
+      \strng{bibnamehash}{e92ee25eee8ce2c8f59ce033319df545}
+      \strng{authorbibnamehash}{e92ee25eee8ce2c8f59ce033319df545}
+      \strng{authornamehash}{e92ee25eee8ce2c8f59ce033319df545}
+      \strng{authorfullhash}{e92ee25eee8ce2c8f59ce033319df545}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Time of Roland Kayn’s Cybernetic Music}
+      \field{pages}{1\bibrangedash 11}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
+      \endverb
+      \verb{url}
+      \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
+      \endverb
+    \endentry
+    \entry{sanfilippovallefeedsys}{article}{}
       \name{author}{2}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
            family={Sanfilippo},
@@ -146,6 +256,7 @@
       \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
       \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
       \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -159,6 +270,34 @@
       \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
       \endverb
       \keyw{feedback,cybernetic,echo,larsen}
+    \endentry
+    \entry{discipioiterated}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=cefba2d321800e2fdc3f7baa38fa3d9f}{%
+           family={Scipio},
+           familyi={S\bibinitperiod},
+           given={Agostino\bibnamedelima Di},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {C.S.C. University of Padova}%
+      }
+      \strng{namehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{fullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{bibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICMC Glasgow 1990 Proceedings}
+      \field{title}{Composition by exploration of non-linear dynamic systems}
+      \field{year}{1990}
+      \field{pages}{324\bibrangedash 327}
+      \range{pages}{4}
     \endentry
     \entry{scottsecondordercyb}{article}{}
       \name{author}{1}{}{%
@@ -197,6 +336,36 @@
       \verb{url}
       \verb https://sites.ufpe.br/moinhojuridico/wp-content/uploads/sites/49/2021/10/Ciber-2b-22-out.-second-order-cybernetcs.pdf
       \endverb
+    \endentry
+    \entry{lucierbose}{online}{}
+      \name{author}{1}{}{%
+        {{hash=44573a441e1c8d442ce057dd052e4987}{%
+           family={Technology},
+           familyi={T\bibinitperiod},
+           given={Massachusetts\bibnamedelima Institute},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{44573a441e1c8d442ce057dd052e4987}
+      \strng{fullhash}{44573a441e1c8d442ce057dd052e4987}
+      \strng{bibnamehash}{44573a441e1c8d442ce057dd052e4987}
+      \strng{authorbibnamehash}{44573a441e1c8d442ce057dd052e4987}
+      \strng{authornamehash}{44573a441e1c8d442ce057dd052e4987}
+      \strng{authorfullhash}{44573a441e1c8d442ce057dd052e4987}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 04.11.2022)}
+      \field{title}{Alvin Lucier on ''I am sitting in a room'''}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=v9XJWBZBzq4
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=v9XJWBZBzq4
+      \endverb
+      \keyw{larsen,lucier,feedback}
     \endentry
     \entry{wikisecondordercyb}{online}{}
       \name{author}{1}{}{%
@@ -257,6 +426,7 @@
       \keyw{Esiodo,teogonia,caos,cosmos}
     \endentry
   \enddatalist
+  \missing{http://www.lovely.com/albumnotes/notes1602.html}
 \endrefsection
 \endinput
 

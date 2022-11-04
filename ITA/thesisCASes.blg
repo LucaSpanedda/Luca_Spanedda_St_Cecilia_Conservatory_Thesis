@@ -1,15 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [1] Config.pm:310> INFO - Logfile is 'thesisCASes.blg'
-[181] biber:340> INFO - === gio nov  3, 2022, 17:28:46
-[252] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
-[390] Biber.pm:972> INFO - Found 8 citekeys in bib section 0
-[419] Biber.pm:4383> INFO - Processing section 0
-[465] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
-[471] bibtex.pm:1713> INFO - LaTeX decoding ...
-[509] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
-[708] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[709] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[710] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[710] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[764] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
-[773] bbl.pm:757> INFO - Output to thesisCASes.bbl
+[196] biber:340> INFO - === ven nov  4, 2022, 14:22:36
+[254] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
+[381] Biber.pm:972> INFO - Found 15 citekeys in bib section 0
+[408] Biber.pm:4383> INFO - Processing section 0
+[436] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
+[442] bibtex.pm:1713> INFO - LaTeX decoding ...
+[491] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
+[731] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[731] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[732] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[732] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[800] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
+[817] bbl.pm:757> INFO - Output to thesisCASes.bbl
+[818] Biber.pm:130> WARN - legacy year field 'September, 2011' in entry 'collinspeasouphist' is not an integer - this will probably not sort properly.
+[818] Biber.pm:130> WARN - I didn't find a database entry for 'http://www.lovely.com/albumnotes/notes1602.html' (section 0)
+[819] Biber.pm:132> INFO - WARNINGS: 2
