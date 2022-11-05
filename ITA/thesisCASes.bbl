@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{fabbrisgiustinianocyb}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5890cc800580efdb70e940e3121cccbf}{%
+           family={Alberto\bibnamedelima Giustiniano},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Luca\bibnamedelima Fabbris},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod},
+           prefix={e},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{5890cc800580efdb70e940e3121cccbf}
+      \strng{fullhash}{5890cc800580efdb70e940e3121cccbf}
+      \strng{bibnamehash}{5890cc800580efdb70e940e3121cccbf}
+      \strng{authorbibnamehash}{5890cc800580efdb70e940e3121cccbf}
+      \strng{authornamehash}{5890cc800580efdb70e940e3121cccbf}
+      \strng{authorfullhash}{5890cc800580efdb70e940e3121cccbf}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 03.11.2022)}
+      \field{title}{CFP18 cibernetica, sistemi, teorie, modelli}
+      \verb{urlraw}
+      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
+      \endverb
+      \verb{url}
+      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
+      \endverb
+      \keyw{cibernetica,macy Conferences}
+    \endentry
     \entry{poincaréproblema}{online}{}
       \name{author}{1}{}{%
         {{hash=9fd3d5f6d5033cf7081b45d9870a6153}{%
@@ -115,34 +145,6 @@
       \endverb
       \keyw{colonia,electronicmusic,studio,music}
     \endentry
-    \entry{fabbrisgiustinianocyb}{online}{}
-      \name{author}{1}{}{%
-        {{hash=92e3af488cb37152384f467cbc9b97b0}{%
-           family={Luca\bibnamedelimb Fabbris\bibnamedelimb e\bibnamedelimb Alberto\bibnamedelima Giustiniano},
-           familyi={L\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim G\bibinitperiod},
-           prefix={a\bibnamedelima cura\bibnamedelima di},
-           prefixi={a\bibinitperiod\bibinitdelim c\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
-      }
-      \strng{namehash}{92e3af488cb37152384f467cbc9b97b0}
-      \strng{fullhash}{92e3af488cb37152384f467cbc9b97b0}
-      \strng{bibnamehash}{92e3af488cb37152384f467cbc9b97b0}
-      \strng{authorbibnamehash}{92e3af488cb37152384f467cbc9b97b0}
-      \strng{authornamehash}{92e3af488cb37152384f467cbc9b97b0}
-      \strng{authorfullhash}{92e3af488cb37152384f467cbc9b97b0}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 03.11.2022)}
-      \field{title}{CFP#18 \ CIBERNETICA. SISTEMI, TEORIE, MODELLI}
-      \verb{urlraw}
-      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
-      \endverb
-      \verb{url}
-      \verb https://philosophykitchen.com/2022/03/cfp18-cibernetica-sistemi-teorie-modelli/
-      \endverb
-      \keyw{cibernetica,macy Conferences}
-    \endentry
     \entry{tudorneuralsynth}{online}{}
       \name{author}{1}{}{%
         {{hash=e6b7e0cde6fc6b07b56e0c16a15e9115}{%
@@ -199,7 +201,7 @@
       \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
       \endverb
     \endentry
-    \entry{dariosanfilippophd}{thesis}{}
+    \entry{sanfilippocasaesthetics}{article}{}
       \name{author}{1}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
            family={Sanfilippo},
@@ -207,8 +209,8 @@
            given={Dario},
            giveni={D\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
-        {Reid School of Music The University of Edinburgh}%
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
       }
       \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
@@ -220,9 +222,10 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Complex Musical Behaviours via Time-Variant Audio Feedback Networks and Distributed Adaptation: a Study of Autopoietic Infrastructures for Real-Time Performance Systems}
-      \field{type}{phdthesis}
-      \field{year}{2019}
+      \field{journaltitle}{Organised Sound}
+      \field{title}{The Aesthetics of Musical Complex Systems}
+      \field{volume}{28}
+      \field{year}{2023}
     \endentry
     \entry{sanfilippovallefeedsys}{article}{}
       \name{author}{2}{}{%
