@@ -145,6 +145,32 @@
       \endverb
       \keyw{colonia,electronicmusic,studio,music}
     \endentry
+    \entry{Lorenzdnf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0e3296d4ad2820047a9c3ef4711904e9}{%
+           family={Lorenz},
+           familyi={L\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \strng{fullhash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \strng{bibnamehash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \strng{authorbibnamehash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \strng{authornamehash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \strng{authorfullhash}{0e3296d4ad2820047a9c3ef4711904e9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Atmospheric Sciences}
+      \field{number}{2}
+      \field{title}{Deterministic Nonperiodic Flow}
+      \field{volume}{20}
+      \field{year}{1963}
+      \field{pages}{130\bibrangedash 148}
+      \range{pages}{19}
+    \endentry
     \entry{tudorneuralsynth}{online}{}
       \name{author}{1}{}{%
         {{hash=e6b7e0cde6fc6b07b56e0c16a15e9115}{%
