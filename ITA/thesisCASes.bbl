@@ -106,6 +106,84 @@
       \verb http://www.nicolascollins.com/texts/peasouphistoryOLD.pdf
       \endverb
     \endentry
+    \entry{di_scipio_relational_2022}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d330309df5da086019baa54c53822e35}{%
+           family={Di\bibnamedelima Scipio},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d330309df5da086019baa54c53822e35}
+      \strng{fullhash}{d330309df5da086019baa54c53822e35}
+      \strng{bibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authornamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2736-5824}
+      \field{journaltitle}{ECHO, a journal of music, thought and technology}
+      \field{month}{1}
+      \field{number}{3}
+      \field{title}{A {Relational} {Ontology} of {Feedback}}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.47041/TKUL7223
+      \endverb
+      \verb{file}
+      \verb Di Scipio - 2022 - A Relational Ontology of Feedback.pdf:files/188/Di Scipio - 2022 - A Relational Ontology of Feedback.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
+      \endverb
+      \verb{url}
+      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
+      \endverb
+    \endentry
+    \entry{discipio_polverisonore_2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d330309df5da086019baa54c53822e35}{%
+           family={Di\bibnamedelima Scipio},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {it}%
+      }
+      \strng{namehash}{d330309df5da086019baa54c53822e35}
+      \strng{fullhash}{d330309df5da086019baa54c53822e35}
+      \strng{bibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authornamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{La Camera Verde}
+      \field{note}{Publisher: La Camera Verde}
+      \field{title}{Polveri Sonore - Una prospettiva ecosistemica della composizione}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{17\bibrangedash 42 Pages}
+      \range{pages}{-1}
+    \endentry
     \entry{dunbarlisteningcyb}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=7756c88e9f289b9c93586308429ce3ee}{%
@@ -481,6 +559,7 @@
     \endentry
   \enddatalist
   \missing{http://www.lovely.com/albumnotes/notes1602.html}
+  \missing{https://faust.grame.fr/}
 \endrefsection
 \endinput
 
