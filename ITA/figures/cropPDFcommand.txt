@@ -1,0 +1,6 @@
+# PDF Manipulation
+
+#convert to black and white
+gs  -sOutputFile=output.pdf  -sDEVICE=pdfwrite  -sColorConversionStrategy=Gray  -dProcessColorModel=/DeviceGray  -dCompatibilityLevel=1.4  -dBlackText -dNOPAUSE  -dBATCH  INPUTFILE.pdf
+# crop margins
+pdf-crop-margins -v -p 0 -a -6 INPUTFILE.pdf

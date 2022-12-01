@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  26 NOV 2022 01:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  1 DEC 2022 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -439,40 +439,98 @@ Package: xparse 2022-01-12 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 ))
-\@quotelevel=\count403
-\@quotereset=\count404
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count403
+\lst@gtempboxa=\box96
+\lst@token=\toks19
+\lst@length=\count404
+\lst@currlwidth=\dimen163
+\lst@column=\count405
+\lst@pos=\count406
+\lst@lostspace=\dimen164
+\lst@width=\dimen165
+\lst@newlines=\count407
+\lst@lineno=\count408
+\lst@maxwidth=\dimen166
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count409
+\lst@skipnumbers=\count410
+\lst@framebox=\box97
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/lstaddons/lstautogobble.sty
+Package: lstautogobble 2012/05/03 v0.1 Implements 'autogobble' option for 'list
+ings'
+\lstag@spacecount=\count411
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty
+Package: zi4 2019/05/17 v1.12
+
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks20
+\XKV@tempa@toks=\toks21
+)
+\XKV@depth=\count412
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\zifour@ocount=\count413
+)
+\@quotelevel=\count414
+\@quotereset=\count415
 
 (./thesisCASes.aux)
 \openout1 = `thesisCASes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count405
-\scratchdimen=\dimen163
-\scratchbox=\box96
-\nofMPsegments=\count406
-\nofMParguments=\count407
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count408
-\MPscratchDim=\dimen164
-\MPnumerator=\count409
-\makeMPintoPDFobject=\count410
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count416
+\scratchdimen=\dimen167
+\scratchbox=\box98
+\nofMPsegments=\count417
+\nofMParguments=\count418
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count419
+\MPscratchDim=\dimen168
+\MPnumerator=\count420
+\makeMPintoPDFobject=\count421
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -512,9 +570,13 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 13.
-Package biblatex Info: Reference segment=0 on input line 13.
- (./cover.tex
+Package biblatex Info: Reference section=0 on input line 47.
+Package biblatex Info: Reference segment=0 on input line 47.
+\c@lstlisting=\count422
+ (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (./cover.tex
 <figures/logo-CSC-pdf-cropped.pdf, id=1, 216.81pt x 60.225pt>
 File: figures/logo-CSC-pdf-cropped.pdf Graphic file (type pdf)
 <use figures/logo-CSC-pdf-cropped.pdf>
@@ -530,17 +592,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/logo-CSC-pdf-cro
 pped.pdf>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 24--33
+Underfull \hbox (badness 10000) in paragraph at lines 58--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--33
+Underfull \hbox (badness 10000) in paragraph at lines 58--67
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 37--64
+Underfull \hbox (badness 10000) in paragraph at lines 71--98
 
  []
 
@@ -569,6 +631,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 28.
+LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 2
+8.
+
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
+File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 10.0pt on input line 28.
 
 Overfull \hbox (5.84033pt too wide) in paragraph at lines 5--49
 \OT1/cmr/m/n/12 Se nella cos-molo-gia greca, questa re-alt^^Ra veniva sp-ie-gat
@@ -660,12 +730,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10])
-Underfull \hbox (badness 10000) in paragraph at lines 411--105
+Underfull \hbox (badness 10000) in paragraph at lines 411--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--105
+Underfull \hbox (badness 10000) in paragraph at lines 411--139
 
  []
 
@@ -696,7 +766,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13] (./chapters/2_ecosistemi.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--36
+Overfull \hbox (1.13622pt too wide) in paragraph at lines 11--39
+\OT1/cmr/m/n/12 Nessun sis-tema ^^Re sep-a-ra-bile e isola-bile dall'ambiente c
+ir-costante, a pre-scindere
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--39
 
  []
 
@@ -711,11 +787,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [14
 
 ]
-<figures/uomo_macchina_ambiente.png, id=85, 492.33937pt x 209.28188pt>
+<figures/uomo_macchina_ambiente.png, id=86, 492.33937pt x 209.28188pt>
 File: figures/uomo_macchina_ambiente.png Graphic file (type png)
 <use figures/uomo_macchina_ambiente.png>
 Package pdftex.def Info: figures/uomo_macchina_ambiente.png  used on input line
- 53.
+ 58.
 (pdftex.def)             Requested size: 227.62204pt x 96.75621pt.
 
 
@@ -727,13 +803,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15 <./figures/uomo_macchina_ambiente.png>]
-<figures/larsen_feedback_scheme.png, id=89, 383.18156pt x 86.57344pt>
-File: figures/larsen_feedback_scheme.png Graphic file (type png)
-<use figures/larsen_feedback_scheme.png>
-Package pdftex.def Info: figures/larsen_feedback_scheme.png  used on input line
- 110.
-(pdftex.def)             Requested size: 227.62204pt x 51.42793pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -743,16 +812,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 135--143
+<figures/larsen_feedback_scheme.png, id=94, 383.18156pt x 86.57344pt>
+File: figures/larsen_feedback_scheme.png Graphic file (type png)
+<use figures/larsen_feedback_scheme.png>
+Package pdftex.def Info: figures/larsen_feedback_scheme.png  used on input line
+ 115.
+(pdftex.def)             Requested size: 227.62204pt x 51.42793pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--153
 
  []
 
-<figures/controlled_larsen_feedback.png, id=95, 319.94531pt x 322.20375pt>
-File: figures/controlled_larsen_feedback.png Graphic file (type png)
-<use figures/controlled_larsen_feedback.png>
-Package pdftex.def Info: figures/controlled_larsen_feedback.png  used on input 
-line 146.
-(pdftex.def)             Requested size: 227.62204pt x 229.23332pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -762,16 +832,67 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17 <./figures/larsen_feedback_scheme.png>]
+<figures/controlled_larsen_feedback.png, id=101, 319.94531pt x 322.20375pt>
+File: figures/controlled_larsen_feedback.png Graphic file (type png)
+<use figures/controlled_larsen_feedback.png>
+Package pdftex.def Info: figures/controlled_larsen_feedback.png  used on input 
+line 156.
+(pdftex.def)             Requested size: 113.81102pt x 114.61665pt.
+
 
 LaTeX Warning: Citation 'https://faust.grame.fr/' on page 18 undefined on input
- line 172.
+ line 183.
 
 
-Overfull \hbox (10.61572pt too wide) in paragraph at lines 151--183
-[][] \OT1/cmr/m/n/12 Il modo pi^^Ru sem-plice per man-tenere l'effetto Larsen i
-n uno stato stazionario,
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18 <./figures/controlled_larsen_feedback.png>]
+<figures/PeakholderIIR.pdf, id=107, 392.71367pt x 189.24243pt>
+File: figures/PeakholderIIR.pdf Graphic file (type pdf)
+<use figures/PeakholderIIR.pdf>
+Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 198.
+(pdftex.def)             Requested size: 341.43306pt x 164.5414pt.
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 204.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19 <./figures/PeakholderIIR.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+
+pdfTeX warning: pdflatex (file ./figures/LARfeedbackstudy2017.pdf): PDF inclusi
+on: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/LARfeedbackstudy2017.pdf, id=119, 677.51134pt x 372.92143pt>
+File: figures/LARfeedbackstudy2017.pdf Graphic file (type pdf)
+<use figures/LARfeedbackstudy2017.pdf>
+Package pdftex.def Info: figures/LARfeedbackstudy2017.pdf  used on input line 2
+39.
+(pdftex.def)             Requested size: 398.33858pt x 219.25923pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 239--239
+ [] 
  []
 
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -780,7 +901,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18 <./figures/controlled_larsen_feedback.png>])
+[21
+
+ <./figures/LARfeedbackstudy2017.pdf>] (./chapters/3_sistemiautonomi.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -789,16 +912,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19] (./chapters/3_sistemiautonomi.tex)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20
+[22
 
 ] (./chapters/4_riti.tex
 Overfull \hbox (15.6917pt too wide) in paragraph at lines 2--2
@@ -814,7 +928,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21
+[23
 
 ] (./chapters/appendix.tex)
 
@@ -825,34 +939,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22
+[24
 
 ]
-Overfull \hbox (21.66194pt too wide) in paragraph at lines 118--118
+Overfull \hbox (15.18683pt too wide) in paragraph at lines 152--152
 \OT1/cmr/m/it/12 sta-bilit^^Ra del Sis-tema so-lare\OT1/cmr/m/n/12 . \OT1/cmr/m
-/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmtt/m/n/12 https : / / www . treccani . it /
- enciclopedia /
+/sc/12 url\OT1/cmr/m/n/12 : $\OT1/zi4/m/n/12 https : / / www . treccani . it / 
+enciclopedia /
  []
 
 
-Overfull \hbox (7.87086pt too wide) in paragraph at lines 118--118
-\OT1/cmtt/m/n/12 article / a -[] relational -[] ontology -[] of -[] feedback$ \
-OT1/cmr/m/n/12 (vis-ited on 11/22/2022). 
+Overfull \hbox (0.69574pt too wide) in paragraph at lines 152--152
+\OT1/zi4/m/n/12 article / a -[] relational -[] ontology -[] of -[] feedback$ \O
+T1/cmr/m/n/12 (vis-ited on 11/22/2022). 
  []
 
 
-Overfull \hbox (25.75467pt too wide) in paragraph at lines 118--118
-\OT1/cmtt/m/n/12 Studio _ de _ musique _ %C3 % A9lectronique _ (Cologne)$\OT1/c
-mr/m/n/12 . (ac-cessed: 17.10.2022). 
+Overfull \hbox (11.15956pt too wide) in paragraph at lines 152--152
+\OT1/zi4/m/n/12 Studio[]de[]musique[] % C3 % A9lectronique[](Cologne)$\OT1/cmr/
+m/n/12 . (ac-cessed: 17.10.2022). 
  []
 
 
-Overfull \hbox (3.90997pt too wide) in paragraph at lines 118--118
+Overfull \hbox (3.90997pt too wide) in paragraph at lines 152--152
 [][]\OT1/cmr/m/n/12 Sanfilippo, Dario and An-drea Valle. ``Feed-back Sys-tems: 
 An An-a-lyt-i-cal Frame-
  []
 
 
+Overfull \hbox (13.62482pt too wide) in paragraph at lines 152--152
+\OT1/zi4/m/n/12 abstract / 37 / 2 / 12 / 94420 / Feedback -[] Systems -[] An -[
+] Analytical -[] Framework ?
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -860,19 +980,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23
+[25
 
 ]
-Overfull \hbox (48.8884pt too wide) in paragraph at lines 118--118
+Overfull \hbox (43.81331pt too wide) in paragraph at lines 152--152
 \OT1/cmr/m/it/12 Ky-ber-netes \OT1/cmr/m/n/12 33.9.10 (2003), pp. 1365{1378. \O
-T1/cmr/m/sc/12 doi\OT1/cmr/m/n/12 : $\OT1/cmtt/m/n/12 doi : 10 . 1108 / 0368492
-0410556007$\OT1/cmr/m/n/12 .
- []
-
-
-Overfull \hbox (0.55301pt too wide) in paragraph at lines 118--118
-\OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmtt/m/n/12 https : / / sites . ufp
-e . br / moinhojuridico / wp -[] content / uploads /
+T1/cmr/m/sc/12 doi\OT1/cmr/m/n/12 : $\OT1/zi4/m/n/12 doi : 10 . 1108 / 03684920
+410556007$\OT1/cmr/m/n/12 .
  []
 
 
@@ -883,38 +997,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24] (./thesisCASes.aux)
+[26] (./thesisCASes.aux)
 Package logreq Info: Writing requests to 'thesisCASes.run.xml'.
 \openout1 = `thesisCASes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10431 strings out of 478287
- 203677 string characters out of 5849288
- 997383 words of memory out of 5000000
- 28505 multiletter control sequences out of 15000+600000
- 477733 words of font info for 56 fonts, out of 8000000 for 9000
+ 12551 strings out of 478287
+ 235097 string characters out of 5849288
+ 1033415 words of memory out of 5000000
+ 30580 multiletter control sequences out of 15000+600000
+ 477804 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,77p,744b,1545s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfti1200.pfb>
-Output written on thesisCASes.pdf (31 pages, 329027 bytes).
+ 68i,12n,77p,744b,1775s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/inconsolata/i4-ot1-0.enc}</usr/share/texlive/texm
+f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+fti1200.pfb>
+Output written on thesisCASes.pdf (33 pages, 387178 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 234 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+# script for compile my thesis
+cd /home/luca/Tesi
+bash compile-thesis.sh

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Script for change faust diagrams
+
+sudo -v
+echo insert the faust code name without dsp extension:
+read faustcode
+faust2firefox $faustcode.dsp
+cd $faustcode-svg
+echo the folder is:
+pwd
+echo starting the diagram editing with inkscape ...:
+for i in *.svg; do inkscape --batch-process --actions="select-all:all;
+                                    org.inkscape.color.desaturate.noprefs;
+                                    export-filename:$i;
+                                    export-do;" $i; done
+echo converting to pdf:
+for i in *.svg; do rsvg-convert -f pdf -o $i.pdf $i; done
+echo all done!
