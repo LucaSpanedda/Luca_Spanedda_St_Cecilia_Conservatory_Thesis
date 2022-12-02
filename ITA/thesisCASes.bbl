@@ -151,6 +151,39 @@
       \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
       \endverb
     \endentry
+    \entry{discipiocircuitideltempo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d330309df5da086019baa54c53822e35}{%
+           family={Di\bibnamedelima Scipio},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {it}%
+      }
+      \list{location}{1}{%
+        {Lucca}%
+      }
+      \list{publisher}{1}{%
+        {Libreria Musicale Italiana}%
+      }
+      \strng{namehash}{d330309df5da086019baa54c53822e35}
+      \strng{fullhash}{d330309df5da086019baa54c53822e35}
+      \strng{bibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authornamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788855430685}
+      \field{note}{N. 38}
+      \field{title}{Circuiti del Tempo Un percorso storico-critico nella creatività musicale elettroacustica e informatica}
+      \field{year}{2021}
+    \endentry
     \entry{discipio_polverisonore_2016}{article}{}
       \name{author}{1}{}{%
         {{hash=d330309df5da086019baa54c53822e35}{%
@@ -168,7 +201,7 @@
       \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -184,7 +217,7 @@
       \field{pages}{17\bibrangedash 42 Pages}
       \range{pages}{-1}
     \endentry
-    \entry{dunbarlisteningcyb}{inproceedings}{}
+    \entry{dunbarlisteningcyb}{article}{}
       \name{author}{1}{}{%
         {{hash=7756c88e9f289b9c93586308429ce3ee}{%
            family={Dunbar-Hester},
@@ -192,8 +225,11 @@
            given={Christina},
            giveni={C\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Cornell University}%
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Sage Publications, Inc.}%
       }
       \strng{namehash}{7756c88e9f289b9c93586308429ce3ee}
       \strng{fullhash}{7756c88e9f289b9c93586308429ce3ee}
@@ -205,23 +241,20 @@
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{re:place conference, Berlin, November 2007}
+      \field{abstract}{Scholars have explored the influence of the field of cybernetics on scientific thought and disciplines. However, from the inception of the field, "cyberneticians" had explicitly envisioned applications reaching beyond the purview of scientific disciplines"}
+      \field{journaltitle}{Science Technology e Human Values}
+      \field{number}{1}
       \field{title}{Listening to Cybernetics: Music, Machines, and Nervous Systems, 1950-1980}
-      \field{year}{2007}
-    \endentry
-    \entry{EMSColonia}{online}{}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 17.10.2022)}
-      \field{title}{Electronic Music Studio (Colonia)}
+      \field{volume}{35}
+      \field{year}{2010}
+      \field{pages}{113\bibrangedash 139}
+      \range{pages}{27}
       \verb{urlraw}
-      \verb https://it.frwiki.wiki/wiki/Studio_de_musique_%C3%A9lectronique_(Cologne)
+      \verb http://www.jstor.org/stable/27786196
       \endverb
       \verb{url}
-      \verb https://it.frwiki.wiki/wiki/Studio_de_musique_%C3%A9lectronique_(Cologne)
+      \verb http://www.jstor.org/stable/27786196
       \endverb
-      \keyw{colonia,electronicmusic,studio,music}
     \endentry
     \entry{Lorenzdnf}{article}{}
       \name{author}{1}{}{%
@@ -304,6 +337,36 @@
       \verb{url}
       \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
       \endverb
+    \endentry
+    \entry{esiodoteogonia}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=bf25549908ecd8213225e1a954ca6d0c}{%
+           family={Ranzato},
+           familyi={R\bibinitperiod},
+           given={Sofia},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Facoltà di Lettere e Filosofia C. d. L. S. in Scienze dell’Antichità}%
+      }
+      \list{language}{1}{%
+        {ita}%
+      }
+      \strng{namehash}{bf25549908ecd8213225e1a954ca6d0c}
+      \strng{fullhash}{bf25549908ecd8213225e1a954ca6d0c}
+      \strng{bibnamehash}{bf25549908ecd8213225e1a954ca6d0c}
+      \strng{authorbibnamehash}{bf25549908ecd8213225e1a954ca6d0c}
+      \strng{authornamehash}{bf25549908ecd8213225e1a954ca6d0c}
+      \strng{authorfullhash}{bf25549908ecd8213225e1a954ca6d0c}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{L’origine del mondo divino Una lettura di Esiodo}
+      \field{type}{Thesis}
+      \field{year}{2006/2007}
+      \field{pages}{10}
+      \range{pages}{1}
     \endentry
     \entry{sanfilippocasaesthetics}{article}{}
       \name{author}{1}{}{%
@@ -499,63 +562,48 @@
       \endverb
       \keyw{larsen,lucier,feedback}
     \endentry
-    \entry{wikisecondordercyb}{online}{}
+    \entry{understandingunderstanding}{book}{}
       \name{author}{1}{}{%
-        {{hash=680b9fd60fec60bdab9ef81def4525d8}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod},
-           given={the\bibnamedelimb free\bibnamedelima encyclopedia},
-           giveni={t\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+        {{hash=0d5ac2259950646e4f22c2841f335985}{%
+           family={Von\bibnamedelima Foerster},
+           familyi={V\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={Heinz},
+           giveni={H\bibinitperiod}}}%
       }
-      \strng{namehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{fullhash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{bibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authorbibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authornamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authorfullhash}{680b9fd60fec60bdab9ef81def4525d8}
-      \field{extraname}{1}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{0d5ac2259950646e4f22c2841f335985}
+      \strng{fullhash}{0d5ac2259950646e4f22c2841f335985}
+      \strng{bibnamehash}{0d5ac2259950646e4f22c2841f335985}
+      \strng{authorbibnamehash}{0d5ac2259950646e4f22c2841f335985}
+      \strng{authornamehash}{0d5ac2259950646e4f22c2841f335985}
+      \strng{authorfullhash}{0d5ac2259950646e4f22c2841f335985}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 03.11.2022)}
-      \field{title}{Second-order cybernetics}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A review of Understanding Understanding: Essays on Cybernetics and Cognition, Heinz von Foerster, 2003. New York: Springer-Verlag, 362pp. ISBN 0387953922. \$64.95 USD.}
+      \field{issn}{17105668, 17105668}
+      \field{journaltitle}{Complicity: An International Journal of Complexity and Education}
+      \field{number}{1}
+      \field{shorttitle}{Understanding Understanding}
+      \field{title}{Understanding Understanding: Essays on Cybernetics and Cognition}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{volume}{2}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.29173/cmplct8737
+      \endverb
       \verb{urlraw}
-      \verb https://en.wikipedia.org/wiki/Second-order_cybernetics
+      \verb https://journals.library.ualberta.ca/complicity/index.php/complicity/article/view/8737
       \endverb
       \verb{url}
-      \verb https://en.wikipedia.org/wiki/Second-order_cybernetics
+      \verb https://journals.library.ualberta.ca/complicity/index.php/complicity/article/view/8737
       \endverb
-      \keyw{cybernetic,Second-order cybernetics,radical constructivism}
-    \endentry
-    \entry{esiodoteogonia}{online}{}
-      \name{author}{1}{}{%
-        {{hash=680b9fd60fec60bdab9ef81def4525d8}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod},
-           given={the\bibnamedelimb free\bibnamedelima encyclopedia},
-           giveni={t\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
-      }
-      \strng{namehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{fullhash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{bibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authorbibnamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authornamehash}{680b9fd60fec60bdab9ef81def4525d8}
-      \strng{authorfullhash}{680b9fd60fec60bdab9ef81def4525d8}
-      \field{extraname}{2}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 03.11.2022)}
-      \field{title}{Teogonia (Esiodo)}
-      \verb{urlraw}
-      \verb https://it.wikipedia.org/wiki/Teogonia_(Esiodo)
-      \endverb
-      \verb{url}
-      \verb https://it.wikipedia.org/wiki/Teogonia_(Esiodo)
-      \endverb
-      \keyw{Esiodo,teogonia,caos,cosmos}
     \endentry
   \enddatalist
   \missing{http://www.lovely.com/albumnotes/notes1602.html}

@@ -1,4 +1,5 @@
 #! usr/bin/bash
+
 printf "compiling the thesis, the bibliography, and again the thesis..."
 pdflatex thesisCASes.tex
 biber thesisCASes
@@ -10,3 +11,6 @@ mv thesisCASes.pdf $now"-thesisCASes".pdf
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$now"-compressed-thesisCASes".pdf $now"-thesisCASes".pdf
 rm -r $now"-thesisCASes".pdf
 mv $now"-compressed-thesisCASes".pdf thesis-pdf
+cd thesis-pdf
+xdg-open $now"-compressed-thesisCASes".pdf
+cd ..
