@@ -77,6 +77,31 @@
       \endverb
       \keyw{astronomia,caos,dynamics}
     \endentry
+    \entry{haroldblackamplifier}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9be267eb895e0b685857f2364a2ec5e5}{%
+           family={Black},
+           familyi={B\bibinitperiod},
+           given={H.S.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Bell Telephone Laboratories, Inc., New York}%
+      }
+      \strng{namehash}{9be267eb895e0b685857f2364a2ec5e5}
+      \strng{fullhash}{9be267eb895e0b685857f2364a2ec5e5}
+      \strng{bibnamehash}{9be267eb895e0b685857f2364a2ec5e5}
+      \strng{authorbibnamehash}{9be267eb895e0b685857f2364a2ec5e5}
+      \strng{authornamehash}{9be267eb895e0b685857f2364a2ec5e5}
+      \strng{authorfullhash}{9be267eb895e0b685857f2364a2ec5e5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ALEE. committee on communication}
+      \field{title}{Stabilized Feed-Back Amplifiers}
+      \field{year}{1933}
+    \endentry
     \entry{collinspeasouphist}{article}{}
       \name{author}{1}{}{%
         {{hash=286bee662fe31c216d37a7764bc0f0bc}{%
@@ -282,6 +307,30 @@
       \field{pages}{130\bibrangedash 148}
       \range{pages}{19}
     \endentry
+    \entry{maxwellongovernor}{article}{}
+      \name{author}{1}{}{%
+        {{hash=aacd7567688e646781c864b50d76a623}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Mr.\bibnamedelimi J.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JOHN PETER GASSIOT, ESQ., V.P., in the Chair.}%
+      }
+      \strng{namehash}{aacd7567688e646781c864b50d76a623}
+      \strng{fullhash}{aacd7567688e646781c864b50d76a623}
+      \strng{bibnamehash}{aacd7567688e646781c864b50d76a623}
+      \strng{authorbibnamehash}{aacd7567688e646781c864b50d76a623}
+      \strng{authornamehash}{aacd7567688e646781c864b50d76a623}
+      \strng{authorfullhash}{aacd7567688e646781c864b50d76a623}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{on Governors}
+      \field{year}{1868}
+    \endentry
     \entry{tudorneuralsynth}{online}{}
       \name{author}{1}{}{%
         {{hash=e6b7e0cde6fc6b07b56e0c16a15e9115}{%
@@ -368,32 +417,6 @@
       \field{pages}{10}
       \range{pages}{1}
     \endentry
-    \entry{sanfilippocasaesthetics}{article}{}
-      \name{author}{1}{}{%
-        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
-           family={Sanfilippo},
-           familyi={S\bibinitperiod},
-           given={Dario},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \strng{bibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Organised Sound}
-      \field{title}{The Aesthetics of Musical Complex Systems}
-      \field{volume}{28}
-      \field{year}{2023}
-    \endentry
     \entry{sanfilippovallefeedsys}{article}{}
       \name{author}{2}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
@@ -437,35 +460,6 @@
       \verb https://direct.mit.edu/comj/article-abstract/37/2/12/94420/Feedback-Systems-An-Analytical-Framework?redirectedFrom=PDF
       \endverb
     \endentry
-    \entry{echodiscipio}{online}{}
-      \name{author}{1}{}{%
-        {{hash=cefba2d321800e2fdc3f7baa38fa3d9f}{%
-           family={Scipio},
-           familyi={S\bibinitperiod},
-           given={Agostino\bibnamedelima Di},
-           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{fullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{bibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \field{extraname}{1}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{addendum}{(accessed: 17.10.2022)}
-      \field{title}{A Relational Ontology of Feedback}
-      \verb{urlraw}
-      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
-      \endverb
-      \verb{url}
-      \verb https://echo.orpheusinstituut.be/article/a-relational-ontology-of-feedback
-      \endverb
-      \keyw{feedback,cybernetic,echo,larsen}
-    \endentry
     \entry{discipioiterated}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=cefba2d321800e2fdc3f7baa38fa3d9f}{%
@@ -483,7 +477,6 @@
       \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
       \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
       \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}

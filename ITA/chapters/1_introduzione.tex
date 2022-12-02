@@ -412,63 +412,55 @@ nella prassi della composizione elettroacustica in tutto il mondo.
 
 \subsection{Il Feedback}
 \label{sec:Il Feedback}
-Il feedback (o retroazione) è un concetto cibernetico che sta ad indicare
-la capacità di un sistema di autoregolarsi tenendo conto degli effetti scaturiti
-dalla modificazione delle caratteristiche del sistema stesso.
-In termini appartenenti alla fisica, è la capacità di un sistema dinamico
-di tenere conto dei risultati prodotti dal sistema per
-modificare le caratteristiche del sistema stesso.
-Quello che osserviamo in un ciclo di feedback è
-il passato che viene influenzato dal presente,
-e che sta per essere compensato dall'immediato
-futuro. \footcite{sanfilippocasaesthetics}
-Negli esseri viventi, ad esempio, i sistemi a retroazione negativa e positiva
-sono ampiamente utilizzati per regolare l'omeostasi dell'organismo.
-Esistono idealmente due tipologie di Feedback:
-\\ \\
-- a Retroazione Positiva
-\\
-- a Retroazione Negativa
-\\ \\
-In un sistema soggetto a questi stimoli,
-il feedback positivo può creare una risposta con crescite o decadimenti esponenziali
-dal punto di equilibrio naturale del sistema.
-Questo viene spesso visto come una reazione a catena
-dove le perturbazioni che tendono verso una certa direzione
-saranno amplificate ricorsivamente dal
-sistema stesso, determinando ulteriori spostamenti nella medesima direzione.
-D'altra parte invece, i circuiti di feedback negativo hanno
-un comportamento complementare al feedback positivo e tendono ad oscillare
-attorno ad un punto di stabilità.
-In effetti, i sistemi di feedback negativo sono in equilibrio dinamico
-e svolgono un azione di controbilanciamento nei confronti degli stimoli esterni
-per mantenere uno stato di equilibrio. \footcite{sanfilippocasaesthetics}
-Nel corso della tesi ritorneremo su questi temi
-riguardo le proprietà del feedback, affrontandoli di volta in volta
+Il Feedback, nella sua espressione inglese, 
+unisce le due parole \textit{Feed} che significa ‘alimentare’, 
+e \textit{Back} ‘all’indietro’. 
+Il primo a introdurre il concetto di Feedback nella letteratura scientifica 
+è stato lo scienziato inglese James Clerk Maxwell, 
+il quale nel 1868 pubblicò uno studio \footcite{maxwellongovernor}.
+sui sistemi automatici in cui metteva in evidenza come essi fossero in grado di correggersi
+in maniera automatica proprio grazie al \textit{ritorno di informazione}.
+Maxwell anticipò quel concetto che arriverà a maturazione solo molti anni dopo con 
+la nascita della Cibernetica con Norbert Wiener, che diede il nome di Cibernetica al campo dei suoi studi proprio in onore del lavoro di Maxwell - dal greco \textit{kybernetiké téchne} sta per ‘arte del governare’, a cui si collega il termine inglese \textit{governor} dell'articolo di Maxwell.
+In italiano il significato del termine può essere tradotto come ‘retro-alimentazione’
+o ‘retro-iniezione’ che ne preservano in qualche modo il significato originale della lingua inglese,
+tuttavia in molti preferiscono conservare la parola inglese Feedback. \\
+Nella teoria cibernetica, e in genere in tutte le discipline scientifiche che usano approcci di tipo sistemico, quando il Feedback ha un effetto risultante dall’azione di un sistema (meccanismo, circuito, organismo ecc.) che si riflette sul sistema stesso per variarne e correggerne opportunamente il funzionamento, questo si può chiamare Retroazione. \\
+Esistono sostanzialmente due tipi di retroazione nel Feedback: \textit{positiva} e \textit{negativa}.
+Il Feedback è generalmente detto negativo quando agisce in modo che il sistema funzioni sempre allo stesso modo, entro margini controllati di tolleranza e convergendo verso un comportamento, viene invece detto positivo quando tende a mantenere il sistema in uno stato di continuo cambiamento.
+Tuttavia queste definizioni possono variare da caso a caso, 
+e nel corso della tesi ritorneremo su questi temi
+riguardo le possibili proprietà del Feedback, affrontando queste di volta in volta
 nei casi specifici.
-Per ora ci basti pensare che nel controllo di un sistema complesso
-come può essere quello del feedback elettroacustico,
-introdurre delle linearità tramite retroazione all'interno del ciclo di
-feedback potrebbe voler dire costringere la complessità
-a dei comportamenti prevedibili, uno stato di convergenza verso l'equilibrio. \\
-Un esempio pratico e conosciuto è quello dell'intonazione del fenomeno Larsen,
-che da un comportamento complesso della sorgente e del ricettore arrivando 
-alla saturazione per autoscillazione giunge ad uno stato stazionario, di stabilità.
+Per anticipare da ora alcuni esempi: 
+ci basti pensare che nel controllo di un sistema complesso
+come può essere quello del Feedback elettroacustico,
+in un modello dove si possono introdurre delle linearità 
+tramite retroazione all'interno del ciclo di
+feedback, potrebbe voler dire costringere la complessità
+a dei comportamenti più prevedibili, 
+puntando uno stato di convergenza verso l'equilibrio. \\
+Un esempio conosciuto è quello dell'intonazione del fenomeno Larsen,
+che da un comportamento complesso della sorgente e del ricettore, crescendo
+verso la saturazione per autoscillazione giunge infine ad uno stato stazionario, di stabilità.
 Mentre introdurre delle non linearità nel sistema tramite la retroazione,
-potrebbe voler dire portare il sistema verso comportamenti non più prevedibili,
+al contrario, può voler dire portare il sistema verso comportamenti non più prevedibili,
 in divergenza dall'equilibrio dello stato stazionario,
-e in alcuni casi verso la soglia del caos.
+e in alcuni casi verso quella che viene chiamata la soglia del caos.
 Questi due tipi di comportamento possono essere ottenuti per l'appunto
 sia velocizzando che rallentando questi processi
-in maniera dipendente dal caso specifico.
-Un secondo esempio esemplare è quello dei filtri digitali nell'audio,
-questi possono essere pensati come un valido strumento
-di contrasto o favoreggiamento rispetto a questo tipo di comportamenti,
+in maniera fortemente dipendente dal caso specifico.
+Un secondo esempio esemplare, è invece quello dei filtri digitali audio,
+pensati come un valido strumento
+di contrasto o avallamento rispetto a questo tipo di comportamenti,
 dove se si allineano le fasi si creano dei poli,
 mentre se si disallineano si punta generalmente alla complessità del sistema.
-Di fatto la storia delle tecnologie elettroacustiche ha più in generale
-da sempre incorporato il principio
-del feedback sin dalle sue origini, basti pensare a tecnologie
+Riguardo i filtri digitali basti pensare anche agli algoritmi di Modellazione Fisica
+degli strumenti,
+come ad esempio quello famoso di Karplus-Strong.
+Di fatto più in generale, la storia delle tecnologie elettroacustiche ha
+da sempre incorporato il principio del Feedback sin dalle sue origini e da prima della
+nascita della Cibernetica. Possiamo pensare a tecnologie
 come il triodo, chiamato inizialmente valvola audion di Lee De Forest,
 o i circuiti di feedback negativo - negative feedback amplifier - di Harold Black
-\footcite{echodiscipio}.
+\footcite{haroldblackamplifier}.

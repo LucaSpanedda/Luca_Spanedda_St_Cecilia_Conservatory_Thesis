@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  2 DEC 2022 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  2 DEC 2022 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,27 +739,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11])
-Underfull \hbox (badness 10000) in paragraph at lines 415--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--139
-
- []
-
-
-Overfull \hbox (3.32092pt too wide) in paragraph at lines 415--139
-\OT1/cmr/m/n/12 Un es-em-pio pratico e conosci-uto ^^Re quello dell'intonazione
- del fenomeno Larsen,
- []
-
-
-Overfull \hbox (2.00658pt too wide) in paragraph at lines 415--139
-\OT1/cmr/m/n/12 bilit^^Ra. Men-tre in-tro-durre delle non lin-earit^^Ra nel sis
--tema tramite la retroazione,
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -970,6 +949,16 @@ T1/cmr/m/n/12 (vis-ited on 11/22/2022).
  []
 
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
+
+]
 Overfull \hbox (3.90997pt too wide) in paragraph at lines 152--152
 [][]\OT1/cmr/m/n/12 Sanfilippo, Dario and An-drea Valle. ``Feed-back Sys-tems: 
 An An-a-lyt-i-cal Frame-
@@ -982,16 +971,6 @@ Overfull \hbox (13.62482pt too wide) in paragraph at lines 152--152
  []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[25
-
-]
 Overfull \hbox (43.81331pt too wide) in paragraph at lines 152--152
 \OT1/cmr/m/it/12 Ky-ber-netes \OT1/cmr/m/n/12 33.9.10 (2003), pp. 1365{1378. \O
 T1/cmr/m/sc/12 doi\OT1/cmr/m/n/12 : $\OT1/zi4/m/n/12 doi : 10 . 1108 / 03684920
@@ -1007,15 +986,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26] (./thesisCASes.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'thesisCASes.run.xml'.
 \openout1 = `thesisCASes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12547 strings out of 478287
- 235054 string characters out of 5849288
- 1036464 words of memory out of 5000000
- 30576 multiletter control sequences out of 15000+600000
+ 12544 strings out of 478287
+ 235084 string characters out of 5849288
+ 1036453 words of memory out of 5000000
+ 30573 multiletter control sequences out of 15000+600000
  477804 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,11n,77p,744b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1036,7 +1022,7 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fti1200.pfb>
-Output written on thesisCASes.pdf (33 pages, 389661 bytes).
+Output written on thesisCASes.pdf (33 pages, 390043 bytes).
 PDF statistics:
  234 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
