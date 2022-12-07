@@ -170,10 +170,10 @@ e giungere conseguentemente ad uno stato di saturazione del sistema.
 Algoritmi di \textit{amplitude-following} possono essere implementati 
 con la media \textit{RMS}, con finestre variabili o fisse, 
 filtri \textit{Peakholder} che mantengano il valore di picco, o di altra natura. \\
-Passando ora ad una parte più operativa e discutendo l'implementazione
+Tratterò ora  una parte più operativa, discutendo l'implementazione
 di alcune di queste tecniche nel linguaggio di programmazione FAUST (Grame), 
 che è l'ambiente in cui ho scritto i codici di tutti i lavori trattati
-per questa tesi e le relative compilazioni, diagrammi e softwares. \\
+in questa tesi e le relative compilazioni, diagrammi e softwares. \\
 \footnote{FAUST (Grame) (Functional Audio Stream), 
 è un linguaggio di programmazione specifico per il Digital Signal
 Processing sviluppato da Yann Orlarey, Dominique Fober, e Stephane Letz nel
@@ -194,29 +194,41 @@ in retroiniezione alla funzione stessa di comparazione,
 in questo modo si sfrutta un principio di feedback per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
 
-\begin{center}
-\includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
-{Schema del \textit{Peakholder} a 1 campione di ritardo} \\ 
-\vspace{0.5cm}
-\end{center}
-
-\clearpage
 \vspace{0.5cm}
 \begin{lstlisting}
 //---------------------------------------------------------- FAUST CODE
 import("stdfaust.lib");
 
 // Peak Max with IIR filter and max comparison
-peakmax = _ : abs <: loop ~_
-with{
-    loop(x) = ((_ , x) : max);
+peakmax = loop
+    with{
+        loop(x) = \(y).((y , abs(x)) : max) ~ _ ;
     };
     
 process = _ : peakmax;
 //---------------------------------------------------------------------
 \end{lstlisting}
 \begin{center}
-Algoritmo del \textit{Peakholder} a 1 campione di ritardo
+    \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
+    {Algoritmo e Schema del \textit{Peakholder} ad 1 campione di ritardo} \\ 
+    \end{center}
+    \begin{lstlisting}
+        //---------------------------------------------------------- FAUST CODE
+        import("stdfaust.lib");
+        
+        // LAR with Peak Max - IIR filter and max comparison
+        peakmax = loop
+        with{
+            loop(x) = \(y).((y , abs(x)) : max)~_;
+        };
+        
+        LARpeakmax = _ <: (_ * (1 - (_ : peakmax)));
+        process = _ : LARpeakmax;
+        //---------------------------------------------------------------------
+    \end{lstlisting}
+\begin{center}
+    \includegraphics[width=12cm]{figures/LARpeakmax.pdf} \\
+    {Algoritmo e Schema del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
 \end{center}
 \vspace{0.5cm}
 
@@ -234,7 +246,6 @@ conseguenti trasformazioni del suono, ed ad una condizione favorevole affinché 
 sistema possa osservarsi tramite l'ambiente circostante. 
 In tal senso vale la pena procedere osservando da vicino come viene richiesto in partitura 
 di implementare questo meccanismo.
-\clearpage
 
 \begin{center}
 \includegraphics[width=14cm]{figures/LARfeedbackstudy2017.pdf} \\
@@ -242,3 +253,34 @@ di implementare questo meccanismo.
 revisione del 2017 - Agostino Di Scipio} \\ 
 \vspace{0.5cm}
 \end{center}
+
+Nel SIGNAL FLOW 1b,
+due microfoni in ingresso (mic1 e mic2) vengono limitati in banda da un filtro Highpass ed 
+un filtro Lowpass, rispettivamente fra 50 e 6000 Hz; dei due microfoni che escono 
+dal cntrlMic1 e cntrlMic2 ne viene ricavato l'inviluppo d'ampiezza tramite
+l'oggetto \textit{integrator}, poi la curva di questo inviluppo viene amplificata da 
+un delay con Feedback, e ne viene estratta solamente la componente energetica 
+presente fra i 0 e i 0.5Hz, limitandone il comportamento dell'oscillazione in quel range.
+Più in basso, nel SIGNAL FLOW 2a, i stessi microfoni (mic1 e mic2) sempre
+limitati in banda fra 50 e 6000 Hz, vengono attenuati in ampiezza dal segnale
+proveniente dal cntrlMic1 e cntrlMic2, realizzando nella sostanza una 
+versione più sofisticata del controbilanciamento del meccanismo LAR.
+La parte restante: ovvero, la generazione del segnale directLevel e la 
+conseguente attenuazione dei segnali audio in uscita (sig1 e sig2),
+consiste in un secondo controbilanciamento ricavato da un processo di granulazione
+attivo alla fine del sistema, finché il granulatore non produce segnale in output 
+l'ampiezza dei segnali audio diretti in uscita dal sistema rimane inalterata. \\
+L'inviluppo d'ampiezza ricavato tramite l'oggetto \textit{integrator}, in partitura 
+viene richiesto come segue:
+
+\begin{center}
+    \includegraphics[width=14cm]{figures/integratorae2.pdf} \\
+    {indicazioni specifiche riguardo l'oggetto \textit{integrator}} \\
+    \vspace{0.5cm}
+    \end{center}
+
+dove sostanzialmente, viene calcolato il valore assoluto di una specifica finestra temporale. 
+Viene indicato all'esecutore di poter utilizzare diversi metodi per poter calcolare il valore, come ad esempio l'RMS, 
+tuttavia da analisi dirette sull'implementazione del compositore, i filtri utilizzati risultano essere di tipo IIR,
+così da avere sostanzialmente una risposta più lenta rispetto ad altre tecniche come ad esempio quella del calcolo a media mobile.  
+La risposta del filtro nell'implementazione originale è di tipo \textit{tau} e l'inviluppo è assoluto.

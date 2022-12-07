@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  2 DEC 2022 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  7 DEC 2022 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,10 +843,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./figures/controlled_larsen_feedback.png>]
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 198.
 <figures/PeakholderIIR.pdf, id=107, 392.71367pt x 189.24243pt>
 File: figures/PeakholderIIR.pdf Graphic file (type pdf)
 <use figures/PeakholderIIR.pdf>
-Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 198.
+Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 212.
 (pdftex.def)             Requested size: 341.43306pt x 164.5414pt.
 
 
@@ -857,9 +859,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19 <./figures/PeakholderIIR.pdf>]
-LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 205.
+[19]
+<figures/LARpeakmax.pdf, id=111, 608.88477pt x 301.59677pt>
+File: figures/LARpeakmax.pdf Graphic file (type pdf)
+<use figures/LARpeakmax.pdf>
+Package pdftex.def Info: figures/LARpeakmax.pdf  used on input line 230.
+(pdftex.def)             Requested size: 341.43306pt x 169.12312pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -869,20 +874,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20
-
-]
+[20 <./figures/PeakholderIIR.pdf> <./figures/LARpeakmax.pdf>]
 
 pdfTeX warning: pdflatex (file ./figures/LARfeedbackstudy2017.pdf): PDF inclusi
 on: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/LARfeedbackstudy2017.pdf, id=119, 677.51134pt x 372.92143pt>
+<figures/LARfeedbackstudy2017.pdf, id=125, 677.51134pt x 372.92143pt>
 File: figures/LARfeedbackstudy2017.pdf Graphic file (type pdf)
 <use figures/LARfeedbackstudy2017.pdf>
 Package pdftex.def Info: figures/LARfeedbackstudy2017.pdf  used on input line 2
-40.
+51.
 (pdftex.def)             Requested size: 398.33858pt x 219.25923pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 240--240
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 251--251
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21 <./figures/LARfeedbackstudy2017.pdf>]
+
+pdfTeX warning: pdflatex (file ./figures/integratorae2.pdf): PDF inclusion: fou
+nd PDF version <1.6>, but at most version <1.5> allowed
+<figures/integratorae2.pdf, id=153, 664.46295pt x 20.06447pt>
+File: figures/integratorae2.pdf Graphic file (type pdf)
+<use figures/integratorae2.pdf>
+Package pdftex.def Info: figures/integratorae2.pdf  used on input line 277.
+(pdftex.def)             Requested size: 398.33858pt x 12.02866pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 277--277
  [] 
  []
 
@@ -895,9 +920,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21
-
- <./figures/LARfeedbackstudy2017.pdf>] (./chapters/3_sistemiautonomi.tex)
+[22 <./figures/integratorae2.pdf>] (./chapters/3_sistemiautonomi.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -906,7 +929,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22
+[23
 
 ] (./chapters/4_riti.tex
 Overfull \hbox (15.6917pt too wide) in paragraph at lines 2--2
@@ -922,7 +945,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23
+[24
 
 ] (./chapters/appendix.tex)
 
@@ -933,7 +956,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24
+[25
 
 ]
 Overfull \hbox (15.18683pt too wide) in paragraph at lines 152--152
@@ -956,7 +979,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25
+[26
 
 ]
 Overfull \hbox (3.90997pt too wide) in paragraph at lines 152--152
@@ -985,26 +1008,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26] (./thesisCASes.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+[27] (./thesisCASes.aux)
 Package logreq Info: Writing requests to 'thesisCASes.run.xml'.
 \openout1 = `thesisCASes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12544 strings out of 478287
- 235084 string characters out of 5849288
- 1036453 words of memory out of 5000000
- 30573 multiletter control sequences out of 15000+600000
+ 12558 strings out of 478287
+ 235434 string characters out of 5849288
+ 1041463 words of memory out of 5000000
+ 30585 multiletter control sequences out of 15000+600000
  477804 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,77p,744b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,12n,77p,744b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/inconsolata/i4-ot1-0.enc}</usr/share/texlive/texm
 f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/
@@ -1022,10 +1038,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fti1200.pfb>
-Output written on thesisCASes.pdf (33 pages, 390043 bytes).
+Output written on thesisCASes.pdf (34 pages, 410963 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 250 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,11 +8,21 @@ faust2firefox $faustcode.dsp
 cd $faustcode-svg
 echo the folder is:
 pwd
-echo starting the diagram editing with inkscape ...:
-for i in *.svg; do inkscape --batch-process --actions="select-all:all;
-                                    org.inkscape.color.desaturate.noprefs;
-                                    export-filename:$i;
-                                    export-do;" $i; done
-echo converting to pdf:
-for i in *.svg; do rsvg-convert -f pdf -o $i.pdf $i; done
+mkdir converted
+# converting to pdf
+for i in *.svg; do rsvg-convert -f pdf -o converted/$i-converted.pdf $i; done
+cd converted
+# black and white pdf
+for i in *.pdf; do gs \
+ -sOutputFile=$i-BW.pdf \
+ -sDEVICE=pdfwrite \
+ -sColorConversionStrategy=Gray \
+ -dProcessColorModel=/DeviceGray \
+ -dCompatibilityLevel=1.4 \
+ -dBlackText \
+ -dNOPAUSE \
+ -dBATCH \
+ $i; done
+# crop margins
+for i in *.pdf; do pdf-crop-margins -v -p 0 -a -6 $i.pdf; done
 echo all done!

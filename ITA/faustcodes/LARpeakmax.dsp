@@ -1,11 +1,12 @@
 //---------------------------------------------------------- FAUST CODE
 import("stdfaust.lib");
 
-// Peak Max with IIR filter and max comparison
+// LAR with Peak Max - IIR filter and max comparison
 peakmax = loop
 with{
     loop(x) = \(y).((y , abs(x)) : max)~_;
 };
-    
-process = _ : peakmax;
+
+LARpeakmax = _ <: (_ * (1 - (_ : peakmax)));
+process = _ : LARpeakmax;
 //---------------------------------------------------------------------
