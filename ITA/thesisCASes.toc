@@ -3,9 +3,9 @@
 \contentsline {subsection}{\numberline {1.2}Le cibernetiche nella musica}{5}{}%
 \contentsline {subsection}{\numberline {1.3}Il Feedback}{12}{}%
 \contentsline {section}{\numberline {2}Ecosistemi Udibili}{14}{}%
-\contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{14}{}%
+\contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{15}{}%
 \contentsline {subsection}{\numberline {2.2}Il Meccanismo LAR}{16}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{23}{}%
-\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{24}{}%
-\contentsline {section}{\numberline {A}First appendix}{25}{}%
-\contentsline {section}{\numberline {B}Second appendix}{25}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{24}{}%
+\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{25}{}%
+\contentsline {section}{\numberline {A}First appendix}{26}{}%
+\contentsline {section}{\numberline {B}Second appendix}{26}{}%

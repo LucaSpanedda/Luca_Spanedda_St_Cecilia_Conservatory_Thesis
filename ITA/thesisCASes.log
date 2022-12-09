@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  7 DEC 2022 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  9 DEC 2022 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,12 +601,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--67
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 71--98
+[3] (./chapters/ringraziamenti.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 3--70
 
  []
 
-[4] [5] [6] [7] (./thesisCASes.toc
+[4] [5] (./chapters/abstract.tex) [6] [7] (./thesisCASes.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -617,7 +617,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `thesisCASes.toc'.
 
- (./thesisCASes.lot)
+
+(./thesisCASes.lot)
 \tf@lot=\write5
 \openout5 = `thesisCASes.lot'.
 
@@ -625,8 +626,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lof=\write6
 \openout6 = `thesisCASes.lof'.
 
-
-[1] (./chapters/1_introduzione.tex
+ [1] (./chapters/1_introduzione.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -757,13 +757,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13] (./chapters/2_ecosistemi.tex
-Overfull \hbox (1.13622pt too wide) in paragraph at lines 11--39
+Overfull \hbox (1.13622pt too wide) in paragraph at lines 11--55
 \OT1/cmr/m/n/12 Nessun sis-tema ^^Re sep-a-ra-bile e isola-bile dall'ambiente c
 ir-costante, a pre-scindere
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--39
+Underfull \hbox (badness 10000) in paragraph at lines 11--55
 
  []
 
@@ -782,7 +782,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: figures/uomo_macchina_ambiente.png Graphic file (type png)
 <use figures/uomo_macchina_ambiente.png>
 Package pdftex.def Info: figures/uomo_macchina_ambiente.png  used on input line
- 58.
+ 74.
 (pdftex.def)             Requested size: 227.62204pt x 96.75621pt.
 
 
@@ -807,12 +807,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 File: figures/larsen_feedback_scheme.png Graphic file (type png)
 <use figures/larsen_feedback_scheme.png>
 Package pdftex.def Info: figures/larsen_feedback_scheme.png  used on input line
- 115.
+ 131.
 (pdftex.def)             Requested size: 227.62204pt x 51.42793pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--153
-
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -823,16 +819,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17 <./figures/larsen_feedback_scheme.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 161--169
+
+ []
+
 <figures/controlled_larsen_feedback.png, id=101, 319.94531pt x 322.20375pt>
 File: figures/controlled_larsen_feedback.png Graphic file (type png)
 <use figures/controlled_larsen_feedback.png>
 Package pdftex.def Info: figures/controlled_larsen_feedback.png  used on input 
-line 156.
+line 172.
 (pdftex.def)             Requested size: 113.81102pt x 114.61665pt.
 
-
 LaTeX Warning: Citation 'https://faust.grame.fr/' on page 18 undefined on input
- line 183.
+ line 199.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -844,12 +843,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [18 <./figures/controlled_larsen_feedback.png>]
 LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 198.
-<figures/PeakholderIIR.pdf, id=107, 392.71367pt x 189.24243pt>
-File: figures/PeakholderIIR.pdf Graphic file (type pdf)
-<use figures/PeakholderIIR.pdf>
-Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 212.
-(pdftex.def)             Requested size: 341.43306pt x 164.5414pt.
+(Font)              scaled to size 12.0pt on input line 214.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -860,10 +854,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+<figures/PeakholderIIR.pdf, id=110, 392.71367pt x 189.24243pt>
+File: figures/PeakholderIIR.pdf Graphic file (type pdf)
+<use figures/PeakholderIIR.pdf>
+Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 228.
+(pdftex.def)             Requested size: 341.43306pt x 164.5414pt.
 <figures/LARpeakmax.pdf, id=111, 608.88477pt x 301.59677pt>
 File: figures/LARpeakmax.pdf Graphic file (type pdf)
 <use figures/LARpeakmax.pdf>
-Package pdftex.def Info: figures/LARpeakmax.pdf  used on input line 230.
+Package pdftex.def Info: figures/LARpeakmax.pdf  used on input line 246.
 (pdftex.def)             Requested size: 341.43306pt x 169.12312pt.
 
 
@@ -874,18 +873,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20 <./figures/PeakholderIIR.pdf> <./figures/LARpeakmax.pdf>]
+[20 <./figures/PeakholderIIR.pdf>]
 
 pdfTeX warning: pdflatex (file ./figures/LARfeedbackstudy2017.pdf): PDF inclusi
 on: found PDF version <1.6>, but at most version <1.5> allowed
-<figures/LARfeedbackstudy2017.pdf, id=125, 677.51134pt x 372.92143pt>
+<figures/LARfeedbackstudy2017.pdf, id=120, 677.51134pt x 372.92143pt>
 File: figures/LARfeedbackstudy2017.pdf Graphic file (type pdf)
 <use figures/LARfeedbackstudy2017.pdf>
 Package pdftex.def Info: figures/LARfeedbackstudy2017.pdf  used on input line 2
-51.
+67.
 (pdftex.def)             Requested size: 398.33858pt x 219.25923pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 251--251
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 267--267
  [] 
  []
 
@@ -897,21 +896,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21 <./figures/LARfeedbackstudy2017.pdf>]
+[21 <./figures/LARpeakmax.pdf>]
 
 pdfTeX warning: pdflatex (file ./figures/integratorae2.pdf): PDF inclusion: fou
 nd PDF version <1.6>, but at most version <1.5> allowed
-<figures/integratorae2.pdf, id=153, 664.46295pt x 20.06447pt>
+<figures/integratorae2.pdf, id=129, 664.46295pt x 20.06447pt>
 File: figures/integratorae2.pdf Graphic file (type pdf)
 <use figures/integratorae2.pdf>
-Package pdftex.def Info: figures/integratorae2.pdf  used on input line 277.
+Package pdftex.def Info: figures/integratorae2.pdf  used on input line 293.
 (pdftex.def)             Requested size: 398.33858pt x 12.02866pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 277--277
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 293--293
  [] 
  []
 
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -920,7 +918,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22 <./figures/integratorae2.pdf>] (./chapters/3_sistemiautonomi.tex)
+[22 <./figures/LARfeedbackstudy2017.pdf>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -929,7 +927,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23
+[23 <./figures/integratorae2.pdf>] (./chapters/3_sistemiautonomi.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24
 
 ] (./chapters/4_riti.tex
 Overfull \hbox (15.6917pt too wide) in paragraph at lines 2--2
@@ -945,7 +952,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24
+[25
 
 ] (./chapters/appendix.tex)
 
@@ -956,17 +963,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25
+[26
 
 ]
-Overfull \hbox (15.18683pt too wide) in paragraph at lines 152--152
+Overfull \hbox (15.18683pt too wide) in paragraph at lines 104--104
 \OT1/cmr/m/it/12 sta-bilit^^Ra del Sis-tema so-lare\OT1/cmr/m/n/12 . \OT1/cmr/m
 /sc/12 url\OT1/cmr/m/n/12 : $\OT1/zi4/m/n/12 https : / / www . treccani . it / 
 enciclopedia /
  []
 
 
-Overfull \hbox (0.69574pt too wide) in paragraph at lines 152--152
+Overfull \hbox (0.69574pt too wide) in paragraph at lines 104--104
 \OT1/zi4/m/n/12 article / a -[] relational -[] ontology -[] of -[] feedback$ \O
 T1/cmr/m/n/12 (vis-ited on 11/22/2022). 
  []
@@ -979,22 +986,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26
+[27
 
 ]
-Overfull \hbox (3.90997pt too wide) in paragraph at lines 152--152
+Overfull \hbox (3.90997pt too wide) in paragraph at lines 104--104
 [][]\OT1/cmr/m/n/12 Sanfilippo, Dario and An-drea Valle. ``Feed-back Sys-tems: 
 An An-a-lyt-i-cal Frame-
  []
 
 
-Overfull \hbox (13.62482pt too wide) in paragraph at lines 152--152
+Overfull \hbox (13.62482pt too wide) in paragraph at lines 104--104
 \OT1/zi4/m/n/12 abstract / 37 / 2 / 12 / 94420 / Feedback -[] Systems -[] An -[
 ] Analytical -[] Framework ?
  []
 
 
-Overfull \hbox (43.81331pt too wide) in paragraph at lines 152--152
+Overfull \hbox (43.81331pt too wide) in paragraph at lines 104--104
 \OT1/cmr/m/it/12 Ky-ber-netes \OT1/cmr/m/n/12 33.9.10 (2003), pp. 1365{1378. \O
 T1/cmr/m/sc/12 doi\OT1/cmr/m/n/12 : $\OT1/zi4/m/n/12 doi : 10 . 1108 / 03684920
 410556007$\OT1/cmr/m/n/12 .
@@ -1008,19 +1015,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27] (./thesisCASes.aux)
+[28] (./thesisCASes.aux)
 Package logreq Info: Writing requests to 'thesisCASes.run.xml'.
 \openout1 = `thesisCASes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12558 strings out of 478287
- 235434 string characters out of 5849288
- 1041463 words of memory out of 5000000
- 30585 multiletter control sequences out of 15000+600000
- 477804 words of font info for 56 fonts, out of 8000000 for 9000
+ 12570 strings out of 478287
+ 235749 string characters out of 5849288
+ 1050463 words of memory out of 5000000
+ 30592 multiletter control sequences out of 15000+600000
+ 478103 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,12n,77p,744b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,12n,77p,744b,1777s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/inconsolata/i4-ot1-0.enc}</usr/share/texlive/texm
 f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/
@@ -1038,10 +1045,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fti1200.pfb>
-Output written on thesisCASes.pdf (34 pages, 410963 bytes).
+Output written on thesisCASes.pdf (35 pages, 413541 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 253 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
