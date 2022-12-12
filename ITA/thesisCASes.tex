@@ -1,4 +1,15 @@
 \documentclass[12pt]{article}
+\usepackage
+    [
+        a4paper,% other options: a3paper, a5paper, etc
+        left=3cm,
+        right=3cm,
+        top=2.5cm,
+        bottom=2.5cm,
+        % use vmargin=2cm to make vertical margins equal to 2cm.
+        % us  hmargin=3cm to make horizontal margins equal to 3cm.
+        % use margin=3cm to make all margins  equal to 3cm.
+    ]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
 \usepackage{multicol}
@@ -8,6 +19,10 @@
 \usepackage[backend=biber,style=verbose]{biblatex}
 \addbibresource{bibliography/bibliography.bib}
 \setlength{\columnsep}{4cm} % aggiusta in base alla lunghezza del tuo nome
+
+%% -- Doppio spazio fra le righe -----------------------------------------------
+\usepackage{setspace}
+\doublespacing
 
 %% -- Impostazioni Codice linguaggio di programmazione -------------------------
 \usepackage{listings}     

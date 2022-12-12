@@ -17,28 +17,30 @@ che sta a significare quell'insieme delle regole di organizzazione ed uso dei
 suoni maggiormente utilizzati per produrre musica nella tradizione 
 musicale Occidentale, è frequente che passi in secondo piano la parola 
 sistema, che assume invece un significato centrale nel contesto di questa tesi;
-difatti non si è passati solamente al comporre le interazioni, 
-ma per molti compositori al comporre i sistemi stessi con cui fare musica.
+difatti molti compositori non sono passati solamente al comporre le interazioni, 
+ma anche al comporre i sistemi stessi con cui fare la propria musica.
 Come accennato nell'abstract, le interazioni che ho ritenuto importante affrontare 
 all'interno dei sistemi dei compositori cibernetici sono di due tipi:
 di sistemi che interagiscono con l’ambiente circostante appartenente al mondo fisico, 
 e di sistemi che interagiscono con il proprio ambiente nel mondo digitale, 
-ma prima di entrare nel merito del primo caso
+ma prima di entrare nel merito del primo caso qui,
 è doveroso spendere qualche parola su cosa
-si intenda qui per ambiente. \\
+si intenda per ambiente. \\
 Nessun sistema è separabile e isolabile dall'ambiente circostante, 
 a prescindere dal fatto che il suo spazio vitale, sia nel mondo fisico o digitale. 
 Proprio come ha mostrato Heinz Von Foerster non si può parlare di auto-organizzazione
 se non ci si riferisce essenzialmente a un ambiente che racchiuda il sistema al suo interno.
-Nella pratica musicale, la sensibilità nel comporre le interazioni
-è spesso lontana dall'idea del voler interagire con la consapevolezza effettiva del 
-puntare ai cambiamenti di stato all'interno del sistema con cui si interagisce,
-e di consguenza viene trascurata la possibilità di interagire con sistemi che abbiano
-la capacità di auto-osservarsi, non dipendendo più direttamente dal controllo dell'esecutore ma 
+E nella pratica musicale, la sensibilità nel comporre le interazioni
+è spesso lontana dall'idea del voler interagire con una consapevolezza effettiva del 
+puntare ai cambiamenti di stato all'interno di un sistema con cui si interagisce,
+e a maggior ragione viene trascurata la possibilità di interagire con sistemi che abbiano
+la capacità di auto-osservarsi non dipendendo più direttamente dal controllo dell'esecutore 
+secondo delle modalità prettamente lineari, 
+ma dall'ambiente, 
 con la capacità di guardare al proprio stato interno per creare autonomamente le interazioni.
-In particolare, quello che si manifesta quando un sistema entra in interazioni non distruttive
-con l'ambiente circostante, che è nella sostanza anche il suo spazio vitale, è un Ecosistema. \\
-I lavori del ciclo Ecosistemico Udibile di Agostino di Scipio, in tal senso, 
+In particolare, nei sistemi auto-osservanti quello che si manifesta quando un sistema entra in interazioni non distruttive
+con il proprio ambiente circostante, che coincide nella sostanza anche nel suo spazio vitale, è un Ecosistema. \\
+In tal senso, i lavori del ciclo Ecosistemico Udibile di Agostino di Scipio, 
 trovano fondamento a partire da fenomeni e relazioni che possono esistere e manifestarsi solamente nell'ambiente 
 circostante da cui prende vita il sistema, 
 che nel suo caso diventa proprio lo spazio acustico reale. 
@@ -85,10 +87,11 @@ sonoro emergente si può chiamare musica.} \footcite{discipio_polverisonore_2016
 \vspace{0.5cm}
 \end{center}
 
-Il modo in cui andrò a discutere in questo capitolo la composizione di interazioni ecosistemiche, 
+La modalità con cui andrò a discutere in questo capitolo la composizione di interazioni ecosistemiche, 
 è ponendo il focus su un lavoro di Agostino Di Scipio, l’Ecosistemico Udibile n.2, studio sul Feedback. 
-Andando ad analizzare il ruolo e il compito dei singoli agenti all'interno del sistema 
-che compongono nella loro totalità l'ecosistema e il brano. 
+Partendo dalla partitura e dai suoi scritti, ed implementando e analizzando
+il ruolo ed il compito dei singoli agenti all'interno del sistema 
+che compongono nella loro totalità l'intero ecosistema del brano. 
 
 \subsection{Il Meccanismo LAR}
 \label{sec:Il Meccanismo LAR}
@@ -144,8 +147,9 @@ altra natura...
 Esistono anche principi di Feedback acustico oltre che elettroacustico, 
 come la risonanza acustica o la risonanza per simpatia,
 che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali,
-ma fatta la doverosa annotazione non ne entrerò ora nel merito.
-Tornando all'articolo di Agostino Di Scipio:
+ma doverose annotazioni a parte, non ne entrerò in questa sede nel merito del Feedback acustico
+ma di quello elettroacustico.
+Tornando dunque all'articolo di Agostino Di Scipio:
 
 \begin{center}
 \vspace{0.5cm}
@@ -155,11 +159,11 @@ resorts to hard-limiting circuits, ‘feedback killers’ and alike devices...
 In a different attitude, one may instead consider feedback as
 a resource, a deliberately designed sound-making mechanism one can play with.} \footcite{di_scipio_relational_2022}
 \vspace{0.5cm}
-\vspace{0.5cm}
 \end{center}
 
-per utilizzare dunque il feedback come una
-risorsa, appare dunque chiaro dover intervenire riguardo questa sua crescita che porta alla saturazione dei sistemi, in tal senso una possibile soluzione è quella di poter far calcolare
+per utilizzare il feedback come una risorsa,
+appare chiara la necessità di un intervento riguardo la sua crescita che porta alla saturazione dei sistemi, 
+in tal senso una delle possibili soluzioni è quella di poter far calcolare
 al computer in tempo reale tramite diverse tecniche di \textit{amplitude following} la stima dell'ampiezza
 del segnale in ingresso, ed utilizzare conseguentemente la \textit{feature extraction} come segnale di controllo in retroazione negativa al sistema di Feedback elettroacustico.
 Questo meccanismo di controbilanciamento del guadagno
@@ -255,7 +259,10 @@ segnale complessivo.
 Oltre a questo, variazioni del comportamento del Feedback sono dipendenti dalla grandezza
 della finestra di osservazione, da eventuali cofficenti di feedback inseriti nella
 retroazione del \textit{Peakholder} e da altri tipi di implementazioni di tecniche 
-\textit{amplitude-following}. \\
+\textit{amplitude-following}. Per questi motivi si sceglie più frequentemente di utilizzare algoritmi
+adattivi, proprio come nel contesto del meccanismo LAR implementato nel Feedback Study,
+dove il comportamento adattivo dell'\textit{amplitude-follower} è cruciale
+per la dinamica adattiva ed auto-regolatoria del sistema.\\
 Il meccanismo LAR è essenzialmente nel cuore della live performance del Feedback Study,
 senza di questo non sarebbe possibile creare una condizione favorevole per procedere alle 
 conseguenti trasformazioni del suono, ed ad una condizione favorevole affinché il 
@@ -270,8 +277,16 @@ revisione del 2017 - Agostino Di Scipio} \\
 \vspace{0.5cm}
 \end{center}
 
-Nel SIGNAL FLOW 1b,
-due microfoni in ingresso (mic1 e mic2) vengono limitati in banda da un filtro Highpass ed 
+Come scritto in partitura, è da notare in prima istanza
+come il microfono serva sia da sorgente per l'alimentazione del Larsen che
+da canale che riceve l'informazione necessaria per il meccanismo auto-regolatorio,
+fin qui è tutto uguale rispetto allo Schema del meccanismo LAR.
+La sostanziale differenza consiste invece nell'aggiunta di un secondo microfono,
+quando viene introdotta questa condizione di disaccoppiamento si 
+permette al meccanismo di essere più responsivo ai piccoli cambiamenti nell'ambiente
+e di rispondere diversamente agli stessi stimoli da diversi punti di osservazione del sistema.
+Nel SIGNAL FLOW 1b, due microfoni in ingresso (mic1 e mic2) 
+vengono limitati in banda da un filtro Highpass ed 
 un filtro Lowpass, rispettivamente fra 50 e 6000 Hz; dei due microfoni che escono 
 dal cntrlMic1 e cntrlMic2 ne viene ricavato l'inviluppo d'ampiezza tramite
 l'oggetto \textit{integrator}, poi la curva di questo inviluppo viene amplificata da 
@@ -290,16 +305,18 @@ L'inviluppo d'ampiezza ricavato tramite l'oggetto \textit{integrator}, in partit
 viene richiesto come segue:
 
 \begin{center}
-    \includegraphics[width=14cm]{figures/integratorae2.pdf} \\
-    {indicazioni specifiche riguardo l'oggetto \textit{integrator}} \\
     \vspace{0.5cm}
-    \end{center}
+    \textit{integrator = returns the average absolute value over a specific 
+    time frame (one may use RMS measures, instead, or other amplitude-following methods); 
+    output range is [0, 1]}
+    \vspace{0.5cm}
+\end{center}
 
 dove sostanzialmente, viene calcolato il valore assoluto di una specifica finestra temporale. 
 Viene indicato all'esecutore di poter utilizzare diversi metodi per poter calcolare il valore, come ad esempio l'RMS, 
 tuttavia da analisi dirette sull'implementazione del compositore, i filtri utilizzati risultano essere di tipo IIR,
 così da avere sostanzialmente una risposta più lenta rispetto ad altre tecniche come ad esempio quella del calcolo a media mobile.  
-La risposta del filtro nell'implementazione originale è di tipo \textit{tau} e l'inviluppo è assoluto.
+La risposta del filtro nell'implementazione originale è di tipo \textit{tau} 
+e l'inviluppo è assoluto.
 
-
-\Huge - Da Continuare... - \normalsize
+\begin{center} \vspace{0.5cm} \Huge - Da Continuare - \normalsize \vspace{0.5cm} \end{center}
