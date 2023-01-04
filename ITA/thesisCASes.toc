@@ -5,7 +5,9 @@
 \contentsline {section}{\numberline {2}Ecosistemi Udibili}{16}{}%
 \contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{17}{}%
 \contentsline {subsection}{\numberline {2.2}Il Meccanismo LAR}{18}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{26}{}%
-\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{27}{}%
-\contentsline {section}{\numberline {A}First appendix}{28}{}%
-\contentsline {section}{\numberline {B}Second appendix}{28}{}%
+\contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{27}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{28}{}%
+\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{29}{}%
+\contentsline {section}{\numberline {A}First appendix}{30}{}%
+\contentsline {subsection}{\numberline {A.1}aelibrary.lib}{30}{}%
+\contentsline {section}{\numberline {B}Second appendix}{37}{}%
