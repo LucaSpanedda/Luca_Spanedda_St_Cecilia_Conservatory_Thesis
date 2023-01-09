@@ -221,11 +221,14 @@ peakmax = loop
     
 process = _ : peakmax;
 \end{lstlisting}
+
 \begin{center}
     \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
     {Algoritmo e Schema del \textit{Peakholder} ad 1 campione di ritardo} \\ 
     \end{center}
-    \begin{lstlisting}
+\clearpage 
+
+\begin{lstlisting}
 // import faust standard library
 import("stdfaust.lib");
         
@@ -237,7 +240,8 @@ with{
         
 LARpeakmax = _ <: (_ * (1 - (_ : peakmax)));
 process = _ : LARpeakmax;
-    \end{lstlisting}
+\end{lstlisting}
+
 \begin{center}
     \includegraphics[width=12cm]{figures/LARpeakmax.pdf} \\
     {Algoritmo e Schema del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
@@ -315,6 +319,7 @@ e l'inviluppo è assoluto. \\
 Nella loro interezza i meccanismi di cntrlMic1 e cntrlMic2, e la conseguente
 attenuazione del segnale diretto provenente da mic1 e mic2 
 possono essere dunque implementati in Faust come segue:
+\clearpage 
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -376,18 +381,136 @@ L'implementazione di questi due oggetti viene richiesta in partitura come segue:
 
 \begin{center}
     \vspace{0.5cm}
-    \textit{sample write = write samples into a memory buffer, in cyclical fashion (wrap-around)}
-\end{center}
-\begin{center}
-    \vspace{0.5cm}
-    \textit{sample read = read samples off the memory buffer, with controls over frequency shift ratios and actual buffer segment being read}
-\end{center}
-\begin{center}
-    \vspace{0.5cm}
+    \textit{sample write = write samples into a memory buffer, in cyclical fashion (wrap-around)} \\
+    \textit{sample read = read samples off the memory buffer, with controls over frequency shift ratios and actual buffer segment being read} \\
     \textit{granular sampling = read sample sequences off subsequent buffer memory chunks, and envelopes the signal chunk with a pseudo-Gaussian envelope curve; the particular
     implementation should allow for time-stretching (slower memory pointer increments at grain level), as well as for "grain density" controls and slight random deviations ("jitter") on
-    grain parameters; no frequency shift necessary}
+    grain parameters; no frequency shift necessary} \\
     \vspace{0.5cm}
 \end{center}
 
-dove {sample write} rappresenta una tabella che viene riscritta in modo continuo 
+dove \textit{sample write} rappresenta una tabella (buffer o dispositivo di memoria) 
+che viene riscritta in modo continuo da un puntatore alla memoria;
+ciclicamente, e in tutta la sua interezza.
+La grandezza di questa tabella è data da una delle quattro variabili definite 
+in partitura utilizzate per inizializzare il sistema, \textit{var1} che definito in questo contesto sta ad indicare
+la grandezza della tabella in secondi.
+Le 4 variabili definite per inizializzare il sistema ad ogni performance sono le seguenti:
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{var1 = distance (in meters) between the two farthest removed loudspeakers on the left-right axis.} \\
+    \textit{var2 = rough estimate of the center frequency in the spectrum of the room’s background noise (spectral centroid): to evaluate at rehearsal time, in a situation of "silence".} \\
+    \textit{var3 = subjective estimate of how the room revereberance, valued between 0 ("no reverb") and 1 (“very long reverb”).} \\
+    \textit{var4 = distance (in meters) between the two farthest removed loudspeakers on the front-rear axis.}
+    \vspace{0.5cm}
+\end{center}
+
+queste 4 variabili hanno un ruolo molto importante, poiché non solo vanno a determinare la velocità del
+comportamento del sistema, ma ne vanno a determinare la sua sensibilità rispetto all'ambiente in cui viene 
+eseguito, come ad esempio nel caso del \textit{sample read} la velocità di lettura dalla tabella \textit{sample write} 
+e la porzione di tabella che ne viene letta. \\
+I \textit{sample read} sono 5 indicati in partitura nella configurazione che segue.
+
+\begin{center}
+\includegraphics[width=14cm]{figures/SAMPLERSfeedbackstudy2017.pdf} \\
+{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
+revisione del 2017 - Agostino Di Scipio} \\ 
+\vspace{0.5cm}
+\end{center}
+
+Il suono del Larsen proveniente da due microfoni e stabilizzato con il meccanismo LAR come 
+illustrato in precedenza, viene a sommarsi per poi venire moltiplicato per un oscillatore a bassa frequenza
+che ne modifica l'inviluppo d'ampiezza. Il risultato di questa operazione viene scritto in memoria
+nella tabella \textit{sample write} e viene letto dai 5 campionatori distribuiti In
+questa sezione del sistema. \\
+I parametri esterni e tempo varianti che utilizza il campionatore sono: \textit{ratio} e \textit{mem chunk},
+che corrispondono rispettivamente alla velocità di lettura e al frammento di buffer che viene letto
+dalla tabella \textit{sample write}.
+A seguito di una conversazione con il compositore è risultato essere fondamentale che
+il campionatore aggiorni i valori di \textit{ratio} ad ogni campione, permettendo modulazioni
+di frequenza derivate dal cambiamento delle velocità di lettura,
+che si riflettono in cambiamenti di frequenza del Larsen registrato nel \textit{sample write}.
+i \textit{ratio} vengono indicati in partitura con delle espressioni diverse per ognuno
+dei 5 \textit{sample read}, ad esempio: \textit{ratio: (var2 + (diffHL * 1000)) / 261}, dove 
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{ratio value sets the sample-read rate as a function of var2 and the control signal diffHL: ratio = 1 causes no rate
+    change, hence no frequency shift of the sampled signal; values major of 1 determine shifts to higher frequencies; values
+    between 0 and 1 determine shifts to lower frequencies}
+    \vspace{0.5cm}
+\end{center}
+
+e dove \textit{diffHL} è un segnale
+di controllo variabile in un range fra 0 e 1, che a run time a microfoni chiusi parte da una costante di 0.5.
+La lettura del \textit{ratio} è sensibile rispetto all'ambiente, poiché il valore di \textit{diffHL}
+che ne determina le modulazioni di frequenza, viene ricavato da una stima della centroide spettale 
+nei segnali di controllo tramite una differenza fra filtri Highpass e Lowpass 
+a cui viene passata come frequenza di taglio la variabile \textit{var2}.
+Altrettanto sostanziale nel contribuire alle trasformazioni del Larsen 
+è il comportamento del \textit{mem chunk}, che deve permettere una lettura
+di frammenti di memoria che può andare dal silenzio: \textit{mem chunk: 0, 0} all'intera
+lunghezza del buffer \textit{mem chunk: 0, 1}, che in questo caso a run time a microfoni chiusi.
+anche in questo caso la maggiorparte dei campionatori implementa un \textit{mem chunk} 
+determinato dai segnali di controllo variabili in un range fra 0 e 1, 
+che a run time e a microfoni chiusi partono da costanti distribuite di 0 e 1.
+Per questo motivo è molto importante che il comportamento del \textit{mem chunk} 
+possa tollerare soglie ai due estremi.
+In partitura altre importanti indicazioni sul campionatore che riguardano 
+lettura e scrittura sono le seguenti:
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{all sample-read processes 
+    should include short fade-in and fade-out
+    ramps when sampling pointers wrap around the buffer, to avoid
+    discontinuities \\
+    more discontinuities may occur because the buffer is being written
+    as it is also being read: these can be avoided by various means of
+    one's own design}
+    \vspace{0.5cm}
+\end{center}
+
+In Faust non è possibile separare la scrittura e la lettura da un buffer,
+difatti esistono solo 2 tipi di oggetti per questo scopo:
+la primitiva \textit{rdtable}, che può essere utilizzata per leggere una tabella di sola lettura (predefinita prima del compile time),
+e la primitiva \textit{rwtable}, che può essere utilizzata per implementare una tabella di lettura/scrittura; 
+quest'ultima prende in input un segnale che può essere scritto nella tabella utilizzando un indice di scrittura, e letto utilizzando un indice di lettura.
+Per implementare in Faust l'architettura richiesta in partitura si possono sincronizzare gli indici di scrittura con un 
+unico segnale destinato alla scrittura utilizzato dai \textit{sample read} e dai \textit{granular sampling}, e impostare
+una grandezza comune, in questo caso di una costante var1 in secondi, 
+condivisa dai buffer in questione.
+In Faust la grandezza della tabella deve essere espressa in campioni, per ottenere
+una grandezza in secondi bisogna dunque moltiplicare il numero di secondi desiderati per
+la frequenza di campionamento, definita anche questa come costante (predefinita prima del compile time).
+Infine per completare le operazioni come richiesto in partitura si può sostituire l'oggetto \textit{rwtable}
+con un send del segnale destinato ad andare in ingresso in feedback ai \textit{sample read} e in
+feedforward ai \textit{granular sampling}.
+A seguito una implementazione del campionatore come richiesto in partitura in Faust.
+\clearpage 
+
+\vspace{0.5cm}
+\begin{lstlisting}
+    sampler(bufferLength, memChunk, ratio, x) = y
+    with {
+        y = it.frwtable(3, L, .0, writePtr, x, readPtrLen) * 
+            trapWin(100) * zeroChunk
+        with {
+            L = bufferLength * SampleRate; 
+                // SR hard-coded: change this to match your samplerate
+            writePtr = + (1') %(L) ~ _;
+            readPtr =  + (1' * (1 / max(ma.EPSILON, memChunk)) 
+                * ratio) %(L) ~ _;
+            readPtrLen = readPtr * memChunk;
+            zeroChunk = (memChunk > ma.EPSILON);
+            trapWin(fadeLenSamp) = readPtrLen - winLenSamp / 2 : abs / 
+                fadeLenSamp : min(1)
+                with {
+                    winLenSamp = max(1, memChunk * L);
+                };
+        };
+    };
+    process = sampler(1, (hslider("chnk",0.5,0,1,.001)), 
+        (hslider("rati",1,0,2,.001)), os.osc(400));
+\end{lstlisting}

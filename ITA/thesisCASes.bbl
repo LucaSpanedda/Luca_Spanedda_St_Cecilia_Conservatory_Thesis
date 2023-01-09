@@ -209,6 +209,34 @@
       \field{title}{Circuiti del Tempo Un percorso storico-critico nella creatività musicale elettroacustica e informatica}
       \field{year}{2021}
     \endentry
+    \entry{discipioiterated}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=d330309df5da086019baa54c53822e35}{%
+           family={Di\bibnamedelima Scipio},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {C.S.C. University of Padova}%
+      }
+      \strng{namehash}{d330309df5da086019baa54c53822e35}
+      \strng{fullhash}{d330309df5da086019baa54c53822e35}
+      \strng{bibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authornamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
+      \field{extraname}{3}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICMC Glasgow 1990 Proceedings}
+      \field{title}{Composition by exploration of non-linear dynamic systems}
+      \field{year}{1990}
+      \field{pages}{324\bibrangedash 327}
+      \range{pages}{4}
+    \endentry
     \entry{discipio_polverisonore_2016}{article}{}
       \name{author}{1}{}{%
         {{hash=d330309df5da086019baa54c53822e35}{%
@@ -226,7 +254,7 @@
       \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -459,33 +487,6 @@
       \verb{url}
       \verb https://direct.mit.edu/comj/article-abstract/37/2/12/94420/Feedback-Systems-An-Analytical-Framework?redirectedFrom=PDF
       \endverb
-    \endentry
-    \entry{discipioiterated}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=cefba2d321800e2fdc3f7baa38fa3d9f}{%
-           family={Scipio},
-           familyi={S\bibinitperiod},
-           given={Agostino\bibnamedelima Di},
-           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {C.S.C. University of Padova}%
-      }
-      \strng{namehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{fullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{bibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authorbibnamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authornamehash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \strng{authorfullhash}{cefba2d321800e2fdc3f7baa38fa3d9f}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{ICMC Glasgow 1990 Proceedings}
-      \field{title}{Composition by exploration of non-linear dynamic systems}
-      \field{year}{1990}
-      \field{pages}{324\bibrangedash 327}
-      \range{pages}{4}
     \endentry
     \entry{scottsecondordercyb}{article}{}
       \name{author}{1}{}{%

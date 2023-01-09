@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  4 JAN 2023 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.22)  9 JAN 2023 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,7 +919,7 @@ LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
 <figures/PeakholderIIR.pdf, id=116, 392.71367pt x 189.24243pt>
 File: figures/PeakholderIIR.pdf Graphic file (type pdf)
 <use figures/PeakholderIIR.pdf>
-Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 225.
+Package pdftex.def Info: figures/PeakholderIIR.pdf  used on input line 226.
 (pdftex.def)             Requested size: 341.43306pt x 164.5414pt.
 
 
@@ -934,7 +934,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figures/LARpeakmax.pdf, id=125, 608.88477pt x 301.59677pt>
 File: figures/LARpeakmax.pdf Graphic file (type pdf)
 <use figures/LARpeakmax.pdf>
-Package pdftex.def Info: figures/LARpeakmax.pdf  used on input line 242.
+Package pdftex.def Info: figures/LARpeakmax.pdf  used on input line 246.
 (pdftex.def)             Requested size: 341.43306pt x 169.12312pt.
 
 
@@ -945,7 +945,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23 <./figures/LARpeakmax.pdf>]
+[23
+
+ <./figures/LARpeakmax.pdf>]
 
 pdfTeX warning: pdflatex (file ./figures/LARfeedbackstudy2017.pdf): PDF inclusi
 on: found PDF version <1.6>, but at most version <1.5> allowed
@@ -953,10 +955,10 @@ on: found PDF version <1.6>, but at most version <1.5> allowed
 File: figures/LARfeedbackstudy2017.pdf Graphic file (type pdf)
 <use figures/LARfeedbackstudy2017.pdf>
 Package pdftex.def Info: figures/LARfeedbackstudy2017.pdf  used on input line 2
-66.
+70.
 (pdftex.def)             Requested size: 398.33858pt x 219.25923pt.
 
-Overfull \hbox (13.22731pt too wide) in paragraph at lines 272--298
+Overfull \hbox (13.22731pt too wide) in paragraph at lines 276--302
 \OT1/cmr/m/n/12 L'inviluppo d'ampiezza ri-ca-vato tramite l'oggetto \OT1/cmr/m/
 it/12 in-te-gra-tor\OT1/cmr/m/n/12 , in par-ti-tura viene richiesto
  []
@@ -987,49 +989,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[27
-
-] (./chapters/3_sistemiautonomi.tex)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[28
-
-] (./chapters/4_riti.tex)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[29
-
-] (./chapters/appendix.tex
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[30
+[26
 
 ]
 
@@ -1040,7 +1000,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31]
+[27
+
+]
+
+pdfTeX warning: pdflatex (file ./figures/SAMPLERSfeedbackstudy2017.pdf): PDF in
+clusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/SAMPLERSfeedbackstudy2017.pdf, id=172, 731.71219pt x 329.81673pt>
+File: figures/SAMPLERSfeedbackstudy2017.pdf Graphic file (type pdf)
+<use figures/SAMPLERSfeedbackstudy2017.pdf>
+Package pdftex.def Info: figures/SAMPLERSfeedbackstudy2017.pdf  used on input l
+ine 416.
+(pdftex.def)             Requested size: 398.33858pt x 179.55278pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1049,7 +1020,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32]
+[28 <./figures/SAMPLERSfeedbackstudy2017.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1058,7 +1029,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33]
+[29]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1067,7 +1038,51 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[30])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31
+
+] (./chapters/3_sistemiautonomi.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32
+
+] (./chapters/4_riti.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33
+
+] (./chapters/appendix.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1085,7 +1100,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36])
+[36]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1094,7 +1109,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41
 
 ]
 Overfull \hbox (2.96149pt too wide) in paragraph at lines 119--119
@@ -1116,7 +1167,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38
+[42
 
 ]
 
@@ -1127,16 +1178,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39] (./thesisCASes.aux)
+[43] (./thesisCASes.aux)
 Package logreq Info: Writing requests to 'thesisCASes.run.xml'.
 \openout1 = `thesisCASes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13105 strings out of 478287
- 244330 string characters out of 5849288
+ 13112 strings out of 478287
+ 244636 string characters out of 5849288
  1153267 words of memory out of 5000000
- 31117 multiletter control sequences out of 15000+600000
+ 31123 multiletter control sequences out of 15000+600000
  478103 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,77p,744b,1777s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1157,10 +1208,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fti1200.pfb>
-Output written on thesisCASes.pdf (46 pages, 421676 bytes).
+Output written on thesisCASes.pdf (50 pages, 478277 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
+ 323 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
