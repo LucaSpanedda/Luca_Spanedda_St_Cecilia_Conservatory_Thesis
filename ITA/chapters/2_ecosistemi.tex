@@ -451,10 +451,11 @@ a cui viene passata come frequenza di taglio la variabile \textit{var2}.
 Altrettanto sostanziale nel contribuire alle trasformazioni del Larsen 
 è il comportamento del \textit{mem chunk}, che deve permettere una lettura
 di frammenti di memoria che può andare dal silenzio: \textit{mem chunk: 0, 0} all'intera
-lunghezza del buffer \textit{mem chunk: 0, 1}, che in questo caso a run time a microfoni chiusi.
-anche in questo caso la maggiorparte dei campionatori implementa un \textit{mem chunk} 
+lunghezza del buffer \textit{mem chunk: 0, 1}.
+Anche in questo caso la maggiorparte dei campionatori implementa un \textit{mem chunk} 
 determinato dai segnali di controllo variabili in un range fra 0 e 1, 
-che a run time e a microfoni chiusi partono da costanti distribuite di 0 e 1.
+segnali di controllo che a run time e a microfoni chiusi 
+partono da costanti distribuite di 0 e 1.
 Per questo motivo è molto importante che il comportamento del \textit{mem chunk} 
 possa tollerare soglie ai due estremi.
 In partitura altre importanti indicazioni sul campionatore che riguardano 
@@ -474,43 +475,62 @@ lettura e scrittura sono le seguenti:
 
 In Faust non è possibile separare la scrittura e la lettura da un buffer,
 difatti esistono solo 2 tipi di oggetti per questo scopo:
-la primitiva \textit{rdtable}, che può essere utilizzata per leggere una tabella di sola lettura (predefinita prima del compile time),
-e la primitiva \textit{rwtable}, che può essere utilizzata per implementare una tabella di lettura/scrittura; 
-quest'ultima prende in input un segnale che può essere scritto nella tabella utilizzando un indice di scrittura, e letto utilizzando un indice di lettura.
-Per implementare in Faust l'architettura richiesta in partitura si possono sincronizzare gli indici di scrittura con un 
-unico segnale destinato alla scrittura utilizzato dai \textit{sample read} e dai \textit{granular sampling}, e impostare
-una grandezza comune, in questo caso di una costante var1 in secondi, 
-condivisa dai buffer in questione.
-In Faust la grandezza della tabella deve essere espressa in campioni, per ottenere
-una grandezza in secondi bisogna dunque moltiplicare il numero di secondi desiderati per
-la frequenza di campionamento, definita anche questa come costante (predefinita prima del compile time).
-Infine per completare le operazioni come richiesto in partitura si può sostituire l'oggetto \textit{rwtable}
-con un send del segnale destinato ad andare in ingresso in feedback ai \textit{sample read} e in
-feedforward ai \textit{granular sampling}.
-A seguito una implementazione del campionatore come richiesto in partitura in Faust.
+la primitiva \textit{rdtable}, che può essere utilizzata per leggere da una tabella di sola lettura 
+(predefinita prima del tempo di compilazione),
+e la primitiva \textit{rwtable}, che può essere utilizzata per implementare una tabella di lettura/scrittura. 
+Quest'ultima prende in input un segnale che può essere scritto nella tabella utilizzando un indice di scrittura e 
+letto utilizzando un secondo indice destinato alla lettura.
+Per implementare in Faust l'architettura del \textit{sample write} richiesta in partitura, 
+si possono sincronizzare gli indici di scrittura di tutte le tabelle con un unico 
+segnale (rampa) destinato a questo scopo e utilizzato dai \textit{sample read} e dai \textit{granular sampling} 
+impostando una grandezza comune, che risulta essere in questo caso una costante espressa in \textit{var1} in secondi, 
+condivisa da tutti i buffer in questione.
+In Faust la grandezza della tabella deve essere espressa in campioni, per ottenere quindi
+una grandezza espressa in secondi, bisogna dunque moltiplicare il numero dei secondi desiderati per
+la frequenza di campionamento, definite entrambi come una costante (predefinita prima del tempo di compilazione).
+Infine per completare le operazioni come richiesto nella partitura, si può sostituire l'oggetto \textit{rwtable}
+con una mandata (send) del segnale destinato ad entrare in feedback ai \textit{sample read} ed in
+feedforward al \textit{granular sampling}.
+A seguito una implementazione del campionatore come richiesto in partitura.
 \clearpage 
 
 \vspace{0.5cm}
 \begin{lstlisting}
-    sampler(bufferLength, memChunk, ratio, x) = y
-    with {
-        y = it.frwtable(3, L, .0, writePtr, x, readPtrLen) * 
-            trapWin(100) * zeroChunk
-        with {
-            L = bufferLength * SampleRate; 
-                // SR hard-coded: change this to match your samplerate
-            writePtr = + (1') %(L) ~ _;
-            readPtr =  + (1' * (1 / max(ma.EPSILON, memChunk)) 
-                * ratio) %(L) ~ _;
-            readPtrLen = readPtr * memChunk;
-            zeroChunk = (memChunk > ma.EPSILON);
-            trapWin(fadeLenSamp) = readPtrLen - winLenSamp / 2 : abs / 
-                fadeLenSamp : min(1)
-                with {
-                    winLenSamp = max(1, memChunk * L);
-                };
+// import faust standard library
+import("stdfaust.lib");
+// hard-coded: change this to match your samplerate
+SampleRate = 44100;
+
+sampler(lengthSec, memChunk, ratio, x) = 
+    it.frwtable(3, bufferLen, .0, writePtr, x, readPtr) * window
+with {
+    bufferLen = lengthSec * SampleRate;
+    writePtr = ba.period(bufferLen);
+    grainLen = max(1, ba.if(writePtr > memChunk * bufferLen, 
+        memChunk * bufferLen, 1));
+    readPtr = y
+        letrec {
+            'y = (ratio + y) % grainLen;
         };
-    };
-    process = sampler(1, (hslider("chnk",0.5,0,1,.001)), 
-        (hslider("rati",1,0,2,.001)), os.osc(400));
+    window = min(1, abs(((readPtr + grainLen / 2) % grainLen) - 
+        grainLen / 2) / 400);
+};
+
+process = sampler(4, hslider("memChunk", 0.05, 0, 1, .001), 
+    hslider("ratio", 10, .1, 10, .001), os.osc(200)) <: _, _;
 \end{lstlisting}
+
+In questo campionatore, il \textit{ratio} è continuamente variabile, 
+rendendo possibili le modulazioni di frequenza desiderate. 
+Mentre il \textit{mem chunk} ricomincia la sua lettura del buffer dall'inizio 
+ogni volta che la rampa di lettura incontra il valore del modulo determinato dalla sua variabile.
+Per risolvere le discontinuità come richiesto in partitura, 
+è necessario utilizzare un design personalizzato,
+e nel design di questo campionatore, 
+per evitare clicks ricorrenti ogni volta che la lettura del campionatore incrocia la sua scrittura, 
+(visto che la lettura del \textit{mem chunk} parte sempre da inizio buffer)
+la lettura parte solo quando la scrittura è di dimensioni maggiori rispetto al frammento \textit{mem chunk} 
+che dovrebbe essere letto.
+Infine, per evitare discontinuità ogni volta che la lettura ricomincia a leggere il buffer da 0, 
+è stata utilizzata una finestratura trapezoidale con un fade-in e fade-out 
+per un valore di campioni costante.
