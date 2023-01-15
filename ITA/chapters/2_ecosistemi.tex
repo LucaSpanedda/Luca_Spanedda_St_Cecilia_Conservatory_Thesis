@@ -38,7 +38,7 @@ In tal senso, i lavori del ciclo Ecosistemico Udibile di Agostino di Scipio,
 trovano fondamento a partire da fenomeni e relazioni che possono esistere e manifestarsi solamente nell'ambiente 
 circostante da cui prende vita il sistema, 
 che nel suo caso diventa proprio lo spazio acustico reale. 
-Lavori come lo studio sul feedback, lo studio sul rumore di fondo, lo studio sulle risposte all'impulso, o
+Lavori come lo studio sul Feedback, lo studio sul rumore di fondo, lo studio sulle risposte all'impulso, o
 lo studio sul silenzio, sono nella loro essenza dei sistemi che hanno come seme 
 della loro morfogenesi un determinato 
 comportamento appartenente allo spazio acustico reale, delimitato in questi studi da una stanza
@@ -89,10 +89,10 @@ che compongono nella loro totalità l'intero ecosistema del brano.
 
 \subsection{Il Meccanismo LAR}
 \label{sec:Il Meccanismo LAR}
-Il feedback elettroacustico (effetto Larsen), che abbiamo già detto
+Il Feedback elettroacustico (effetto Larsen), che abbiamo già detto
 esser stata una delle risorse centrali dei primi compositori cibernetici,
 è la condizione di partenza su cui Agostino Di Scipio opera per la costruzione degli Ecosistemi Udibili.
-Volendoci addentrare ora verso una spiegazione più tecnica del feedback elettroacustico,
+Volendoci addentrare ora verso una spiegazione più tecnica del Feedback elettroacustico,
 possiamo citare una definizione che Di Scipio ha esposto in un suo articolo
 pubblicato presso la rivista Online: ECHO dell’ Orpheus Institute, in
 Ghent. \footcite{di_scipio_relational_2022}
@@ -107,9 +107,9 @@ source save the minimal, barely audible turbulence of the background noise, in a
 ‘silence’. This ‘sound-of-nothing’ is amplified and heard through L1, whence it comes back in
 S. \\
 If amplification suffices, the L1 sound feeds back into M1 and the chain design closes onto
-itself, making a ‘reinjection’ circuit – a feedback loop. The amplitude level, the
+itself, making a ‘reinjection’ circuit – a Feedback loop. The amplitude level, the
 transductive technical features of M1 and L1, their relative distance, the distance from
-walls, etc. – all of that (and much more) sets the actual feedback loop gain. With
+walls, etc. – all of that (and much more) sets the actual Feedback loop gain. With
 not-too-high gain levels, what is engendered is an audible nuisance, a kind of ‘halo’: the
 sound reinjection decays more or less rapidly, in a kind of badly sounding, spectrally uneven
 reverb effect. With higher gain levels, the loop eventually enters a self-oscillatory regime,
@@ -117,7 +117,7 @@ it may ‘ring’ or ‘howl’, as is often said. Because of the iterated reinj
 audible but spectrally wide background noise accumulates in the loop and finally (quickly)
 yields an increasingly louder sustained sound of narrower spectrum – this is often heard as a
 peaking tone of definite pitch, or a tone cluster. That’s the Larsen effect: a self-sustaining
-feedback resonance occasioned by a positive feedback loop (FB+) (‘positive’ here means greater
+Feedback resonance occasioned by a positive Feedback loop (FB+) (‘positive’ here means greater
 than unit gain).}
 \vspace{0.5cm}
 \vspace{0.5cm}
@@ -125,13 +125,13 @@ than unit gain).}
 
 \begin{center}
 \vspace{0.5cm}
-\includegraphics[width=8cm]{figures/larsen_feedback_scheme.png} \\
+\includegraphics[width=8cm]{figures/larsen_Feedback_scheme.png} \\
 {Schema M1→L1→S} \\ 
 \vspace{0.5cm}
 \end{center}
 
 L'effetto Larsen: (dal nome del fisico Søren Absalon Larsen
-che per primo ne scoprì il principio), detto anche feedback elettroacustico,
+che per primo ne scoprì il principio), detto anche Feedback elettroacustico,
 come abbiamo appena letto è un fenomeno di retroiniezione che tende idealmente 
 ad un'accumulazione infinita, che viene poi limitata in realtà dalla saturazione dei sistemi 
 che la generano (relativi alla potenza massima, all'amplificazione, nonché alla sensibilità dei
@@ -147,15 +147,15 @@ Tornando dunque all'articolo di Agostino Di Scipio:
 
 \begin{center}
 \vspace{0.5cm}
-\textit{In common sound engineering practice, audible feedback phenomena are a nuisance, a problem one
+\textit{In common sound engineering practice, audible Feedback phenomena are a nuisance, a problem one
 should get rid of or substantially minimize. When direct level manipulation is not enough, one
-resorts to hard-limiting circuits, ‘feedback killers’ and alike devices... 
-In a different attitude, one may instead consider feedback as
+resorts to hard-limiting circuits, ‘Feedback killers’ and alike devices... 
+In a different attitude, one may instead consider Feedback as
 a resource, a deliberately designed sound-making mechanism one can play with.} \footcite{di_scipio_relational_2022}
 \vspace{0.5cm}
 \end{center}
 
-per utilizzare il feedback come una risorsa,
+per utilizzare il Feedback come una risorsa,
 appare chiara la necessità di un intervento riguardo la sua crescita che porta alla saturazione dei sistemi, 
 in tal senso una delle possibili soluzioni è quella di poter far calcolare
 al computer in tempo reale tramite diverse tecniche di \textit{amplitude following} la stima dell'ampiezza
@@ -167,14 +167,14 @@ ognuna con le sue diverse caratteristiche ed esiti. \\
 
 \begin{center}
 \vspace{0.25cm}
-\includegraphics[width=4cm]{figures/controlled_larsen_feedback.png} \\
+\includegraphics[width=4cm]{figures/controlled_larsen_Feedback.png} \\
 {Schema del meccanismo LAR} \\ 
 \vspace{0.5cm}
 \end{center}
 
 Nella tradizione della computer music, ci sono in effetti
 diversi modi per realizzare un algoritmo di controbilanciamento 
-del feedback in tempo reale.
+del Feedback in tempo reale.
 Alcuni di questi possono riguardare controbilanciamenti nel dominio della frequenza,
 con tecniche di filtraggio automatizzate (adattive) che
 hanno il compito di eliminare dallo spettro la presenza dell'autoscillazione prodotta dal Larsen \textit{Larsen Suppressors},
@@ -205,7 +205,7 @@ di campioni idealmente infinita IIR \textit{Infinite Impulse Response},
 che ha il compito di confrontare il valore assoluto del campione in ingresso con il suo precedente,
 il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingresso 
 in retroiniezione alla funzione stessa di comparazione, 
-in questo modo si sfrutta un principio di feedback per l'accumulazione
+in questo modo si sfrutta un principio di Feedback per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
 
 \vspace{0.5cm}
@@ -253,7 +253,7 @@ una funzione di smoothing del segnale, si verificano problemi di segnali di diff
 molto larga che possono generare aliasing e contributi spuri che tendono a permanere nel
 segnale complessivo.
 Oltre a questo, variazioni del comportamento del Feedback sono dipendenti dalla grandezza
-della finestra di osservazione, da eventuali cofficenti di feedback inseriti nella
+della finestra di osservazione, da eventuali cofficenti di Feedback inseriti nella
 retroazione del \textit{Peakholder} e da altri tipi di implementazioni di tecniche 
 \textit{amplitude-following}. Per questi motivi si sceglie più frequentemente di utilizzare algoritmi
 adattivi, proprio come nel contesto del meccanismo LAR implementato nel Feedback Study,
@@ -267,7 +267,7 @@ In tal senso vale la pena procedere osservando da vicino come viene richiesto in
 di implementare questo meccanismo.
 
 \begin{center}
-\includegraphics[width=14cm]{figures/LARfeedbackstudy2017.pdf} \\
+\includegraphics[width=14cm]{figures/LARFeedbackstudy2017.pdf} \\
 {Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
 revisione del 2017 - Agostino Di Scipio} \\ 
 \vspace{0.5cm}
@@ -323,41 +323,122 @@ possono essere dunque implementati in Faust come segue:
 
 \vspace{0.5cm}
 \begin{lstlisting}
-// import faust standard library
-import("stdfaust.lib");
-// import audible ecosystemics objects library
-import("aelibrary.lib");
+    // import faust standard library
+    import("stdfaust.lib");
     
-LARmechanismAE2(mic1, mic2) = sig1, sig2
-with{
-    // from Signal Flow 1b
-    cntrlMic(x) = x : HPButterworthN(1, 50) : LPButterworthN(1, 6000) : 
-            integrator(.01) : delayfb(.01, .995) : LPButterworthN(5, .5);
+    LARmechanismAE2(mic1, mic2) = sig1, sig2
+    with{
+        Mic_1B_1 = hgroup("Mixer", hgroup("Signal Flow 1B", 
+            gainMic_1B_1(mic1)));
+        Mic_1B_2 = hgroup("Mixer", hgroup("Signal Flow 1B", 
+            gainMic_1B_2(mic2)));
     
-    cntrlMic1 = mic1 : cntrlMic;
-    cntrlMic2 = mic2 : cntrlMic;
+        // cntrlMic - original version
+        cntrlMic(x) = x : HP1(50) : LP1(6000) : 
+            integrator(.01) : delayfb(.01, .995) : LP5(.5);
+        cntrlMic1 = Mic_1B_1 : cntrlMic;
+        cntrlMic2 = Mic_1B_2 : cntrlMic;
     
-    // from Signal Flow 2a
-    micIN1 = mic1 : HPButterworthN(1, 50) : LPButterworthN(1, 6000) * 
-        (1 - cntrlMic1);
-    micIN2 = mic2 : HPButterworthN(1, 50) : LPButterworthN(1, 6000) * 
-        (1 - cntrlMic2);
+        // from Signal Flow 2a
+        Mic_2A_1 = hgroup("Mixer", hgroup("Signal Flow 2A", 
+            gainMic_2A_1(mic1)));
+        Mic_2A_2 = hgroup("Mixer", hgroup("Signal Flow 2A", 
+            gainMic_2A_2(mic2)));
+        micIN1 = Mic_2A_1 : HP1(50) : LP1(6000) * 
+            (1 - cntrlMic1);
+        micIN2 = Mic_2A_2 : HP1(50) : LP1(6000) * 
+            (1 - cntrlMic2);
+        // in the full system this this is a secondary counterbalance
+        directLevel = 1;
+        sig1 = micIN1 * directLevel;
+        sig2 = micIN2 * directLevel;
+    };
     
-    // in the full system this this is a secondary counterbalance
-    directLevel = 1;
-    sig1 = micIN1 * directLevel;
-    sig2 = micIN2 * directLevel;
-};
+    process = LARmechanismAE2;
     
-process = LARmechanismAE2;
+    
+    //------- ------------- ----- -----------
+    //-- LIBRARY ----------------------------------------------------------
+    //------- --------
+    // selected objects from "aelibrary.lib"
+    
+    //-------------------------------------------------------- UTILITIES --
+    // limit function for library and system
+    limit(maxl,minl,x) = x : max(minl, min(maxl));
+    
+    //---------------------------------------------------------- FILTERS --
+    onePoleTPT(cf, x) = loop ~ _ : ! , si.bus(3)
+    with {
+        g = tan(cf * ma.PI * (1/ma.SR));
+        G = g / (1.0 + g);
+        loop(s) = u , lp , hp , ap
+        with {
+            v = (x - s) * G;
+            u = v + lp;
+            lp = v + s;
+            hp = x - lp;
+            ap = lp - hp;
+        };
+    };
+    
+    LPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (_, !, !);
+    HPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (!, _, !);
+    
+    // Order Aproximations filters - Outs
+    LP1(CF, x) = x :LPTPT(CF);
+    HP1(CF, x) = x :HPTPT(CF);
+    LP2(CF, x) = x :LPTPT(CF) :LPTPT(CF);
+    HP2(CF, x) = x :HPTPT(CF) :HPTPT(CF);
+    LP3(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
+    HP3(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
+    LP4(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
+    HP4(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
+    LP5(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
+    HP5(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
+    
+    //------------------------------------------------------- INTEGRATOR --
+    integrator(sec, x) = an.abs_envelope_tau(limit(1000,.001, sec), x);
+    
+    //----------------------------------------------------------- DELAYS --
+    delayfb(delSec,fb,x) = loop ~ _ : mem
+    with{ 
+        loop(z) = ( (z * fb + x) @(ba.sec2samp(delSec)-1) );
+    };
+    
+    //--------------------------------------------- INPUTS/OUTPUTS MIXER --
+    gainMic_1B_1(x) = x *    
+        si.smoo( ba.db2linear(
+                vslider("SF_1B_1 [unit:db]", 0, -80, 80, .001) ) ) <:
+                    attach(_, VHmetersEnvelope(_) :
+                        vbargraph("VM1B1 [unit:dB]", -80, 80));
+    gainMic_1B_2(x) = x * 
+        si.smoo( ba.db2linear(
+                vslider("SF_1B_2 [unit:db]", 0, -80, 80, .001) ) ) <:
+                    attach(_, VHmetersEnvelope(_) :
+                        vbargraph("VM1B2 [unit:dB]", -80, 80));
+    gainMic_2A_1(x) = x * 
+        si.smoo( ba.db2linear(
+                vslider("SF_2A_1 [unit:db]", 0, -80, 80, .001) ) ) <:
+                    attach(_, VHmetersEnvelope(_) :
+                        vbargraph("VM2A1 [unit:dB]", -80, 80));
+    gainMic_2A_2(x) = x * 
+        si.smoo( ba.db2linear(
+                vslider("SF_2A_2 [unit:db]", 0, -80, 80, .001) ) ) <:
+                    attach(_, VHmetersEnvelope(_) :
+                        vbargraph("VM2A2 [unit:dB]", -80, 80));
+    
+    VHmetersEnvelope = abs : max ~ -(1.0/ma.SR) : 
+        max(ba.db2linear(-70)) : ba.linear2db;
 \end{lstlisting}
 
 Gli algoritmi degli oggetti richiamati in questa implementazione sono 
-provenienti dalla libreria scritta per questo brano "aelibrary.lib" 
-che è consultabile nel primo appendice.
-Questo codice che rappresenta il cuore del sistema,
+provenienti dalla libreria scritta per questo brano.
+(sono stati riportati qui alcuni oggetti della libreria per rendere compilabile
+il codice appena scritto)
+Questo codice, che rappresenta il cuore del sistema,
 permette grazie al meccanismo adattivo una condizione favorevole
-per mantenere il Larsen in uno stato stazionario, consentendo al sistema
+per mantenere il Larsen in uno stato stazionario senza che giunga a 
+saturazione, e consentendo al sistema
 di fatto una serie di nuove possibilità di elaborazione e trasformazione del suono.
 
 \clearpage
@@ -413,7 +494,7 @@ e la porzione di tabella che ne viene letta. \\
 I \textit{sample read} sono 5 indicati in partitura nella configurazione che segue.
 
 \begin{center}
-\includegraphics[width=14cm]{figures/SAMPLERSfeedbackstudy2017.pdf} \\
+\includegraphics[width=14cm]{figures/SAMPLERSFeedbackstudy2017.pdf} \\
 {Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
 revisione del 2017 - Agostino Di Scipio} \\ 
 \vspace{0.5cm}
@@ -489,35 +570,37 @@ In Faust la grandezza della tabella deve essere espressa in campioni, per ottene
 una grandezza espressa in secondi, bisogna dunque moltiplicare il numero dei secondi desiderati per
 la frequenza di campionamento, definite entrambi come una costante (predefinita prima del tempo di compilazione).
 Infine per completare le operazioni come richiesto nella partitura, si può sostituire l'oggetto \textit{rwtable}
-con una mandata (send) del segnale destinato ad entrare in feedback ai \textit{sample read} ed in
+con una mandata (send) del segnale destinato ad entrare in Feedback ai \textit{sample read} ed in
 feedforward al \textit{granular sampling}.
 A seguito una implementazione del campionatore come richiesto in partitura.
 \clearpage 
 
 \vspace{0.5cm}
 \begin{lstlisting}
-// import faust standard library
-import("stdfaust.lib");
-// hard-coded: change this to match your samplerate
-SampleRate = 44100;
-
-sampler(lengthSec, memChunk, ratio, x) = 
+    // import faust standard library
+    import("stdfaust.lib");
+    // hard-coded: change this to match your samplerate
+    SampleRate = 44100;
+    
+    
+    sampler(lengthSec, memChunk, ratio, x) = 
     it.frwtable(3, bufferLen, .0, writePtr, x, readPtr) * window
-with {
-    bufferLen = lengthSec * SampleRate;
-    writePtr = ba.period(bufferLen);
-    grainLen = max(1, ba.if(writePtr > memChunk * bufferLen, 
-        memChunk * bufferLen, 1));
-    readPtr = y
-        letrec {
-            'y = (ratio + y) % grainLen;
-        };
-    window = min(1, abs(((readPtr + grainLen / 2) % grainLen) - 
-        grainLen / 2) / 400);
-};
-
-process = sampler(4, hslider("memChunk", 0.05, 0, 1, .001), 
-    hslider("ratio", 10, .1, 10, .001), os.osc(200)) <: _, _;
+    with {
+        memChunkLimited = max(0.100, min(1, memChunk));
+        bufferLen = lengthSec * SampleRate;
+        writePtr = ba.period(bufferLen);
+        grainLen = max(1, ba.if(writePtr > memChunkLimited * bufferLen, 
+            memChunkLimited * bufferLen, 1));
+        readPtr = y
+            letrec {
+                'y = (ratio + y) % grainLen;
+            };
+        window = min(1, abs(((readPtr + grainLen / 2) % grainLen) - 
+            grainLen / 2) / 200);
+    };
+    
+    process = sampler(4, hslider("memChunkLimited", 0.100, 0, 1, .001), 
+        hslider("ratio", 5, .1, 10, .001), os.osc(100)) <: _, _;
 \end{lstlisting}
 
 In questo campionatore, il \textit{ratio} è continuamente variabile, 
@@ -533,4 +616,161 @@ la lettura parte solo quando la scrittura è di dimensioni maggiori rispetto al 
 che dovrebbe essere letto.
 Infine, per evitare discontinuità ogni volta che la lettura ricomincia a leggere il buffer da 0, 
 è stata utilizzata una finestratura trapezoidale con un fade-in e fade-out 
-per un valore di campioni costante.
+per un valore di campioni costante. \\
+Mentre alcuni campionatori fanno parte di un circuito di Feedback interno al sistema, 
+sia i granulatori che tutti i campionatori utilizzano lo spazio acustico reale per il Feedback,
+i granulatori in particolare sono l'ultima trasformazione del suono del sistema, prima di andare a 
+due sommatori con il resto delle uscite e all'output.
+In partitura vengono indicati come a seguito.
+
+\begin{center}
+    \includegraphics[width=14cm]{figures/GRANULATORSFeedbackstudy2017.pdf} \\
+    {Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
+    revisione del 2017 - Agostino Di Scipio} \\ 
+    \vspace{0.5cm}
+\end{center}
+
+Anche in questo caso, oltre alle indicazioni dei segnali di controllo che vengono
+ricevuti dai due \textit{granular sampling}, 
+in partitura sono presenti delle richiste specifiche riguardo l'implementazione 
+dell'oggetto che ne determinano il risultato dei timbri che produce: 
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{"grains" are short sequences of samples read off the memory
+    buffer, enveloped with a pseudo-gaussian function curve \\
+    grain.dur.jitter is a random deviation of the current
+    grain.duration value: the current actual grain duration is:
+    grain.duration + (rnd * grain.dur.jitter * grain.duration), with rnd
+    is: random value in the interval (- 1, 1) \\
+    mem.pointer is the pointer to the next location in the memory
+    buffer; in the present notation, it varies between - 1 (beginning
+    of buffer) and 1 (end of buffer) \\
+    mem.pointer.jitter is a random deviation of the current
+    mem.pointer value; any viable method can be used to
+    calculate the current actual value of mem.pointer \\
+    density is the average number of sound grains active at any
+    time (1 is: max, 0 is: no grains)}
+    \vspace{0.5cm}
+\end{center}
+
+I due granulatori leggono dunque dalla tabella \textit{sample write} dove vengono scritti
+al contempo i Larsen diretti e i campionatori in Feedback. 
+Questa letura avviene con due puntatori alla memoria \textit{(mem.pointer)} determinati 
+dai segnali di controllo \textit{timeIndex1} e \textit{timeIndex2}, la grandezza dei grani 
+\textit{(grain.duration)} viene invece determinata dai segnali di controllo 
+\textit{memWriteDel1} e \textit{memWriteDel2}, infine il parametro \textit{.jitter}
+presente sia nei puntatori alla memoria che nelle durate (e calcolato in modo differente per ognuna delle due),
+ha il compito di decorrelare le fasi dei grani, accedendo alla memoria in punti differenti,
+e le durate di questi, dando vita in questo modo a delle tessiture timbriche \textit{"clouds"} più interessanti.
+Anche in questo caso, a seguito di una conversazione con il compositore è emerso che le voci di polifonia
+(istanze) risultano essere 10 per ogni \textit{granular sampling}.
+Un problema che sorge nell'implementazione di un granulatore polifonico in un linguaggio di 
+programmazione come Faust (che non contempla segnali di controllo ma lavora in DSP sul singolo campione),
+è che in necessità di creare delle \textit{"clouds"}, è necessario che i puntatori di lettura
+siano decorrelati in qualche modo, così da non non avere la stessa fase e sovrapporsi sistematicamente.
+Nella tradizione della computer music, esistono diverse implementazioni techniche e design 
+di algoritmi di granulazione per risolvere questo tipo di problema:
+alcune tipologie di granulatori sono dette "asincrone" poiché sono particolari design dove
+ogni istanza ha un personale \textit{trigger} 
+di partenza che ne avvia la lettura del grano, decorrelato rispetto alle altre istanze,
+invece e altre tipologie chiamate "quasi sincrone" e "sincrone" si concentrano sul mantenere
+una coerenza di fase del segnale e una certa continuità.
+In questo caso per il design di questo oggetto in Faust, si è optato per un tipo di granulazione
+PSOLA (acronimo di Pitch-Synchronous Overlap and Add, sovrapposizione e aggiunta a toni sincroni), 
+poiché come abbiamo visto precedentemente in partitura, 
+seppur sono presenti funzioni di \textit{jittering} del segnale
+per ottenere certe tessiture timbriche, viene esplicitamente richiesto
+che il \textit{timestretching} del suono sia possibile. 
+A seguito una implementazione del granulatore come richiesto in partitura.
+
+
+\vspace{0.5cm}
+\begin{lstlisting}
+    // import faust standard library
+    import("stdfaust.lib");
+    // hard-coded: change this to match your samplerate
+    SampleRate = 44100;
+    
+    //------------------------------------------------ GRANULAR SAMPLING --
+    grain(L, position, duration, x, trigger) = hann(phase) * 
+        buffer(readPtr, x)
+    with {
+        maxLength = L * SampleRate;
+        length = L * SampleRate;
+        hann(ph) = sin(ma.PI * ph) ^ 2.0;
+        lineSegment = loop ~ si.bus(2) : _ , ! , _
+        with {
+            loop(yState, incrementState) = y , increment , ready
+            with {
+                ready = ((yState == 0.0) | (yState == 1.0)) & trigger;
+                y = ba.if(ready, increment, min(1.0, yState + increment));
+                increment = ba.if(ready, ma.T / max(ma.T, duration), 
+                    incrementState);
+            };
+        };
+        phase = lineSegment : _ , !;
+        unlocking = lineSegment : ! , _;
+        lock(param) = ba.sAndH(unlocking, param); 
+        grainPosition = lock(position);
+        grainDuration = lock(duration);
+        readPtr = grainPosition * length + phase * grainDuration * ma.SR;
+        buffer(readPtr, x) = 
+            it.frwtable(3, maxLength, .0, writePtr, x, readPtrWrapped)
+        with {
+            writePtr = ba.period(length);
+            readPtrWrapped = ma.modulo(readPtr, length);
+        };
+    };
+    
+    // works for N >= 2
+    triggerArray(N, rate) = loop ~ si.bus(3) : (! , ! , _) <: 
+        par(i, N, == (i)) : par(i, N, \(x).(x > x'))
+    with {
+        loop(incrState, phState, counterState) = incr , ph , counter
+        with {
+            init = 1 - 1';
+            trigger = (phState < phState') + init;
+            incr = ba.if(trigger, rate * ma.T, incrState);
+            ph = ma.frac(incr + phState);
+            counter = (trigger + counterState) % N;
+        };
+    };
+    
+    grainN(voices, L, position, rate, duration, x) = 
+        triggerArray(voices, rate) : 
+        par(i, voices, grain(L, position, duration, x));
+    
+    process = os.osc(200) * .5 <: grainN(10, 4, 
+        hslider("Grain Position", -1, -1, 1, .001), 
+        hslider("Grain Rate", 1, 1, 100, .001),
+        hslider("Grain Duration", 0.100, 0, 1, .001)) :> _;
+    
+    // in the full system this this is the granular sampling function
+    granular_sampling(var1, timeIndex, memWriteDel, cntrlLev, divDur, x) = 
+        grainN(10, var1, position, rate, duration, x) :> _
+    with {
+        rnd = no.noise;
+        memPointerJitter = rnd * (1.0 - memWriteDel) * .01;
+        position = timeIndex * (1.0 - ((1.0 - memWriteDel) * .01)) + 
+            memPointerJitter;
+        density = 1.0 - cntrlLev;
+        rate = 50 ^ (density * 2.0 - 1.0);
+        grainDuration = .023 + (1.0 - memWriteDel) / divDur;
+        duration = grainDuration + grainDuration * .1 * rnd;
+    };
+\end{lstlisting}
+
+In conclusione, abbiamo avuto modo di approfondire alcuni dei principali meccanismi 
+utilizzati da Agostino Di Scipio per uno dei più importanti lavori del suo ciclo Ecosistemico Udibile,
+prendendo questo lavoro come caso di studio, con il fine di illustrare praticamente 
+alcune modalità e relazioni possibili 
+di un sistema con l'ambiente circostante e lo spazio acustico.
+I meccanismi contenuti all'interno del brano ovviamente non si limitano a questi,
+e ci sono altre modalità d'interazione con l'ambiente circostante prodotte da altri meccanismi di elaborazione
+digitale del suono; così come ne esistono delle altre tipologie in altri lavori del ciclo, tanto quanto 
+nell'operato di altri compositori, ma si è cercato qui di illustrare i passaggi 
+essenziali così da poter lasciar spazio ad ulteriori approfondimenti di altri sistemi di 
+altro tipo, lasciando comunque aperta la possibilità di poter approfondire il brano a partire
+dai testi citati in bibliografia e dal codice del porting dell'intero sistema in Faust 
+riportato nell'appendice.
