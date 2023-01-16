@@ -2,21 +2,86 @@
 \section{Sistemi Autonomi}
 \label{sec:Sistemi Autonomi}
 
-Nel capitolo precedente, attraverso la composizione e gli studi di Agostino Di Scipio 
-nei suoi Ecosistemici Udibili, abbiamo potuto osservare
-cosa si intende e come viene organizzato un sistema con non linearità provenienti dal 
-mondo fisico; un sistema aperto all'ambiente esterno in riferimento 
-alla cibernetica di secondo ordine.
-Differentemente dall'approccio Ecosistemico, l'altro tipo di paradigma che ho trovato 
-interessante studiare riguarda le particolari implementazioni di sistemi non lineari 
-interamente programmati nel software, dove l'ambiente che racchiude il sistema al suo
-interno e le proprie relazioni fra gli agenti, è interamente 
-costruito e costituito dal DSP.
-Ho voluto rintracciare questo tipo di lavoro nella composizione e gli studi
-di Dario Sanfilippo: specialista di sistemi di feedback, esecutore, compositore,
-i cui lavori manifestano principi di autopoiesi, evolvibilità, e di costruttivismo radicale 
-nella progettazione di reti di feedback audio complesse 
-che vengono implementate per performance dal vivo, destinate all'interazione 
-uomo-macchina o di macchine autonome.
+Nel capitolo precedente, attraverso la composizione e gli studi di Agostino Di Scipio, 
+abbiamo potuto osservare che cosa si intende, e come viene organizzato, 
+un sistema con non linearità provenienti dal mondo fisico; aperto al suo ambiente esterno 
+che diviene in questo caso lo spazio stesso della performance.
+Sempre in riferimento alla cibernetica di secondo ordine,
+abbiamo già parlato del fatto che nessun sistema è separabile e 
+isolabile da un suo ambiente circostante, 
+ma abbiamo osservato anche come il concetto di spazio di un sistema sia 
+qualcosa di molto complesso, poiché il concetto stesso di "complessità"
+sta a significare in un sistema che questo sia composto da diversi sottosistemi tipicamente in relazione fra loro.
+Mentre, nel caso di Agostino Di Scipio, lo spazio del sistema che ne contiene le sue relazioni 
+è costituito principalmente dal mondo fisico, 
+in questo capitolo osserveremo come, per lo spazio di un sistema, 
+si possa intendere anche uno spazio latente, 
+che traccia le sue relazioni tra le parti in uno spazio virtuale interamente programmato nel software. 
+In questo caso, l'ambiente digitale che racchiude il sistema all'interno e le sue relazioni 
+tra gli agenti è interamente costituito solo dal DSP, 
+inclusi i metodi per la generazione delle relative non linearità.
+Ho voluto approfondire questo metodo attraverso il lavoro compositivo e gli studi di Dario Sanfilippo, 
+specialista di sistemi di feedback, esecutore e compositore. 
+I suoi lavori riguardano principi di autopoiesi, evolvibilità e costruttivismo radicale nella progettazione 
+di reti di feedback audio complesse. \\
+La modalità con cui andrò a discutere in questo capitolo la composizione di questi
+sistemi autonomi, appartenenti anche questi alla più vasta categoria dei CASes (Complex Adaptive Systems), 
+è ponendo un focus su un particolare lavoro di Dario Sanfilippo, Order From Noise \textit{(Homage to Heinz Von Foerster)}. \\
+Order From Noise \textit{(Homage to Heinz Von Foerster)} è un progetto che implementa uno 
+dei primi prototipi di Dario Sanfilippo basati sull'idea dell'\textit{adattattività dinamica}. 
+Questo lavoro del compositore si basa sull'idea che i sistemi adattivi complessi, 
+che sono emergenti per definizione, siano essenziali per raggiungere innovazioni formali, 
+performative e tecniche, nel contesto della performance in Live Electronics e nella composizione musicale in generale. 
+\footcite{sanfilippo_time-variant_2018}
+In comune qui con l'opera di Agostino Di Scipio, il tipo di rapporto in cui è l'uomo ad essere totalmente a controllo della macchina,
+è respinto per essere sostituito da un concetto di ibridazione: 
+una condizione in cui umano e macchina cooperano per far emergere la performance. 
+Nel caso delle opere di Dario Sanfilippo, tuttavia, l'estetica dei suoi lavori è interamente subordinata
+al disegno del sistema stesso, e di volta in volta emerge in fenomeni musicali che sono il risultato
+del tipo d'interazione che viene a crearsi fra il performer e il disegno del sistema che si era reso necessario
+in partenza. \\
+In alcuni casi, questa idea viene portata alle sue estreme conseguenze con opere in cui la macchina è l'unica 
+ente che esegue, come accade per il brano presentato qui.
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{Order from noise (2017) is based on a time-variant feedback delay network containing a 
+    set of entangled nonlinear processing algorithms for audio and information signals. 
+    The work is an example of autonomous self-performing system and it is realised by
+    feeding the network with one millisecond of background noise from the performance
+    environment. The initial recirculating noise impulse is what entirely determines the
+    formal evolutions of the system which have substantially different long-term developments 
+    for each different noise impulse. An approach to present the work live is that
+    of reinitialising the system a number of times for a period of about three-five minutes
+    to show its sensitivity to initial conditions and the long-term divergence between the
+    formal structures.}\footcite{sanfilippo_time-variant_2018}
+    \vspace{0.5cm}
+\end{center}
 
 \begin{center} \vspace{0.5cm} \Huge - Da Continuare - \normalsize \vspace{0.5cm} \end{center}
+
+Lookahead Limiters per la stabilità delle Feedback Network:
+In Order From Noise Dario Sanfilippo utilizza un unità per raggiungere la stabilità
+globale della rete chiamata Lookahead Limiter.
+<< My original design was based on two side-chained amplitude curves: 
+a fast one for attack transients and one for sustained sounds, which had 
+to be slow enough as to avoid intermodulation distortion. The fast curve 
+was based on peak envelope estimation (see below), while the slow one was based on 
+RMS to have a smooth behaviour. The curves were in a master-slave mode so that 
+the effect of the fast curve would decrease with regard to the growth of the slow curve: 
+that was necessary to avoid that the processed signal would be scaled down twice by both curves. 
+Despite the algorithm produced good results, it needed some empirical calibrations 
+and it also involved a rather large number of objects in Pure Data which would considerably load the CPU. 
+Besides, I was using some objects from PD-extended and I already had in mind to migrate to Pure Data Vanilla.
+A simplified design was based on only one amplitude curve calculated with a long-decay peak envelope (10 seconds). 
+A peak envelope checks whether the input is greater than the output and, if that condition is true, 
+it updates the peak with the new value from the input signal. 
+Otherwise, the current peak decreases following an exponential curve and reaches a certain 
+attenuation after a desired time which, in my specific case, is of ~60dBs. 
+This would allow detecting fast attack transient and, at the same time, 
+the long decay would create a smooth curve for the sustained and slow sounds. >>
+https://www.dariosanfilippo.com/blog/2017/lookahead-limiting-in-pure-data/
+
+This was a good compromise for my systems, although such a long decay is not always desirable: occasionally, 
+that would create silences after high-amplitude impulses for the attenuating curve 
+would decrease very slowly and the input signal would be scaled down even if below the limiting threshold.

@@ -445,6 +445,53 @@
       \field{pages}{10}
       \range{pages}{1}
     \endentry
+    \entry{sanfilippo_time-variant_2018}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
+           family={Sanfilippo},
+           familyi={S\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{bibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The use of recursive time-variant networks for musical applications dates back to the 1960s with the seminal work of Gordon Mumma who implemented his own systems and circuits in the analogue domain. Practitioners like Nicolas Collins followed the same approach in the 1970s – particularly with works such as Pea Soup (1976) – and, in more modern times, this technique has been extended to the digital domain and thoroughly explored by composers such as Agostino Di Scipio and the author. The general framework for this approach is to establish several interdependent relationships among the information which is extracted from sound and the variables which affect sound itself, while also creating a structural coupling, i.e. a feedback loop, between information and sound processing. This configuration is the basis for the realisation of systems which can adapt – very broadly speaking – to the context they operate in, and that, under the right circumstances and implementations, can exhibit a complex autonomous behaviour, albeit maintaining a convincing variety over a long time span is a particularly challenging goal. The work presented here is based on a novel idea developed by the author, that is a time-variant network where the relationships between information and sound processing are themselves time-variant and context-dependent, resulting in a dynamical adaptivity, with the scope of enhancing the long-term variety and complexity of autonomous music systems. The author, after a discussion on adaptive systems which is necessary to better contextualise the conceptual and technical framework of the work, will proceed through a description of the system while providing connections to the artistic ideas and implications of this approach on the practice of live performance with autonomous systems.}
+      \field{journaltitle}{Musica/Tecnologia}
+      \field{month}{8}
+      \field{note}{Artwork Size: 119-129 Pages Publisher: Musica/Tecnologia}
+      \field{shorttitle}{Time-variant infrastructures and dynamical adaptivity for higher degrees of complexity in autonomous music feedback systems}
+      \field{title}{Time-variant infrastructures and dynamical adaptivity for higher degrees of complexity in autonomous music feedback systems: the {Order} from noise (2017) project}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{119\bibrangedash 129 Pages}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.13128/MUSIC_TEC-23804
+      \endverb
+      \verb{file}
+      \verb Sanfilippo - 2018 - Time-variant infrastructures and dynamical adaptiv.pdf:files/115/Sanfilippo - 2018 - Time-variant infrastructures and dynamical adaptiv.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://oajournals.fupress.net/index.php/mt/article/view/7482
+      \endverb
+      \verb{url}
+      \verb https://oajournals.fupress.net/index.php/mt/article/view/7482
+      \endverb
+    \endentry
     \entry{sanfilippovallefeedsys}{article}{}
       \name{author}{2}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%

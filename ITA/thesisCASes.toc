@@ -3,11 +3,11 @@
 \contentsline {subsection}{\numberline {1.2}Le Cibernetiche nella musica}{5}{}%
 \contentsline {subsection}{\numberline {1.3}Il Feedback}{13}{}%
 \contentsline {section}{\numberline {2}Ecosistemi Udibili}{16}{}%
-\contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{17}{}%
-\contentsline {subsection}{\numberline {2.2}Il Meccanismo LAR}{18}{}%
+\contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{18}{}%
+\contentsline {subsection}{\numberline {2.2}Il Meccanismo LAR}{19}{}%
 \contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{30}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{40}{}%
-\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{41}{}%
-\contentsline {section}{\numberline {A}First appendix}{42}{}%
-\contentsline {subsection}{\numberline {A.1}aelibrary.lib}{42}{}%
-\contentsline {section}{\numberline {B}Second appendix}{49}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{41}{}%
+\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{44}{}%
+\contentsline {section}{\numberline {A}First appendix}{45}{}%
+\contentsline {subsection}{\numberline {A.1}aelibrary.lib}{45}{}%
+\contentsline {section}{\numberline {B}Second appendix}{52}{}%

@@ -6,19 +6,34 @@ Uno degli esiti musicali più importanti che ha portato con sé
 il paradigma della complessità, riguarda essenzialmente l'aver smesso di 
 scrivere musica per strumenti interattivi con cui farla (e viceversa), 
 ed esser passati invece al  comporre le interazioni tramite gli strumenti. \\
-Fra le altre cose, nell'insieme delle parole: Sistema Tonale, 
-che sta a significare quell'insieme delle regole di organizzazione ed uso dei
-suoni maggiormente utilizzati per produrre musica nella tradizione 
-musicale Occidentale, è frequente che passi in secondo piano la parola 
+Da un punto di vista più generalizzato, Heinz Von Foerster in tal senso 
+sviluppò una teoria dell'informazione secondo cui l'informazione è un costrutto relazionale, 
+e non solo un singolo oggetto o un solo segnale, 
+e che di conseguenza la quantità di informazione in un sistema è determinata 
+quindi dalla sua capacità di generare varietà.
+Le implicazioni e le conseguenze di questo pensiero applicato alla musica sono enormi.
+Nella nostra tradizione musicale occidentale, nell'insieme delle parole: Sistema Tonale, 
+che sta a significare "quell'insieme delle regole di organizzazione ed uso dei
+suoni maggiormente utilizzati per produrre musica" 
+(sempre rimanendo nel contesto della tradizione musicale Occidentale), 
+è frequente che passi in secondo piano la parola 
 sistema, che assume invece un significato centrale nel contesto di questa tesi;
-difatti molti compositori non sono passati solamente al comporre le interazioni, 
-ma anche al comporre i sistemi stessi con cui fare la propria musica.
-Come accennato nell'abstract, le interazioni che ho ritenuto importante affrontare 
-all'interno dei sistemi dei compositori cibernetici sono di due tipi:
+se si pensa che di conseguenza passa in secondo piano l'insieme di quelle relazioni
+che compongono nella sua interezza un sistema, di cui parla Von Foerster, 
+si riduce la pratica musicale ai minimi termini.
+Non è un caso che molti compositori nel corso del XX Secolo, siano passati non solo al comporre 
+i sistemi stessi con cui fare la propria musica, ma al comporne anche le interazioni.
+Si pensi ai sistemi formalizzati come partiture da Iannis Xenakis, John Cage, o Roland Kayn,
+arrivando fino alle partiture comportamentali come quelle di Domenico Guaccero e 
+in generale del contesto della Roma del dopoguerra, arrivando fino ai lavori di 
+Karlheinz Stockhausen.
+Tornando al tema principale, come accennato nell'abstract, 
+le interazioni che ho ritenuto importante affrontare 
+all'interno dei sistemi creati dai compositori cibernetici sono di due tipi:
 di sistemi che interagiscono con l’ambiente circostante appartenente al mondo fisico, 
-e di sistemi che interagiscono con il proprio ambiente nel mondo digitale, 
-ma prima di entrare nel merito del primo caso qui,
-è doveroso spendere qualche parola su cosa
+e di sistemi che interagiscono con il proprio ambiente nel mondo digitale.
+Prima di entrare nel merito del primo caso qui,
+è doveroso spendere ancora qualche parola su cosa
 si intenda per ambiente. \\
 Nessun sistema è separabile e isolabile dall'ambiente circostante, 
 a prescindere dal fatto che il suo spazio vitale, sia nel mondo fisico o digitale. 
@@ -207,6 +222,7 @@ il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingr
 in retroiniezione alla funzione stessa di comparazione, 
 in questo modo si sfrutta un principio di Feedback per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
+\clearpage 
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -221,12 +237,6 @@ peakmax = loop
     
 process = _ : peakmax;
 \end{lstlisting}
-
-\begin{center}
-    \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
-    {Algoritmo e Schema del \textit{Peakholder} ad 1 campione di ritardo} \\ 
-    \end{center}
-\clearpage 
 
 \begin{lstlisting}
 // import faust standard library
@@ -247,6 +257,11 @@ process = _ : LARpeakmax;
     {Algoritmo e Schema del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
 \end{center}
 \vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
+    {Algoritmo e Schema del \textit{Peakholder} ad 1 campione di ritardo} \\ 
+    \end{center}
 
 Questo tipo di algoritmo presenta comunque alcuni problemi: non avendo
 una funzione di smoothing del segnale, si verificano problemi di segnali di differenza a banda
@@ -441,7 +456,6 @@ per mantenere il Larsen in uno stato stazionario senza che giunga a
 saturazione, e consentendo al sistema
 di fatto una serie di nuove possibilità di elaborazione e trasformazione del suono.
 
-\clearpage
 \subsection{Trasformazioni del suono}
 \label{sec:Trasformazioni del suono}
 
