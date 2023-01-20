@@ -104,10 +104,10 @@ che compongono nella loro totalità l'intero ecosistema del brano.
 
 \subsection{Il Meccanismo LAR}
 \label{sec:Il Meccanismo LAR}
-Il Feedback elettroacustico (effetto Larsen), che abbiamo già detto
-esser stata una delle risorse centrali dei primi compositori cibernetici,
-è la condizione di partenza su cui Agostino Di Scipio opera per la costruzione degli Ecosistemi Udibili.
-Volendoci addentrare ora verso una spiegazione più tecnica del Feedback elettroacustico,
+Il Feedback elettroacustico, che abbiamo già detto
+esser stata una delle risorse fondamentali dei primi compositori cibernetici,
+è la condizione di partenza su cui Agostino Di Scipio opera per la costruzione dei suoi Ecosistemi Udibili.
+Addentrandoci ora verso una spiegazione più tecnica del Feedback elettroacustico,
 possiamo citare una definizione che Di Scipio ha esposto in un suo articolo
 pubblicato presso la rivista Online: ECHO dell’ Orpheus Institute, in
 Ghent. \footcite{di_scipio_relational_2022}
@@ -171,13 +171,37 @@ a resource, a deliberately designed sound-making mechanism one can play with.} \
 \end{center}
 
 per utilizzare il Feedback come una risorsa,
-appare chiara la necessità di un intervento riguardo la sua crescita che porta alla saturazione dei sistemi, 
+ora appare chiara la necessità di un intervento sulla sua retroiniezione a guadagno infinito 
+che porta alla saturazione dei sistemi coinvolti, 
 in tal senso una delle possibili soluzioni è quella di poter far calcolare
 al computer in tempo reale tramite diverse tecniche di \textit{amplitude following} la stima dell'ampiezza
-del segnale in ingresso, ed utilizzare conseguentemente la \textit{feature extraction} come segnale di controllo in retroazione negativa al sistema di Feedback elettroacustico.
-Questo meccanismo di controbilanciamento del guadagno
-del fenomeno è chiamato da Agostino Di Scipio col nome di LAR: \textit{Audio Feedback with Self-regulated Gain},
-e può essere implementato in DSP in diverse modalità e configurazioni,
+del segnale in ingresso, ed utilizzare conseguentemente la \textit{feature extraction} 
+come segnale di controllo in retroazione negativa al sistema di Feedback elettroacustico. \\
+Questo tipo di meccanismi, provenienti dalla tradizione della Computer Music, appartiene 
+all'ambito del \textit{Music Information Retrieval} (MIR).
+Il MIR è un campo di ricerca multidisciplinare, che nell'area dell’informatica musicale si occupa di
+studiare i metodi e gli strumenti per l’estrazione dell’informazione musicale per mezzo di un
+computer. \\
+Oltre alle analisi in tempo differito, che sono tipicamente trattate dal MIR
+per le sue applicazioni di ricerca dove viene presa in considerazione
+l’intera lunghezza del segnale su cui si effettua un analisi, 
+oggi grazie ad alcuni linguaggi di programmazione
+adatti alle implementazioni per il tempo reale e utili alle
+performance in Live Electronics, è possibile operare anche alcune
+di queste analisi in tempo reale, fra cui per l'appunto la stima dell'ampiezza
+di un segnale in ingresso.
+L'applicazione in tempo reale di una \textit{feature extraction} 
+Nel contesto di una performance di Live Electronics, viene chiamata col nome di
+\textit{Audio Information Processing};
+tanto più un sistema è in grado di raccogliere informazioni riguardo
+il suo stato e il suo rapporto con l'ambiente, tanto più sarà in grado di
+processare "congitivamente" tramite l'informazione il suo prodotto. \\
+Rimandando al prossimo capitolo approfondimenti riguardo il tema 
+dell'\textit{Audio Information Processing}, mi fermerò per il momento a discutere 
+nel dettaglio il singolo meccanismo di controbilanciamento del guadagno
+del fenomeno di Feedback elettroacustico, che è chiamato da Agostino Di Scipio col nome di 
+LAR: \textit{Audio Feedback with Self-regulated Gain},
+e che può essere implementato in DSP in diverse modalità e configurazioni,
 ognuna con le sue diverse caratteristiche ed esiti. \\
 
 \begin{center}
@@ -187,21 +211,24 @@ ognuna con le sue diverse caratteristiche ed esiti. \\
 \vspace{0.5cm}
 \end{center}
 
-Nella tradizione della computer music, ci sono in effetti
-diversi modi per realizzare un algoritmo di controbilanciamento 
+Ci sono in effetti diversi modi per ottenere una \textit{feature extraction} 
+in tempo reale capace di realizzare un algoritmo di controbilanciamento 
 del Feedback in tempo reale.
-Alcuni di questi possono riguardare controbilanciamenti nel dominio della frequenza,
+Alcuni di questi metodi possono riguardare controbilanciamenti 
+applicati nel dominio della frequenza,
 con tecniche di filtraggio automatizzate (adattive) che
 hanno il compito di eliminare dallo spettro la presenza dell'autoscillazione prodotta dal Larsen \textit{Larsen Suppressors},
 o come nel nostro caso d’interesse possono riguardare controbilanciamenti in ampiezza
 automatizzati, che non permettano al Feedback di avere un guadagno troppo troppo elevato 
-e giungere conseguentemente ad uno stato di saturazione del sistema.
+e giungere conseguentemente allo stato di saturazione del sistema.
 Algoritmi di \textit{amplitude-following} possono essere implementati 
 con la media \textit{RMS}, con finestre variabili o fisse, 
 filtri \textit{Peakholder} che mantengano il valore di picco, o di altra natura. \\
 Tratterò ora  una parte più operativa, discutendo l'implementazione
 di alcune di queste tecniche nel linguaggio di programmazione FAUST (Grame), 
-che è l'ambiente in cui ho scritto i codici di tutti i lavori trattati
+che è uno dei linguaggi di programmazione
+che consente di fare \textit{Audio Information Processing} in tempo reale.
+Faust è l'ambiente in cui ho scritto i codici di tutti i lavori trattati
 in questa tesi e le relative compilazioni, diagrammi e softwares. \\
 \footnote{FAUST (Grame) (Functional Audio Stream), 
 è un linguaggio di programmazione specifico per il Digital Signal

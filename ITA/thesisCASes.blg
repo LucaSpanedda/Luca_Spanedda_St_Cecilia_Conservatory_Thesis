@@ -1,21 +1,21 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'thesisCASes.blg'
-[118] biber:340> INFO - === lun gen 16, 2023, 15:10:01
-[137] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
-[234] Biber.pm:972> INFO - Found 21 citekeys in bib section 0
-[258] Biber.pm:4383> INFO - Processing section 0
-[277] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
-[290] bibtex.pm:1713> INFO - LaTeX decoding ...
-[477] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
-[696] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[696] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[696] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[696] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[747] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
-[765] bbl.pm:757> INFO - Output to thesisCASes.bbl
-[766] Biber.pm:130> WARN - Duplicate entry key: 'van_new_nodate' in file 'bibliography/bibliography.bib', skipping ...
-[767] Biber.pm:130> WARN - legacy year field '2006/2007' in entry 'esiodoteogonia' is not an integer - this will probably not sort properly.
-[767] Biber.pm:130> WARN - legacy year field 'September, 2011' in entry 'collinspeasouphist' is not an integer - this will probably not sort properly.
-[767] Biber.pm:130> WARN - I didn't find a database entry for 'http://www.lovely.com/albumnotes/notes1602.html' (section 0)
-[767] Biber.pm:130> WARN - I didn't find a database entry for 'https://faust.grame.fr/' (section 0)
-[767] Biber.pm:132> INFO - WARNINGS: 5
+[110] biber:340> INFO - === ven gen 20, 2023, 17:51:38
+[130] Biber.pm:418> INFO - Reading 'thesisCASes.bcf'
+[225] Biber.pm:972> INFO - Found 22 citekeys in bib section 0
+[246] Biber.pm:4383> INFO - Processing section 0
+[262] Biber.pm:4574> INFO - Looking for bibtex file 'bibliography/bibliography.bib' for section 0
+[274] bibtex.pm:1713> INFO - LaTeX decoding ...
+[445] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography/bibliography.bib'
+[666] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[666] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[667] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[667] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[702] bbl.pm:654> INFO - Writing 'thesisCASes.bbl' with encoding 'UTF-8'
+[713] bbl.pm:757> INFO - Output to thesisCASes.bbl
+[714] Biber.pm:130> WARN - Duplicate entry key: 'van_new_nodate' in file 'bibliography/bibliography.bib', skipping ...
+[714] Biber.pm:130> WARN - legacy year field '2006/2007' in entry 'esiodoteogonia' is not an integer - this will probably not sort properly.
+[714] Biber.pm:130> WARN - legacy year field 'September, 2011' in entry 'collinspeasouphist' is not an integer - this will probably not sort properly.
+[714] Biber.pm:130> WARN - I didn't find a database entry for 'http://www.lovely.com/albumnotes/notes1602.html' (section 0)
+[714] Biber.pm:130> WARN - I didn't find a database entry for 'https://faust.grame.fr/' (section 0)
+[714] Biber.pm:132> INFO - WARNINGS: 5

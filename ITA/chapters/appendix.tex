@@ -1,59 +1,334 @@
 \section{First appendix}
 
-In questo appendice sono riportate tutte le Librerie
-scritte in Faust contenenti gli oggetti dei brani trattati
+In questo appendice sono riportati tutti i codici dei sistemi
+e le relative librerie di oggetti trattati
 nel corso della tesi.
 
-\subsection{aelibrary.lib}
+\subsection{AudibleEcosystemics2(dot)dsp}
 
 \vspace{0.5cm}
 \begin{lstlisting}
 //---------------------------------------------------------------------
-// AGOSTINO DI SCIPIO - AUDIBLE ECOSYSTEMICS 2A/B - LIBRARY
-//---------------------------------------------------------------------
+declare name "Agostino Di Scipio - AUDIBLE ECOSYSTEMICS n.2";
+declare author "Luca Spanedda";
+declare author "Dario Sanfilippo";
+declare version "alpha";
+declare description " 2022 version - Realised on composer's instructions
+    of the year 2017 edited in L’Aquila, Italy";
 
-//-------------------------------------------------------- UTILITIES --
+// import faust standard library
+import("stdfaust.lib");
+// import audible ecosystemics objects library
+import("aelibrary.lib");
+
+// PERFORMANCE SYSTEM VARIABLES
+SampleRate = 44100;
+var1 = 8;
+var2 = 100;
+var3 = 0.20;
+var4 = 8;
+
+
+//------- ------------- ----- -----------
+//-- AE2 -----------------------------------------------------------------------
+//------- --------
+
+
+// MAIN SYSTEM FUNCTION
+outputrouting(grainOut1, grainOut2, out1, out2, out3, out4, out5, out6, mic1, mic2, mic3, mic4, diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7) =
+out1, out2, out3, out4, out5, out6; // choose here the signals in output
+
+process = si.bus(8) : vgroup("System Inspectors", par(i, 8, hgroup("Mics", inspect(i, -1, 1)))) :> si.bus(4) : 
+    (signalflow1a : signalflow1b : signalflow2a : signalflow2b : signalflow3) ~ si.bus(2) : outputrouting;
+
+signalflow1a( grainOut1, grainOut2, mic1, mic2, mic3, mic4 ) = 
+grainOut1, grainOut2, 
+mic1, mic2, mic3, mic4, 
+( (diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain) : vgroup("System Inspectors", par(i, 8, hgroup("Signal Flow 1a", inspect(i, -1, 1)))) )
+with {
+    Mic_1A_1 = mic3 * hgroup( "Mixer", hgroup( "Signal Flow 1A", gainMic_1A) );
+    Mic_1A_2 = mic4 * hgroup( "Mixer", hgroup( "Signal Flow 1A", gainMic_1A) );
+    map6sumx6 = (Mic_1A_1 : integrator(.01) : delayfb(.01, .95)) +
+                (Mic_1A_2 : integrator(.01) : delayfb(.01, .95)) : 
+                    \(x).(6 + x * 6);
+
+    localMaxDiff =  ((map6sumx6, Mic_1A_1) : localmax) ,
+                    ((map6sumx6, Mic_1A_2) : localmax) :
+                        \(x, y).(x - y);
+
+    SenstoExt = (map6sumx6, localMaxDiff) : 
+        localmax <: _ , (_ : delayfb(12, 0)) : + : * (.5) : 
+            LP1(.5) ;
+
+    diffHL =    ((Mic_1A_1 + Mic_1A_2) : HP3(var2) : integrator(.05)) ,
+                ((Mic_1A_1 + Mic_1A_2) : LP3(var2) : integrator(.10)) :
+                    \(x, y).(x - y) * 
+                        (1 - SenstoExt) : delayfb(.01, .995) : 
+                            LP5(25) : \(x).(.5 + x * .5) : 
+                                // LIMIT - max - min
+                                limit(1, 0);
+
+    memWriteLev = (Mic_1A_1 + Mic_1A_2) : integrator(.1) : delayfb(.01, .9) :
+        LP5(25) : \(x).(1 - (x * x)) : 
+            // LIMIT - max - min
+            limit(1, 0);
+
+    memWriteDel1 = memWriteLev : delayfb((var1 / 2), 0) : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    memWriteDel2 = memWriteLev : delayfb((var1 / 3), 0) : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    cntrlMain = (Mic_1A_1 + Mic_1A_2) * SenstoExt : integrator(.01) : 
+        delayfb(.01, .995) : LP5(25) : 
+            // LIMIT - max - min
+            limit(1, 0);
+
+    cntrlLev1 = cntrlMain : delayfb((var1 / 3), 0) : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    cntrlLev2 = cntrlMain : delayfb((var1 / 2), 0) : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    cntrlFeed = cntrlMain : \(x).(ba.if(x <= .5, 1.0, (1.0 - x) * 2.0)) : 
+            // LIMIT - max - min
+            limit(1, 0);
+};
+
+signalflow1b( grainOut1, grainOut2, mic1, mic2, mic3, mic4, diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain ) = 
+mic1, mic2, mic3, mic4, 
+diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, 
+( (cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3) : vgroup("System Inspectors", par(i, 8, hgroup("Signal Flow 1b", inspect(i, -1, 1)))) )
+with {
+    Mic_1B_1 = mic1 * hgroup( "Mixer", hgroup( "Signal Flow 1B", gainMic_1B) );
+    Mic_1B_2 = mic2 * hgroup( "Mixer", hgroup( "Signal Flow 1B", gainMic_1B) );
+    // cntrlMic - original version
+    cntrlMic(x) = x : HP1(50) : LP1(6000) : 
+        integrator(.01) : delayfb(.01, .995) : LP5(.5);
+
+    // cntrlMic - alternative version
+    // cntrlMic(x) = x : HP2(50) : LP1(6000) :
+    //     integrator(.01) : delayfb(.01, .995) : LP5(.04);
+    cntrlMic1 = Mic_1B_1 : cntrlMic : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    cntrlMic2 = Mic_1B_2 : cntrlMic : 
+        // LIMIT - max - min
+        limit(1, 0);
+
+    directLevel =
+        (grainOut1 + grainOut2) : integrator(.01) : delayfb(.01, .97) : 
+            LP5(.5) <: 
+                 _ , 
+                (_ : delayfb(var1 * 2, (1 - var3) * 0.5)) : + : 
+                    \(x).(1 - x * .5) : 
+                        // LIMIT - max - min
+                        limit(1, 0);
+
+    timeIndex1 = triangleWave(1 / (var1 * 2)) : \(x).((x - 2) * 0.5);
+
+    timeIndex2 = triangleWave(1 / (var1 * 2)) : \(x).((x + 1) * 0.5);
+
+    triangle1 = triangleWave(1 / (var1 * 6)) * memWriteLev;
+
+    triangle2 = triangleWave(var1 * (1 - cntrlMain));
+
+    triangle3 = triangleWave(1 / var1);
+};
+
+signalflow2a( mic1, mic2, mic3, mic4, diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3 ) = 
+mic1, mic2, mic3, mic4, 
+diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, 
+cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, 
+( (sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7) : vgroup("System Inspectors", par(i, 8, hgroup("Signal Flow 2a", inspect(i, -1, 1)))) )
+with {
+    Mic_2A_1 = mic1 * hgroup( "Mixer", hgroup( "Signal Flow 2A", gainMic_2A) );
+    Mic_2A_2 = mic2 * hgroup( "Mixer", hgroup( "Signal Flow 2A", gainMic_2A) );
+    micIN1 = Mic_2A_1 : HP1(50) : LP1(6000) * 
+        (1 - cntrlMic1);
+
+    micIN2 = Mic_2A_2 : HP1(50) : LP1(6000) * 
+        (1 - cntrlMic2);
+
+    SRSect1(x) = x : sampler(var1, (1 - memWriteDel2), (var2 + (diffHL * 1000)) / 261) : 
+        HP4(50) : delayfb(var1 / 2, 0);
+
+    SRSect2(x) = x : sampler(var1, (memWriteLev + memWriteDel1) / 2, (290 - (diffHL * 90)) / 261) : 
+        HP4(50) : delayfb(var1, 0);
+
+    SRSect3(x) = x : sampler(var1, (1 - memWriteDel1), ((var2 * 2) - (diffHL * 1000)) / 261) : 
+        HP4(50);
+
+    SRSectBP1(x) = x : SRSect3 : BPsvftpt(diffHL * 400, (var2 / 2) * memWriteDel2);
+
+    SRSectBP2(x) = x : SRSect3 : BPsvftpt((1 - diffHL) * 800, var2 * (1 - memWriteDel1));
+
+    SRSect4(x) = x : sampler(var1, 1, (250 + (diffHL * 20)) / 261);
+
+    SRSect5(x) = x : sampler(var1, memWriteLev, .766283);
+
+    SampleWriteLoop = loop ~ _
+    with {
+        loop(fb) =
+            (
+                (   SRSect1(fb) ,
+                    SRSect2(fb) ,
+                    SRSectBP1(fb) ,
+                    SRSectBP2(fb) :> _ 
+                ) * (cntrlFeed * memWriteLev)
+            ) <:
+            (   
+                _ + (micIN1 + micIN2) : _ * triangle1 ),
+                _ ,
+                SRSect4(fb) ,
+                SRSect5(fb) ,
+                SRSect3(fb) ;
+    };
+
+    sig1 = micIN1 * directLevel;
+
+    sig2 = micIN2 * directLevel;
+
+    sampWOut = SampleWriteLoop : \(A,B,C,D,E).( A );
+
+    variabledelaysig3(x) = x : de.delay( max(0, ba.sec2samp(.05)), max(0, int(ba.sec2samp(.05 * cntrlMain))) );
+    sig3 = SampleWriteLoop : \(A,B,C,D,E).( B ) : _ * 
+        memWriteLev : variabledelaysig3 * triangle2 * directLevel;
+
+    sig4 = SampleWriteLoop : \(A,B,C,D,E).( B ) : _ * 
+        memWriteLev * (1-triangle2) * directLevel;
+
+    sig5 = SampleWriteLoop : \(A,B,C,D,E).( C ) :
+        HP4(50) : delayfb(var1 / 3, 0);
+
+    sig6 = SampleWriteLoop : \(A,B,C,D,E).( D ) :
+        HP4(50) : delayfb(var1 / 2.5, 0);
+
+    sig7 = SampleWriteLoop : \(A,B,C,D,E).( E ) : delayfb(var1 / 1.5, 0) * 
+        directLevel;
+};
+
+signalflow2b( mic1, mic2, mic3, mic4, diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7 ) = 
+mic1, mic2, mic3, mic4, 
+diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, 
+cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, 
+sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7, 
+grainOut1, grainOut2, 
+out1, out2
+with {
+    grainOut1 = granular_sampling(var1, timeIndex1, memWriteDel1, cntrlLev1, 21, sampWOut);
+
+    grainOut2 = granular_sampling(var1, timeIndex2, memWriteDel2, cntrlLev2, 20, sampWOut);
+
+    out1 =  
+        ( 
+            ((sig5 : delayfb(.040, 0)) * (1 - triangle3)),
+             (sig5 * triangle3),
+            ((sig6 : delayfb(.036, 0)) * (1 - triangle3)),
+            ((sig6 : delayfb(.036, 0)) * triangle3 ),
+              sig1,
+              0,
+              sig4,
+              grainOut1 * (1 - memWriteLev) + grainOut2 * memWriteLev 
+        ) :> _ * hgroup( "Mixer", hgroup( "Signal Flow 3", gainMic_3) );
+
+    out2 =  
+        ( 
+             (sig5 * (1 - triangle3)),
+            ((sig5 : delayfb(.040, 0)) * triangle3),
+             (sig6 * (1 - triangle3)),
+             (sig6 * triangle3),
+              sig2,
+              sig3,
+              sig7,
+              grainOut1 * memWriteLev + grainOut2 * (1 - memWriteLev) 
+        ) :> _ * hgroup( "Mixer", hgroup( "Signal Flow 3", gainMic_3) );
+};
+
+signalflow3( mic1, mic2, mic3, mic4, diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7, grainOut1, grainOut2, out1, out2 ) = 
+grainOut1, grainOut2,
+( 
+(   out1, out2, 
+(   out2 : delayfb((var4 / 2) / 344, 0)), 
+(   out1 : delayfb((var4 / 2) / 344, 0)), 
+(   out1 : delayfb(var4 / 344, 0)), 
+(   out2 : delayfb(var4 / 344, 0)) ) 
+: vgroup("System Inspectors", par(i, 6, hgroup("Signal Flow 3", inspect(i, -1, 1))) ) 
+), 
+mic1, mic2, mic3, mic4,
+diffHL, memWriteDel1, memWriteDel2, memWriteLev, cntrlLev1, cntrlLev2, cntrlFeed, cntrlMain, 
+cntrlMic1, cntrlMic2, directLevel, timeIndex1, timeIndex2, triangle1, triangle2, triangle3, 
+sampWOut, sig1, sig2, sig3, sig4, sig5, sig6, sig7;
+//---------------------------------------------------------------------
+\end{lstlisting}
+
+\subsection{aelibrary(dot)lib}
+
+\vspace{0.5cm}
+\begin{lstlisting}
+//---------------------------------------------------------------------
+declare name "Agostino Di Scipio - AUDIBLE ECOSYSTEMICS n.2";
+declare author "Luca Spanedda";
+declare author "Dario Sanfilippo";
+declare version "alpha";
+declare description " 2022 version - Realised on composer's instructions
+    of the year 2017 edited in L’Aquila, Italy";
+
+// import faust standard library
+import("stdfaust.lib");
+
+// PERFORMANCE SYSTEM SampleRate
+SampleRate = 44100;
+
+//------- ------------- ----- -----------
+//-- LIBRARY -------------------------------------------------------------------
+//------- --------
+
+
+//----------------------------------------------------------------- UTILITIES --
 // limit function for library and system
 limit(maxl,minl,x) = x : max(minl, min(maxl));
 // see signal values 
-inspect(i, lower, upper) = _ <: _ , 
-    vbargraph("sig_%2i [style:numerical]", lower, upper) : attach;
+inspect(i, lower, upper) = _ * 1000 <: _ , 
+    vbargraph("sig_%2i [style:numerical]", lower * 1000, upper * 1000) : attach :
+    _ / 1000;
     //process = (os.osc(.01) : inspect(1, .1, -1, 1));
 diffDebug(x) = an.abs_envelope_tau(1, (x-x')) * (SampleRate/2);
 
-//----------------------------------------------------------- DELAYS --
+//-------------------------------------------------------------------- DELAYS --
 delayfb(delSec,fb,x) = loop ~ _ : mem
 with{ 
-    loop(z) = ( (z * fb + x) @(ba.sec2samp(delSec)-1) );
+    loop(z) = ( (z * fb + x) @(max(0, ba.sec2samp(delSec)-1)) );
 };
 
-//------------------------------------------------------- SAMPLEREAD --
-sampler(bufferLength, memChunk, ratio, x) = y
-with {
-    y = it.frwtable(3, L, .0, writePtr, x, readPtrLen) * 
-        trapWin(100) * zeroChunk : fi.dcblocker
+//---------------------------------------------------------------- SAMPLEREAD --
+sampler(lengthSec, memChunk, ratio, x) = 
+    it.frwtable(3, bufferLen, .0, writePtr, x, readPtr) * window
     with {
-        L = bufferLength * SampleRate; // hard-coded: change to your SR
-        writePtr = + (1') %(L) ~ _;
-        readPtr =  + (1' * (1 / max(ma.EPSILON, memChunk)) * 
-            ratio) %(L) ~ _;
-        readPtrLen = readPtr * memChunk;
-        zeroChunk = (memChunk > ma.EPSILON);
-        trapWin(fadeLenSamp) = readPtrLen - winLenSamp / 2 : abs / 
-            fadeLenSamp : min(1)
-            with {
-                winLenSamp = max(1, memChunk * L);
+        memChunkLimited = max(0.010, min(1, memChunk));
+        bufferLen = lengthSec * SampleRate;
+        writePtr = ba.period(bufferLen);
+        grainLen = max(1, ba.if(writePtr > memChunkLimited * bufferLen, 
+            memChunkLimited * bufferLen, 1));
+        readPtr = y
+            letrec {
+                'y = (ratio + y) % grainLen;
             };
+        window = min(1, abs(((readPtr + grainLen / 2) % grainLen) - 
+            grainLen / 2) / 200);
     };
-};
-// process = sampler(1, (hslider("chnk",0.5,0,1,.001)), 
-    // (hslider("rati",1,0,2,.001)), os.osc(400));
+// process = sampler(4, hslider("memChunkLimited", 0.05, 0, 1, .001), 
+    // hslider("ratio", 10, .1, 10, .001), os.osc(100)) <: _, _;
 
-//------------------------------------------------------ INTEGRATOR ---
-integrator(seconds, x) = an.abs_envelope_tau(
-    limit(1000, .001, seconds), x);
+//--------------------------------------------------------------- INTEGRATOR ---
+integrator(seconds, x) = an.abs_envelope_tau(limit(1000,.001,seconds), x);
 
-//-------------------------------------------------------- LOCALMAX ---
+//----------------------------------------------------------------- LOCALMAX ---
 localMax(seconds, x) = loop ~ si.bus(4) : _ , ! , ! , !
 with {
     loop(yState, timerState, peakState, timeInSamplesState) = 
@@ -67,16 +342,14 @@ with {
         y = ba.if(reset, peak', yState);
     };
 };
-//process = os.osc(.1245) : localMax(hslider("windowlocalM", 
-    -1, -1, 8, .001));
-localmax(resetPeriod, x) = localMax(
-    limit(1000, 0, resetPeriod), x);
+//process = os.osc(.1245) : localMax(hslider("windowlocalM",-1,-1,8,.001));
+localmax(resetPeriod, x) = localMax(limit(1000,0,resetPeriod), x);
 
-//-------------------------------------------------------- TRIANGLE ---
+//----------------------------------------------------------------- TRIANGLE ---
 triangularFunc(x) = abs(ma.frac((x - .5)) * 2.0 - 1.0);
 triangleWave(f) = triangularFunc(os.phasor(1,f));
 
-//--------------------------------------------------------- FILTERS ---
+//------------------------------------------------------------------ FILTERS ---
 onePoleTPT(cf, x) = loop ~ _ : ! , si.bus(3)
 with {
     g = tan(cf * ma.PI * (1/ma.SR));
@@ -90,85 +363,49 @@ with {
         ap = lp - hp;
     };
 };
+
 LPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (_ , ! , !);
 HPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (! , _ , !);
-// TEST
-// process = (-100, no.noise) : HPTPT;
 
-SVFTPT(K, Q, CF, x) = circuitout : 
-    ! , ! , _ , _ , _ , _ , _ , _ , _ , _
-with{
-    g = tan(CF * ma.PI / ma.SR);
-    R = 1.0 / (2.0 * Q);
-    G1 = 1.0 / (1.0 + 2.0 * R * g + g * g);
-    G2 = 2.0 * R + g;
-    circuit(s1, s2) = 
-        u1 , u2 , lp , hp , bp, notch, apf, ubp, peak, bshelf
-        with{
-            hp = (x - s1 * G2 - s2) * G1;
-            v1 = hp * g;
-            bp = s1 + v1;
-            v2 = bp * g;
-            lp = s2 + v2;
-            u1 = v1 + bp;
-            u2 = v2 + lp;
-            notch = x - ((2*R)*bp);
-            apf = x - ((4*R)*bp);
-            ubp = ((2*R)*bp);
-            peak = lp -hp;
-            bshelf = x + (((2*K)*R)*bp);
-        };
-    // choose the output from the SVF Filter (ex. bshelf)
-    circuitout = circuit ~ si.bus(2);
-};
-// Outs = (lp , hp , bp, notch, apf, ubp, peak, bshelf)
-// SVFTPT(K, Q, CF, x) = (Filter-K, Filter-Q, Frequency Cut)
+SVFTPT(Q, cf, x) = loop ~ si.bus(2) : (! , ! , _ , _ , _ , _ , _)
+    with {
+        g = tan(cf * ma.PI * (1.0/ma.SR));
+        R = 1.0 / (2.0 * Q);
+        G1 = 1.0 / (1.0 + 2.0 * R * g + g * g);
+        G2 = 2.0 * R + g;
+        loop(s1, s2) = u1 , u2 , lp , hp , bp , bp * 2.0 * R , x - bp * 4.0 * R
+            with {
+                hp = (x - s1 * G2 - s2) * G1;
+                v1 = hp * g;
+                bp = s1 + v1;
+                v2 = bp * g;
+                lp = s2 + v2;
+                u1 = v1 + bp;
+                u2 = v2 + lp;
+            };
+    };
 
-// Filters Bank
-LPSVF(Q, CF, x) = SVFTPT(0, Q, 
-    limit(20000,ma.EPSILON,CF), x) : _ , ! , ! , ! , ! , ! , ! , ! ;
-HPSVF(Q, CF, x) = SVFTPT(0, Q, 
-    limit(20000,ma.EPSILON,CF), x) : ! , _ , ! , ! , ! , ! , ! , !;
-//process = (-1, -10000, no.noise) <: LPSVF, HPSVF;
-BPsvftpt(BW, CF, x) = SVFTPT(0 : ba.db2linear, ql, cfl, 
-    x ) : ! , ! , ! , ! , !, _ , ! , !
-with{
-    cfl = limit(20000,ma.EPSILON,CF);
-    bwl = limit(20000,ma.EPSILON,BW);
-    ql = cfl / bwl;
-};
-// TEST
-//process = (1, 1000, no.noise) : BPsvftpt;
+BPsvftpt(bw, cf, x) = Q , CF , x : SVFTPT : (! , ! , ! , _ , !)
+    with {
+        CF = max(20, min(20480, LPTPT(1, cf)));
+        BW = max(1, min(20480, LPTPT(1, bw)));
+        Q = max(.01, min(100, BW / CF));
+    };
 
-// Butterworth
-butterworthQ(order, stage) = qFactor(order % 2)
-with {
-    qFactor(0) = 1.0 / (2.0 * cos(((2.0 * stage + 1) *
-    (ma.PI / (order * 2.0)))));
-    qFactor(1) = 1.0 / (2.0 * cos(((stage + 1) * (ma.PI / order))));
-};
+// Order Aproximations filters - Outs
+LP1(CF, x) = x : LPTPT(CF);
+HP1(CF, x) = x : HPTPT(CF);
+LP2(CF, x) = x : LPTPT(CF) : LPTPT(CF);
+HP2(CF, x) = x : HPTPT(CF) : HPTPT(CF);
+LP3(CF, x) = x : LPTPT(CF) : LPTPT(CF) : LPTPT(CF);
+HP3(CF, x) = x : HPTPT(CF) : HPTPT(CF) : HPTPT(CF);
+LP4(CF, x) = x : LPTPT(CF) : LPTPT(CF) : LPTPT(CF) : LPTPT(CF);
+HP4(CF, x) = x : HPTPT(CF) : HPTPT(CF) : HPTPT(CF) : HPTPT(CF);
+LP5(CF, x) = x : LPTPT(CF) : LPTPT(CF) : LPTPT(CF) : LPTPT(CF) : LPTPT(CF);
+HP5(CF, x) = x : HPTPT(CF) : HPTPT(CF) : HPTPT(CF) : HPTPT(CF) : HPTPT(CF);
 
-LPButterworthN(1, cf, x) = LPTPT(cf, x);
-LPButterworthN(N, cf, x) = cascade(N % 2)
-with {
-    cascade(0) = x : seq(i, N / 2, LPSVF(butterworthQ(N, i), cf));
-    cascade(1) = x : LPTPT(cf) : seq(i, (N - 1) / 2,
-    LPSVF(butterworthQ(N, i), cf));
-};
-
-HPButterworthN(1, cf, x) = HPTPT(cf, x);
-HPButterworthN(N, cf, x) = cascade(N % 2)
-with {
-    cascade(0) = x : seq(i, N / 2, HPSVF(butterworthQ(N, i), cf));
-    cascade(1) = x : HPTPT(cf) : seq(i, (N - 1) /
-    2, HPSVF(butterworthQ(N, i), cf));
-};
-//process = HPButterworthN(10, -1000, no.noise), 
- // LPButterworthN(10, -1000, no.noise);
-
-//----------------------------------------------- GRANULAR SAMPLING ---
-grain(L, position, duration, x, trigger) = hann(phase) * 
-    buffer(readPtr, x)
+//-------------------------------------------------------- GRANULAR SAMPLING ---
+grain(L, position, duration, x, trigger) = hann(phase) * buffer(readPtr, x)
 with {
     maxLength = 1920000;
     length = L * ma.SR;
@@ -179,8 +416,8 @@ with {
         with {
             ready = ((yState == 0.0) | (yState == 1.0)) & trigger;
             y = ba.if(ready, increment, min(1.0, yState + increment));
-            increment = ba.if(ready, ma.T / 
-                max(ma.T, duration), incrementState);
+            increment = ba.if(ready, (1.0/ma.SR) / max((1.0/ma.SR), duration), 
+                incrementState);
         };
     };
     phase = lineSegment : _ , !;
@@ -205,15 +442,14 @@ with {
     with {
         init = 1 - 1';
         trigger = (phState < phState') + init;
-        incr = ba.if(trigger, rate * ma.T, incrState);
+        incr = ba.if(trigger, rate * (1.0/ma.SR), incrState);
         ph = ma.frac(incr + phState);
         counter = (trigger + counterState) % N;
     };
 };
 
-grainN(voices, L, position, rate, duration, x) = 
-    triggerArray(voices, rate) : 
-        par(i, voices, grain(L, position, duration, x));
+grainN(voices, L, position, rate, duration, x) = triggerArray(voices, rate) : 
+    par(i, voices, grain(L, position, duration, x));
 
 granular_sampling(var1, timeIndex, memWriteDel, cntrlLev, divDur, x) = 
     grainN(8, var1, position, rate, duration, x) :> /(8)
@@ -228,6 +464,382 @@ with {
     duration = grainDuration + grainDuration * .1 * rnd;
 };
 
+//----------------------------------------------------- INPUTS/OUTPUTS MIXER ---
+gainMic_1A =
+    si.smoo( ba.db2linear( vslider("SF_1A [unit:db]", 0, -80, 80, .001) ) ) <:
+        attach(_, VHmetersEnvelope(_) :vbargraph("1A [unit:dB]", -80, 20));
+gainMic_1B =   
+    si.smoo( ba.db2linear( vslider("SF_1B [unit:db]", 0, -80, 80, .001) ) ) <:
+        attach(_, VHmetersEnvelope(_) :vbargraph("1B [unit:dB]", -80, 20));
+gainMic_2A =
+    si.smoo( ba.db2linear( vslider("SF_2A [unit:db]", 0, -80, 80, .001) ) ) <:
+        attach(_, VHmetersEnvelope(_) :vbargraph("2A [unit:dB]", -80, 20));
+gainMic_3 =   
+    si.smoo( ba.db2linear( vslider("SF_3 [unit:db]", 0, -80, 80, .001) ) ) <:
+        attach(_, VHmetersEnvelope(_) :vbargraph("3 [unit:dB]", -80, 20));
+VHmetersEnvelope = abs : max ~ -(1.0/ma.SR) : 
+    max(ba.db2linear(-80)) : ba.linear2db;
+//---------------------------------------------------------------------
+\end{lstlisting}
+
+\subsection{RITIAutonomousNetworkfixedVersion(dot)dsp}
+
+\vspace{0.5cm}
+\begin{lstlisting}
+//---------------------------------------------------------------------
+// import faust standard library
+import("stdfaust.lib");
+// import audible ecosystemics objects library
+import("RITI.lib");
+
+
+// SYSTEM VARIABLES ----------------------------------------
+DelSecondsMax = 12;
+SystemSpaceVarOUT = 2.8713;
+SystemSpaceVarIN =  2.3132;
+BPFOrder = 1;
+BPFilters = 32;
+NetworkVoices = 4;
+InitDCBlockzero = 1;
+InitDCBlockpole = 0.995;
+InitX0 = 1.2;
+InitY0 = 1.3;
+InitZ0 = 1.6;
+
+// SYSTEM CONTROLS ----------------------------------------
+RoomInterfaceNetwork(Mic1, Mic2, Mic3, Mic4) = 
+hgroup( "RITI Mixer", 
+    hgroup( "Lorenz Equation Parameters[0]", Dtf, Betaf, Rhof, Sigmaf), 
+    hgroup( "Bandpass Filters Bank [1]", BPFilterBypassf, GlobalBPFrequenciesf, GlobalBPBWf, Interpolations1f, Interpolations2f), 
+    hgroup( "Amplificators [2]", Saturationf, LorenzFeedbackf, NetworkFeedbackf),
+    hgroup( "Input/Output [3]", ExternalInputGainf, OutputGainf, MicsOutputf)
+)
+with {
+    Dtf = (vslider("Dt", 0.62, 0, 1, .001)) : onepoletau(.5);
+    Sigmaf = (vslider("Sigma", 8.2, 0, 100, .001)) : onepoletau(.5);
+    Rhof = (vslider("Rho", 0.010, 0, .1, .001)) : onepoletau(.5);
+    Betaf = (vslider("Beta", 0.10, 0, 10, .001)) : onepoletau(.5);
+    BPFilterBypassf = (vslider("BP Bypass", 0, 0, .1, .001)) : onepoletau(.5);
+    GlobalBPFrequenciesf = (16 ^ vslider("Frequency", 0, -1, 1, .001)) : onepoletau(.5);
+    GlobalBPBWf = (vslider("Bandwidth", 1, 1, 100, .001)) : onepoletau(.5);
+    Interpolations1f = (vslider("Interpolations 1", 1, 0, 1, .001)) : onepoletau(.5);
+    Interpolations2f = (vslider("Interpolations 2", 1, 0, 1, .001)) : onepoletau(.5);
+    Saturationf = (vslider("Lorenz Tan", 0, 0, 10, .001)) : onepoletau(.5);
+    LorenzFeedbackf = (10 ^ vslider("Lorenz FB", 0, -1, 1, .001)) : onepoletau(.5); 
+    NetworkFeedbackf = (10 ^ vslider("Network FB", 0, -1, 1, .001)) : onepoletau(.5); 
+    OutputGainf = (vslider("Master", 0, 0, 1, .001)) : onepoletau(.5);
+    ExternalInputGainf = (vslider("External Sum", 0, 0, 100, .001)) : onepoletau(.5);
+    MicsOutputf = (Mic1, Mic2, Mic3, Mic4) :> _ / 4;
+};
+
+// MODIFIED LORENZ SYSTEM ----------------------------------------
+ModifiedLorenzSystem(x0, y0, z0, dt, beta, rho, sigma, bypassFilter, filterPartials, filterOrder, globalFreq, globalAmps, globalBW, interpolation1, interpolation2, saturation, dcBlockzero, dcBlockpole, internalFeedback, externalInput) = 
+externalInput : (ModifiedLorenzEquations ~ si.bus(3) : par(i, 3, /(saturation + 1)) :> _ / 3)
+    with {
+        x_init = x0-x0';    y_init = y0-y0';    z_init = z0-z0';
+
+        ModifiedLorenzEquations(x, y, z, external) = 
+            ( (( x + sigma * (y - x) * dt + x_init) * internalFeedback + external ) : dcblocker(dcBlockzero, dcBlockpole) : saturator(saturation + 1) : 
+            BandpassFiltersBank(bypassFilter, filterPartials, filterOrder, globalFreq, globalAmps, globalBW, interpolation1, interpolation2)), 
+
+            ( (( y + (rho * x - x * z - y) * dt + y_init) * internalFeedback + external ) : dcblocker(dcBlockzero, dcBlockpole) : saturator(saturation + 1) : 
+            BandpassFiltersBank(bypassFilter, filterPartials, filterOrder, globalFreq, globalAmps, globalBW, interpolation1, interpolation2)), 
+
+            ( (( z + (x * y - beta * z) * dt + z_init) * internalFeedback + external ) : dcblocker(dcBlockzero, dcBlockpole) : saturator(saturation + 1) : 
+            BandpassFiltersBank(bypassFilter, filterPartials, filterOrder, globalFreq, globalAmps, globalBW, interpolation1, interpolation2));
+    };
+
+// GLOBAL SYSTEM NETWORK ----------------------------------------
+GlobalSystemNetwork(dt, beta, rho, sigma, bpFilterBypass, globalBPFrequencies, globalBPBW, interpolations1, interpolations2, saturation, lorenzFeedback,
+networkFeedbackGain, externalInputGain, networkOutputGain, micsOutput) = ( loop ~ _ : (si.block(1), si.bus(NetworkVoices)) ) : 
+    par( i, NetworkVoices, _ : normalization(1) ) : par( i, NetworkVoices, _ * networkOutputGain )
+    with{
+        loop(networkFeedback) =  par(i,  NetworkVoices,
+                        ( 
+                            ((networkFeedback * networkFeedbackGain) + ( micsOutput * externalInputGain )) : timeVaryingDelay(SystemSpaceVarIN * (NetworkVoices - i), 0) : ModifiedLorenzSystem(InitX0, InitY0, InitZ0, dt, beta, rho, sigma, bpFilterBypass, BPFilters, BPFOrder, globalBPFrequencies, 1, globalBPBW, interpolations1, interpolations2, saturation, InitDCBlockzero, InitDCBlockpole, lorenzFeedback) : timeVaryingDelay(SystemSpaceVarOUT * (i + 1), 0) 
+                        )
+                    ) <: (si.bus(NetworkVoices) :> +/NetworkVoices), (si.bus(NetworkVoices));
+        };
+           
+              
+process = si.bus(8) :> si.bus(4) : RoomInterfaceNetwork : GlobalSystemNetwork;
+//---------------------------------------------------------------------
+\end{lstlisting}
+
+\subsection{RITI(dot)lib}
+
+\vspace{0.5cm}
+\begin{lstlisting}
+//---------------------------------------------------------------------
+// import faust standard library
+import("stdfaust.lib");
+// Import lists: Frequencies, Amps, Bandwidth
+import("Cello_D2.lib");
+
+
+//---------------------------------------------------------------- FUNCTIONS ---
+// Give a distance in meters - Delay time in samples in output
+meterstoSamps(Meters) =  ((1000 / 343.1) * Meters) * (ma.SR / 1000);
+ms2samp(t) = (t/1000) * ma.SR;
+sec2samp(t) = t * ma.SR;
+limit(maxl,minl,x) = x : max(minl, min(maxl));
+vmeter(i, minx, maxx, x) = attach(x, x: vbargraph("chan %i[2]", minx, maxx));
+hmeter(i, minx, maxx, x) = attach(x, x: hbargraph("chan %i[2]", minx, maxx));
+VHmetersEnvelope = abs : max ~ -(1.0/ma.SR) : 
+    max(ba.db2linear(-80)) : ba.linear2db;
+
+//------------------------------------------ CHAOTIC EQUATIONS CONSTRICTIONS ---
+saturator(lim, x) = lim * ma.tanh(x / (max(lim, ma.EPSILON)));
+
+dcblocker(zero, pole, x) = x : dcblockerout
+    with{
+        onezero =  _ <: _,mem : _,*(zero) : -;
+        onepole = + ~ * (pole);
+        dcblockerout = _ : onezero : onepole;
+    };
+
+timeVaryingDelay(delTime, fbGain, x) = loop ~ _ : mem
+with {  
+    loop(fb) = (fb * fbGain + x) : 
+        de.sdelay( ba.sec2samp(DelSecondsMax), 
+        1024, 
+        ba.sec2samp(delTime)-1 );
+    };
+
+//------------------------------------------------------------------ FILTERS ---
+// Zavalishin's SVF BP FILTER
+// optimized BP from the TPT version of the SVF Filter by Vadim Zavalishin
+// reference : (by Will Pirkle)
+// http://www.willpirkle.com/Downloads/AN-4VirtualAnalogFilters.2.0.pdf
+BPSVF(glin, bw, cf, x) = loop ~ si.bus(2) : (! , ! , _)
+    with {
+        g = tan(cf * ma.PI * (1.0/ma.SR));
+        Q = cf / max(ma.EPSILON, bw);
+        R = 1.0 / (Q + Q);
+        G = 1.0 / (1.0 + 2.0 * R * g + g * g);
+        loop(s1, s2) = u1 , u2 , bp * glin
+            with {
+                bp = (g * (x - s2) + s1) * G;
+                bp2 = bp + bp;
+                v2 = bp2 * g;
+                u1 = bp2 - s1;
+                u2 = v2 + s2;
+            };
+    };
+// Zavalishin's Onepole TPT Filter
+// reference : same of BPSVF
+onePoleTPT(cf, x) = loop ~ _ : ! , si.bus(3) // Outs: lp , hp , ap
+with {
+    g = tan(cf * ma.PI * (1.0/ma.SR));
+    G = g / (1.0 + g);
+    loop(s) = u , lp , hp , ap
+    with {
+        v = (x - s) * G; u = v + lp; lp = v + s; hp = x - lp; ap = lp - hp;
+    };
+};
+// Lowpass TPT
+LPTPT(cf, x) = onePoleTPT(cf, x) : (_ , ! , !);
+// Highpass TPT
+HPTPT(cf, x) = onePoleTPT(cf, x) : (! , _ , !);
+
+// Spectre BP Filter Banks
+BandpassFiltersBank(bypassFilter, filterPartials, filterOrder, globalFreq, globalAmps, globalBW, interpolation1, interpolation2, x) = x <: 
+    par(i, filterPartials, 
+        seq(r, filterOrder, 
+            BPSVF( 
+                AmplitudesListinterpolate(  (i + 1), interpolation1, interpolation2) * globalAmps, 
+                BandwidthsListinterpolate(  (i + 1), interpolation1, interpolation2) * globalBW, 
+                FrequenciesListinterpolate( (i + 1), interpolation1, interpolation2) * globalFreq
+            ) 
+        )
+    ):> (+ / filterPartials) * (1 - bypassFilter) + x * bypassFilter;
+
+onepoletau(tau, x) = fb ~ _ 
+with {  
+    fb(y) = (1.0 - s) * x + s * y; 
+    s = ba.tau2pole(tau);
+    };
+    
+//---------------------------------------------------------------- ANALIZERS ---
+peakHolder(holdTime, x) = loop ~ si.bus(2) : ! , _
+with {
+    loop(timerState, outState) = timer , output
+    with {
+        isNewPeak = abs(x) >= outState;
+        isTimeOut = timerState >= (holdTime * ma.SR - 1);
+        bypass = isNewPeak | isTimeOut;
+        timer = ba.if(bypass, 0, timerState + 1);
+        output = ba.if(bypass, abs(x), outState);
+    };
+};
+
+// RMS with indipendent attack and release time:
+// reference:
+// Udo Zölzer - Digital Audio Signal Processing Second Edition
+// reference :
+// https://fmipa.umri.ac.id/wp-content/uploads/2016/03/
+// Udo-Zolzer-digital-audio-signal-processing.9780470997857.40435.pdf
+RMS(att,rel,x) = loop ~ _ : sqrt
+with {
+    loop(y) = (1.0 - coeff) * x * x + coeff * y
+    with {
+        attCoeff = exp(-2.0 * ma.PI * (1.0/ma.SR) / att);
+        relCoeff = exp(-2.0 * ma.PI * (1.0/ma.SR) / rel);
+        coeff = ba.if(abs(x) > y, attCoeff, relCoeff);
+    };
+};
+
+// Moving Average RMS
+movingAverage(seconds, x) = x - (x @ N) : fi.pole(1.0) / N
+with {
+N = seconds * ma.SR;
+};
+RMSRectangular(seconds, x) = sqrt(max(0, movingAverage(seconds, x * x)));
+
+// Peak Envelope (envelope follower)
+// reference :
+// https://www.dariosanfilippo.com/blog/2017/
+// lookahead-limiting-in-pure-data/
+// reference :
+// https://www.cs.princeton.edu/courses/archive/spr05/cos579/DSP/DSP.html
+peakenvelope(t,x) = abs(x) <: loop ~ _ * rt60(t)
+with{
+    loop(y,z) = ( (y,z) : max);
+    rt60(t) = 0.001^((1/ma.SR)/t);
+};
+
+// peak-hold module with an exponential decay curve
+peakHoldwDecay(holdSeconds, frequencyCut, decayT60, x) = x : 
+    peakHolder(holdSeconds) : LPTPT(frequencyCut) : peakenvelope(decayT60);
+
+//------------------------------------------------------- LOOKAHEAD LIMITERS ---
+// reference :
+// https://www.dariosanfilippo.com/blog/2017/
+// lookahead-limiting-in-pure-data/
+// reference :
+// https://users.iem.at/zmoelnig/publications/limiter/
+// Peak normalization
+// reference :
+// https://www.hackaudio.com/digital-signal-processing/amplitude/peak-normalization/
+
+normalization(treshold, x) = treshold / ( x : peakHoldwDecay(.1, 500, 10) ) *
+    x @ (( 2/1000 ) * ma.SR);
+
+limitation(threshold, x) = ( x : peakHoldwDecay(.1, 500, 10) ) : 
+    ( threshold / max(ma.EPSILON, _) : min(1.0) ) *
+        ( x @ (ms2samp(1)));
+
+//------------------------------------------------------------- NONLINEARITY ---
+
+
+nonLinearity(exponent, refPeriod, y) = y : lowFreqNoise <: (nonlinearsig(exponent, ma.tanh(_ * normRMS)))
+with{
+    lowFreqNoise(x) = x : seq(i, 4, LPTPT(1.0 / refPeriod));
+    noiseRMS(x) = x * x : LPTPT(1.0 / (10.0 * refPeriod)) : sqrt;
+    normRMS(x) = 1.0 / max(ma.EPSILON, noiseRMS(x));
+    nonlinearsig(exponent, x) = ma.signum(x) * pow(abs(x), exponent);
+};
+//---------------------------------------------------------------------
+\end{lstlisting}
+
+\subsection{CelloD2(dot)lib}
+
+\vspace{0.5cm}
+\begin{lstlisting}
+//---------------------------------------------------------------------
+// import faust standard library
+import("stdfaust.lib");
+
+
+// INSTRUMENT SPECTRES --------------------------------------
+// FFT analysis
+
+Cello1_D2_frequencies = (
+368.0, 221.0, 147.0, 515.0, 736.0, 74.0, 589.0, 810.0, 883.0, 295.0, 442.0, 662.0, 1693.0, 956.0, 1030.0, 2282.0, 1914.0, 1546.0, 1104.0, 1472.0, 2356.0, 2503.0, 2135.0, 1251.0, 1398.0, 1325.0, 1178.0, 2061.0, 2429.0, 2209.0, 1619.0, 2572.0, 1840.0, 2655.0, 1766.0, 2865.0) ; 
+ 
+Cello1_D2_amplitudes = (
+1.0, 0.883508750371294, 0.6105272358722508, 0.25009984168236576, 0.2004373971446242, 0.19782531572463796, 0.15986608084324763, 0.15408867955329245, 0.15388399774271314, 0.12206611629626225, 0.07568694217870818, 0.0749419685950924, 0.04993743413946004, 0.04296305701601583, 0.03695324484801036, 0.035190168499954565, 0.034299901561064564, 0.027814420294695608, 0.025519908386620865, 0.025451275008886335, 0.024970356245165314, 0.02376619002590769, 0.02359690477324046, 0.02108580284017779, 0.020955020563014883, 0.02080994218773682, 0.020502590513884294, 0.019359564369447416, 0.01934635943322834, 0.018745547950376563, 0.014962909727368317, 0.011249397635411025, 0.00849049090994134, 0.0070851384197025405, 0.006322712098150642, 0.0062269201300692465) ; 
+ 
+Cello1_D2_bandwidths = (
+1.0
+) ; 
+
+
+Cello2_D2_frequencies = (
+129.0, 782.0, 260.0, 521.0, 391.0, 1042.0, 1949.0, 912.0, 1558.0, 2079.0, 651.0, 2351.0, 1699.0, 2221.0, 1433.0, 1819.0, 442.0, 1308.0, 1178.0, 569.0, 2481.0, 2275.0, 2861.0, 2532.0, 2403.0, 2991.0, 2600.0, 2142.0, 3116.0, 1753.0, 2667.0, 3377.0, 3637.0, 3446.0, 3523.0, 3268.0) ; 
+ 
+Cello2_D2_amplitudes = (
+1.0, 0.5539841329657997, 0.5527755241243919, 0.3798690322097816, 0.24385623120426272, 0.1858573818584144, 0.1718924484719696, 0.13549203046918346, 0.09550335625230665, 0.06326345700196957, 0.05721228382207657, 0.046121609704541516, 0.04311865463771355, 0.032964828166694375, 0.02880281110676074, 0.02747889262701017, 0.02513218851591026, 0.02498359541143432, 0.024351519031547093, 0.022320475851666407, 0.020022022408488896, 0.01947464397996532, 0.018274828098453825, 0.017151821615801758, 0.016455897816434754, 0.014466403589882717, 0.011927332037780307, 0.010669371414647293, 0.008807995446126208, 0.007513211416567189, 0.007349012756623662, 0.0044685740115062425, 0.004297015920414301, 0.004118966421804356, 0.003062546865966815, 0.002902563274463849) ; 
+ 
+Cello2_D2_bandwidths = (
+1.0
+) ;  
+
+
+Cello3_D2_frequencies = (
+98.0, 783.0, 294.0, 587.0, 685.0, 196.0, 489.0, 1566.0, 2055.0, 391.0, 1957.0, 1468.0, 881.0, 1076.0, 2153.0, 1664.0, 2544.0, 2349.0, 2251.0, 1370.0, 2446.0, 1272.0, 2642.0, 978.0, 2936.0, 1761.0, 1174.0, 3033.0, 2740.0, 3229.0, 832.0, 2838.0, 3327.0, 3621.0, 3717.0, 3816.0, 3425.0, 3523.0) ; 
+ 
+Cello3_D2_amplitudes = (
+1.0, 0.5246811846335828, 0.4012585768972376, 0.22942034106512663, 0.20079641370293627, 0.18876983281899867, 0.12502443350296757, 0.0933584257472202, 0.07841217109023603, 0.07786536078021235, 0.06732374792084482, 0.06398941035139119, 0.06048111263906231, 0.05915731723672648, 0.058731470170536024, 0.05118398937740636, 0.046391926665833076, 0.040066228067825026, 0.03988990722982784, 0.03345736827139034, 0.032867690289697674, 0.026159698256227056, 0.02450082955507741, 0.022720013057591623, 0.01673071239995854, 0.01386228359792361, 0.011125330538207747, 0.01045539895797359, 0.008912949330652495, 0.008614981571685254, 0.007903782014397535, 0.006904461116857643, 0.005737821129793645, 0.004468696578275683, 0.004458611785686046, 0.004255083332897215, 0.004082351498449864, 0.003974921717750587) ; 
+ 
+Cello3_D2_bandwidths = (
+1.0
+) ; 
+
+
+Cello4_D2_frequencies = (
+165.0, 247.0, 82.0, 412.0, 329.0, 576.0, 824.0, 906.0, 741.0, 494.0, 659.0, 1560.0, 1725.0, 1071.0, 1658.0, 2152.0, 1313.0, 994.0, 1488.0, 1807.0, 2564.0, 1905.0, 1230.0, 2296.0, 1972.0, 2214.0, 2070.0, 2399.0, 1395.0, 1153.0, 2950.0, 2873.0, 2708.0) ; 
+ 
+Cello4_D2_amplitudes = (
+1.0, 0.40463907988091696, 0.24305538012575184, 0.09564215197843938, 0.07882101859578412, 0.07272871966988338, 0.06616610763986651, 0.05372820415795432, 0.03670485927598048, 0.027388497371127554, 0.021635361017390872, 0.010607924019265583, 0.009233410589260653, 0.008987446999479275, 0.008735131399976701, 0.007861982586356843, 0.007105490361846338, 0.006690209866887384, 0.005720588228210853, 0.005655438992297758, 0.00564938401160071, 0.0054292290841770575, 0.00528525120649931, 0.0051118414293123745, 0.004984368543658675, 0.004299506779823275, 0.004149143995148571, 0.003924111275742912, 0.003601811817177141, 0.002426805651034355, 0.001983449226846196, 0.0017614827121850407, 0.0015088640939487819) ; 
+ 
+Cello4_D2_bandwidths = (
+1.0
+) ; 
+
+// INSTRUMENT SPECTRES --------------------------------------
+// index of the lists
+
+FrequenciesListCH1(index) = ba.take(index, Cello1_D2_frequencies) ;
+AmplitudesListCH1(index) = ba.take(index, Cello1_D2_amplitudes)  ;
+BandwidthsListCH1(index) = ba.take(1,     Cello1_D2_bandwidths)  ;
+
+FrequenciesListCH2(index) = ba.take(index, Cello2_D2_frequencies) ;
+AmplitudesListCH2(index) = ba.take(index, Cello2_D2_amplitudes)  ;
+BandwidthsListCH2(index) = ba.take(1,     Cello2_D2_bandwidths)  ;
+
+FrequenciesListCH3(index) = ba.take(index, Cello3_D2_frequencies) ;
+AmplitudesListCH3(index) = ba.take(index, Cello3_D2_amplitudes)  ;
+BandwidthsListCH3(index) = ba.take(1,     Cello3_D2_bandwidths)  ;
+
+FrequenciesListCH4(index) = ba.take(index, Cello4_D2_frequencies) ;
+AmplitudesListCH4(index) = ba.take(index, Cello4_D2_amplitudes)  ;
+BandwidthsListCH4(index) = ba.take(1,     Cello4_D2_bandwidths)  ;
+
+// INSTRUMENT SPECTRES --------------------------------------
+// interpolations
+
+// linear interpolation
+linInterpolate(x0, x1, delta) = x0 + delta * (x1-x0);
+siglinInterpol(order, x) = x : seq(r, order, interpolate)
+with{
+    interpolate(y) = y + .5 * (y' - y);
+};
+
+// bilinear interpolation
+bilinInterpolate(x0, x1, x0b, x1b, dt1, dt2) = 
+    linInterpolate(
+        linInterpolate(x0, x1, dt1), 
+        linInterpolate(x0b, x1b, dt1),
+        dt2)
+    with{
+        linInterpolate(x0, x1, delta) = x0 + delta * (x1-x0);
+    };
+
+// lists interpolations
+FrequenciesListinterpolate(index, dt1, dt2) = bilinInterpolate(FrequenciesListCH1(index), FrequenciesListCH2(index), FrequenciesListCH3(index), FrequenciesListCH4(index), dt1, dt2);
+AmplitudesListinterpolate(index, dt1, dt2) = bilinInterpolate(AmplitudesListCH1(index), AmplitudesListCH2(index), AmplitudesListCH3(index), AmplitudesListCH4(index), dt1, dt2);
+BandwidthsListinterpolate(index, dt1, dt2) = bilinInterpolate(BandwidthsListCH1(index), BandwidthsListCH2(index), BandwidthsListCH3(index), BandwidthsListCH4(index), dt1, dt2);
 //---------------------------------------------------------------------
 \end{lstlisting}
 

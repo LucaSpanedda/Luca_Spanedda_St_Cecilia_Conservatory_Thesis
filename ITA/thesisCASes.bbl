@@ -445,6 +445,55 @@
       \field{pages}{10}
       \range{pages}{1}
     \endentry
+    \entry{sanfilippo_time-domain_2021}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
+           family={Sanfilippo},
+           familyi={S\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{bibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract In this paper, we present a set of time-domain algorithms for the low- and high-level analysis of audio streams. These include spectral centroid, noisiness, and spectral spread for the low level, and dynamicity, heterogeneity, and complexity for the high level. The low-level algorithms provide a continuous measure of the features and can operate with short analysis frames. The high-level algorithms, on the other hand, are original designs informed both perceptually and by complexity theory for the analysis of musically meaningful information, both in short sounds or articulated streams with long-term nontrivial variations. These algorithms are suitable for the implementation of real-time audio analysis in diverse live performance setups that require the extraction of information from several streams at the same time. For example, the low-level algorithms can be deployed in large audio networks of adaptive agents, or in small-to-large ensembles for the analysis of various characteristics of the instruments for computer-assisted performance. Furthermore, the high-level algorithms can be implemented as part of fitness functions in music systems based on evolutionary algorithms that follow musically-informed criteria, or as analysis tools to assess the quality of some of the characteristics of a musical output. Musical applications of these algorithms can be found in a companion paper in this issue of Computer Music Journal: “Complex Adaptation in Audio Feedback Networks for the Synthesis of Music and Sounds.”}
+      \field{issn}{0148-9267, 1531-5169}
+      \field{journaltitle}{Computer Music Journal}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{Time-{Domain} {Adaptive} {Algorithms} for {Low}- and {High}-{Level} {Audio} {Information} {Processing}}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{volume}{45}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{24\bibrangedash 38}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1162/comj_a_00592
+      \endverb
+      \verb{file}
+      \verb Sanfilippo - 2021 - Time-Domain Adaptive Algorithms for Low- and High-.pdf:files/114/Sanfilippo - 2021 - Time-Domain Adaptive Algorithms for Low- and High-.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/comj/article/45/1/24/110389/Time-Domain-Adaptive-Algorithms-for-Low-and-High
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/comj/article/45/1/24/110389/Time-Domain-Adaptive-Algorithms-for-Low-and-High
+      \endverb
+    \endentry
     \entry{sanfilippo_time-variant_2018}{article}{}
       \name{author}{1}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
@@ -462,6 +511,7 @@
       \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}

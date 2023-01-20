@@ -5,9 +5,14 @@
 \contentsline {section}{\numberline {2}Ecosistemi Udibili}{16}{}%
 \contentsline {subsection}{\numberline {2.1}L'interazione Uomo-Macchina-Ambiente}{18}{}%
 \contentsline {subsection}{\numberline {2.2}Il Meccanismo LAR}{19}{}%
-\contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{30}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{41}{}%
-\contentsline {section}{\numberline {4}La Composizione di RITI : un sistema caotico ibrido}{44}{}%
-\contentsline {section}{\numberline {A}First appendix}{45}{}%
-\contentsline {subsection}{\numberline {A.1}aelibrary.lib}{45}{}%
-\contentsline {section}{\numberline {B}Second appendix}{52}{}%
+\contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{31}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{42}{}%
+\contentsline {subsection}{\numberline {3.1}Audio Information Processing}{44}{}%
+\contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{47}{}%
+\contentsline {section}{\numberline {A}First appendix}{48}{}%
+\contentsline {subsection}{\numberline {A.1}AudibleEcosystemics2(dot)dsp}{48}{}%
+\contentsline {subsection}{\numberline {A.2}aelibrary(dot)lib}{56}{}%
+\contentsline {subsection}{\numberline {A.3}RITIAutonomousNetworkfixedVersion(dot)dsp}{62}{}%
+\contentsline {subsection}{\numberline {A.4}RITI(dot)lib}{66}{}%
+\contentsline {subsection}{\numberline {A.5}CelloD2(dot)lib}{71}{}%
+\contentsline {section}{\numberline {B}Second appendix}{76}{}%
