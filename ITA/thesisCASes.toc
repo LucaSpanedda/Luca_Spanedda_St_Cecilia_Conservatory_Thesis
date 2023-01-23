@@ -8,11 +8,11 @@
 \contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{31}{}%
 \contentsline {section}{\numberline {3}Sistemi Autonomi}{42}{}%
 \contentsline {subsection}{\numberline {3.1}Audio Information Processing}{44}{}%
-\contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{47}{}%
-\contentsline {section}{\numberline {A}First appendix}{48}{}%
-\contentsline {subsection}{\numberline {A.1}AudibleEcosystemics2(dot)dsp}{48}{}%
-\contentsline {subsection}{\numberline {A.2}aelibrary(dot)lib}{56}{}%
-\contentsline {subsection}{\numberline {A.3}RITIAutonomousNetworkfixedVersion(dot)dsp}{62}{}%
-\contentsline {subsection}{\numberline {A.4}RITI(dot)lib}{66}{}%
-\contentsline {subsection}{\numberline {A.5}CelloD2(dot)lib}{71}{}%
-\contentsline {section}{\numberline {B}Second appendix}{76}{}%
+\contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{49}{}%
+\contentsline {section}{\numberline {A}First appendix}{50}{}%
+\contentsline {subsection}{\numberline {A.1}AudibleEcosystemics2(dot)dsp}{50}{}%
+\contentsline {subsection}{\numberline {A.2}aelibrary(dot)lib}{58}{}%
+\contentsline {subsection}{\numberline {A.3}RITIAutonomousNetworkfixedVersion(dot)dsp}{64}{}%
+\contentsline {subsection}{\numberline {A.4}RITI(dot)lib}{68}{}%
+\contentsline {subsection}{\numberline {A.5}CelloD2(dot)lib}{73}{}%
+\contentsline {section}{\numberline {B}Second appendix}{78}{}%

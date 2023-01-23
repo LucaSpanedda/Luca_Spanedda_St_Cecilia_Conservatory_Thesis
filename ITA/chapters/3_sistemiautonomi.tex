@@ -95,22 +95,101 @@ Come già accennato nello scorso capitolo, l'\textit{Audio Information Processin
 ovvero la capacità di un sistema di elaborare le informazioni
 tremite la \textit{feature extraction}, è un dato fondamentale nella creazione 
 di un CAS, che ne determina le sue capacità "congitive" e di auto-osservazione
-rispetto all'ambiente. L'uso creativo dei CASes in Musica,
+rispetto all'ambiente. 
+L'uso creativo dei CASes in Musica,
 e la loro stretta connessione con l'informazione,
-ha favorito lo sviluppo di techniche algoritmiche per \textit{Audio Information Processing} 
-e l'analisi di comportamenti ad alto e basso livello.
-Alcuni primi alcuni esempi storici sono ad esempio le performance 
-in Live Electronics di Gordon Mumma, 
-come ad esempio “Diastasis, as in Beer” (1966), e "Hornpipe" (1967), 
+ha favorito lo sviluppo di techniche algoritmiche per l'\textit{Audio Information Processing} 
+e l'analisi di comportamenti, sia ad alto e basso livello.
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{The low-level algorithms provide a continuous measure of the features and can operate
+with short analysis frames. The high-level algorithms, on the other hand, are original designs informed both perceptually
+and by complexity theory for the analysis of musically meaningful information, both in short sounds or articulated
+streams with long-term nontrivial variations.}\footcite{sanfilippo_time-domain_2021}
+\vspace{0.5cm}
+\end{center}
+
+Alcuni primi esempi storici,
+sono ad esempio le performance in Live Electronics di Gordon Mumma, 
+come“Diastasis, as in Beer” (1966), e "Hornpipe" (1967), 
 dove vengono implementate techniche di amplitude following utilizzate 
 poi per pilotare parametri nelle unità di generazione del suono.\footcite{sanfilippo_time-domain_2021}
+Arrivando fino ai sistemi di Agostino Di Scipio, che nello studio del suo
+Feedback Study ci ha dato modo di approfondire e scoprire
+tutti quei meccanismi e tutte quelle particolari funzioni che hanno la responsabilità
+di generare segnali di controllo nei suoi sistemi. \\
+Dario Sanfilippo ha discusso in più articoli l'utilizzo dell'\textit{Information Processing} 
+nei CASes, sia in senso generale\footcite{sanfilippo_time-domain_2021}, 
+parlando di implementazioni più tipiche come: 
+centroide spettrale, rumorosità, diffusione spettrale a basso livello, eterogeneità e
+complessità per l'alto livello.
+Che come in questo caso nell'utilizzo specifico di queste tecniche 
+in un suo sistema:
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{These signals, often based on
+    their perceptual characteristics and their relationship with the domains of the variables
+    in the processing units, are mapped to certain ranges and then used to control the state
+    of the components in a large network. (See Di Scipio (2003) for a detailed discussion
+    on this method). Using infrasonic signals to pilot these variables is highly desirable if
+    not necessary, for high-rate, sudden changes in the DSP parameters would produce an
+    output with a continuously large and homogeneous spectral band, so it would not be
+    possible to perceive the state variations in the long-term.
+    The information and audio processing algorithms implemented, the specific con-
+    nections between the control signals and the variables, the linear and nonlinear map-
+    ping strategies used as well as the network topologies, all these elements determine the
+    infrastructure of a system. In a large network, these elements can already provide a high
+    number of configurations and an even larger number of possible states that a system
+    can reach. That, theoretically, could be considered as something that guarantees a good
+    variety and complexity in the long-term behaviour of a system, albeit the practical case
+    tends to be much different from the ideal scenario.}\footcite{sanfilippo_time-variant_2018}
+    \vspace{0.5cm}
+\end{center}
+
+Nel suo articolo su Order From Noise, Sanfilippo discute tutte le unità utilizzate
+nel suo sistema e il loro ruolo all'interno della rete.
+Partendo dalla descrizione di queste nell'articolo, tratterò ora una parte più operativa 
+implementando queste tecniche nel linguaggio di programmazione FAUST (Grame), 
+con un particolare Focus a tutte quelle \textit{feature extraction}
+che nell'implementazione della rete permettono al sistema 
+(nonostante questo sia chiuso rispetto all'ambiente esterno) 
+di mantenersi in uno stato "emergente" manifestando comportamenti nuovi,
+e di "stabilità", rimanendo sempre in dei range controllati tramite feedback positivi e negativi.\\
+La rete di Order From Noise ha sei nodi, ognuno dei quali contiene due unità in cascata, 
+contenenti i seguenti algoritmi di elaborazione audio: 
+\textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
+ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.}
+
+\begin{center}
+    \includegraphics[width=12cm]{figures/OFNnetwork.pdf} \\
+    {Schema della rete di Order From Noise} \\ 
+    \end{center}
+
+A parte le unità di elaborazione del suono,
+in questo sistema,l'\textit{Information Processing} utilizzato per generare i 
+segnali di controllo è diverso
+dalle implementazioni tipiche riportate precedentemente nel corso di questa tesi;
+piuttosto che calcolare \textit{feature extraction} come l'RMS, la diffusione spettale, ecc. 
+Dario Sanfilippo utilizza in questo sistema una sorta di Low Frequency Oscillator
+non lineare dipendente dal segnale in ingresso.
+Questo comportamento viene ottenuto utilizzando un filtro Lowpass per far 
+passare solo le componenti energetiche di un segnale sotto la soglia di 1Hz,
+come ad esempio segnali a 0,01Hz, il segnale risultante viene poi processato
+tramite normalizzazione dinamica per essere riportato ad una soglia in ampiezza
+in un range fra [-1; 1],
+viene elevato a una potenza relativamente grande per forzarlo intorno a 0,
+ed infine utilizzato per pilotare la frequenza di un fasore.\\
 
 
-\begin{center} \vspace{0.5cm} \Huge - Da Continuare - \normalsize \vspace{0.5cm} \end{center}
+- algoritmo
+
 
 Lookahead Limiters per la stabilità delle Feedback Network:
 In Order From Noise Dario Sanfilippo utilizza un unità per raggiungere la stabilità
 globale della rete chiamata Lookahead Limiter.
+
 << My original design was based on two side-chained amplitude curves: 
 a fast one for attack transients and one for sustained sounds, which had 
 to be slow enough as to avoid intermodulation distortion. The fast curve 
