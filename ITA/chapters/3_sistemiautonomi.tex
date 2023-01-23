@@ -29,7 +29,7 @@ di reti di feedback audio complesse. \\
 La modalità con cui andrò a discutere in questo capitolo la composizione di questi
 sistemi autonomi, appartenenti anche questi alla più vasta categoria dei CASes (Complex Adaptive Systems), 
 è ponendo un focus su un particolare lavoro di Dario Sanfilippo, Order From Noise \textit{(Homage to Heinz Von Foerster)}. \\
-Order From Noise \textit{(Homage to Heinz Von Foerster)} è un progetto che implementa uno 
+Order From Noise è un progetto che implementa uno 
 dei primi prototipi di Dario Sanfilippo basati sull'idea dell'\textit{adattattività dinamica}. 
 Questo lavoro del compositore si basa sull'idea che i sistemi adattivi complessi, 
 che sono emergenti per definizione, siano essenziali per raggiungere innovazioni formali, 
@@ -74,11 +74,11 @@ Rispetto al sistema discusso nel capitolo precedente,
 come già accennato c'è una sostanziale differenza nel concetto di spazio
 o ambiente del sistema. 
 Come appena detto, Order From Noise è basato su una \textit{feedback delay network} 
-tempo-variante, vuole dire che ci ritroviamo di fronte ad un un sistema il cui
-funzionamento cambia nel tempo, a differenza dei sistemi tempo-invarianti
+tempo-variante, vale a dire che ci ritroviamo di fronte ad un un sistema il cui
+funzionamento stesso cambia nel tempo, a differenza dei sistemi tempo-invarianti
 dove seppur l'output del sistema può cambiare nel tempo, 
 il loro funzionamento e l'ambiente che contiene il sistema rimane inalterato.
-In parole semplici lo spazio del sistema in Order From Noise può variare nel tempo,
+In parole semplici: lo spazio del sistema in Order From Noise può variare nel tempo
 rendendo imprevedibile il suo funzionamento a partire da una determinata condizione 
 iniziale.
 Per questo motivo il performer non avrà un grande margine di prevedibilità 
@@ -137,9 +137,9 @@ in un suo sistema:
     not necessary, for high-rate, sudden changes in the DSP parameters would produce an
     output with a continuously large and homogeneous spectral band, so it would not be
     possible to perceive the state variations in the long-term.
-    The information and audio processing algorithms implemented, the specific con-
-    nections between the control signals and the variables, the linear and nonlinear map-
-    ping strategies used as well as the network topologies, all these elements determine the
+    The information and audio processing algorithms implemented, the specific connections 
+    between the control signals and the variables, the linear and nonlinear mapping strategies 
+    used as well as the network topologies, all these elements determine the
     infrastructure of a system. In a large network, these elements can already provide a high
     number of configurations and an even larger number of possible states that a system
     can reach. That, theoretically, could be considered as something that guarantees a good
@@ -156,7 +156,7 @@ con un particolare Focus a tutte quelle \textit{feature extraction}
 che nell'implementazione della rete permettono al sistema 
 (nonostante questo sia chiuso rispetto all'ambiente esterno) 
 di mantenersi in uno stato "emergente" manifestando comportamenti nuovi,
-e di "stabilità", rimanendo sempre in dei range controllati tramite feedback positivi e negativi.\\
+e di "stabilità" rimanendo sempre in dei range controllati tramite feedback positivi e negativi.\\
 La rete di Order From Noise ha sei nodi, ognuno dei quali contiene due unità in cascata, 
 contenenti i seguenti algoritmi di elaborazione audio: 
 \textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
@@ -182,9 +182,11 @@ in un range fra [-1; 1],
 viene elevato a una potenza relativamente grande per forzarlo intorno a 0,
 ed infine utilizzato per pilotare la frequenza di un fasore.\\
 
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={non linearità in Order From Noise}]
+{codes/OFNnonLinearity.dsp}
 
-- algoritmo
-
+\begin{center} \vspace{0.5cm} \Huge - Da Continuare - \normalsize \vspace{0.5cm} \end{center}
 
 Lookahead Limiters per la stabilità delle Feedback Network:
 In Order From Noise Dario Sanfilippo utilizza un unità per raggiungere la stabilità

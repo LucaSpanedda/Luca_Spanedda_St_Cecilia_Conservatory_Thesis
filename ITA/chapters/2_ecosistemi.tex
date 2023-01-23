@@ -25,8 +25,8 @@ Non è un caso che molti compositori nel corso del XX Secolo, siano passati non 
 i sistemi stessi con cui fare la propria musica, ma al comporne anche le interazioni.
 Si pensi ai sistemi formalizzati come partiture da Iannis Xenakis, John Cage, o Roland Kayn,
 arrivando fino alle partiture comportamentali come quelle di Domenico Guaccero e 
-in generale del contesto della Roma del dopoguerra, arrivando fino ai lavori di 
-Karlheinz Stockhausen.
+in generale del contesto della Roma del dopoguerra, per concludere con lavori di 
+Karlheinz Stockhausen come Plus-Minus, dove i processi sono udibili.
 Tornando al tema principale, come accennato nell'abstract, 
 le interazioni che ho ritenuto importante affrontare 
 all'interno dei sistemi creati dai compositori cibernetici sono di due tipi:
@@ -54,8 +54,8 @@ trovano fondamento a partire da fenomeni e relazioni che possono esistere e mani
 circostante da cui prende vita il sistema, 
 che nel suo caso diventa proprio lo spazio acustico reale. 
 Lavori come lo studio sul Feedback, lo studio sul rumore di fondo, lo studio sulle risposte all'impulso, o
-lo studio sul silenzio, sono nella loro essenza dei sistemi che hanno come seme 
-della loro morfogenesi un determinato 
+lo studio sul silenzio, sono nella loro essenza dei sistemi che hanno come principio 
+nella loro morfogenesi, un determinato 
 comportamento appartenente allo spazio acustico reale, delimitato in questi studi da una stanza
 che ne racchiude al suo interno tutti gli agenti e le relazioni possibili,
 per costruirne una storia di relazioni dove il sistema si osserva attraverso lo spazio fisico, 
@@ -155,10 +155,8 @@ pick-up di uno strumento musicale elettrico, come una chitarra o un basso, o un 
 altra natura... 
 Esistono anche principi di Feedback acustico oltre che elettroacustico, 
 come la risonanza acustica o la risonanza per simpatia,
-che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali,
-ma doverose annotazioni a parte, non ne entrerò in questa sede nel merito del Feedback acustico
-ma di quello elettroacustico.
-Tornando dunque all'articolo di Agostino Di Scipio:
+che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali.
+Tornando quindi all'articolo di Agostino Di Scipio:
 
 \begin{center}
 \vspace{0.5cm}
@@ -196,13 +194,14 @@ Nel contesto di una performance di Live Electronics, viene chiamata col nome di
 tanto più un sistema è in grado di raccogliere informazioni riguardo
 il suo stato e il suo rapporto con l'ambiente, tanto più sarà in grado di
 processare "congitivamente" tramite l'informazione il suo prodotto. \\
-Rimandando al prossimo capitolo approfondimenti riguardo il tema 
+Rimandando al prossimo capitolo approfondimenti più dettagliati riguardo il tema 
 dell'\textit{Audio Information Processing}, mi fermerò per il momento a discutere 
-nel dettaglio il singolo meccanismo di controbilanciamento del guadagno
-del fenomeno di Feedback elettroacustico, che è chiamato da Agostino Di Scipio col nome di 
+nel dettaglio alcuni fondamentali meccanismi presi da questo brano che sono paradigmatici,
+come il singolo meccanismo di controbilanciamento del guadagno
+del fenomeno di Feedback elettroacustico, che viene chiamato da Agostino Di Scipio col nome di 
 LAR: \textit{Audio Feedback with Self-regulated Gain},
 e che può essere implementato in DSP in diverse modalità e configurazioni,
-ognuna con le sue diverse caratteristiche ed esiti. \\
+ognuna con le sue diverse caratteristiche e che porta a differenti esiti. \\
 
 \begin{center}
 \vspace{0.25cm}
@@ -249,46 +248,25 @@ il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingr
 in retroiniezione alla funzione stessa di comparazione, 
 in questo modo si sfrutta un principio di Feedback per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
-\clearpage 
 
-\vspace{0.5cm}
-\begin{lstlisting}
-// import faust standard library
-import("stdfaust.lib");
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Peakholder} ad 1 campione di ritardo}]
+{codes/PeakholderIIR.dsp}
 
-// Peak Max with IIR filter and max comparison
-peakmax = loop
-    with{
-        loop(x) = \(y).((y , abs(x)) : max) ~ _ ;
-    };
-    
-process = _ : peakmax;
-\end{lstlisting}
-
-\begin{lstlisting}
-// import faust standard library
-import("stdfaust.lib");
-        
-// LAR with Peak Max - IIR filter and max comparison
-peakmax = loop
-with{
-    loop(x) = \(y).((y , abs(x)) : max)~_;
-};
-        
-LARpeakmax = _ <: (_ * (1 - (_ : peakmax)));
-process = _ : LARpeakmax;
-\end{lstlisting}
-
-\begin{center}
-    \includegraphics[width=12cm]{figures/LARpeakmax.pdf} \\
-    {Algoritmo e Schema del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
-\end{center}
-\vspace{0.5cm}
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del LAR con \textit{Peakholder} ad 1 campione di ritardo}]
+{codes/LARpeakmax.dsp}
 
 \begin{center}
     \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
-    {Algoritmo e Schema del \textit{Peakholder} ad 1 campione di ritardo} \\ 
+    {Topologia del \textit{Peakholder} ad 1 campione di ritardo} \\ 
     \end{center}
+
+\begin{center}
+    \includegraphics[width=12cm]{figures/LARpeakmax.pdf} \\
+    {Topologia del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
+\end{center}
+\vspace{0.5cm}
 
 Questo tipo di algoritmo presenta comunque alcuni problemi: non avendo
 una funzione di smoothing del segnale, si verificano problemi di segnali di differenza a banda
@@ -351,131 +329,36 @@ viene richiesto come segue:
 \end{center}
 
 dove sostanzialmente, viene calcolato il valore assoluto di una specifica finestra temporale. 
-Viene indicato all'esecutore di poter utilizzare diversi metodi per poter calcolare il valore, come ad esempio l'RMS, 
+A seguito una implementazione di questo tipo di algoritmo, dove \textit{fi.pole} è 
+un semplice onepole filter nella forma: \(y(n) = x(n) + py(n-1)\) e \textit{ma.SR} 
+una costante che rappresenta la frequenza di campionamento.
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo d'integrazione a media mobile}]
+{codes/MovingAverage.dsp}
+
+In partitura viene indicato all'esecutore di poter utilizzare diversi metodi 
+per poter calcolare il valore desiderato, come ad esempio l'RMS, 
 tuttavia da analisi dirette secondo l'implementazione del compositore del sistema sul 
-linguaggio di programmazione proprietario KYMA, i filtri utilizzati risultano essere di tipo IIR,
+sistema hardware-software KYMA con il suo linguaggio di programmazione dedicato, 
+i filtri utilizzati risultano essere di tipo IIR,
 così da avere nella sostanza una risposta più lenta rispetto ad altre implementazioni come ad esempio 
 quella del calcolo a media mobile.  
 La risposta del filtro nell'implementazione originale è di tipo \textit{tau} 
 e l'inviluppo è assoluto. \\
+Se si desidera utilizzare questo tipo d'implementazione, nella libreria di Faust 
+è possibile trovarla nell'oggetto \verb|an.abs_envelope_tau|.
 Nella loro interezza i meccanismi di cntrlMic1 e cntrlMic2, e la conseguente
 attenuazione del segnale diretto provenente da mic1 e mic2 
-possono essere dunque implementati in Faust come segue:
-\clearpage 
+possono essere quindi implementati in Faust come segue:
 
-\vspace{0.5cm}
-\begin{lstlisting}
-    // import faust standard library
-    import("stdfaust.lib");
-    
-    LARmechanismAE2(mic1, mic2) = sig1, sig2
-    with{
-        Mic_1B_1 = hgroup("Mixer", hgroup("Signal Flow 1B", 
-            gainMic_1B_1(mic1)));
-        Mic_1B_2 = hgroup("Mixer", hgroup("Signal Flow 1B", 
-            gainMic_1B_2(mic2)));
-    
-        // cntrlMic - original version
-        cntrlMic(x) = x : HP1(50) : LP1(6000) : 
-            integrator(.01) : delayfb(.01, .995) : LP5(.5);
-        cntrlMic1 = Mic_1B_1 : cntrlMic;
-        cntrlMic2 = Mic_1B_2 : cntrlMic;
-    
-        // from Signal Flow 2a
-        Mic_2A_1 = hgroup("Mixer", hgroup("Signal Flow 2A", 
-            gainMic_2A_1(mic1)));
-        Mic_2A_2 = hgroup("Mixer", hgroup("Signal Flow 2A", 
-            gainMic_2A_2(mic2)));
-        micIN1 = Mic_2A_1 : HP1(50) : LP1(6000) * 
-            (1 - cntrlMic1);
-        micIN2 = Mic_2A_2 : HP1(50) : LP1(6000) * 
-            (1 - cntrlMic2);
-        // in the full system this this is a secondary counterbalance
-        directLevel = 1;
-        sig1 = micIN1 * directLevel;
-        sig2 = micIN2 * directLevel;
-    };
-    
-    process = LARmechanismAE2;
-    
-    
-    //------- ------------- ----- -----------
-    //-- LIBRARY ----------------------------------------------------------
-    //------- --------
-    // selected objects from "aelibrary.lib"
-    
-    //-------------------------------------------------------- UTILITIES --
-    // limit function for library and system
-    limit(maxl,minl,x) = x : max(minl, min(maxl));
-    
-    //---------------------------------------------------------- FILTERS --
-    onePoleTPT(cf, x) = loop ~ _ : ! , si.bus(3)
-    with {
-        g = tan(cf * ma.PI * (1/ma.SR));
-        G = g / (1.0 + g);
-        loop(s) = u , lp , hp , ap
-        with {
-            v = (x - s) * G;
-            u = v + lp;
-            lp = v + s;
-            hp = x - lp;
-            ap = lp - hp;
-        };
-    };
-    
-    LPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (_, !, !);
-    HPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (!, _, !);
-    
-    // Order Aproximations filters - Outs
-    LP1(CF, x) = x :LPTPT(CF);
-    HP1(CF, x) = x :HPTPT(CF);
-    LP2(CF, x) = x :LPTPT(CF) :LPTPT(CF);
-    HP2(CF, x) = x :HPTPT(CF) :HPTPT(CF);
-    LP3(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
-    HP3(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
-    LP4(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
-    HP4(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
-    LP5(CF, x) = x :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF) :LPTPT(CF);
-    HP5(CF, x) = x :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF) :HPTPT(CF);
-    
-    //------------------------------------------------------- INTEGRATOR --
-    integrator(sec, x) = an.abs_envelope_tau(limit(1000,.001, sec), x);
-    
-    //----------------------------------------------------------- DELAYS --
-    delayfb(delSec,fb,x) = loop ~ _ : mem
-    with{ 
-        loop(z) = ( (z * fb + x) @(ba.sec2samp(delSec)-1) );
-    };
-    
-    //--------------------------------------------- INPUTS/OUTPUTS MIXER --
-    gainMic_1B_1(x) = x *    
-        si.smoo( ba.db2linear(
-                vslider("SF_1B_1 [unit:db]", 0, -80, 80, .001) ) ) <:
-                    attach(_, VHmetersEnvelope(_) :
-                        vbargraph("VM1B1 [unit:dB]", -80, 80));
-    gainMic_1B_2(x) = x * 
-        si.smoo( ba.db2linear(
-                vslider("SF_1B_2 [unit:db]", 0, -80, 80, .001) ) ) <:
-                    attach(_, VHmetersEnvelope(_) :
-                        vbargraph("VM1B2 [unit:dB]", -80, 80));
-    gainMic_2A_1(x) = x * 
-        si.smoo( ba.db2linear(
-                vslider("SF_2A_1 [unit:db]", 0, -80, 80, .001) ) ) <:
-                    attach(_, VHmetersEnvelope(_) :
-                        vbargraph("VM2A1 [unit:dB]", -80, 80));
-    gainMic_2A_2(x) = x * 
-        si.smoo( ba.db2linear(
-                vslider("SF_2A_2 [unit:db]", 0, -80, 80, .001) ) ) <:
-                    attach(_, VHmetersEnvelope(_) :
-                        vbargraph("VM2A2 [unit:dB]", -80, 80));
-    
-    VHmetersEnvelope = abs : max ~ -(1.0/ma.SR) : 
-        max(ba.db2linear(-70)) : ba.linear2db;
-\end{lstlisting}
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo LAR nel Feedback Study}]
+{codes/soloLAR_Audible_Ecosystemics_2.dsp}
 
 Gli algoritmi degli oggetti richiamati in questa implementazione sono 
 provenienti dalla libreria scritta per questo brano.
-(sono stati riportati qui alcuni oggetti della libreria per rendere compilabile
+(sono stati riportati qui solo alcuni oggetti della libreria, per rendere eseguibile
 il codice appena scritto)
 Questo codice, che rappresenta il cuore del sistema,
 permette grazie al meccanismo adattivo una condizione favorevole
@@ -493,7 +376,7 @@ Il suono proveniente dal meccanismo LAR appena discusso nella precedente sezione
 passa per una serie di elaborazioni numeriche del segnale prima di essere restituito
 e diffuso dagli altoparlanti nello spazio acustico reale. Queste elaborazioni
 che vengono poi nuovamente intercettate dal microfono e riportate nel Sistema,
-consentono una continua e incessante trasformazione del suono, che permette
+consentono una continua ed incessante trasformazione del suono, che permette
 di cambiarne la morfologia ad ogni istante di tempo e in modo continuo, 
 permettendo al sistema di avere "vita propria" ascoltandosi tramite l'ambiente
 anche senza il contributo apportato da un esecutore. \\
@@ -614,35 +497,10 @@ Infine per completare le operazioni come richiesto nella partitura, si può sost
 con una mandata (send) del segnale destinato ad entrare in Feedback ai \textit{sample read} ed in
 feedforward al \textit{granular sampling}.
 A seguito una implementazione del campionatore come richiesto in partitura.
-\clearpage 
 
-\vspace{0.5cm}
-\begin{lstlisting}
-    // import faust standard library
-    import("stdfaust.lib");
-    // hard-coded: change this to match your samplerate
-    SampleRate = 44100;
-    
-    
-    sampler(lengthSec, memChunk, ratio, x) = 
-    it.frwtable(3, bufferLen, .0, writePtr, x, readPtr) * window
-    with {
-        memChunkLimited = max(0.100, min(1, memChunk));
-        bufferLen = lengthSec * SampleRate;
-        writePtr = ba.period(bufferLen);
-        grainLen = max(1, ba.if(writePtr > memChunkLimited * bufferLen, 
-            memChunkLimited * bufferLen, 1));
-        readPtr = y
-            letrec {
-                'y = (ratio + y) % grainLen;
-            };
-        window = min(1, abs(((readPtr + grainLen / 2) % grainLen) - 
-            grainLen / 2) / 200);
-    };
-    
-    process = sampler(4, hslider("memChunkLimited", 0.100, 0, 1, .001), 
-        hslider("ratio", 5, .1, 10, .001), os.osc(100)) <: _, _;
-\end{lstlisting}
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{sample write/read} per il Feedback Study}]
+{codes/Sampler.dsp}
 
 In questo campionatore, il \textit{ratio} è continuamente variabile, 
 rendendo possibili le modulazioni di frequenza desiderate. 
@@ -725,82 +583,9 @@ per ottenere certe tessiture timbriche, viene esplicitamente richiesto
 che il \textit{timestretching} del suono sia possibile. 
 A seguito una implementazione del granulatore come richiesto in partitura.
 
-
-\vspace{0.5cm}
-\begin{lstlisting}
-    // import faust standard library
-    import("stdfaust.lib");
-    // hard-coded: change this to match your samplerate
-    SampleRate = 44100;
-    
-    //------------------------------------------------ GRANULAR SAMPLING --
-    grain(L, position, duration, x, trigger) = hann(phase) * 
-        buffer(readPtr, x)
-    with {
-        maxLength = L * SampleRate;
-        length = L * SampleRate;
-        hann(ph) = sin(ma.PI * ph) ^ 2.0;
-        lineSegment = loop ~ si.bus(2) : _ , ! , _
-        with {
-            loop(yState, incrementState) = y , increment , ready
-            with {
-                ready = ((yState == 0.0) | (yState == 1.0)) & trigger;
-                y = ba.if(ready, increment, min(1.0, yState + increment));
-                increment = ba.if(ready, ma.T / max(ma.T, duration), 
-                    incrementState);
-            };
-        };
-        phase = lineSegment : _ , !;
-        unlocking = lineSegment : ! , _;
-        lock(param) = ba.sAndH(unlocking, param); 
-        grainPosition = lock(position);
-        grainDuration = lock(duration);
-        readPtr = grainPosition * length + phase * grainDuration * ma.SR;
-        buffer(readPtr, x) = 
-            it.frwtable(3, maxLength, .0, writePtr, x, readPtrWrapped)
-        with {
-            writePtr = ba.period(length);
-            readPtrWrapped = ma.modulo(readPtr, length);
-        };
-    };
-    
-    // works for N >= 2
-    triggerArray(N, rate) = loop ~ si.bus(3) : (! , ! , _) <: 
-        par(i, N, == (i)) : par(i, N, \(x).(x > x'))
-    with {
-        loop(incrState, phState, counterState) = incr , ph , counter
-        with {
-            init = 1 - 1';
-            trigger = (phState < phState') + init;
-            incr = ba.if(trigger, rate * ma.T, incrState);
-            ph = ma.frac(incr + phState);
-            counter = (trigger + counterState) % N;
-        };
-    };
-    
-    grainN(voices, L, position, rate, duration, x) = 
-        triggerArray(voices, rate) : 
-        par(i, voices, grain(L, position, duration, x));
-    
-    process = os.osc(200) * .5 <: grainN(10, 4, 
-        hslider("Grain Position", -1, -1, 1, .001), 
-        hslider("Grain Rate", 1, 1, 100, .001),
-        hslider("Grain Duration", 0.100, 0, 1, .001)) :> _;
-    
-    // in the full system this this is the granular sampling function
-    granular_sampling(var1, timeIndex, memWriteDel, cntrlLev, divDur, x) = 
-        grainN(10, var1, position, rate, duration, x) :> _
-    with {
-        rnd = no.noise;
-        memPointerJitter = rnd * (1.0 - memWriteDel) * .01;
-        position = timeIndex * (1.0 - ((1.0 - memWriteDel) * .01)) + 
-            memPointerJitter;
-        density = 1.0 - cntrlLev;
-        rate = 50 ^ (density * 2.0 - 1.0);
-        grainDuration = .023 + (1.0 - memWriteDel) / divDur;
-        duration = grainDuration + grainDuration * .1 * rnd;
-    };
-\end{lstlisting}
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{granular sampling} per il Feedback Study}]
+{codes/Granulator.dsp}
 
 In conclusione, abbiamo avuto modo di approfondire alcuni dei principali meccanismi 
 utilizzati da Agostino Di Scipio per uno dei più importanti lavori del suo ciclo Ecosistemico Udibile,
