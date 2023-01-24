@@ -163,7 +163,7 @@ contenenti i seguenti algoritmi di elaborazione audio:
 ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.}
 
 \begin{center}
-    \includegraphics[width=12cm]{figures/OFNnetwork.pdf} \\
+    \includegraphics[width=14cm]{figures/OFNnetwork.pdf} \\
     {Schema della rete di Order From Noise} \\ 
     \end{center}
 
@@ -186,31 +186,177 @@ ed infine utilizzato per pilotare la frequenza di un fasore.\\
 \lstinputlisting[breaklines, frame=trBL, caption={non linearità in Order From Noise}]
 {codes/OFNnonLinearity.dsp}
 
-\begin{center} \vspace{0.5cm} \Huge - Da Continuare - \normalsize \vspace{0.5cm} \end{center}
+La funzione \verb|lowFreqNoise(x)| accetta un segnale in ingresso
+facendolo passare per uno stadio di 4 filtri Lowpass a cascata,
+dove la stessa frequenza di taglio viene passata esternamente 
+dalla variabile \verb|refPeriod|.
+Il segnale passa poi per il normalizzatore dinamico composto dalle funzioni
+\verb|noiseRMS(x)| e \verb|normRMS(x)|,
+questo tipo di normalizzazione dinamica si basa sulla stima RMS e ha due ingressi,
+uno è il segnale di riferimento, e l'altro è il segnale che deve essere normalizzato sulla base
+del segnale di riferimento fornito, ovviamente,
+la finestra RMS deve essere abbastanza grande a seconda della lentezza del
+segnale che deve essere normalizzato.\\ 
+Per comprendere meglio i meccanismi alla base
+della normalizzazione dinamica,
+andrò a discutere ora il caso più generico
+di una normalizzazione di picco in DSP. \\
+Partendo dall'algoritmo basilare del \textit{Peakholder} in IIR discusso nel precedente capitolo. 
+L'ampiezza del picco di un segnale può essere normalizzata secondo la seguente espressione 
+\( y_{1}(t) = (1/(\max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right))) * x(t) \), 
+dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. \\
+Per prima cosa si calcola con il \textit{Peakholder} il picco massimo del segnale,
+tracciandone il profilo di ampiezza campione per campione,
+e a seguito si divide poi il risultato per 
+un fattore per cui si desidera riscalare il segnale, in questo caso una costante 1.
+Ed infine il profilo di ampiezza risultante da questa operazione verrà moltiplicato 
+per lo stesso segnale in ingresso, incrementando o riducendo l'ampiezza di questo in base al risultato dell'operazione, 
+e ridimensionando grazie a questo processo l'ampiezza di tutti i campioni del segnale, 
+in modo tale che l'ampiezza del picco abbia un valore pari a [1, -1].
 
-Lookahead Limiters per la stabilità delle Feedback Network:
-In Order From Noise Dario Sanfilippo utilizza un unità per raggiungere la stabilità
-globale della rete chiamata Lookahead Limiter.
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo di normalizzazione di picco tramite \textit{Peakholder} ad 1 campione di ritardo}]
+{codes/PeakNormalizationIIR.dsp}
 
-<< My original design was based on two side-chained amplitude curves: 
-a fast one for attack transients and one for sustained sounds, which had 
-to be slow enough as to avoid intermodulation distortion. The fast curve 
-was based on peak envelope estimation (see below), while the slow one was based on 
-RMS to have a smooth behaviour. The curves were in a master-slave mode so that 
-the effect of the fast curve would decrease with regard to the growth of the slow curve: 
-that was necessary to avoid that the processed signal would be scaled down twice by both curves. 
-Despite the algorithm produced good results, it needed some empirical calibrations 
-and it also involved a rather large number of objects in Pure Data which would considerably load the CPU. 
-Besides, I was using some objects from PD-extended and I already had in mind to migrate to Pure Data Vanilla.
-A simplified design was based on only one amplitude curve calculated with a long-decay peak envelope (10 seconds). 
-A peak envelope checks whether the input is greater than the output and, if that condition is true, 
-it updates the peak with the new value from the input signal. 
-Otherwise, the current peak decreases following an exponential curve and reaches a certain 
-attenuation after a desired time which, in my specific case, is of ~60dBs. 
-This would allow detecting fast attack transient and, at the same time, 
-the long decay would create a smooth curve for the sustained and slow sounds. >>
-https://www.dariosanfilippo.com/blog/2017/lookahead-limiting-in-pure-data/
+\begin{center}
+    \includegraphics[width=14cm]{figures/PeakNormalizationIIR.pdf} \\
+    {Topologia del normalizzatore di picco tramite \textit{Peakholder} ad 1 campione di ritardo}} \\ 
+\end{center}
+\vspace{0.5cm}
+    
+Proprio come nell'algoritmo del \textit{Peakholder} ad 1 campione di ritardo, 
+il problema di questa applicazione dipende dal fatto che nel segnale
+complessivo possano permanere contributi spuri che alterino il risultato
+della normalizzazione, e che si possa generare aliasing a causa di una mancata
+funzione di smoothing del segnale.
+Per questi motivi nelle unità della rete di Order From Noise 
+che implementano al proprio interno meccanismi di Feedback,
+e per raggiungere quindi una stabilità globale della rete,
+è presente un tipo di limiter dinamico chiamato da Dario Sanfilippo
+col nome di \textit{Lookahead Limiter}, che a differenza dell'algoritmo
+appena discusso ha un comportamento adattivo.
+Questo tipo di Algoritmo viene descritto da Dario Sanfilippo sia nell'articolo 
+di Musica/Tecnologia dell' 11-12 (2017-2018) che parla di Order From Noise 
+citato precedentemente,\footcite{sanfilippo_time-variant_2018}
+che nel suo blog, dove ne riporta un implementazione fatta nel linguaggio di programmazione
+Pure Data.
 
-This was a good compromise for my systems, although such a long decay is not always desirable: occasionally, 
-that would create silences after high-amplitude impulses for the attenuating curve 
-would decrease very slowly and the input signal would be scaled down even if below the limiting threshold.
+\begin{center}
+    \vspace{0.5cm}
+    \textit{Recently, I have decided to try the design of a limiter based on a post by IOhannes Zmölnig who, 
+    in turn, has based his design on the thesis project by Peter Falkner: 
+    Entwicklung eines digitalen Stereo-Limiters mit Hilfe des Signalprozessors DSP56001.
+    This design is based on a peak-hold module with an exponential decay curve...
+    The first step in a lookahead limiter is to delay the input signal so 
+    that the attenuating curve can anticipate fast peaks. 
+    The amplitude profile of the input signal is obtained by combining a peak-hold module 
+    – something that holds a peak for a certain time until a new peak is detected – 
+    with a peak envelope one to have a smooth decay when signals transition to lower peaks. 
+    Here, after, the peak-hold module, 
+    I am also using a one-pole low-pass filter with a period matching that of the input delay 
+    so that peaks and input signal are synchronised and the attack is slightly smoothed out... 
+    The peak envelope can easily be implemented as a single feedback loop through which the detected peaks recirculate}\\
+    \vspace{0.5cm}
+    Lookahead limiting in Pure Data - July 2, 2017
+    \footcite{https://www.dariosanfilippo.com/blog/2017/lookahead-limiting-in-pure-data/}
+    \vspace{0.5cm}
+    \end{center}
+
+Per implementare il \textit{Lookahead Limiter} 
+sono dunque richieste due unità distinte
+combinate fra loro in Feedforward con un filtro onepole Lowpass fra le due,
+un \textit{Peakholder} con una finestra che mantiene il picco massimo del segnale e
+che viene resettata da un timer, 
+e un \textit{Peakenvelope} che ha invece un decadimento 
+basato su \textit{tau} all'interno della retroazione; sono entrambe due
+unità ottimizzate del nostro algoritmo \textit{Peakholder} ad 1 campione di ritardo,
+e che combinate fra loro consentono di rilevare sia i transienti di attacco rapidi, 
+che al contempo di avere una lunga fase di decadimento per i suoni sostenuti e lenti.\\
+Il \textit{Peakenvelope} può essere ottenuto modificando 
+la retroazione dell'algoritmo \textit{Peakholder}, moltiplicandola per 
+un fattore di decadimento come nella seguente formula \\
+\( y_{1}(t) = \max\left( k_{1} * y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right) \), 
+dove \( k_{1} = {0.001}^{\frac{(\frac{1}{(SR)})}{T}} \) è la formula del decadimento RT60, 
+e dove T rappresenta il tempo di decadimento desiderato in secondi, mentre
+\textit{SR} rappresenta la costante della frequenza di campionamento utilizzata.
+Come nelle altre formule del \textit{Peakholder}, \textit{x} è il segnale in ingresso, 
+e \textit{y} il segnale sia in uscita che reiterato nella funzione stessa. \\
+A seguito l'algoritmo in Faust del \textit{Peakenvelope}.
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo di \textit{Peakenvelope} con Decay RT60}]
+{codes/PeakEnvelope.dsp}
+
+\begin{center}
+    \includegraphics[width=15cm]{figures/PeakEnvelope.pdf} \\
+    {Topologia del \textit{Peakenvelope} con Decay RT60}} \\ 
+\end{center}
+\vspace{0.5cm}
+
+per quanto riguarda invece l'algoritmo del \textit{Peakholder} adattivo, è un po' meno semplice. 
+Il \textit{Peakholder} verificherà se l'ingresso è maggiore o uguale all'uscita e, 
+se la condizione è vera, aggiornerà il picco e ripristinerà un timer. 
+Quando la condizione invece è falsa, 
+inizierà il suo countdown e, allo scadere del tempo, se non è stato rilevato alcun nuovo picco, 
+qualsiasi valore nell'ingresso corrente verrà impostato come nuovo picco.
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Peakholder} (adattivo) con Timer}]
+{codes/PeakHolderAdaptive.dsp}
+\clearpage
+
+\begin{center}
+    \includegraphics[width=15cm]{figures/PeakHolderAdaptive.pdf} \\
+    {Topologia del \textit{Peakholder} (adattivo) con Timer}} \\ 
+\end{center}
+\vspace{0.5cm}
+\clearpage
+
+Per concludere infine le unità sono combinate fra loro come a seguito,
+formando nel loro insieme il \textit{Lookahead Limiter}.
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Lookahead Limiter}}]
+{codes/LookaheadLimiter.dsp}
+
+Prima di concludere queste considerazioni a seguito qualche doverosa aggiunta.
+Anche nell'Ecosistemico Udibile n.2, studio sul Feedback, di Agostino Di Scipio è presente 
+una versione ottimizzata dell'algoritmo \textit{Peakholder}, che a differenza
+del \textit{Peakholder} con il timer discusso precedentemente, viene chiamato come
+\textit{Local Max}, e riporta l'ampiezza massima solamente al termine del \textit{time frame} che corrisponde
+al reset del timer, senza necessità della complessa condizione vero/falso discussa precedentemente, 
+ma a discapito di un tempo di ritardo dovuto all'analisi del valore massimo che viene riportato 
+solo al termine del \textit{time frame}.
+In partitura viene descritto come segue:
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{local max = returns the maximum signal amplitude (absolute value) 
+    in a given time frame; frame duration is dynamically adjusted: 
+    the next frame duration is set at the end of the previous frame} \\
+    \vspace{0.5cm}
+\end{center}
+
+A seguito l'implementazione del \textit{Local Max} in Faust.
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Local Max}}]
+{codes/LocalMax.dsp}
+
+In conclusione, abbiamo avuto modo di approfondire alcuni dei principali meccanismi 
+utilizzati da Dario Sanfilippo nel suo brano Order From Noise \textit{(Homage to Heinz Von Foerster)},
+prendendo questo lavoro come caso di studio, con il fine di illustrare praticamente 
+alcune modalità e relazioni possibili per rendere un sistema 
+capace di manifestare comportamenti emergenti e complessità anche all'interno di uno 
+spazio deterministico interamente costituito solo dal DSP nel software 
+(che abbiamo chiamato qui col nome di spazio latente); 
+inclusi metodi e strategie per la generazione delle relative non linearità,
+e i meccanismi adattivi per mantenere il sistema in una condizione di stabilità
+controllata, tramite algoritmi di Feedback positivo e negativo.
+Anche qui i meccanismi contenuti all'interno del brano ovviamente non si limitano solamente a questi,
+ma si è cercato di approfondire le parti del sistema che riguardano l'\textit{Audio Information Processing};
+così da fornire strumenti che rendono possibile affrontare il problema 
+dell'adattattività e dell'\textit{adattattività dinamica}
+all'interno dei CASes, lasciando comunque aperta la possibilità di poter approfondire il brano a partire
+dai testi citati in bibliografia che riportano anche le formule matematiche e la descrizione
+delle altre unità che compongono nella loro interezza il brano.

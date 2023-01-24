@@ -4,7 +4,7 @@
 sudo -v
 echo insert the faust code name without dsp extension:
 read faustcode
-faust2firefox -sd -sn -fc 1000 $faustcode.dsp
+faust2firefox $faustcode.dsp
 cd $faustcode-svg
 echo the folder is:
 pwd

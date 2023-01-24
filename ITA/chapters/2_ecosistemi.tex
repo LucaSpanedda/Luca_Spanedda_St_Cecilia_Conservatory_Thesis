@@ -243,8 +243,13 @@ la stima di questa costante avviene tramite un algoritmo di analisi.
 Il modo più semplice per implementare un algoritmo di analisi di questo tipo
 è attraverso un \textit{Peakholder} che nella sua forma basilare consiste in una finestra 
 di campioni idealmente infinita IIR \textit{Infinite Impulse Response},
-che ha il compito di confrontare il valore assoluto del campione in ingresso con il suo precedente,
-il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingresso 
+e che può essere espresso matematicamente come 
+\( y_{1}(t) = \max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right) \) 
+dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. \\
+Utilizzato come algoritmo di controbilanciamento può essere espresso matematicamente come
+\( y_{1}(t) = (1-(\max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right))) * x(t) \), 
+questo algoritmo ha il compito di confrontare il valore assoluto del campione in ingresso con il suo precedente,
+e Il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingresso 
 in retroiniezione alla funzione stessa di comparazione, 
 in questo modo si sfrutta un principio di Feedback per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
@@ -258,12 +263,12 @@ del valore massimo, in un'analisi campione per campione.
 {codes/LARpeakmax.dsp}
 
 \begin{center}
-    \includegraphics[width=12cm]{figures/PeakholderIIR.pdf} \\
+    \includegraphics[width=14cm]{figures/PeakholderIIR.pdf} \\
     {Topologia del \textit{Peakholder} ad 1 campione di ritardo} \\ 
     \end{center}
 
 \begin{center}
-    \includegraphics[width=12cm]{figures/LARpeakmax.pdf} \\
+    \includegraphics[width=14cm]{figures/LARpeakmax.pdf} \\
     {Topologia del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
 \end{center}
 \vspace{0.5cm}

@@ -8,6 +8,6 @@
 \contentsline {subsection}{\numberline {2.3}Trasformazioni del suono}{31}{}%
 \contentsline {section}{\numberline {3}Sistemi Autonomi}{42}{}%
 \contentsline {subsection}{\numberline {3.1}Audio Information Processing}{44}{}%
-\contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{50}{}%
-\contentsline {section}{\numberline {A}First appendix}{51}{}%
-\contentsline {section}{\numberline {B}Second appendix}{83}{}%
+\contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{59}{}%
+\contentsline {section}{\numberline {A}First appendix}{60}{}%
+\contentsline {section}{\numberline {B}Second appendix}{92}{}%
