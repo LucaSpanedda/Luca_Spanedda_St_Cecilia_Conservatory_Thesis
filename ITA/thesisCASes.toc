@@ -9,5 +9,6 @@
 \contentsline {section}{\numberline {3}Sistemi Autonomi}{42}{}%
 \contentsline {subsection}{\numberline {3.1}Audio Information Processing}{44}{}%
 \contentsline {section}{\numberline {4}RITI: un sistema caotico ibrido}{59}{}%
-\contentsline {section}{\numberline {A}First appendix}{60}{}%
-\contentsline {section}{\numberline {B}Second appendix}{92}{}%
+\contentsline {subsection}{\numberline {4.1}Motivazioni}{59}{}%
+\contentsline {section}{\numberline {A}First appendix}{64}{}%
+\contentsline {section}{\numberline {B}Second appendix}{96}{}%

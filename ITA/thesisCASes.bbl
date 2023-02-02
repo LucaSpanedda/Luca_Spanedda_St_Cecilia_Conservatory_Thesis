@@ -102,6 +102,35 @@
       \field{title}{Stabilized Feed-Back Amplifiers}
       \field{year}{1933}
     \endentry
+    \entry{francois_jbonnet_after_death}{book}{}
+      \name{author}{1}{}{%
+        {{hash=457e88ee653dfaace83f8a6f5dc7c2e4}{%
+           family={Bonnet},
+           familyi={B\bibinitperiod},
+           given={François\bibnamedelima J.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Urbanomic}%
+      }
+      \strng{namehash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \strng{fullhash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \strng{bibnamehash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \strng{authorbibnamehash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \strng{authornamehash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \strng{authorfullhash}{457e88ee653dfaace83f8a6f5dc7c2e4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{After Death}
+      \field{year}{2020}
+      \field{pages}{80}
+      \range{pages}{1}
+    \endentry
     \entry{collinspeasouphist}{article}{}
       \name{author}{1}{}{%
         {{hash=286bee662fe31c216d37a7764bc0f0bc}{%
@@ -695,6 +724,38 @@
       \verb{url}
       \verb https://journals.library.ualberta.ca/complicity/index.php/complicity/article/view/8737
       \endverb
+    \endentry
+    \entry{wishart_on_sonic_art}{book}{}
+      \name{author}{1}{}{%
+        {{hash=81812ffd6a91ca7b5bf4a77a7cfb4194}{%
+           family={Wishart},
+           familyi={W\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Edinburgh}%
+      }
+      \list{publisher}{1}{%
+        {harwood academic publishers}%
+      }
+      \strng{namehash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \strng{fullhash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \strng{bibnamehash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \strng{authorbibnamehash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \strng{authornamehash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \strng{authorfullhash}{81812ffd6a91ca7b5bf4a77a7cfb4194}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On Sonic Art}
+      \field{year}{1996}
+      \field{pages}{355}
+      \range{pages}{1}
     \endentry
   \enddatalist
   \missing{http://www.lovely.com/albumnotes/notes1602.html}
