@@ -1,21 +1,116 @@
 %% TITOLO
-\section{RITI: un sistema caotico ibrido}
-\label{sec:RITI: un sistema caotico ibrido}
+\section{Sistemi Caotici}
+\label{sec:Sistemi Caotici}
 
-RITI : Room Is The Interface è un Brano basato su un CAS autonomo \textit{site-specific},
-dove la personalità acustica della stanza dove viene eseguito il brano
+Ciò che accomuna un Sistema Complesso ad un Sistema Caotico è la non linearità.
+In questa visione della complessità, i Sistemi Caotici sono considerati un sottoinsieme 
+appartenente alla macrocategoria dei Sistemi Complessi: la complessità 
+si manifesta infatti sulla soglia della caos. 
+Mentre nel mondo fisico la non linearità è insita nella natura
+delle cose, nel mondo digitale, queste non linearità, come abbiamo visto
+anche nei capitoli precedenti, devono essere accuratamente
+programmate ed introdotte all’interno degli algoritmi per raggiungere la complessità. 
+La teoria del caos postula che esista una classe di fenomeni naturali che
+possano essere modellati da sistemi deterministici non lineari.
+Quando si parla di caos ci si riferisce ad un certo tipo di comportamento di
+un sistema dinamico: determinato dalla sensibilità alle condizioni iniziali,
+imprevedibilità a lungo termine, e orbite periodiche dense. \\ 
+In altri termini un sistema caotico amplifica le piccole differenze: porta i fenomeni microscopici
+a un livello macroscopico. Ed è dunque nell’amplificazione di queste piccole
+deviazioni delle condizioni iniziali che si annida il caso.
+Nonostante siano perfettamente individuate le equazioni differenziali che
+descrivono questi sistemi: al variare delle condizioni iniziali 
+varia il comportamento del sistema stesso negli stadi successivi a quello iniziale.
+L’ipotesi che i sistemi deterministici possano sviluppare comportamenti impredicibili, 
+come già detto all'inizio di questa tesi fu teorizzata da Henri Poincaré e portata alla
+fama da Edward Norton Lorenz con il suo articolo.\footcite{Lorenzdnf}
+In questo capitolo della tesi illustrerò come a partire dalla
+risoluzione delle equazioni differenziali del sistema di Lorenz, si possa
+creare un CAS che possa essere utilizzato per la
+performance musicale in Live Electronics, attraverso
+la composizione di un mio brano.
+
+\subsection{RITI : Room Is The Instrument}
+\label{RITI : Room Is The Instrument}
+
+RITI: Room Is The Instrument è un brano che si basa su un sistema caotico \textit{site-specific}.
+La personalità acustica della stanza in cui viene eseguito il brano 
 viene riflessa in variazioni del comportamento del sistema stesso.
-L'idea dell'acronimo RITI nasce come omaggio a: Sound is the interface, 
-il famoso paper di Agostino Di Scipio, che introdusse per la prima volta
-una prospettiva sistemica sull'auto-organizzazione e sulla capacità
-di un sistema di auto-osservarsi tramite l'ambiente circostante. \\
+L'idea dell'acronimo RITI deriva dal famoso paper di Agostino Di Scipio 
+"Sound is the interface" (SITI), 
+che ha introdotto per la prima volta la prospettiva sistemica 
+sull'auto-organizzazione e sulla capacità di un sistema di auto-osservarsi 
+tramite l'ambiente circostante in musica.\footcite{di_scipio_sound_2003} \\
+Il sistema è costruito utilizzando una soluzione 
+delle equazioni differenziali del sistema di Lorenz come motore di sintesi del suono in DSP. 
+Sono state aggiunte a questo delle costrizioni matematiche
+per esplorare il sistema in regioni instabili, 
+seguendo il metodo descritto nel paper di Dario Sanfilippo 
+"Constrained Differential Equations as Complex Sound Generators".\footcite{sanfilippo_constrained_2021} 
+Dove vengono illustrate una serie di risoluzioni per alcune 
+equazioni differenziali caotiche,
+modificate inserendo opportunamente all'interno di queste un
+DC Blocker e un Waveshaper (soft clipping) utilizzando la funzione della Tangente Iperbolica.
+Oltre alle costrizioni proposte da Dario Sanfilippo, 
+ispirato dall'idea che ha avuto Tom Mudd nel suo paper
+"Between Chaotic Synthesis and Physical Modelling: Instrumentalising with Gutter Synthesis",\footcite{tom_mudd_gutter_synthesis}
+di aggiungere alla risoluzione dell'equazione differenziale dell'Oscillatore di Duffing
+un banco di filtri Bandpass, che permettesse al sistema di manifestare
+risonanze modali che ricordino il comportamento di uno strumento musicale.
+Ho deciso di aggiungere alla risoluzione delle equazioni di Lorenz modificate,
+un banco parallelo di 32 filtri Bandpass informati 
+con 4 liste ricavate dall'analisi di 4 registrazioni di note diverse di un violoncello, 
+per ottenere questo tipo di comportamenti,
+e per concludere l'aggiunta dell'ingresso di un segnale esterno affidato ai microfoni nelle equazioni, 
+che permettesse di perturbare il sistema e generare un ulteriore stato 
+di Feedback dall'ambiente della performance,
+rendendo così il sistema di sintesi autonomo anche sensibile alle condizioni esterne.
+L'equazione di Lorenz modificata con le costrizioni esposte,
+costituisce nel suo insieme un singolo agente, a cui ci riferiremo a partire questo
+momento con il nome di CSGA \textit{Complex Sound Generator Agent}, che verrà richiamato a seguito
+all'interno di una superiore Feedback Delay Network (FDN) che ne contiene un 
+numero finito voci determinato a tempo di compilazione. 
+Prima della performance, in fase di compilazione del sistema,
+è quindi possibile scegliere il numero di CSGA che andranno a costituire 
+la FDN, e di conseguenza il numero di altoparlanti da utilizzare
+per ascoltare l'output da ogni agente della rete.
+Tuttavia, si può anche decidere di ascoltare solo un certo numero di output
+della rete a partire da un numero di altoparlanti ridotti nello spazio della performance,
+senza rinunciare alla conseguente complessità derivata da una compilazione con un
+numero di agenti che costituiscono la rete superiore al numero di ouput che si vogliono ascoltare, 
+ad esempio 4, 8, 16...
+Il feedback globale della rete proveniene da ogni singola voce 
+che va a sommarsi con diversi tempi di ritardo prima della retroiniezione,
+rientrando poi conseguentemente con opportuni tempi di ritardo nelle altre voci del sistema.
+Questo processo crea una decorrelazione ed una perturbazione nei singoli agenti all'interno del sistema,
+ma offre anche la possibilità con opportuni valori di Gain del Feedback, 
+di lasciar ricirolare del materiale nella FDN.
+La performance consiste nell'impostare un insieme iniziale di valori 
+di inizializzazione del sistema, come Dt, Rho, Beta, Sigma, 
+Tangente Iperbolica, 
+un fattore di Shift in frequenza del banco di filtri, 
+Tempi di ritardo della FDN, ecc.
+A partire da questi, l'obiettivo è di esplorare il sistema 
+finché non si ha l'impressione di aver esaurito tutte le possibilità, 
+con l'obiettivo fondamentale di bilanciare i tre feedback principali: 
+quelli provenienti dalle retroazioni delle tre equazioni differenziali 
+di Lorenz, quello della FDN, e quello proveniente dal contributo 
+dell'ambiente di performance.
+Nelle sezioni successive della tesi, 
+discuteremo in dettaglio tutti questi aspetti passo per passo, 
+come fatto fino ad ora con i lavori precedenti. 
+Tuttavia, prima di entrare nel dettaglio tecnico del brano, 
+vorrei prima soffermarmi a spiegare le motivazioni 
+generali che hanno suscitato in me l'interesse per i 
+Sistemi Complessi Adattivi in Live Electronics, 
+e che mi hanno spinto alla creazione di questo brano. \\
 
 \subsection{Motivazioni}
-\label{sec:Motivazioni}
+\label{Motivazioni}
 
 In questi ultimi anni di studi musicali, sono emerse nel mio fare musica 
 delle questioni per me di fondamentale importanza che hanno accompagnato il mio operato
-e che giustificano la mia esigenza di essermi interessato ai CASes in musica. \\
+e che hanno mosso il mio interesse verso i le Cibernetiche in musica. \\
 In primo luogo indagare rispetto al rapporto che esiste fra l'interprete, la notazione, e lo strumento musicale;
 che può essere vista come una parte contenuta all'interno della relazione fra uomo-macchina-ambiente di cui parla
 Agostino Di Scipio. \\
@@ -28,22 +123,22 @@ acustica nel dominio del continuum temporale.
 Questi parametri principalmente impiegati nella semiografia musicale Occidentale, 
 sono stati fino all'incirca ad inizio del XX Secolo: 
 le altezze dei suoni, le intensità, i ritmi, le durate, ed infine il timbro desiderato, 
-quest'ultimo descritto richiedendo l'utilizzo di un certo strumento musicale o di specifici gruppi strumentali.
-Tuttavia il significato stesso del termine musica non è comunque univoco ed ha avuto (e ha ancora oggi) 
+quest'ultimo descritto richiedendo l'impiego di un certo strumento musicale o di specifici gruppi strumentali.
+Tuttavia il significato stesso del termine musica non è comunque univoco ed ha avuto (ed ha ancora ad oggi) 
 diverse accezioni utilizzate nei vari periodi storici.
 Difatti con l'arrivo del XXI Secolo, sono state messe in crisi le nozioni di strumento musicale e di semiografia musicale, 
 in quanto la pratica del comporre non si è più solamente limitata al comporre 
 con i timbri dei diversi strumenti musicali, ma si è aperta anche alla possibilità del comporre stesso nel timbro, 
-spingendo i compositori a cercare vie alternative ed alle volte individuali.
+spingendo i compositori a cercare vie alternative ed alle volte individuali in cui scrivere musica differente dalla tradizione.\\
 Riguardo gli strumenti musicali invece, se la voce è difatti il primo strumento dell'uomo in quanto 
 abita il corpo stesso che ne è il custode, la macchina che nel suo senso generico è qualsiasi strumento 
-il cui moto relativo trasmetta o anche amplifichi la forza umana, 
-sin dall'antichità si è prestata all'idea di strumento musicale come a qualcosa per assistere l'uomo nella 
+il cui moto relativo trasmetta o anche amplifichi la forza umana.
+Sin dall'antichità la macchina si è prestata all'impiego come strumento musicale sottoforma di qualcosa per assistere l'uomo nella 
 sua intenzione del fare musica secondo l'organizzazione dei parametri esposti precedentemente; 
 con la composizione nel timbro viene invece a mancare l'idea 
 di una musica composta solamente da queste tipiche relazioni tramite gli strumenti musicali, 
 rivalutando l'idea stessa che si ha di uno strumento musicale, aperta ora di fatto alla possibilità 
-del poter comporre quanto il timbro stesso, anche lo strumento che lo produce. \\
+del poter comporre quanto il timbro stesso integrando anche la creazione dello strumento che lo produce. \\
 Come dice Trevor Wishart nel suo libro On Sonic Art:
 
 \begin{center}
@@ -61,8 +156,8 @@ Come dice Trevor Wishart nel suo libro On Sonic Art:
 \end{center}
 
 Come comportarsi quindi davanti ad una condizione in cui viene messa in crisi l'idea stessa
-che si ha di musica, di notazione musicale, e di strumento musicale?
-La mia indagine mi ha portato a rivolgere l'attenzione al rapporto con la notazione 
+che si ha di musica, di notazione musicale, e di strumento musicale?\\
+Questa indagine mi ha portato a rivolgere l'attenzione al rapporto con la notazione 
 e gli strumenti musicali in quelle opere dei compositori contemporanei, 
 che raccogliendo le ceneri di questa crisi del XXI Secolo, 
 hanno deciso di approfondire l'idea dietro l'utilizzo
@@ -71,12 +166,15 @@ qualcosa di funzionale al riprodurre dei parametri annotati in partitura a prior
 ma come un sistema che offre una serie di possibilità; 
 in cui lo strumento diviene il corpo acustico su cui indagare 
 tutta una serie di relazioni e gesti possibili dell'interprete, 
-alla ricerca di un'esplorazione sonora dello spazio del sistema.
+alla ricerca di un'esplorazione sonora dello spazio del sistema,
+e in cui la partitura diviene traccia del come replicare l'esistenza di 
+qualsiasi tipo d'interazione con il sistema.
 In tal senso Trevor Wishart suggerisce di guardare alla Teoria delle Catastrofi 
-di René Thom, assumendo che le regole formali di una musica possono
+di René Thom, assumendo che le regole formali di una musica passono
 essere ricavate dall'osservazione di uno strumento stesso come se questo fosse un sistema.
-Ho rintracciato questo tipo di atteggiamento nei confronti dello strumento
-e della notazione in opere come: Pression di Helmut Lachenmann,
+Nella mia indagine per portare dei validi esempi, ho dunque rintracciato questo tipo di atteggiamento 
+nei confronti dello strumento
+e della notazione in alcune opere come: Pression di Helmut Lachenmann,
 dove la partitura viene ad indicare come agire sul corpo dello strumento
 schiudendone nella sua totalità il suo mondo sonoro accessibile,
 o nell'opera Necessità d'interrogare il cielo di Giorgio Netti,
@@ -86,25 +184,61 @@ sul corpo dello strumento e degli esiti acustici del gesto, scendono così tanto
 acustiche, o anche nei lavori stessi di Wishart, come nel ciclo Vox 
 dove la voce viene esplorata in tutte le sue ambiguità rendendo
 complesso il collegamento fra il suono e la sorgente che lo produce. \\
-Se è vero quindi come dice Wishart che le regole formali di una musica possono
+In senso più generale la storia della musica elettroacustica è fortunatamente costellata 
+di pionieri che hanno messo in crisi il linguaggio musicale e l'impiego degli strumenti musicali,
+ma l'ulteriore scarto che propongo qui, consiste nel fatto che se è vero quindi come 
+dice Trevor Wishart che le regole formali di una musica possono
 essere ricavate dall'osservazione di un sistema, 
 la pratica del disegnare un sistema autonomo (la macchina) con cui fare musica,
 ne riflette di conseguenza la quantità di informazione che questo contiene al suo interno,
 e di conseguenza il tipo di relazioni e interazioni con il suo ambiente che 
 ci interessano dal punto di vista compositivo.\\
-In secondo luogo indagare rispetto al rapporto conflittuale che l'uomo ha con la tecnologia
+In secondo luogo, ho trovato interessante indagare rispetto al rapporto conflittuale che l'uomo ha con la tecnologia
 nella società contemporanea. 
 In effetti, l'uomo ha da sempre un rapporto conflittuale con la tecnologia,
 se sin dai tempi di Platone emergevano queste problematiche e preoccupazioni
 relative alla discretizzazione del pensiero con la scrittura
-come possiamo leggere in Fedro, 
-giungendo alle paure più contemporanee di Norbert Weiner riguardo la tecnologia
-esposte nel sua Introduzione alla Cibernetica, l'uso umano degli esseri umani,
-l'idea di una società contemporanea composta da interazioni sistemiche fra l'uomo e la macchina
-in cui il primo è succube della seconda, sembra in qualche modo essersi rivelata profetica e realizzata.
-In risposta a questa condizione, disegnare i propri sistemi e di conseguenza riappropriarsi della tecnologia,
-rappresenta dalla mia prospettiva personale un modo costruttivista di rispondere ai problemi del mondo contemporaneo
-attraverso la pratica musicale.
+(come possiamo leggere in Fedro), 
+giungendo alle paure più attuali di Norbert Weiner di fronte
+alla scoperta della Cibernetica, possiamo dire che la sua paura di una società contemporanea 
+composta da interazioni sistemiche fra l'uomo e la macchina
+in cui il primo è succube della seconda, sembra in qualche modo essere stata profetica ed essersi realizzata.
+Come scrive Norbert Wiener nel suo libro Introduzione alla cibernetica. L'uso umano degli esseri umani,
+inizialmente pubblicato con il titolo The Human Use Of Human Beings: Cybernetics And Society\footcite{wiener_introduzione_nodate}
+nel 1950:
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{La nostra concezione della società ideale differisce dalla società ideale
+    prospettata dai fascisti e da molti magnati del mondo degli affari 
+    e della politica.
+    Essi preferiscono una organizzazione in cui tutti i comandi
+    provengano dall'alto senza che sia possibile nessuna riverisbilità.
+    Sotto di essi gli uomini sono stati ridotti al livello di esecutori degli ordini
+    di un centro nervoso che pretende di essere superiore.
+    Desidero che questo libro sia inteso come una protesta contro questa
+    utilizzazione inumana degli esseri umani, poiché sono convinto che impiegare
+    un uomo richiedendogli e attribuendogli meno di quanto comporta la sua condizione umana,
+    significa abbruttire questa condizione e sperperare le sue energie.
+    È una degradazione della condizione umana legare un uomo a un remo e impiegarlo come
+    sorgente di energia; ma è altrettanto degradante segregarlo in una fabbrica
+    e assegnarlo a un compito meramente meccanico che richieda meno di un milionesimo
+    delle sue facoltà cerebrali. È assai più facile infatti
+    organizzare una fabbrica o una galera che impieghi gli esseri umani
+    per una insignificante frazione delle loro attitudini che costruire una 
+    società in cui essi possano elevarsi in tutta la loro statura.
+    Coloro che soffrono di un complesso di potenza sanno che la meccanizzazione 
+    dell'uomo è il mezzo più semplice per realizzare le loro ambizioni.
+    Sono convinto che questa facile via al potere comporta non soltato l'annullamento 
+    di quelli che io credo siano i valori morali dell'umanità,
+    ma anche l'eliminazione delle attuali, labilissime possibilità di
+    sopravvivenza della razza umana per un periodo considerevole.
+    }
+\vspace{0.5cm}
+\end{center}
+
+Se in risposta a questa affermazione di Wiener passiamo ad una seconda citazione, proveniente invece da un libro 
+recente che critica la nostra condizione nella società contemporanea, scritto e pubblicato da François J. Bonnet. nel 2020:
 
 \begin{center}
     \vspace{0.5cm}
@@ -136,28 +270,50 @@ cloud of promises and signs as desirable as they are deadly.}\footcite{francois_
 \vspace{0.5cm}
 \end{center}
 
-Per concludere le mie motivazioni, l'ultimo aspetto che ho reputato importante affrontare è la forma,
+Troveremo che non solo le paure profetiche di Wiener si sono realizzate già da diverso tempo, 
+ma che da molto tempo ne stiamo già raccogliendo le inevitabili conseguenze,
+che si riflettono dal mio punto di vista in una società anestetizzata, 
+schiava della tecnologia, e livellata in qualche modo ad una condizione di eterno presente.
+In risposta a questa condizione, disegnare i propri sistemi e di conseguenza riappropriarsi della tecnologia,
+rappresenta per me un modo costruttivista di rispondere ai problemi del mondo contemporaneo
+attraverso la pratica musicale.\\
+Per concludere infine le motivazioni che mi hanno portato a questo tipo di scrittura musicale, 
+l'ultimo aspetto che ho reputato importante affrontare è la forma,
 nei suoi aspetti Macro-temporali e Micro-temporali. \\
-Se è vero come sostiene François J. Bonnet, ed altri filosofi come Mark Fisher e Slavoj Žižek,
+Se ammettiamo quindi come sostiene François J. Bonnet, ed altri filosofi come Mark Fisher e Slavoj Žižek,
 che la nostra società contemporanea ha in qualche modo normalizzato
 una velocità schizofrenica nelle cose, dove tutto deve essere estremamente funzionale per motivi pratici,
+e dove non abbiamo più modo di esercitare alcun controllo sullo scorrere del tempo,
 la riappropriazione del tempo nella forma, dell'ascolto, ed infine dello spazio, diviene per me un elemento fondamentale
 nella composizione,
 dove tutti gli elementi del sistema hanno un ruolo condiviso che contribuisce a formare la complessità nel suo insieme.
-A tal proposito ho sempre trovato interessante come un piccolo cambiamento all'interno di un sistema 
-possa portare a cambiamenti radicali
+A tal proposito ho sempre trovato interessante osservare nelle evoluzioni temporali 
+come un piccolo cambiamento all'interno di un sistema possa consefuentemente portare a cambiamenti radicali
 nella Macroforma, proprio come nella sensibilità alle condizioni della teoria del caos, 
 che ci illustra come in un sistema caotico, a variazioni infinitesime delle condizioni iniziali 
 corrispondono variazioni significative del comportamento futuro. 
-In tal senso è diventato per me un aspetto importante lavorare con
+Dunque in tal senso è diventato per me un aspetto importante lavorare con
 sistemi emergenti che possano rendere udibili questi processi di continua trasformazione
-del suono. \\
-E a tal proposito Stockhausen, nella sua teoria della "Forma unificata del tempo", 
-spiega come in tal senso la differenza fra i Micro-elementi nella forma, 
+del suono, e che non rendano udibile una sola traiettoria possibile nell'evoluzione formale
+di un brano.\\
+È tal proposito Stockhausen, nella sua teoria della "Forma unificata del tempo", 
+notò già nel 1960 come in tal senso la differenza fra i Micro-elementi nella forma, 
 e la Macroforma, non consista tanto in diversi ruoli e compiti del comporre,
-quanto a diversi livelli di percezione del tempo, 
-poiché altezza e ritmo sono fondamentalmente la stessa cosa percepita a diverse scale temporali,
-come illustra nella sua composizione Kontakte realizzata fra il 1958 ed il 1960.
+quanto più a diversi livelli di percezione del tempo, 
+poiché altezza e ritmo sono fondamentalmente la stessa cosa se percepita a diverse scale temporali,
+e ce lo illustra nella sua composizione Kontakte realizzata fra il 1958 ed il 1960, mettendo in luce
+come nella forma di un brano musicale il ruolo delle parti sia sostanzialmente un problema di complessità,
+che dipende dal punto di vista dell'osservatore.
+
+\subsection{Complex Sound Generators}
+\label{Complex Sound Generators}
+
+La nozione di Complex Sound Generators è stata ripresa qui a partire dal
+paper di Dario Sanfilippo\footcite{sanfilippo_constrained_2021},
+tuttavia nella letteratura della Computer Music, primi esempi di applicazioni
+di sistemi caotici per la generazione di suoni nella musica risalgono
+ai primi anni '90 con gli esempi portati da Agostino Di Scipio
+in suoi articoli come “Composition by exploration of non-linear dynamic systems”\footcite{discipioiterated}
 
 %% TESTO
 %% - parlare del brano e della sua realizzazione +

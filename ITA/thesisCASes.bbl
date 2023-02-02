@@ -160,7 +160,7 @@
       \verb http://www.nicolascollins.com/texts/peasouphistoryOLD.pdf
       \endverb
     \endentry
-    \entry{di_scipio_relational_2022}{online}{}
+    \entry{di_scipio_sound_2003}{article}{}
       \name{author}{1}{}{%
         {{hash=d330309df5da086019baa54c53822e35}{%
            family={Di\bibnamedelima Scipio},
@@ -178,6 +178,56 @@
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
       \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This paper takes a systemic perspective on interactive signal processing and introduces the author's Audible Eco-Systemic Interface (AESI) project. It starts with a discussion of the paradigm of ‘interaction’ in existing computer music and live electronics approaches, and develops following bio-cybernetic principles such as ‘system/ambience coupling’, ‘noise’, and ‘self-organisation’. Central to the paper is an understanding of ‘interaction’ as a network of interdependencies among system components, and as a means for dynamical behaviour to emerge upon the contact of an autonomous system (e.g. a DSP unit) with the external environment (room or else hosting the performance). The author describes the design philosophy in his current work with the AESI (whose DSP component was implemented as a signal patch in K YMA 5.2), touching on compositional implications (not only live electronics situations, but also sound installations).}
+      \field{issn}{1355-7718, 1469-8153}
+      \field{journaltitle}{Organised Sound}
+      \field{month}{12}
+      \field{number}{3}
+      \field{shorttitle}{‘{Sound} is the interface’}
+      \field{title}{‘{Sound} is the interface’: from \textit{interactive} to \textit{ecosystemic} signal processing}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{volume}{8}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{269\bibrangedash 277}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1017/S1355771803000244
+      \endverb
+      \verb{file}
+      \verb Di Scipio - 2003 - ‘Sound is the interface’ from interactive .pdf:files/25/Di Scipio - 2003 - ‘Sound is the interface’ from interactive .pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/product/identifier/S1355771803000244/type/journal_article
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/product/identifier/S1355771803000244/type/journal_article
+      \endverb
+    \endentry
+    \entry{di_scipio_relational_2022}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d330309df5da086019baa54c53822e35}{%
+           family={Di\bibnamedelima Scipio},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d330309df5da086019baa54c53822e35}
+      \strng{fullhash}{d330309df5da086019baa54c53822e35}
+      \strng{bibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authornamehash}{d330309df5da086019baa54c53822e35}
+      \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
+      \field{extraname}{2}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -228,7 +278,7 @@
       \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -255,7 +305,7 @@
       \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -283,7 +333,7 @@
       \strng{authorbibnamehash}{d330309df5da086019baa54c53822e35}
       \strng{authornamehash}{d330309df5da086019baa54c53822e35}
       \strng{authorfullhash}{d330309df5da086019baa54c53822e35}
-      \field{extraname}{4}
+      \field{extraname}{5}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -388,6 +438,33 @@
       \field{title}{on Governors}
       \field{year}{1868}
     \endentry
+    \entry{tom_mudd_gutter_synthesis}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7ec9e5cc61c5b8fc62b805e044cd12ee}{%
+           family={Mudd},
+           familyi={M\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \strng{fullhash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \strng{bibnamehash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \strng{authorbibnamehash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \strng{authornamehash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \strng{authorfullhash}{7ec9e5cc61c5b8fc62b805e044cd12ee}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents the Gutter Synthesis project, a synthesis method that combines chaotic synthesis based on the Duffing Oscillator dynamical system with modal-like resonances. The synthesis process is described and the project is related both to prior work on chaotic synthesis and to relevant perspectives from physical modelling. A range of specific kinds of interactions with the synthesis engine are considered, supported by accompanying videos. These interactions demonstrate the complexity of behaviours that can be encountered when interacting with chaotic systems, particularly in relation to hysteresis. The potential of the system to enter different states, and for unstable boundary points to be explored as creative resources are considered and linked to Andy Keep’s notion of instrumentalizing.}
+      \field{journaltitle}{Proceedings of the Seventh Conference on Computation, Communication, Aesthetics & X}
+      \field{title}{Between chaotic synthesis and physical modelling: Intrumentalizing with Gutter Synthesis}
+      \field{pages}{12}
+      \range{pages}{1}
+    \endentry
     \entry{tudorneuralsynth}{online}{}
       \name{author}{1}{}{%
         {{hash=e6b7e0cde6fc6b07b56e0c16a15e9115}{%
@@ -474,7 +551,7 @@
       \field{pages}{10}
       \range{pages}{1}
     \endentry
-    \entry{sanfilippo_time-domain_2021}{article}{}
+    \entry{sanfilippo_constrained_2021}{article}{}
       \name{author}{1}{}{%
         {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
            family={Sanfilippo},
@@ -492,6 +569,37 @@
       \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents investigations for complex sound generation based on modiﬁed classic chaotic differential equations. The modiﬁcation consists of a constraining structure, a cascaded saturating nonlinearity and DC-blocker unit within the recursive paths of the differential equations. The new conﬁguration allows for the exploration of these equations in unstable regions, increasing the parameters ranges allowed and extending sonic possibilities. Furthermore, the conﬁguration implements a low-level competing mechanism between positive and negative feedback relations that forces oscillation and enhances complex variations both at timbral and formal time scales. The resulting systems exhibit phase spaces with nontrivial trajectories and show potential for computer music and, particularly, applications requiring some degree of autonomy. The sound generators are implemented in the Faust programming language and are published on Github under the GNU GPL v3.0 license.}
+      \field{title}{{CONSTRAINED} {DIFFERENTIAL} {EQUATIONS} {AS} {COMPLEX} {SOUND} {GENERATORS}}
+      \field{year}{2021}
+      \field{pages}{8}
+      \range{pages}{1}
+      \verb{file}
+      \verb Sanfilippo - 2021 - CONSTRAINED DIFFERENTIAL EQUATIONS AS COMPLEX SOUN.pdf:files/110/Sanfilippo - 2021 - CONSTRAINED DIFFERENTIAL EQUATIONS AS COMPLEX SOUN.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{sanfilippo_time-domain_2021}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1e3cf3c73417ced0c26a7c44076e70d2}{%
+           family={Sanfilippo},
+           familyi={S\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{fullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{bibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
+      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -540,7 +648,7 @@
       \strng{authorbibnamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{authornamehash}{1e3cf3c73417ced0c26a7c44076e70d2}
       \strng{authorfullhash}{1e3cf3c73417ced0c26a7c44076e70d2}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -723,6 +831,36 @@
       \endverb
       \verb{url}
       \verb https://journals.library.ualberta.ca/complicity/index.php/complicity/article/view/8737
+      \endverb
+    \endentry
+    \entry{wiener_introduzione_nodate}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4c57f398a86ab1994e9bd661e786e707}{%
+           family={Wiener},
+           familyi={W\bibinitperiod},
+           given={Norbert},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{4c57f398a86ab1994e9bd661e786e707}
+      \strng{fullhash}{4c57f398a86ab1994e9bd661e786e707}
+      \strng{bibnamehash}{4c57f398a86ab1994e9bd661e786e707}
+      \strng{authorbibnamehash}{4c57f398a86ab1994e9bd661e786e707}
+      \strng{authornamehash}{4c57f398a86ab1994e9bd661e786e707}
+      \strng{authorfullhash}{4c57f398a86ab1994e9bd661e786e707}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{HOUGHTON MIFFLIN COMPANY, BOSTON}
+      \field{title}{The Human Use of Human Beings}
+      \field{year}{1950}
+      \field{pages}{224}
+      \range{pages}{1}
+      \verb{file}
+      \verb Wiener - INTRODUZIONE ALLA CIBERNETICA.pdf:files/184/Wiener - INTRODUZIONE ALLA CIBERNETICA.pdf:application/pdf
       \endverb
     \endentry
     \entry{wishart_on_sonic_art}{book}{}
