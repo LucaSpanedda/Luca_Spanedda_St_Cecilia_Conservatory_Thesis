@@ -9,7 +9,7 @@ si manifesta infatti sulla soglia della caos.
 Mentre nel mondo fisico la non linearità è insita nella natura
 delle cose, nel mondo digitale, queste non linearità, come abbiamo visto
 anche nei capitoli precedenti, devono essere accuratamente
-programmate ed introdotte all’interno degli algoritmi per raggiungere la complessità. 
+programmate ed introdotte all’interno degli algoritmi per raggiungere la complessità. \\
 La teoria del caos postula che esista una classe di fenomeni naturali che
 possano essere modellati da sistemi deterministici non lineari.
 Quando si parla di caos ci si riferisce ad un certo tipo di comportamento di
@@ -24,26 +24,30 @@ varia il comportamento del sistema stesso negli stadi successivi a quello inizia
 L’ipotesi che i sistemi deterministici possano sviluppare comportamenti impredicibili, 
 come già detto all'inizio di questa tesi fu teorizzata da Henri Poincaré e portata alla
 fama da Edward Norton Lorenz con il suo articolo.\footcite{Lorenzdnf}
-In questo capitolo della tesi illustrerò come a partire dalla
-risoluzione delle equazioni differenziali del sistema di Lorenz, si possa
+In questo capitolo della tesi, illustrerò attraverso la composizione di un mio brano, 
+come a partire dalla risoluzione delle equazioni differenziali del sistema di Lorenz, si possa
 creare un CAS che possa essere utilizzato per la
-performance musicale in Live Electronics, attraverso
-la composizione di un mio brano.
+performance musicale in Live Electronics.
 
 \subsection{RITI : Room Is The Instrument}
 \label{RITI : Room Is The Instrument}
 
-RITI: Room Is The Instrument è un brano che si basa su un sistema caotico \textit{site-specific}.
-La personalità acustica della stanza in cui viene eseguito il brano 
-viene riflessa in variazioni del comportamento del sistema stesso.
+RITI: Room Is The Instrument è un brano che si basa su un Sistema Complesso \textit{site-specific},
+in grado di manifestare comportamenti emergenti e caotici,
+dove la personalità acustica della stanza in cui viene eseguito il brano può
+essere riflessa in variazioni del comportamento del sistema stesso.
 L'idea dell'acronimo RITI deriva dal famoso paper di Agostino Di Scipio 
 "Sound is the interface" (SITI), 
 che ha introdotto per la prima volta la prospettiva sistemica 
 sull'auto-organizzazione e sulla capacità di un sistema di auto-osservarsi 
 tramite l'ambiente circostante in musica.\footcite{di_scipio_sound_2003} \\
-Il sistema è costruito utilizzando una soluzione 
-delle equazioni differenziali del sistema di Lorenz come motore di sintesi del suono in DSP. 
-Sono state aggiunte a questo delle costrizioni matematiche
+Il sistema è costruito utilizzando alla base una soluzione 
+delle equazioni differenziali del sistema di Lorenz come motore di sintesi del suono in DSP;
+Le esigenze di questo tipo di applicazioni nel mondo della Computer Music
+sono generalmente motivate dal desiderio di esplorare i comportamenti complessi ed emergenti
+che questo tipo di sistemi manifesta.
+Il modello delle Equazioni di Lorenz che ho seguito per questo tipo di sistema, si basa
+su delle costrizioni matematiche aggiunte alle risoluzioni
 per esplorare il sistema in regioni instabili, 
 seguendo il metodo descritto nel paper di Dario Sanfilippo 
 "Constrained Differential Equations as Complex Sound Generators".\footcite{sanfilippo_constrained_2021} 
@@ -55,20 +59,20 @@ Oltre alle costrizioni proposte da Dario Sanfilippo,
 ispirato dall'idea che ha avuto Tom Mudd nel suo paper
 "Between Chaotic Synthesis and Physical Modelling: Instrumentalising with Gutter Synthesis",\footcite{tom_mudd_gutter_synthesis}
 di aggiungere alla risoluzione dell'equazione differenziale dell'Oscillatore di Duffing
-un banco di filtri Bandpass, che permettesse al sistema di manifestare
+un banco di filtri Bandpass che permettesse al sistema di manifestare
 risonanze modali che ricordino il comportamento di uno strumento musicale.
 Ho deciso di aggiungere alla risoluzione delle equazioni di Lorenz modificate,
 un banco parallelo di 32 filtri Bandpass informati 
 con 4 liste ricavate dall'analisi di 4 registrazioni di note diverse di un violoncello, 
-per ottenere questo tipo di comportamenti,
-e per concludere l'aggiunta dell'ingresso di un segnale esterno affidato ai microfoni nelle equazioni, 
+per ottenere questo tipo di comportamenti:
+Per concludere, ho aggiunto infine alle tre equazioni l'ingresso di un segnale esterno, affidato ai microfoni, 
 che permettesse di perturbare il sistema e generare un ulteriore stato 
-di Feedback dall'ambiente della performance,
+di Feedback proveniente dall'ambiente della performance,
 rendendo così il sistema di sintesi autonomo anche sensibile alle condizioni esterne.
 L'equazione di Lorenz modificata con le costrizioni esposte,
-costituisce nel suo insieme un singolo agente, a cui ci riferiremo a partire questo
-momento con il nome di CSGA \textit{Complex Sound Generator Agent}, che verrà richiamato a seguito
-all'interno di una superiore Feedback Delay Network (FDN) che ne contiene un 
+costituisce nel suo insieme un singolo agente, a cui ci riferiremo a partire da questo
+momento con il nome di CSGA \textit{Complex Sound Generator Agent}, e che verrà richiamato a seguito
+all'interno di una superiore \textit{Feedback Delay Network} (FDN) che ne contiene un 
 numero finito voci determinato a tempo di compilazione. 
 Prima della performance, in fase di compilazione del sistema,
 è quindi possibile scegliere il numero di CSGA che andranno a costituire 
@@ -305,21 +309,124 @@ e ce lo illustra nella sua composizione Kontakte realizzata fra il 1958 ed il 19
 come nella forma di un brano musicale il ruolo delle parti sia sostanzialmente un problema di complessità,
 che dipende dal punto di vista dell'osservatore.
 
-\subsection{Complex Sound Generators}
+\subsection{Complex Sound Generator}
 \label{Complex Sound Generators}
 
-La nozione di Complex Sound Generators è stata ripresa qui a partire dal
+La nozione di Complex Sound Generator è stata ripresa qui a partire dal
 paper di Dario Sanfilippo\footcite{sanfilippo_constrained_2021},
 tuttavia nella letteratura della Computer Music, primi esempi di applicazioni
 di sistemi caotici per la generazione di suoni nella musica risalgono
 ai primi anni '90 con gli esempi portati da Agostino Di Scipio
-in suoi articoli come “Composition by exploration of non-linear dynamic systems”\footcite{discipioiterated}
+in suoi articoli come “Composition by exploration of non-linear dynamic systems”.\footcite{discipioiterated}
+Le radici della sintesi caotica in generale sono multiple e dipendono
+dalla definizione del campo di applicazione, si potrebbe far risalire
+a David Tudor con i suoi esperimenti cibernetici sul feedback elettrico del 1960
+così come alle implementazioni specifiche esplorate da molti artisti
+delle equazioni di Rössler nella sintesi video e audio.\footcite{tom_mudd_gutter_synthesis}
+Il modello delle Equazioni utilizate alla base del CSGA si basa sul modello di Lorenz 
+che fu il primo esempio di un sistema di equazioni differenziali a bassa
+dimensionalità in grado di generare un comportamento caotico.
+Venne scoperto da Edward N. Lorenz, del Massachusetts Institute of Technology, nel 1963.
+Semplificando le equazioni del moto alle derivate parziali che descrivono il movimento termico di
+convezione di un fluido, Lorenz ottenne un sistema di tre equazioni differenziali del primo ordine.
+La versione continua dell’equazione differenziale che descrive il modello di Lorenz è descritta come segue: 
 
-%% TESTO
-%% - parlare del brano e della sua realizzazione +
-%% Codici Faust degli agenti e delle varie parti.
-%% Le analisi condotte e il contributo proveniente dai lavori
-%% di Agostino Di Scipio e Dario Sanfilippo.
-%% In coda al capitolo rimandare al codice completo in Appendice A e plot
-%% grafici di Faust in Appendice B -
-%% + Partitura dopo gli appendici (o appendice C)
+\begin{align*}
+\frac{\partial x}{\partial t} & = \sigma(y-x) \\
+\frac{\partial y}{\partial t} & = \rho x - xz - y \\
+\frac{\partial z}{\partial t} & = xy -\beta z 
+\end{align*}
+
+Dove \( x \) è proporzionale all’ampiezza della circolazione della velocità del fluido nell’anello del fluido,
+il positivo rappresenta il moto in senso orario ed il negativo il senso antiorario,
+dove \( y \) è la differenza di temperatura tra i fluidi superiori ed inferiori,
+e dove \( z \) è la distorsione dalla linearità del profilo della temperatura verticale.
+Mentre \( \sigma,  \rho,  \beta \) governano la relazione fra le quantità (e sono maggiori di 0),
+e \( \partial t \) rappresenta lo step d'integrazione. \\
+Mentre per una sua rappresentazione in forma di modello discreto,
+può essere scritto un algoritmo in Faust come segue:
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
+{codes/LorenzEquations.dsp}
+
+Come detto in precedenza, esistono ricerche che si pongono il problema 
+di un adattività dei sistemi caotici con il fine di poterli utilizzare per determinati scopi,
+andrò adesso ad illustrare nel dettaglio i modelli che ho preso a riferimento in questo brano per poter utilizzare
+i sistemi caotici per fini musicali di sintesi del segnale. 
+Per poter esplorare un sistema caotico con il fine di creare un segnale udibile in tutte le sue regioni, 
+è necessario dunque porsi dunque un problema di ottimizzazione;
+è necessario chiedersi quali problemi possano verficarsi e quali strumenti possano contrastarli. 
+I problemi nell'utilizzare Lorenz come segnale di sintesi 
+sono in sostanza Il DC Offset, e i valori più grandi del range [1, -1].
+Riguardo le soluzioni sappiamo che il DC blocker, 
+è uno strumento indispensabile nella modellazione della guida d’onda
+digitale e in altre applicazioni, e che può rimuovere la componente Continua del segnale 
+che circola in una linea di ritardo. Questo consiste sostanzialmente in
+un filtro FIR highpass, poiché le correnti continue possono essere viste come frequenze a
+0Hz, ed infine un onepole in serie che recupera parte della cancellazione del FIR.
+Mentre per la funzione della Tangente Iperbolica, sappiamo che è una funzione
+non lineare appartenente alle funzioni iperboliche, che costituiscono una famiglia di funzioni 
+elementari dotate di alcune proprietà analoghe e corrispondenti alle
+proprietà delle ordinarie funzioni trigonometriche.
+utilizzando la Tangente Iperbolica come un Waveshaper (soft clipping) possiamo 
+esplorare il sistema caotico in tutte le sue regioni rimanendo sempre in un range [1, -1].
+A tal proposito Dario Sanfilippo propone:\footcite{sanfilippo_constrained_2021}
+
+\begin{center}
+    \vspace{0.5cm}
+    \textit{Considering first-order differential equations, 
+we can obtain a generalisation of the modified systems discussed
+here. Let \( y \) be a vector of functions, let \( x \) be an input vec-
+tor, let \( F \) be a vector of functions of \( y \) and \( x \) ; let  \( C \) be
+a vector of constraining functions. Written in differential
+form with respect to time, we have that:}
+\end{center}
+\begin{align*}
+    \frac{\partial y(t)}{\partial t} & = C(F(x(t), y(t)))
+        &&\text{where} & C(z) = B(l * S(z(l)))
+\end{align*}
+\begin{center}
+    \textit{with B and S being, respectively, vectors of first-order
+    DC-blockers and saturating nonlinearities with arbitrary
+    saturation threshold piloted by the parameter l. The saturation threshold 
+    becomes a key parameter for the interaction with the oscillators, while the overall output can be
+    normalised to unity peak amplitudes for digital audio by
+    merely dividing by l. While several types of bounded saturators are available, here, 
+    we will focus on the well known 
+    hyperbolic tangent function. Note that the input
+    vector can be used to set the system’s initial conditions or
+    as continuous perturbation through signals. In fact, these
+    systems can also be deployed as nonlinear distortion units
+    when operating under non-self-oscillating conditions.}
+    \vspace{0.5cm}
+\end{center}
+
+Secondo il metodo appena esposto, le costrizioni possono essere rappresentate come:
+
+\begin{center}
+\begin{align*}
+    \text{per B} && y(n) = x(n) -x(n-1) +Ry(n-1) \\
+    \text{per S} && y(t) = tanh(x(t))
+\end{align*}
+\end{center}
+
+Mentre per la rappresentazione di Lorenz in forma di modello discreto modificato,
+può essere scritto un algoritmo in Faust come segue:
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
+{codes/LorenzEquations.dsp}
+
+Per concludere, il sistema di Lorenz Modificato passa infine per la sua terza costrizione,
+che consiste in un Banco di Filtri Bandpass dove per il termine in ingresso \( x\left(n\right) \)  
+il segnale viene diviso per il numero di banchi di filtri e restituito in uscita come 
+\( y & = x_{{1}}(n), x_{{2}}(n), x_{{3}}(n),... \) .
+Assumento ancora una volta C come vettore delle costrizioni e fBank come la funzione
+che rappresenta il banco di filtri avremmo infine che:
+
+\end{center}
+\begin{align*}
+    C(z) = fBank(B(l * S(z(l))))
+\end{align*}
+\begin{center}

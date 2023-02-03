@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {3.2}Audio Information Processing}{45}{}%
 \contentsline {subsection}{\numberline {3.3}Conclusioni}{58}{}%
 \contentsline {section}{\numberline {4}Sistemi Caotici}{60}{}%
-\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{60}{}%
+\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{61}{}%
 \contentsline {subsection}{\numberline {4.2}Motivazioni}{63}{}%
-\contentsline {subsection}{\numberline {4.3}Complex Sound Generators}{69}{}%
-\contentsline {section}{\numberline {A}First appendix}{70}{}%
-\contentsline {section}{\numberline {B}Second appendix}{102}{}%
+\contentsline {subsection}{\numberline {4.3}Complex Sound Generator}{69}{}%
+\contentsline {section}{\numberline {A}First appendix}{74}{}%
+\contentsline {section}{\numberline {B}Second appendix}{106}{}%
