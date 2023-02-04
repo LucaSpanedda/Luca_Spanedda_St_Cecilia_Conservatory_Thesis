@@ -16,5 +16,5 @@
 \contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{63}{}%
 \contentsline {subsection}{\numberline {4.2}Motivazioni}{65}{}%
 \contentsline {subsection}{\numberline {4.3}Complex Sound Generator}{71}{}%
-\contentsline {section}{\numberline {A}First appendix}{82}{}%
-\contentsline {section}{\numberline {B}Second appendix}{114}{}%
+\contentsline {section}{\numberline {A}First appendix}{93}{}%
+\contentsline {section}{\numberline {B}Second appendix}{125}{}%
