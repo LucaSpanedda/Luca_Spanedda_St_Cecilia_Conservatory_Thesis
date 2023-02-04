@@ -206,7 +206,11 @@ andrò a discutere ora il caso più generico
 di una normalizzazione di picco in DSP. \\
 Partendo dall'algoritmo basilare del \textit{Peakholder} in IIR discusso nel precedente capitolo. 
 L'ampiezza del picco di un segnale può essere normalizzata secondo la seguente espressione 
-\( y_{1}(t) = (1/(\max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right))) * x(t) \), 
+
+\begin{align*}
+    y_{1}(t) = (1/(\max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right))) * x(t) 
+\end{align*}
+
 dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. \\
 Per prima cosa si calcola con il \textit{Peakholder} il picco massimo del segnale,
 tracciandone il profilo di ampiezza campione per campione,
@@ -277,11 +281,19 @@ e che combinate fra loro consentono di rilevare sia i transienti di attacco rapi
 che al contempo di avere una lunga fase di decadimento per i suoni sostenuti e lenti.\\
 Il \textit{Peakenvelope} può essere ottenuto modificando 
 la retroazione dell'algoritmo \textit{Peakholder}, moltiplicandola per 
-un fattore di decadimento come nella seguente formula \\
-\( y_{1}(t) = \max\left( k_{1} * y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right) \), 
-dove \( k_{1} = {0.001}^{\frac{(\frac{1}{(SR)})}{T}} \) è la formula del decadimento RT60, 
-e dove T rappresenta il tempo di decadimento desiderato in secondi, mentre
-\textit{SR} rappresenta la costante della frequenza di campionamento utilizzata.
+un fattore di decadimento come nella seguente formula 
+
+\begin{align*}
+    y_{1}(t) = \max\left( k_{1} * y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right)
+\end{align*}
+dove 
+\begin{align*}
+    k_{1} = {0.001}^{\frac{T}{ST}} 
+\end{align*} 
+
+è la formula del decadimento RT60, 
+e dove \textit{T} rappresenta il tempo di decadimento desiderato in secondi, 
+mentre \textit{ST} rappresenta la durata di un campione in secondi per la frequenza di campionamento corrente.
 Come nelle altre formule del \textit{Peakholder}, \textit{x} è il segnale in ingresso, 
 e \textit{y} il segnale sia in uscita che reiterato nella funzione stessa. \\
 A seguito l'algoritmo in Faust del \textit{Peakenvelope}.

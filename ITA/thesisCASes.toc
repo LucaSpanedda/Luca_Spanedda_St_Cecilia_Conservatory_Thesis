@@ -6,15 +6,15 @@
 \contentsline {subsection}{\numberline {2.1}Audible EcoSystemics n.2 - Feedback Study}{17}{}%
 \contentsline {subsection}{\numberline {2.2}L'interazione Uomo-Macchina-Ambiente}{19}{}%
 \contentsline {subsection}{\numberline {2.3}Il Meccanismo LAR}{20}{}%
-\contentsline {subsection}{\numberline {2.4}Trasformazioni del suono}{32}{}%
+\contentsline {subsection}{\numberline {2.4}Trasformazioni del suono}{33}{}%
 \contentsline {subsection}{\numberline {2.5}Conclusioni}{42}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{43}{}%
-\contentsline {subsection}{\numberline {3.1}Order From Noise (Homage to Heinz Von Foerster)}{43}{}%
-\contentsline {subsection}{\numberline {3.2}Audio Information Processing}{45}{}%
-\contentsline {subsection}{\numberline {3.3}Conclusioni}{58}{}%
-\contentsline {section}{\numberline {4}Sistemi Caotici}{60}{}%
-\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{61}{}%
-\contentsline {subsection}{\numberline {4.2}Motivazioni}{63}{}%
-\contentsline {subsection}{\numberline {4.3}Complex Sound Generator}{69}{}%
-\contentsline {section}{\numberline {A}First appendix}{74}{}%
-\contentsline {section}{\numberline {B}Second appendix}{106}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{44}{}%
+\contentsline {subsection}{\numberline {3.1}Order From Noise (Homage to Heinz Von Foerster)}{44}{}%
+\contentsline {subsection}{\numberline {3.2}Audio Information Processing}{46}{}%
+\contentsline {subsection}{\numberline {3.3}Conclusioni}{60}{}%
+\contentsline {section}{\numberline {4}Sistemi Caotici}{62}{}%
+\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{63}{}%
+\contentsline {subsection}{\numberline {4.2}Motivazioni}{65}{}%
+\contentsline {subsection}{\numberline {4.3}Complex Sound Generator}{71}{}%
+\contentsline {section}{\numberline {A}First appendix}{82}{}%
+\contentsline {section}{\numberline {B}Second appendix}{114}{}%

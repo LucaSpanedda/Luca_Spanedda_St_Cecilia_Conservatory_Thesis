@@ -381,12 +381,11 @@ here. Let \( y \) be a vector of functions, let \( x \) be an input vec-
 tor, let \( F \) be a vector of functions of \( y \) and \( x \) ; let  \( C \) be
 a vector of constraining functions. Written in differential
 form with respect to time, we have that:}
-\end{center}
-\begin{align*}
-    \frac{\partial y(t)}{\partial t} & = C(F(x(t), y(t)))
-        &&\text{where} & C(z) = B(l * S(z(l)))
-\end{align*}
 \begin{center}
+\begin{align*}
+    \frac{\partial y(t)}{\partial t} & = C(F(x(t), y(t))) && \text{where} && C(z) = B(l * S(z(l)))
+\end{align*}
+\end{center}
     \textit{with B and S being, respectively, vectors of first-order
     DC-blockers and saturating nonlinearities with arbitrary
     saturation threshold piloted by the parameter l. The saturation threshold 
@@ -404,29 +403,98 @@ form with respect to time, we have that:}
 
 Secondo il metodo appena esposto, le costrizioni possono essere rappresentate come:
 
-\begin{center}
 \begin{align*}
-    \text{per B} && y(n) = x(n) -x(n-1) +Ry(n-1) \\
-    \text{per S} && y(t) = tanh(x(t))
+    \text{where B} && y(n) = x(n) -x(n-1) +Ry(n-1) \\
+    \text{where S} && y(t) = tanh(x(t))
 \end{align*}
-\end{center}
 
 Mentre per la rappresentazione di Lorenz in forma di modello discreto modificato,
 può essere scritto un algoritmo in Faust come segue:
 
 \vspace{0.5cm} 
-\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con DC-blocker e TanH}]
 {codes/LorenzEquations.dsp}
 
 Per concludere, il sistema di Lorenz Modificato passa infine per la sua terza costrizione,
-che consiste in un Banco di Filtri Bandpass dove per il termine in ingresso \( x\left(n\right) \)  
-il segnale viene diviso per il numero di banchi di filtri e restituito in uscita come 
-\( y & = x_{{1}}(n), x_{{2}}(n), x_{{3}}(n),... \) .
-Assumento ancora una volta C come vettore delle costrizioni e fBank come la funzione
-che rappresenta il banco di filtri avremmo infine che:
+che consiste in un Banco di Filtri Bandpass dove per un solo termine in ingresso 
+il segnale viene diviso per il numero di banchi di filtri e restituito in uscita. \\
+Il banco di filtri Bandpass è costituito da 32 voci parallele informate da 
+4 liste di ricavate da analisi di 4 file audio di note del violocello,
+esplorate durante il corso della performance.
+L'algoritmo dei filtri Bandpass utilizzato come costrizione per il sistema
+di Lorenz Modificato, consiste in un implementazione \textit{Virtual Analog} 
+di un filtro del 2° ordine basato sulla struttura SVF \textit{State Variable Filter}.
+La particolarità di questo tipo d'implementazione di SVF che ho utilizzato,
+è che preserva matematicamente la topologia del filtro analogico,
+includendo nella maggiorparte dei casi \textit{zero-delay loops}.
+Questi filtri sono chiamati \textit{Topology Preserving Transform filters} o filtri TPT,
+e provengono dal libro "The Art of VA Filter Design" di Vadim Zavalishin, 
+pubblicato e reperibile gratuitamente in rete. \\
+A seguito riporto l'implementazione matematica di questo filtro SVF TPT di Vadim Zavalishin
+che ha esposto Will Pirkle in un suo articolo chiamato 
+"Virtual Analog (VA) Filter Implementation and Comparisons v2.0"
+del 2013 e reperibile dal suo sito.
 
-\end{center}
 \begin{align*}
-    C(z) = fBank(B(l * S(z(l))))
+    y_{hp}(n) = & \frac{x(n)- 2Rs_{1}(n) - gs_{1}(n) - s_{2}(n)}
+    {1 + 2Rg + g^{2}}
 \end{align*}
-\begin{center}
+
+in questa formula viene prima calcolata l'equazione 
+differenziale per l'uscita \( yHP \) (Highpass),
+e dopo, applicata all'ingresso del primo integratore, 
+utilizzando il metodo il \textit{read-before-write}
+(ovvero \( s_{1} \) e \( s_{2} \) vengono letti per primi e aggiornati per ultimi). 
+Vengono ricavate da qui le equazioni alle differenze per tutti gli altri filtri:
+
+\begin{align*}
+{y_{bp}(n)}& =  gy_{hp}(n) + s_{1}(n) \\
+{y_{lp}(n)}& =  gy_{bp}(n) + s_{2}(n) \\
+{y_{ubp}(n)}& =  2Ry_{bp}(n) \\
+{y_{bshelf}(n)}& =  x(n) + 2KRy_{bp}(n) \\
+{y_{notch}(n)}& =  x(n) - 2Ry_{bp}(n) \\
+{y_{apf}(n)}& =  x(n) - 4Ry_{bp}n) \\
+{y_{peak}(n)}& =  y_{lp}(n) - y_{hp}(n) \\
+\end{align*}
+
+prendendo quindi la funzione \( y_{bp} \), e assumendo ancora una volta C come vettore delle costrizioni
+per le tre equazioni differenziali del sistema di Lorenz, 
+e aggiungendo ora Q come la funzione che rappresenta il banco di filtri, 
+avremo infine che:
+
+\begin{align*}
+    \text{for} && \frac{\partial y(t)}{\partial t} & = C(F(x(t), y(t))) \\
+    \text{where} && C(z) = Q(B(l * S(z(l)))) \\
+    \text{Q is} && y(n) = x_{{1}}_{bp}(n) + x_{{2}}_{bp}(n) + x_{{3}}_{bp}(n) + ... x_{{32}}_{bp}(n)
+\end{align*}
+
+il CSGA in forma di modello discreto modificato,
+può infine essere scritto un algoritmo in Faust come segue:
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con DC-blocker e TanH}]
+{codes/LorenzEquations.dsp}
+
+Prima di passare alla descrizione globale della rete,
+voglio ringraziare qui Edoardo Staffa per avermi assistito 
+nel realizzare un semplice metodo di analisi DFT per i file audio .wav 
+tramite alcune librerie nel Linguaggio di programmazione Python3.
+In un secondo momento ho poi modificato il codice per 
+ottenere le liste con il metodo che mi occorreva per informare i filtri di Faust.
+L'algoritmo in Python è il seguente
+
+\vspace{0.5cm} 
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo della DFT in Python}]
+{codes/DFT.py}
+
+Questo codice prende come argomenti:
+un file audio .wav in ingresso, 
+un range compreso fra una frequenza minima e massima, 
+il numero di bin da utilizzare per l'analisi DFT,
+ed infine il numero di picchi ordinati per frequenze dalle più alte in ampiezza
+che si vogliono in output con i relativi valori di ampiezze, 
+con il bandwidth dell'analisi.
+In queste liste in output: frequenze, ampiezze e bandwidth,
+i valori di frequenza in uscita dall'analisi simili a quelli già salvati 
+in un intervallo di 40Hz, vengono eliminati, 
+e i restanti picchi principali salvati nel file .lib
