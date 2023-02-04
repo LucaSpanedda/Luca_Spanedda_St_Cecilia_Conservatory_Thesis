@@ -348,8 +348,22 @@ può essere scritto un algoritmo in Faust come segue:
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
-{codes/LorenzEquations.dsp}
+{codes/LorenzSystem.dsp}
 
+\begin{center}
+    \includegraphics[width=10cm]{figures/LorenzSystemInside.pdf} \\
+    {Topologia dell'Algoritmo del Sistema di Lorenz Discreto} \\ 
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=14cm]{figures/LorenzSystemFB1.pdf} \\
+    {Topologia del Feedback delle Equazioni del Sistema di Lorenz Discreto} \\ 
+\end{center}
+\vspace{0.5cm}
+
+Questo algoritmo permette già di produrre sintesi attraverso la 
+risoluzioni delle Equazioni del Sistema di Lorenz, ma per il momento in modo acritico.
 Come detto in precedenza, esistono ricerche che si pongono il problema 
 di un adattività dei sistemi caotici con il fine di poterli utilizzare per determinati scopi,
 andrò adesso ad illustrare nel dettaglio i modelli che ho preso a riferimento in questo brano per poter utilizzare
@@ -413,8 +427,27 @@ può essere scritto un algoritmo in Faust come segue:
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con DC-blocker e TanH}]
-{codes/LorenzEquations.dsp}
+{codes/CostrainedLorenzSystem.dsp}
 
+\begin{center}
+    \includegraphics[width=14cm]{figures/LorenzSystemFB2.pdf} \\
+    {Topologia del Feedback delle Equazioni del Sistema di Lorenz Modificato con DC-blocker e TanH} \\ 
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=14cm]{figures/DCblocker.pdf} \\
+    {Topologia dell'Algoritmo DC-blocker} \\ 
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=10cm]{figures/Saturator.pdf} \\
+    {Topologia dell'Algoritmo TanH} \\ 
+\end{center}
+\vspace{0.5cm}
+
+Ora il sistema di Lorenz è invece ottimizzato per la sintesi sonora.
 Per concludere, il sistema di Lorenz Modificato passa infine per la sua terza costrizione,
 che consiste in un Banco di Filtri Bandpass dove per un solo termine in ingresso 
 il segnale viene diviso per il numero di banchi di filtri e restituito in uscita. \\
@@ -469,19 +502,32 @@ avremo infine che:
 \end{align*}
 
 il CSGA in forma di modello discreto modificato,
-può infine essere scritto un algoritmo in Faust come segue:
+può infine essere scritto in un algoritmo in Faust come segue:
 
 \vspace{0.5cm} 
-\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con DC-blocker e TanH}]
-{codes/LorenzEquations.dsp}
+\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con Filterbak}]
+{codes/CSGA.dsp}
 
+\begin{center}
+    \includegraphics[width=14cm]{figures/LorenzSystemFB3.pdf} \\
+    {Topologia del Feedback delle Equazioni del Sistema di Lorenz Modificato con Filterbank} \\ 
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=14cm]{figures/BPFilterBank.pdf} \\
+    {Topologia del Filterbank con i filtri Bandpass SVF TPT} \\ 
+\end{center}
+\vspace{0.5cm}
+
+Questo andrà a rappresentare un singolo Agente richiamato all'interno della FDN.
 Prima di passare alla descrizione globale della rete,
 voglio ringraziare qui Edoardo Staffa per avermi assistito 
 nel realizzare un semplice metodo di analisi DFT per i file audio .wav 
 tramite alcune librerie nel Linguaggio di programmazione Python3.
 In un secondo momento ho poi modificato il codice per 
 ottenere le liste con il metodo che mi occorreva per informare i filtri di Faust.
-L'algoritmo in Python è il seguente
+L'algoritmo in Python è il seguente:
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo della DFT in Python}]
@@ -494,7 +540,7 @@ il numero di bin da utilizzare per l'analisi DFT,
 ed infine il numero di picchi ordinati per frequenze dalle più alte in ampiezza
 che si vogliono in output con i relativi valori di ampiezze, 
 con il bandwidth dell'analisi.
-In queste liste in output: frequenze, ampiezze e bandwidth,
+E in queste liste in output: frequenze, ampiezze e bandwidth,
 i valori di frequenza in uscita dall'analisi simili a quelli già salvati 
 in un intervallo di 40Hz, vengono eliminati, 
 e i restanti picchi principali salvati nel file .lib

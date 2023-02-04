@@ -94,16 +94,16 @@ BandpassFiltersBank(bypassFilter, filterPartials, filterOrder, globalFreq, globa
         )
     ):> (+ / filterPartials) * (1 - bypassFilter) + x * bypassFilter;
 
+// Hyperbolic Tangent Saturator Parameter
+THRESHOLD = 1000;
 // Hyperbolic Tangent Saturator Function
-saturator(lim, x) = lim * ma.tanh(x / (max(lim, ma.EPSILON)));
+saturator(lim, x) = lim * ma.tanh( x / (max(lim, ma.EPSILON)) );
 
+// DC Blocker Parameters
+ZERO = 1;
+POLE = .995;
 // DC Blocker Filter Function
-dcblocker(zero, pole, x) = x : dcblockerout
-    with{
-        onezero =  _ <: _, mem : _, *(zero) : - ;
-        onepole = + ~ * (pole);
-        dcblockerout = _ : onezero : onepole;
-    };
+dcblocker(zero, pole, x) = x : _ <: _, mem : _, * (zero) : - : + ~ * (pole);
 
 // Costrained (Modified) Lorenz System 
 LorenzSystem(x0, y0, z0, dt, beta, rho, sigma, tanHrange) = 
@@ -121,4 +121,4 @@ LorenzSystem(x0, y0, z0, dt, beta, rho, sigma, tanHrange) =
             (z + ((x * y) - (beta * z)) * dt + z_init);
     };
 
-process = LorenzSystem(1.2, 1.3, 1.6, .150, 2, 3.4, 1.9, 1000) <: _, _;
+process = LorenzSystem(1.2, 1.3, 1.6, .150, 2, 3.4, 1.9, THRESHOLD) <: _, _;
