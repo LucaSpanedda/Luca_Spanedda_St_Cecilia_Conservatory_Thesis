@@ -318,6 +318,8 @@ tuttavia nella letteratura della Computer Music, primi esempi di applicazioni
 di sistemi caotici per la generazione di suoni nella musica risalgono
 ai primi anni '90 con gli esempi portati da Agostino Di Scipio
 in suoi articoli come “Composition by exploration of non-linear dynamic systems”.\footcite{discipioiterated}
+O nel corso degli anni '90 con gli studi di Lorenzo Seno al Centro Di Ricerche musicali
+di Roma sui modelli fisici ed il Caos, con applicazioni nelle composizioni di Michelangelo Lupone.
 Le radici della sintesi caotica in generale sono multiple e dipendono
 dalla definizione del campo di applicazione, si potrebbe far risalire
 a David Tudor con i suoi esperimenti cibernetici sul feedback elettrico del 1960
@@ -351,7 +353,7 @@ può essere scritto un algoritmo in Faust come segue:
 {codes/LorenzSystem.dsp}
 
 \begin{center}
-    \includegraphics[width=10cm]{figures/LorenzSystemInside.pdf} \\
+    \includegraphics[width=11.5cm]{figures/LorenzSystemInside.pdf} \\
     {Topologia dell'Algoritmo del Sistema di Lorenz Discreto} \\ 
 \end{center}
 \vspace{0.5cm}
@@ -461,11 +463,11 @@ La particolarità di questo tipo d'implementazione di SVF che ho utilizzato,
 è che preserva matematicamente la topologia del filtro analogico,
 includendo nella maggiorparte dei casi \textit{zero-delay loops}.
 Questi filtri sono chiamati \textit{Topology Preserving Transform filters} o filtri TPT,
-e provengono dal libro "The Art of VA Filter Design" di Vadim Zavalishin, 
+e provengono dal libro "The Art of VA Filter Design" di Vadim Zavalishin,\footcite{Zavalishin_VA_filter_design}
 pubblicato e reperibile gratuitamente in rete. \\
 A seguito riporto l'implementazione matematica di questo filtro SVF TPT di Vadim Zavalishin
 che ha esposto Will Pirkle in un suo articolo chiamato 
-"Virtual Analog (VA) Filter Implementation and Comparisons v2.0"
+"Virtual Analog (VA) Filter Implementation and Comparisons v2.0"\footcite{Pirkle_VA_filter_design}
 del 2013 e reperibile dal suo sito.
 
 \begin{align*}
@@ -515,7 +517,7 @@ può infine essere scritto in un algoritmo in Faust come segue:
 \vspace{0.5cm}
 
 \begin{center}
-    \includegraphics[width=14cm]{figures/BPFilterBank.pdf} \\
+    \includegraphics[width=15cm]{figures/BPFilterBank.pdf} \\
     {Topologia del Filterbank con i filtri Bandpass SVF TPT} \\ 
 \end{center}
 \vspace{0.5cm}
@@ -544,3 +546,9 @@ E in queste liste in output: frequenze, ampiezze e bandwidth,
 i valori di frequenza in uscita dall'analisi simili a quelli già salvati 
 in un intervallo di 40Hz, vengono eliminati, 
 e i restanti picchi principali salvati nel file .lib
+
+\subsection{Feedback Networks}
+\label{Feedback Networks}
+
+\subsection{Conclusioni}
+\label{Conclusioni}

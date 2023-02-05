@@ -521,6 +521,36 @@
       \verb https://kayn.nl/wp-content/uploads/2016/12/The-Time-of-Roland-Kayns-Cybernetic-Music-Thomas-Patteson.pdf
       \endverb
     \endentry
+    \entry{Pirkle_VA_filter_design}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6c5ba18c4ce9e680245989b767c443ae}{%
+           family={Pirkle},
+           familyi={P\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Copyright © 2013 Will Pirkle}%
+      }
+      \strng{namehash}{6c5ba18c4ce9e680245989b767c443ae}
+      \strng{fullhash}{6c5ba18c4ce9e680245989b767c443ae}
+      \strng{bibnamehash}{6c5ba18c4ce9e680245989b767c443ae}
+      \strng{authorbibnamehash}{6c5ba18c4ce9e680245989b767c443ae}
+      \strng{authornamehash}{6c5ba18c4ce9e680245989b767c443ae}
+      \strng{authorfullhash}{6c5ba18c4ce9e680245989b767c443ae}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{I have had several requests from readers to do a Virtual Analog (VA) Filter Implementation plug-in. The source of these designs is a book electronically published in June 2012 named The Art of VA Filter Design by Vadim Zavalishin.}
+      \field{journaltitle}{www.willpirkle.com}
+      \field{title}{Virtual Analog (VA) Filter Implementation and Comparisons v2.0}
+      \field{pages}{24}
+      \range{pages}{1}
+    \endentry
     \entry{esiodoteogonia}{thesis}{}
       \name{author}{1}{}{%
         {{hash=bf25549908ecd8213225e1a954ca6d0c}{%
@@ -893,6 +923,32 @@
       \field{title}{On Sonic Art}
       \field{year}{1996}
       \field{pages}{355}
+      \range{pages}{1}
+    \endentry
+    \entry{Zavalishin_VA_filter_design}{book}{}
+      \name{author}{1}{}{%
+        {{hash=dec3c7af94d27456fa959c51b08008be}{%
+           family={Zavalishin},
+           familyi={Z\bibinitperiod},
+           given={Vadim},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{dec3c7af94d27456fa959c51b08008be}
+      \strng{fullhash}{dec3c7af94d27456fa959c51b08008be}
+      \strng{bibnamehash}{dec3c7af94d27456fa959c51b08008be}
+      \strng{authorbibnamehash}{dec3c7af94d27456fa959c51b08008be}
+      \strng{authornamehash}{dec3c7af94d27456fa959c51b08008be}
+      \strng{authorfullhash}{dec3c7af94d27456fa959c51b08008be}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{THE ART OF VA FILTER DESIGN}
+      \field{year}{rev. 2.1.0 (October 28, 2018)}
+      \field{pages}{520}
       \range{pages}{1}
     \endentry
   \enddatalist

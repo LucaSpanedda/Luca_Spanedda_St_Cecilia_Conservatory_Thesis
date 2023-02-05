@@ -226,12 +226,13 @@ e giungere conseguentemente allo stato di saturazione del sistema.
 Algoritmi di \textit{amplitude-following} possono essere implementati 
 con la media \textit{RMS}, con finestre variabili o fisse, 
 filtri \textit{Peakholder} che mantengano il valore di picco, o di altra natura. \\
-Tratterò ora  una parte più operativa, discutendo l'implementazione
+Tratterò a partire da ora nella tesi anche delle parti più operative, 
+discutendo ed illustrando l'implementazione
 di alcune di queste tecniche nel linguaggio di programmazione FAUST (Grame), 
 che è uno dei linguaggi di programmazione
 che consente di fare \textit{Audio Information Processing} in tempo reale.
 Faust è l'ambiente in cui ho scritto i codici di tutti i lavori trattati
-in questa tesi e le relative compilazioni, diagrammi e softwares. \\
+in questa tesi e le relative compilazioni, diagrammi e softwares.
 \footnote{FAUST (Grame) (Functional Audio Stream), 
 è un linguaggio di programmazione specifico per il Digital Signal
 Processing sviluppato da Yann Orlarey, Dominique Fober, e Stephane Letz nel
@@ -239,6 +240,14 @@ Processing sviluppato da Yann Orlarey, Dominique Fober, e Stephane Letz nel
 scritto in C++, che permette di tradurre delle istruzioni date e create 
 appositamente per il digital signal processing (DSP), in un largo raggio di linguaggi
 di programmazione non specifici per il dominio dell’Audio Digitale.} \footcite{https://faust.grame.fr/} \\
+Vorrei qui esprimere la mia profonda gratitudine a 
+Dario Sanfilippo per il prezioso supporto che mi ha fornito durante 
+lo sviluppo di molti di questi codici,
+e poiché negli ultimi anni ha amorevolmente condiviso con me il suo sapere e le sue tecniche 
+sviluppate nel corso dei suoi studi e delle sue ricerche, 
+spiegandomi sempre con molta pazienza ogni dettaglio e applicazione 
+di queste nei auoi Sistemi Complessi;
+come farebbe il migliore dei maestri con un suo allievo. \\
 Il modo più semplice per mantenere l’effetto Larsen in uno stato stazionario, è attraverso un
 valore costante ricavato dalla crescita del segnale in ingresso 
 che controbilanci l’ampiezza del circuito di Feedback, come in figura del meccanismo LAR;
