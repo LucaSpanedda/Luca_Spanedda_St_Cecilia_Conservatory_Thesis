@@ -388,6 +388,57 @@
       \verb http://www.jstor.org/stable/27786196
       \endverb
     \endentry
+    \entry{liang_difference_2013}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2398dbe0b920a0780e2f8a962bac272a}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e2ec1b7f9427a1247f3d2d6615831eb1}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{57ebb4940b3ad4548b5cc348a94af631}
+      \strng{fullhash}{57ebb4940b3ad4548b5cc348a94af631}
+      \strng{bibnamehash}{57ebb4940b3ad4548b5cc348a94af631}
+      \strng{authorbibnamehash}{57ebb4940b3ad4548b5cc348a94af631}
+      \strng{authornamehash}{57ebb4940b3ad4548b5cc348a94af631}
+      \strng{authorfullhash}{57ebb4940b3ad4548b5cc348a94af631}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper uses diﬀerence equation to explore some of the more obvious properties of the Lorenz equation. We will investigate changes in the behavior of solutions of the Lorenz equation as the parameter r is varied. A trajectory in phase space is analyzed when iterative equation is magniﬁed. The distance between two states i and j in the phase space is described by recurrence plots which may reveal the motion feature of chaos system trajectory with time change.}
+      \field{issn}{1311-8080, 1314-3395}
+      \field{journaltitle}{International Journal of Pure and Apllied Mathematics}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{DIFFERENCE EQUATION OF LORENZ SYSTEM}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{volume}{83}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.12732/ijpam.v83i1.9
+      \endverb
+      \verb{file}
+      \verb Liang e Song - 2013 - DIFFERENCE EQUATION OF LORENZ SYSTEM.pdf:files/143/Liang e Song - 2013 - DIFFERENCE EQUATION OF LORENZ SYSTEM.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.ijpam.eu/contents/2013-83-1/9/
+      \endverb
+      \verb{url}
+      \verb http://www.ijpam.eu/contents/2013-83-1/9/
+      \endverb
+    \endentry
     \entry{Lorenzdnf}{article}{}
       \name{author}{1}{}{%
         {{hash=0e3296d4ad2820047a9c3ef4711904e9}{%

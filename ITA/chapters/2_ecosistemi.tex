@@ -83,12 +83,14 @@ la possibilità di potersi aprire ad un flusso di relazioni
 complesso fra uomo-macchina-ambiente dove le tre sono fortamente connesse e interdipendenti 
 l'una dall'altra.
 
+\begin{figure}[h!]
 \begin{center}
 \vspace{0.5cm}
-\includegraphics[width=8cm]{figures/uomo_macchina_ambiente.png} \\
-{Interazione Uomo-Macchina-Ambiente} \\ 
-\vspace{0.5cm}
+\includegraphics[width=8cm]{figures/uomo_macchina_ambiente.png} 
+    \caption{Interazione Uomo-Macchina-Ambiente}
+    \vspace{0.5cm}
 \end{center}
+\end{figure} 
 
 \begin{center}
 \vspace{0.5cm}
@@ -141,12 +143,14 @@ than unit gain).}
 \vspace{0.5cm}
 \end{center}
 
-\begin{center}
-\vspace{0.5cm}
-\includegraphics[width=8cm]{figures/larsen_Feedback_scheme.png} \\
-{Schema M1→L1→S} \\ 
-\vspace{0.5cm}
-\end{center}
+\begin{figure}[h!]
+    \begin{center}
+        \vspace{0.5cm}
+        \includegraphics[width=8cm]{figures/larsen_Feedback_scheme.png}
+        \caption{Schema M1→L1→S}
+        \vspace{0.5cm}
+        \end{center}
+\end{figure} 
 
 L'effetto Larsen: (dal nome del fisico Søren Absalon Larsen
 che per primo ne scoprì il principio), detto anche Feedback elettroacustico,
@@ -206,12 +210,14 @@ LAR: \textit{Audio Feedback with Self-regulated Gain},
 e che può essere implementato in DSP in diverse modalità e configurazioni,
 ognuna con le sue diverse caratteristiche e che porta a differenti esiti. \\
 
+\begin{figure}[h!]
 \begin{center}
 \vspace{0.25cm}
-\includegraphics[width=4cm]{figures/controlled_larsen_Feedback.png} \\
-{Schema del meccanismo LAR} \\ 
+\includegraphics[width=4cm]{figures/controlled_larsen_Feedback.png}
+\caption{Schema del meccanismo LAR}
 \vspace{0.5cm}
 \end{center}
+\end{figure} 
 
 Ci sono in effetti diversi modi per ottenere una \textit{feature extraction} 
 in tempo reale capace di realizzare un algoritmo di controbilanciamento 
@@ -282,16 +288,20 @@ del valore massimo, in un'analisi campione per campione.
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del LAR con \textit{Peakholder} ad 1 campione di ritardo}]
 {codes/LARpeakmax.dsp}
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=14cm]{figures/PeakholderIIR.pdf} \\
-    {Topologia del \textit{Peakholder} ad 1 campione di ritardo} \\ 
+    \includegraphics[width=14cm]{figures/PeakholderIIR.pdf}
+    \caption{Topologia del \textit{Peakholder} ad 1 campione di ritardo} 
     \end{center}
+\end{figure} 
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=14cm]{figures/LARpeakmax.pdf} \\
-    {Topologia del LAR con \textit{Peakholder} ad 1 campione di ritardo} \\ 
+    \includegraphics[width=14cm]{figures/LARpeakmax.pdf} 
+    \caption{Topologia del LAR con \textit{Peakholder} ad 1 campione di ritardo} 
 \end{center}
 \vspace{0.5cm}
+\end{figure} 
 
 Questo tipo di algoritmo presenta comunque alcuni problemi: non avendo
 una funzione di smoothing del segnale, si verificano problemi di segnali di differenza a banda
@@ -311,12 +321,14 @@ sistema possa osservarsi tramite l'ambiente circostante.
 In tal senso vale la pena procedere osservando da vicino come viene richiesto in partitura 
 di implementare questo meccanismo.
 
+\begin{figure}[h!]
 \begin{center}
-\includegraphics[width=14cm]{figures/LARFeedbackstudy2017.pdf} \\
-{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
-revisione del 2017 - Agostino Di Scipio} \\ 
+\includegraphics[width=14cm]{figures/LARFeedbackstudy2017.pdf}
+\caption{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)}
+revisione del 2017 - Agostino Di Scipio}
 \vspace{0.5cm}
 \end{center}
+\end{figure}
 
 Come scritto in partitura, è da notare in prima istanza
 come il microfono serva sia da sorgente per l'alimentazione del Larsen che
@@ -447,12 +459,14 @@ eseguito, come ad esempio nel caso del \textit{sample read} la velocità di lett
 e la porzione di tabella che ne viene letta. \\
 I \textit{sample read} sono 5 indicati in partitura nella configurazione che segue.
 
+\begin{figure}[h!]
 \begin{center}
-\includegraphics[width=14cm]{figures/SAMPLERSFeedbackstudy2017.pdf} \\
-{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
-revisione del 2017 - Agostino Di Scipio} \\ 
+\includegraphics[width=14cm]{figures/SAMPLERSFeedbackstudy2017.pdf}
+\caption{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)}
+revisione del 2017 - Agostino Di Scipio} 
 \vspace{0.5cm}
 \end{center}
+\end{figure} 
 
 Il suono del Larsen proveniente da due microfoni e stabilizzato con il meccanismo LAR come 
 illustrato in precedenza, viene a sommarsi per poi venire moltiplicato per un oscillatore a bassa frequenza
@@ -552,12 +566,14 @@ i granulatori in particolare sono l'ultima trasformazione del suono del sistema,
 due sommatori con il resto delle uscite e all'output.
 In partitura vengono indicati come a seguito.
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=14cm]{figures/GRANULATORSFeedbackstudy2017.pdf} \\
-    {Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)} \\
-    revisione del 2017 - Agostino Di Scipio} \\ 
+    \includegraphics[width=14cm]{figures/GRANULATORSFeedbackstudy2017.pdf}
+    \caption{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ Feedback Study (2003)}
+    revisione del 2017 - Agostino Di Scipio}
     \vspace{0.5cm}
 \end{center}
+\end{figure}
 
 Anche in questo caso, oltre alle indicazioni dei segnali di controllo che vengono
 ricevuti dai due \textit{granular sampling}, 

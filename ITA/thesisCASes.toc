@@ -1,22 +1,22 @@
-\contentsline {section}{\numberline {1}Introduzione}{3}{}%
-\contentsline {subsection}{\numberline {1.1}La Cibernetica}{5}{}%
-\contentsline {subsection}{\numberline {1.2}Le Cibernetiche nella musica}{7}{}%
-\contentsline {subsection}{\numberline {1.3}Il Feedback}{15}{}%
-\contentsline {section}{\numberline {2}Ecosistemi Udibili}{18}{}%
-\contentsline {subsection}{\numberline {2.1}Audible EcoSystemics n.2 - Feedback Study}{18}{}%
-\contentsline {subsection}{\numberline {2.2}L'interazione Uomo-Macchina-Ambiente}{20}{}%
-\contentsline {subsection}{\numberline {2.3}Il Meccanismo LAR}{21}{}%
-\contentsline {subsection}{\numberline {2.4}Trasformazioni del suono}{34}{}%
-\contentsline {subsection}{\numberline {2.5}Conclusioni}{43}{}%
-\contentsline {section}{\numberline {3}Sistemi Autonomi}{45}{}%
-\contentsline {subsection}{\numberline {3.1}Order From Noise (Homage to Heinz Von Foerster)}{45}{}%
-\contentsline {subsection}{\numberline {3.2}Audio Information Processing}{47}{}%
-\contentsline {subsection}{\numberline {3.3}Conclusioni}{61}{}%
-\contentsline {section}{\numberline {4}Sistemi Caotici}{63}{}%
-\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{64}{}%
-\contentsline {subsection}{\numberline {4.2}Motivazioni}{66}{}%
-\contentsline {subsection}{\numberline {4.3}Complex Sound Generator}{72}{}%
-\contentsline {subsection}{\numberline {4.4}Feedback Networks}{93}{}%
-\contentsline {subsection}{\numberline {4.5}Conclusioni}{93}{}%
-\contentsline {section}{\numberline {A}First appendix}{94}{}%
-\contentsline {section}{\numberline {B}Second appendix}{126}{}%
+\contentsline {section}{\numberline {1}Introduzione}{4}{}%
+\contentsline {subsection}{\numberline {1.1}La Cibernetica}{6}{}%
+\contentsline {subsection}{\numberline {1.2}Le Cibernetiche nella musica}{8}{}%
+\contentsline {subsection}{\numberline {1.3}Il Feedback}{16}{}%
+\contentsline {section}{\numberline {2}Ecosistemi Udibili}{19}{}%
+\contentsline {subsection}{\numberline {2.1}Audible EcoSystemics n.2 - Feedback Study}{19}{}%
+\contentsline {subsection}{\numberline {2.2}L'interazione Uomo-Macchina-Ambiente}{21}{}%
+\contentsline {subsection}{\numberline {2.3}Il Meccanismo LAR}{22}{}%
+\contentsline {subsection}{\numberline {2.4}Trasformazioni del suono}{35}{}%
+\contentsline {subsection}{\numberline {2.5}Conclusioni}{44}{}%
+\contentsline {section}{\numberline {3}Sistemi Autonomi}{46}{}%
+\contentsline {subsection}{\numberline {3.1}Order From Noise (Homage to Heinz Von Foerster)}{46}{}%
+\contentsline {subsection}{\numberline {3.2}Audio Information Processing}{48}{}%
+\contentsline {subsection}{\numberline {3.3}Conclusioni}{62}{}%
+\contentsline {section}{\numberline {4}Sistemi Caotici}{64}{}%
+\contentsline {subsection}{\numberline {4.1}RITI : Room Is The Instrument}{65}{}%
+\contentsline {subsection}{\numberline {4.2}Complex Sound Generator}{67}{}%
+\contentsline {subsection}{\numberline {4.3}Feedback Networks}{88}{}%
+\contentsline {subsection}{\numberline {4.4}Motivazioni Personali}{89}{}%
+\contentsline {subsection}{\numberline {4.5}Conclusioni}{95}{}%
+\contentsline {section}{\numberline {A}First appendix}{97}{}%
+\contentsline {section}{\numberline {B}Second appendix}{129}{}%

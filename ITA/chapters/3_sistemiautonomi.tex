@@ -165,10 +165,12 @@ contenenti i seguenti algoritmi di elaborazione audio:
 \textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
 ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.}
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=14cm]{figures/OFNnetwork.pdf} \\
-    {Schema della rete di Order From Noise} \\ 
+    \includegraphics[width=14cm]{figures/OFNnetwork.pdf}
+    \caption{Schema della rete di Order From Noise}
     \end{center}
+\end{figure}
 
 A parte le unità di elaborazione del suono,
 in questo sistema,l'\textit{Information Processing} utilizzato per generare i 
@@ -225,11 +227,13 @@ in modo tale che l'ampiezza del picco abbia un valore pari a [1, -1].
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo di normalizzazione di picco tramite \textit{Peakholder} ad 1 campione di ritardo}]
 {codes/PeakNormalizationIIR.dsp}
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=14cm]{figures/PeakNormalizationIIR.pdf} \\
-    {Topologia del normalizzatore di picco tramite \textit{Peakholder} ad 1 campione di ritardo}} \\ 
+    \includegraphics[width=14cm]{figures/PeakNormalizationIIR.pdf}
+    \caption {Topologia del normalizzatore di picco tramite \textit{Peakholder} ad 1 campione di ritardo}
 \end{center}
 \vspace{0.5cm}
+\end{figure}
     
 Proprio come nell'algoritmo del \textit{Peakholder} ad 1 campione di ritardo, 
 il problema di questa applicazione dipende dal fatto che nel segnale
@@ -302,11 +306,13 @@ A seguito l'algoritmo in Faust del \textit{Peakenvelope}.
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo di \textit{Peakenvelope} con Decay RT60}]
 {codes/PeakEnvelope.dsp}
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=15cm]{figures/PeakEnvelope.pdf} \\
-    {Topologia del \textit{Peakenvelope} con Decay RT60}} \\ 
+    \includegraphics[width=15cm]{figures/PeakEnvelope.pdf}
+    \caption{Topologia del \textit{Peakenvelope} con Decay RT60}
 \end{center}
 \vspace{0.5cm}
+\end{figure}
 
 per quanto riguarda invece l'algoritmo del \textit{Peakholder} adattivo, è un po' meno semplice. 
 Il \textit{Peakholder} verificherà se l'ingresso è maggiore o uguale all'uscita e, 
@@ -320,11 +326,13 @@ qualsiasi valore nell'ingresso corrente verrà impostato come nuovo picco.
 {codes/PeakHolderAdaptive.dsp}
 \clearpage
 
+\begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=15cm]{figures/PeakHolderAdaptive.pdf} \\
-    {Topologia del \textit{Peakholder} (adattivo) con Timer}} \\ 
+    \includegraphics[width=15cm]{figures/PeakHolderAdaptive.pdf}
+    \caption{Topologia del \textit{Peakholder} (adattivo) con Timer}
 \end{center}
 \vspace{0.5cm}
+\end{figure}
 \clearpage
 
 Per concludere infine le unità sono combinate fra loro come a seguito,
