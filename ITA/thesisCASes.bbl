@@ -388,6 +388,34 @@
       \verb http://www.jstor.org/stable/27786196
       \endverb
     \endentry
+    \entry{GINCAzioni}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f5637483605ef188ca55e8c9e6ccfed8}{%
+           family={Gallehr},
+           familyi={G\bibinitperiod},
+           given={Theo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \strng{fullhash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \strng{bibnamehash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \strng{authorbibnamehash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \strng{authornamehash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \strng{authorfullhash}{f5637483605ef188ca55e8c9e6ccfed8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 06.02.2023)}
+      \field{title}{Gruppo Nuova Consonanza Azioni. Documentario.}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=dqvAhBJ99wA
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=dqvAhBJ99wA
+      \endverb
+      \keyw{lfeedback,ginc,azioni}
+    \endentry
     \entry{liang_difference_2013}{article}{}
       \name{author}{2}{}{%
         {{hash=2398dbe0b920a0780e2f8a962bac272a}{%
