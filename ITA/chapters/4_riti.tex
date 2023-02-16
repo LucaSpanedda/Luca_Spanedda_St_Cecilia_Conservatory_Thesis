@@ -2,9 +2,9 @@
 \section{Sistemi Caotici}
 \label{sec:Sistemi Caotici}
 
-Ciò che accomuna un Sistema Complesso ad un Sistema Caotico è la non linearità.
-In questa visione della complessità, i Sistemi Caotici sono considerati un sottoinsieme 
-appartenente alla macrocategoria dei Sistemi Complessi: la complessità 
+Ciò che accomuna un sistema complesso ad un sistema caotico è la non linearità.
+In questa visione della complessità, i sistemi caotici sono considerati un sottoinsieme 
+appartenente alla macrocategoria dei sistemi complessi: la complessità 
 si manifesta infatti sulla soglia della caos. 
 Mentre nel mondo fisico la non linearità è insita nella natura
 delle cose, nel mondo digitale, queste non linearità, come abbiamo visto
@@ -27,7 +27,7 @@ fama da Edward Norton Lorenz con il suo articolo.\footcite{Lorenzdnf}
 In questo capitolo della tesi, illustrerò attraverso la composizione di un mio brano, 
 come a partire dalla risoluzione delle equazioni differenziali del sistema di Lorenz, si possa
 creare un CAS che possa essere utilizzato per la
-performance musicale in Live Electronics.
+performance musicale in live electronics.
 
 \subsection{RITI : Room Is The Instrument}
 \label{RITI : Room Is The Instrument}
@@ -54,7 +54,7 @@ seguendo il metodo descritto nel paper di Dario Sanfilippo
 Dove vengono illustrate una serie di risoluzioni per alcune 
 equazioni differenziali caotiche,
 modificate inserendo opportunamente all'interno di queste un
-DC Blocker e un Waveshaper (soft clipping) utilizzando la funzione della Tangente Iperbolica.
+DC Blocker e un Waveshaper (soft clipping) utilizzando la funzione della tangente iperbolica.
 Oltre alle costrizioni proposte da Dario Sanfilippo, 
 ispirato dall'idea che ha avuto Tom Mudd nel suo paper
 "Between Chaotic Synthesis and Physical Modelling: Instrumentalising with Gutter Synthesis",\footcite{tom_mudd_gutter_synthesis}
@@ -64,11 +64,11 @@ risonanze modali che ricordino il comportamento di uno strumento musicale.
 Ho deciso di aggiungere alla risoluzione delle equazioni di Lorenz modificate,
 un banco parallelo di 32 filtri Bandpass informati 
 con 4 liste ricavate dall'analisi di 4 registrazioni di note diverse di un violoncello, 
-per ottenere questo tipo di comportamenti:
+per ottenere una complessità costretta dalle risonanze modali di questi filtri.
 Per concludere, ho aggiunto infine alle tre equazioni l'ingresso di un segnale esterno, 
 affidato ai microfoni, 
 che permettesse di perturbare il sistema e generare un ulteriore stato 
-di Feedback proveniente dall'ambiente della performance,
+di feedback proveniente dall'ambiente della performance,
 rendendo così il sistema di sintesi sensibile alle condizioni esterne.
 L'equazione di Lorenz modificata con le costrizioni esposte,
 costituisce nel suo insieme un singolo agente, a cui ci riferiremo a partire da questo
@@ -88,14 +88,14 @@ Il feedback globale della rete proveniene da ogni singola voce
 che va a sommarsi con diversi tempi di ritardo prima della retroiniezione,
 rientrando poi conseguentemente con opportuni tempi di ritardo nelle altre voci del sistema.
 Questo processo crea una decorrelazione ed una perturbazione nei singoli agenti all'interno del sistema,
-ma offre anche la possibilità con opportuni valori di Gain del Feedback della FDN, 
+ma offre anche la possibilità con opportuni valori di Gain del feedback della FDN, 
 di lasciar ricirolare del materiale nella rete.
 La performance consiste nell'impostare un insieme iniziale di valori 
 di inizializzazione del sistema, come Dt, Rho, Beta, Sigma, 
-Tangente Iperbolica, 
+tangente iperbolica, 
 un fattore di Shift in frequenza del banco di filtri, 
 Tempi di ritardo della FDN, ecc.
-A partire da questi, l'obiettivo è di esplorare il sistema 
+E a partire da questi, l'obiettivo è di esplorare il sistema 
 finché non si ha l'impressione di aver esaurito tutte le possibilità, 
 con l'obiettivo fondamentale di bilanciare i tre feedback principali: 
 quelli provenienti dalle retroazioni delle tre equazioni differenziali 
@@ -147,18 +147,22 @@ può essere scritto un algoritmo in Faust come segue:
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
 {codes/LorenzSystem.dsp}
+\clearpage
 
+\begin{figure}[h!]
 \begin{center}
     \includegraphics[width=11.5cm]{figures/LorenzSystemInside.pdf} 
     \caption{Topologia dell'Algoritmo del Sistema di Lorenz Discreto} 
 \end{center}
 \vspace{0.5cm}
 \end{figure}
+\end{figure}
+\clearpage
 
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=14cm]{figures/LorenzSystemFB1.pdf}
-    \caption {Topologia del Feedback delle Equazioni del Sistema di Lorenz Discreto}
+    \caption{Topologia del Feedback delle Equazioni del Sistema di Lorenz Discreto}
 \end{center}
 \vspace{0.5cm}
 \end{figure}
@@ -167,8 +171,9 @@ Questo algoritmo permette già di produrre sintesi attraverso la
 risoluzioni delle Equazioni del Sistema di Lorenz, ma per il momento in modo acritico.
 Come detto in precedenza, esistono ricerche che si pongono il problema 
 di un adattività dei sistemi caotici con il fine di poterli utilizzare per determinati scopi,
-andrò adesso ad illustrare nel dettaglio i modelli che ho preso a riferimento in questo brano per poter utilizzare
-i sistemi caotici per fini musicali di sintesi del segnale. 
+andrò adesso ad illustrare nel dettaglio i modelli che ho preso 
+a riferimento in questo brano per poter utilizzare
+i sistemi caotici per fini musicali di sintesi del segnale. \\
 Per poter esplorare un sistema caotico con il fine di creare un segnale udibile in tutte le sue regioni, 
 è necessario dunque porsi dunque un problema di ottimizzazione;
 è necessario chiedersi quali problemi possano verficarsi e quali strumenti possano contrastarli. 
@@ -180,11 +185,11 @@ digitale e in altre applicazioni, e che può rimuovere la componente Continua de
 che circola in una linea di ritardo. Questo consiste sostanzialmente in
 un filtro FIR highpass, poiché le correnti continue possono essere viste come frequenze a
 0Hz, ed infine un onepole in serie che recupera parte della cancellazione del FIR.
-Mentre per la funzione della Tangente Iperbolica, sappiamo che è una funzione
+Mentre per la funzione della tangente iperbolica, sappiamo che è una funzione
 non lineare appartenente alle funzioni iperboliche, che costituiscono una famiglia di funzioni 
 elementari dotate di alcune proprietà analoghe e corrispondenti alle
 proprietà delle ordinarie funzioni trigonometriche.
-utilizzando la Tangente Iperbolica come un Waveshaper (soft clipping) possiamo 
+utilizzando la tangente iperbolica come un Waveshaper (soft clipping) possiamo 
 esplorare il sistema caotico in tutte le sue regioni rimanendo sempre in un range [1, -1].
 A tal proposito Dario Sanfilippo propone:\footcite{sanfilippo_constrained_2021}
 
@@ -216,7 +221,7 @@ form with respect to time, we have that:}
     \vspace{0.5cm}
 \end{center}
 
-Secondo il metodo appena esposto, le costrizioni possono essere rappresentate come:
+Secondo il metodo appena esposto, le costrizioni possono essere rappresentate come
 
 \begin{align*}
     \text{where B} && y(n) = x(n) -x(n-1) +Ry(n-1) \\
@@ -233,7 +238,7 @@ può essere scritto un algoritmo in Faust come segue:
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=14cm]{figures/LorenzSystemFB2.pdf}
-    \caption{Topologia del Feedback delle Equazioni del Sistema di Lorenz Modificato con DC-blocker e TanH}  
+    \caption{Topologia del feedback delle Equazioni del Sistema di Lorenz Modificato con DC-blocker e TanH}  
 \end{center}
 \vspace{0.5cm}
 \end{figure}
@@ -245,6 +250,7 @@ può essere scritto un algoritmo in Faust come segue:
 \end{center}
 \vspace{0.5cm}
 \end{figure}
+\clearpage
 
 \begin{figure}[h!] 
 \begin{center}
@@ -318,7 +324,7 @@ può infine essere scritto in un algoritmo in Faust come segue:
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=14cm]{figures/LorenzSystemFB3.pdf}
-    \caption {Topologia del Feedback delle Equazioni del Sistema di Lorenz Modificato con Filterbank}
+    \caption {Topologia del feedback delle Equazioni del Sistema di Lorenz Modificato con Filterbank}
 \end{center}
 \vspace{0.5cm}
 \end{figure}
@@ -362,7 +368,7 @@ e i restanti picchi principali salvati nel file .lib
 
 Per concludere questa osservazione sulla struttura sistemica di RITI,
 discuterò brevemente, ripetendo alcuni concetti fondamentali illustrati ad inzio capitolo.
-I tre stati di Feedback principale su cui si basa questo sistema sono:
+I tre stati di feedback principale su cui si basa questo sistema sono:
 Il feedback interno alle equazioni differenziali, o chiamato anche come fattore di magnificazione; 
 ne possiamo vedere un implementazione in questo paper\footcite{liang_difference_2013}.
 Questo ci permette di poter portare le equazioni di Lorenz da uno stato di autoscillazione al
@@ -377,6 +383,7 @@ il sistema viene aperto all'ambiente: perturbato dagli stessi segnali che produc
 che ne variano il comportamento nel tempo, e da fenomeni di Larsen che emergono quando il fattore di 
 magnificazione che produce l'autoscillazione in Lorenz ha un contributo energeticamente 
 inferiore rispetto a quello del Larsen proveniente dalla stanza.
+\clearpage
 
 \begin{figure}[h!]
 \begin{center}
@@ -391,8 +398,7 @@ esplorando nella performance tutti i suoi spazi,
 rivolgendo gli altoparlanti verso le pareti trasformando così l'ambiente stesso
 nello spazio di sistema, rappresenta per me un estensione: del concetto di strumento musicale, 
 dell'interazione con la macchina, ed infine dell'utopia di un nuovo ascolto,
-in un mondo dove è sempre più necessario prendere consapevolezza della complessità che ci circonda,
-aprendosi verso l'ignoto e smettendo una volta per tutte di essere reazionari.
+in un mondo dove è sempre più necessario prendere consapevolezza della complessità che ci circonda.
 
 \subsection{Motivazioni Personali}
 \label{Motivazioni Personali}
@@ -400,11 +406,11 @@ aprendosi verso l'ignoto e smettendo una volta per tutte di essere reazionari.
 Prima di concludere questo elaborato, 
 vorrei prima soffermarmi a spiegare alcune delle motivazioni 
 personali che hanno suscitato in me l'interesse per i 
-Sistemi Complessi Adattivi in Live Electronics, 
+sistemi complessi adattivi in live electronics, 
 e che mi hanno spinto in particolare alla creazione di questo brano. \\
 In questi ultimi anni di studi musicali, sono emerse nel mio fare musica 
 delle questioni per me di fondamentale importanza che hanno accompagnato il mio operato
-e che hanno mosso il mio interesse verso i le Cibernetiche in musica. \\
+e che hanno mosso il mio interesse verso i le cibernetiche in musica. \\
 In primo luogo indagare rispetto al rapporto che esiste fra l'interprete, la notazione, e lo strumento musicale;
 che può essere vista in qualche modo come una parte contenuta all'interno 
 della relazione fra uomo-macchina-ambiente di cui parla
@@ -495,7 +501,7 @@ se sin dai tempi di Platone emergevano queste problematiche e preoccupazioni
 relative alla discretizzazione del pensiero con la scrittura
 (come possiamo leggere in Fedro), 
 giungendo alle paure più attuali di Norbert Weiner di fronte
-alla scoperta della Cibernetica, possiamo dire che la sua paura di una società contemporanea 
+alla scoperta della cibernetica, possiamo dire che la sua paura di una società contemporanea 
 composta da interazioni sistemiche fra l'uomo e la macchina
 in cui il primo è succube della seconda, sembra in qualche modo essere stata profetica ed essersi realizzata.
 Come scrive Norbert Wiener nel suo libro Introduzione alla cibernetica. L'uso umano degli esseri umani,
@@ -581,30 +587,34 @@ una velocità schizofrenica nelle cose, dove tutto deve essere estremamente funz
 e dove non abbiamo più modo di esercitare alcun controllo sullo scorrere del tempo,
 la riappropriazione del tempo nella forma, dell'ascolto, ed infine dello spazio, diviene per me un elemento fondamentale
 nella composizione,
-dove tutti gli elementi del sistema hanno un ruolo condiviso che contribuisce a formare la complessità nel suo insieme.
+dove tutti gli elementi del sistema hanno un ruolo condiviso che contribuisce 
+a formare la complessità nel suo insieme.
 A tal proposito ho sempre trovato interessante osservare nelle evoluzioni temporali 
-come un piccolo cambiamento all'interno di un sistema possa consefuentemente portare a cambiamenti radicali
-nella Macroforma, proprio come nella sensibilità alle condizioni della teoria del caos, 
+come un piccolo cambiamento all'interno di un sistema possa conseguentemente portare 
+a cambiamenti radicali
+nella Macroforma; proprio come nella sensibilità alle condizioni della teoria del caos, 
 che ci illustra come in un sistema caotico, a variazioni infinitesime delle condizioni iniziali 
 corrispondono variazioni significative del comportamento futuro. 
 Dunque in tal senso è diventato per me un aspetto importante lavorare con
 sistemi emergenti che possano rendere udibili questi processi di continua trasformazione
 del suono, e che non rendano udibile una sola traiettoria possibile nell'evoluzione formale
 di un brano.\\
-È tal proposito Stockhausen, nella sua teoria della "Forma unificata del tempo", 
+È a tal proposito che Stockhausen, nella sua teoria della "Forma unificata del tempo", 
 notò già nel 1960 come in tal senso la differenza fra i Micro-elementi nella forma, 
 e la Macroforma, non consista tanto in diversi ruoli e compiti del comporre,
 quanto più a diversi livelli di percezione del tempo, 
 poiché altezza e ritmo sono fondamentalmente la stessa cosa se percepita a diverse scale temporali,
-e ce lo illustra nella sua composizione Kontakte realizzata fra il 1958 ed il 1960, mettendo in luce
-come nella forma di un brano musicale il ruolo delle parti sia sostanzialmente un problema di complessità,
+e ce lo illustra nella sua composizione Kontakte realizzata fra il 1958 ed il 1960, 
+mettendo in certi termini in luce,
+come nella forma di un brano musicale il ruolo delle parti sia sostanzialmente un problema 
+di complessità
 che dipende dal punto di vista dell'osservatore.
 
 \subsection{Conclusioni}
 \label{Conclusioni}
 
 In conclusione, 
-abbiamo avuto modo di introdurre l'argomento delle Cibernetiche in Musica,
+abbiamo avuto modo di introdurre l'argomento delle cibernetiche in Musica,
 parlando di come l'esigenza di un pensiero sistemico 
 abbia pian piano fatto breccia nell'operato
 di alcuni dei più importanti compositori del XX Secolo. 
@@ -612,7 +622,7 @@ Arrivando fino ad osservare e studiare il realizzarsi di questa condizione
 attraverso l'operato di Dario Sanfilippo e da Agostino Di Scipio, 
 di cui abbiamo approfondito alcuni dei principali meccanismi presenti nei loro lavori compositivi,
 nel desiderio di creare attraverso questi modelli
-una strada da seguire per la composizione dei Sistemi Complessi Adattivi per la
-performance musicale in Live Electronics.
+una strada da seguire per la composizione dei sistemi complessi adattivi per la
+performance musicale in live electronics.
 Ed Infine mettendo in luce l'importanza di una prospettiva 
 ontologica ed epistemeologica nella composizione musicale sistemica.

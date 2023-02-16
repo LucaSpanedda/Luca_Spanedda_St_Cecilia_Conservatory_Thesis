@@ -59,7 +59,7 @@
     LPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (_, !, !);
     HPTPT(cf, x) = onePoleTPT(limit(20000,ma.EPSILON,cf), x) : (!, _, !);
     
-    // Order Aproximations filters - Outs
+    // Order with filters in series
     LP1(CF, x) = x :LPTPT(CF);
     HP1(CF, x) = x :HPTPT(CF);
     LP2(CF, x) = x :LPTPT(CF) :LPTPT(CF);

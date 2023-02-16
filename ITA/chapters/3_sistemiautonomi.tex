@@ -36,10 +36,10 @@ Order From Noise è un progetto che implementa uno
 dei primi prototipi di Dario Sanfilippo basati sull'idea dell'\textit{adattattività dinamica}. 
 Questo lavoro del compositore si basa sull'idea che i sistemi adattivi complessi, 
 che sono emergenti per definizione, siano essenziali per raggiungere innovazioni formali, 
-performative e tecniche, nel contesto della performance in Live Electronics e nella composizione musicale in generale. 
+performative e tecniche, nel contesto della performance in live electronics e nella composizione musicale in generale. 
 \footcite{sanfilippo_time-variant_2018}
 I CASes si dicono adattivi quando sono composti da una rete dinamica 
-di interazioni dove i singoli agenti interconnessi fra loro, interagendo individualmente
+di interazioni dove i singoli agenti sono interconnessi fra loro, interagendo individualmente
 o collettivamente, possono cambiare il loro stato in risposta a variazioni nell'ambiente o
 degli altri agenti connessi. 
 Questo tipo di relazioni nel sistema è comune sia nell'opera di Agostino Di Scipio,
@@ -88,7 +88,7 @@ Per questo motivo il performer non avrà un grande margine di prevedibilità
 nel comportamento del sistema a differenza dei sistemi tempo-varianti,
 ma saprà che per le stesse condizioni iniziali, il sistema qui totalmente
 deterministico, riporterà sempre le stesse evoluzioni formali.
-Proprio come nei Sistemi Caotici emersi dalla Teoria del Caos introdotti all'inizio di questa tesi,
+Proprio come nei sistemi caotici emersi dalla teoria del caos introdotti all'inizio di questa tesi,
 che seppur governati da leggi deterministiche, 
 sono in grado di esibire un'empirica casualità nell'evoluzione delle variabili dinamiche. \\
 
@@ -114,12 +114,12 @@ streams with long-term nontrivial variations.}\footcite{sanfilippo_time-domain_2
 \end{center}
 
 Alcuni primi esempi storici,
-sono ad esempio le performance in Live Electronics di Gordon Mumma, 
-come“Diastasis, as in Beer” (1966), e "Hornpipe" (1967), 
+sono ad esempio le performance in live electronics di Gordon Mumma, 
+come: Diastasis, as in Beer (1966), e Hornpipe (1967), 
 dove vengono implementate techniche di amplitude following utilizzate 
 poi per pilotare parametri nelle unità di generazione del suono.\footcite{sanfilippo_time-domain_2021}
 Arrivando fino ai sistemi di Agostino Di Scipio, che nello studio del suo
-Feedback Study ci ha dato modo di approfondire e scoprire
+feedback study ci ha dato modo di approfondire e scoprire
 tutti quei meccanismi e tutte quelle particolari funzioni che hanno la responsabilità
 di generare segnali di controllo nei suoi sistemi. \\
 Dario Sanfilippo ha discusso in più articoli l'utilizzo dell'\textit{Information Processing} 
@@ -155,15 +155,12 @@ Nel suo articolo su Order From Noise, Sanfilippo discute tutte le unità utilizz
 nel suo sistema e il loro ruolo all'interno della rete.
 Partendo dalla descrizione di queste nell'articolo, tratterò ora una parte più operativa 
 implementando queste tecniche nel linguaggio di programmazione FAUST (Grame), 
-con un particolare Focus a tutte quelle \textit{feature extraction}
+con un particolare focus su tutte tutte quelle \textit{feature extraction}
 che nell'implementazione della rete permettono al sistema 
 (nonostante questo sia chiuso rispetto all'ambiente esterno) 
 di mantenersi in uno stato "emergente" manifestando comportamenti nuovi,
 e di "stabilità" rimanendo sempre in dei range controllati tramite feedback positivi e negativi.\\
-La rete di Order From Noise ha sei nodi, ognuno dei quali contiene due unità in cascata, 
-contenenti i seguenti algoritmi di elaborazione audio: 
-\textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
-ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.}
+\clearpage
 
 \begin{figure}[h!]
 \begin{center}
@@ -172,8 +169,12 @@ ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing
     \end{center}
 \end{figure}
 
+La rete di Order From Noise ha sei nodi, ognuno dei quali contiene due unità in cascata, 
+contenenti i seguenti algoritmi di elaborazione audio: 
+\textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
+ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.} \\
 A parte le unità di elaborazione del suono,
-in questo sistema,l'\textit{Information Processing} utilizzato per generare i 
+in questo sistema, l'\textit{Information Processing} utilizzato per generare i 
 segnali di controllo è diverso
 dalle implementazioni tipiche riportate precedentemente nel corso di questa tesi;
 piuttosto che calcolare \textit{feature extraction} come l'RMS, la diffusione spettale, ecc. 
@@ -181,7 +182,7 @@ Dario Sanfilippo utilizza in questo sistema una sorta di Low Frequency Oscillato
 non lineare dipendente dal segnale in ingresso.
 Questo comportamento viene ottenuto utilizzando un filtro Lowpass per far 
 passare solo le componenti energetiche di un segnale sotto la soglia di 1Hz,
-come ad esempio segnali a 0,01Hz, il segnale risultante viene poi processato
+come ad esempio segnali a 0.01Hz, il segnale risultante viene poi processato
 tramite normalizzazione dinamica per essere riportato ad una soglia in ampiezza
 in un range fra [-1; 1],
 viene elevato a una potenza relativamente grande per forzarlo intorno a 0,
@@ -241,7 +242,7 @@ complessivo possano permanere contributi spuri che alterino il risultato
 della normalizzazione, e che si possa generare aliasing a causa di una mancata
 funzione di smoothing del segnale.
 Per questi motivi nelle unità della rete di Order From Noise 
-che implementano al proprio interno meccanismi di Feedback,
+che implementano al proprio interno meccanismi di feedback,
 e per raggiungere quindi una stabilità globale della rete,
 è presente un tipo di limiter dinamico chiamato da Dario Sanfilippo
 col nome di \textit{Lookahead Limiter}, che a differenza dell'algoritmo
@@ -275,7 +276,7 @@ Pure Data.
 
 Per implementare il \textit{Lookahead Limiter} 
 sono dunque richieste due unità distinte
-combinate fra loro in Feedforward con un filtro onepole Lowpass fra le due,
+combinate fra loro in feedforward con un filtro onepole Lowpass fra le due,
 un \textit{Peakholder} con una finestra che mantiene il picco massimo del segnale e
 che viene resettata da un timer, 
 e un \textit{Peakenvelope} che ha invece un decadimento 
@@ -343,7 +344,7 @@ formando nel loro insieme il \textit{Lookahead Limiter}.
 {codes/LookaheadLimiter.dsp}
 
 Prima di concludere queste considerazioni a seguito qualche doverosa aggiunta.
-Anche nell'Ecosistemico Udibile n.2, studio sul Feedback, di Agostino Di Scipio è presente 
+Anche nell'Ecosistemico Udibile n.2, studio sul feedback, di Agostino Di Scipio è presente 
 una versione ottimizzata dell'algoritmo \textit{Peakholder}, che a differenza
 del \textit{Peakholder} con il timer discusso precedentemente, viene chiamato come
 \textit{Local Max}, e riporta l'ampiezza massima solamente al termine del \textit{time frame} che corrisponde
@@ -378,11 +379,12 @@ spazio deterministico interamente costituito solo dal DSP nel software
 (che abbiamo chiamato qui col nome di spazio latente); 
 inclusi metodi e strategie per la generazione delle relative non linearità,
 e meccanismi adattivi per mantenere il sistema in una condizione di stabilità
-controllata tramite algoritmi di Feedback positivo e negativo.
+controllata tramite algoritmi di feedback positivo e negativo.
 Anche qui i meccanismi contenuti all'interno del brano ovviamente non si limitano solamente a questi,
 ma si è cercato di approfondire le parti del sistema che riguardano l'\textit{Audio Information Processing};
-così da fornire strumenti che rendono possibile affrontare il problema 
+così da fornire alcuni strumenti che rendano possibile affrontare il problema 
 dell'adattattività e dell'\textit{adattattività dinamica}
-all'interno dei CASes, lasciando comunque aperta la possibilità di poter approfondire il brano a partire
+all'interno dei CASes, lasciando comunque aperta la possibilità 
+di poter approfondire il brano a partire
 dai testi citati in bibliografia, che riportano anche le formule matematiche e la descrizione
-per gli altri moduli e le altre unità del brano brano.
+per gli altri moduli e le altre unità del brano.
