@@ -2,8 +2,7 @@ declare name "Agostino Di Scipio - AUDIBLE ECOSYSTEMICS n.2";
 declare author "Luca Spanedda";
 declare author "Dario Sanfilippo";
 declare version "1.0";
-declare description " 2023 version Realised on composer's instructions
-    of the year 2017 edited in L’Aquila, Italy";
+declare description " 2023 version Realised on the 2017 composer's instructions";
 
 // import faust standard library
 import("stdfaust.lib");

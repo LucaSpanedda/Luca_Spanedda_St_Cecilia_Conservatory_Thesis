@@ -1,3 +1,6 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX root = ../thesisCASes.tex
+
 %% TITOLO
 \section{Sistemi Caotici}
 \label{sec:Sistemi Caotici}
@@ -156,7 +159,6 @@ può essere scritto un algoritmo in Faust come segue:
 \end{center}
 \vspace{0.5cm}
 \end{figure}
-\end{figure}
 \clearpage
 
 \begin{figure}[h!]
@@ -308,11 +310,11 @@ per le tre equazioni differenziali del sistema di Lorenz,
 e aggiungendo ora Q come la funzione che rappresenta il banco di filtri, 
 avremo infine che:
 
-\begin{align*}
-    \text{for} && \frac{\partial y(t)}{\partial t} & = C(F(x(t), y(t))) \\
-    \text{where} && C(z) = Q(B(l * S(z(l)))) \\
-    \text{Q is} && y(n) = x_{{1}}_{bp}(n) + x_{{2}}_{bp}(n) + x_{{3}}_{bp}(n) + ... x_{{32}}_{bp}(n)
-\end{align*}
+\begin{gather*}
+    \text{for} \frac{\partial y(t)}{\partial t} = C(F(x(t), y(t))) \\
+    \text{where} C(z) = Q(B(l * S(z(l)))) \\
+    \text{Q is} y(n) = x_{1bp}(n) + x_{2bp}(n) + x_{3bp}(n) + ... x_{32bp}(n)
+\end{gather*}
 
 il CSGA in forma di modello discreto modificato,
 può infine essere scritto in un algoritmo in Faust come segue:
@@ -388,10 +390,11 @@ inferiore rispetto a quello del Larsen proveniente dalla stanza.
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=15cm]{figures/RITI4VoiceNetwork.pdf} \\
-    \caption {Esempio della Rete di RITI compilata con 4 Voci (4 CSGA)} \\ 
+    \caption {Esempio della Rete di RITI compilata con 4 Voci (4 CSGA)}
 \end{center}
-\vspace{0.5cm}
 \end{figure}
+
+\vspace{0.5cm}
 
 La possibilità di regolare i tre stati di feedback e di portare il sistema "sulla soglia del caos"
 esplorando nella performance tutti i suoi spazi, 
