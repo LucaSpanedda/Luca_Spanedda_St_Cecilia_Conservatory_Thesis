@@ -4,15 +4,15 @@ In questo appendice sono riportati tutti i codici dei sistemi
 e le relative librerie di oggetti trattati nel corso della tesi. \\
 \verb| Audible_Ecosystemics_2.dsp | è il file principale di una implementazione 
 completa del sistema di Audible Ecosystemics 2 di Agostino Di Scipio, sviluppato con il supporto
-e il prezioso aiuto di Dario Sanfilippo, nel Debug del sistema e del codice; 
+e il prezioso aiuto di Dario Sanfilippo, nel Debug del sistema e sviluppo della libreria del codice; 
 e conseguente al prezioso lavoro svolto con i miei compagni nella Classe di esecuzione ed interpretazione 
 della musica elettroacustica di Giuseppe Silvi, che mi ha permesso di approfondire le tematiche
-discusse nel corso della tesi e poter sviluppare strategie efficaci per questa implementazione.
+discusse nel corso della tesi riguardo al brano e poter sviluppare strategie efficaci per questa implementazione.
 \verb| aelibrary.lib | è invece la libreria degli oggetti utilizzati nella implementazione del sistema
-di Audible Ecosystemics 2 di Agostino Di Scipio. \\
-\verb| RITI_AutonomousNetwork_fixedVersion.dsp | è il file principale della implementazione 
+di Audible Ecosystemics 2 di Agostino Di Scipio (oggetti discussi anche nella tesi). \\
+\verb| RITI_v1_CelloC2.dsp | è il file principale della implementazione 
 del mio sistema di RITI v.1.0. \verb| RITI.lib | è invece la libreria degli oggetti utilizzati nella 
-implementazione del mio sistema di RITI v.1.0. \verb| Cello_D2.lib | è infine una libreria
+implementazione del mio sistema di RITI v.1.0. \verb| SpectreLists.lib | è infine una libreria
 con i risultati delle analisi condotte sulle note del violoncello, utilizzata per passare le informazioni
 ai filtri passabanda nel sistema di RITI v.1.0. \\
 \clearpage
@@ -28,9 +28,9 @@ ai filtri passabanda nel sistema di RITI v.1.0. \\
 \lstinputlisting[breaklines, frame=trBL]{codes/aelibrary.lib}
 \clearpage
 
-\begin{center} \Large \verb| RITI_AutonomousNetwork_fixedVersion.dsp | \normalsize \\
+\begin{center} \Large \verb| RITI_v1_CelloC2.dsp | \normalsize \\
     \vspace{0.2cm} \end{center}
-\lstinputlisting[breaklines, frame=trBL]{codes/RITI_AutonomousNetwork_fixedVersion.dsp}
+\lstinputlisting[breaklines, frame=trBL]{codes/RITI_v1_CelloC2.dsp}
 \clearpage
 
 \begin{center} \Large \verb| RITI.lib | \normalsize \\
@@ -38,9 +38,51 @@ ai filtri passabanda nel sistema di RITI v.1.0. \\
 \lstinputlisting[breaklines, frame=trBL]{codes/RITI.lib}
 \clearpage
 
-\begin{center} \Large \verb| Cello_D2.lib | \normalsize \\
+\begin{center} \Large \verb| SpectreLists.lib | \normalsize \\
     \vspace{0.2cm} \end{center}
-\lstinputlisting[breaklines, frame=trBL]{codes/Cello_D2.lib}
+\lstinputlisting[breaklines, frame=trBL]{codes/SpectreLists.lib}
 \clearpage
 
 \section{Second appendix}
+
+In questo appendice sono riportati i codici utilizzati per le analisi 
+spettrali del violoncello effettuati in Python per il sistema RITI v.1.0. \\
+\verb| FFT_range.py | il primo prototipo di questo codice è stato sviluppato
+in collaborazione con il mio collega e amico Edoardo Staffa. 
+L'analisi DFT del file audio può essere effettuata scegliendo il numero di Bins e 
+il Range in frequenza da analizzare (il Bandwidth è ricavato sulla base di questi dati),
+l'output dell'analisi è sia un plot di uno spettrogramma in formato .html navigabile,
+che un file di testo con tutti i dati: frequenze, ampiezze e Bandwidth.
+\verb| sort_amplitudes.py | prende la lista generata ed effettua un sort
+decrescente delle liste a partire dalle frequenze con i picchi di ampiezza più 
+elevati a quelli meno elevati. \verb| filter_frequencies.py | elimina le frequenze 
+dalle liste troppo vicine ai picchi più elevati (impostato di default a 40Hz).
+\verb| sort_frequencies.py | effettua il sort per frequenze in ordine crescente.
+\verb| makelib.py | infine converte le liste .txt processate in un file .lib leggibile da Faust.
+\clearpage
+
+
+\begin{center} \Large \verb| FFT_range.py | \normalsize \\
+    \vspace{0.2cm} \end{center}
+\lstinputlisting[breaklines, frame=trBL]{codes/FFT_range.py}
+\clearpage
+
+\begin{center} \Large \verb| sort_amplitudes.py | \normalsize \\
+    \vspace{0.2cm} \end{center}
+\lstinputlisting[breaklines, frame=trBL]{codes/sort_amplitudes.py}
+\clearpage
+
+\begin{center} \Large \verb| filter_frequencies.py | \normalsize \\
+    \vspace{0.2cm} \end{center}
+\lstinputlisting[breaklines, frame=trBL]{codes/filter_frequencies.py}
+\clearpage
+
+\begin{center} \Large \verb| sort_frequencies.py | \normalsize \\
+    \vspace{0.2cm} \end{center}
+\lstinputlisting[breaklines, frame=trBL]{codes/sort_frequencies.py}
+\clearpage
+
+\begin{center} \Large \verb| makelib.py | \normalsize \\
+    \vspace{0.2cm} \end{center}
+\lstinputlisting[breaklines, frame=trBL]{codes/makelib.py}
+\clearpage
