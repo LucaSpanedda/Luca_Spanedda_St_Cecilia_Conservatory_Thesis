@@ -16,6 +16,11 @@
 \contentsline {lstlisting}{\numberline {16}Algoritmo della DFT in Python}{85}{}%
 \contentsline {lstlisting}{codes/Audible_Ecosystemics_2.dsp}{100}{}%
 \contentsline {lstlisting}{codes/aelibrary.lib}{109}{}%
-\contentsline {lstlisting}{codes/RITI_AutonomousNetwork_fixedVersion.dsp}{116}{}%
-\contentsline {lstlisting}{codes/RITI.lib}{120}{}%
-\contentsline {lstlisting}{codes/Cello_D2.lib}{126}{}%
+\contentsline {lstlisting}{codes/RITI_v1_CelloC2.dsp}{119}{}%
+\contentsline {lstlisting}{codes/RITI.lib}{124}{}%
+\contentsline {lstlisting}{codes/SpectreLists.lib}{130}{}%
+\contentsline {lstlisting}{codes/FFT_range.py}{145}{}%
+\contentsline {lstlisting}{codes/sort_amplitudes.py}{149}{}%
+\contentsline {lstlisting}{codes/filter_frequencies.py}{151}{}%
+\contentsline {lstlisting}{codes/sort_frequencies.py}{154}{}%
+\contentsline {lstlisting}{codes/makelib.py}{156}{}%
