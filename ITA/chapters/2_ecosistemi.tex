@@ -5,19 +5,21 @@
 \section{Ecosistemi Udibili}
 \label{sec:Ecosistemi Udibili}
 
-\subsection{Audible EcoSystemics n.2 - Feedback Study}
-\label{sec:Audible EcoSystemics n.2 - Feedback Study}
+Uno degli esiti musicali più importanti che ha portato con sé il paradigma della complessità è stato l'abbandono della scrittura come strumento unidirezionale di istruzione per l'ottenimento di suoni-conseguenze da strumenti, ed aver mosso la composizione verso la scrittura di interazioni e relazioni tra  strumenti.
 
-Uno degli esiti musicali più importanti che ha portato con sé 
-il paradigma della complessità, riguarda essenzialmente l'aver smesso di 
-scrivere musica per strumenti interattivi con cui farla (e viceversa), 
-ed esser passati invece al  comporre le interazioni tramite gli strumenti.
+%Uno degli esiti musicali più importanti che ha portato con sé 
+%il paradigma della complessità, riguarda essenzialmente l'aver smesso di 
+%scrivere musica per strumenti interattivi con cui farla (e viceversa), 
+%ed esser passati invece al  comporre le interazioni tramite gli strumenti.
 
 Da un punto di vista più generale, Heinz Von Foerster in tal senso 
-sviluppò una teoria dell'informazione secondo cui l'informazione è un costrutto relazionale, 
+sviluppò la teoria %dell'informazione
+secondo cui l'informazione è un costrutto relazionale, 
 e non solo un singolo oggetto o un solo segnale, 
 e che di conseguenza la quantità di informazione in un sistema è determinata 
-quindi dalla sua capacità di generare varietà.
+%quindi
+dalla sua capacità di generare varietà.
+
 Le implicazioni e le conseguenze di questo pensiero applicato alla musica sono enormi.
 Nella nostra tradizione musicale occidentale, nell'insieme delle parole: Sistema Tonale, 
 che sta a significare "quell'insieme delle regole di organizzazione ed uso dei
@@ -28,14 +30,20 @@ sistema, che assume invece un significato centrale nel contesto di questa tesi;
 se si pensa che di conseguenza passa in secondo piano l'insieme di quelle relazioni
 che compongono nella sua interezza un sistema, di cui parla Von Foerster, 
 si riduce la pratica musicale ai minimi termini.
+
 Non è un caso che molti compositori nel corso del XX Secolo, siano passati non solo al comporre 
 i sistemi stessi con cui fare la propria musica, ma al comporne anche le interazioni.
 Si pensi ai sistemi formalizzati come partiture da: Iannis Xenakis, John Cage, o Roland Kayn,
-arrivando fino alle partiture comportamentali come quelle di: Domenico Guaccero e 
+arrivando fino alle partiture comportamentali
+
+\todo[inline,color=green]{luca fai attenzione, guaccero e chi come lui ha spinto la musica a quello che abbiamo ora, non avrebbe mai accettato che le sue partiture fossero definite comportamentali. Erano partiture, complete, dettagliate, più di altre, che permettono una musica più completa, più complessa di altre.}
+
+come quelle di: Domenico Guaccero e 
 del contesto generale della Roma del dopoguerra, per concludere con lavori di 
 Karlheinz Stockhausen come Plus-Minus, dove i processi sono udibili.
-Tornando al tema principale, come accennato nell'abstract, 
-le interazioni che ho ritenuto importante affrontare 
+
+%Tornando al tema principale, come accennato nell'abstract, 
+Le interazioni che ho ritenuto importante affrontare 
 all'interno dei sistemi creati dai compositori cibernetici sono di due tipi:
 di sistemi che interagiscono con l’ambiente circostante appartenente al mondo fisico, 
 e di sistemi che interagiscono con il proprio ambiente nel mondo digitale.
@@ -58,7 +66,11 @@ con la capacità di guardare al proprio stato interno per creare autonomamente l
 In particolare, nei sistemi auto-osservanti quello che si manifesta quando un sistema entra in interazioni non distruttive
 con il proprio ambiente circostante, che coincide nella sostanza anche nel suo spazio vitale, è un Ecosistema.
 
-In tal senso, i lavori del ciclo Ecosistemico Udibile di Agostino di Scipio, 
+\subsection{Audible EcoSystemics n.2 - Feedback Study}
+\label{sec:Audible EcoSystemics n.2 - Feedback Study}
+
+%In tal senso, 
+I lavori del ciclo Ecosistemico Udibile di Agostino di Scipio, 
 trovano fondamento a partire da fenomeni e relazioni che possono esistere e manifestarsi solamente nell'ambiente 
 circostante da cui prende vita il sistema, 
 che nel suo caso diventa proprio lo spazio acustico reale. 
@@ -113,6 +125,7 @@ che compongono nella loro totalità l'intero ecosistema del brano.
 
 \subsection{Il Meccanismo LAR}
 \label{sec:Il Meccanismo LAR}
+
 Il feedback elettroacustico, che abbiamo già detto
 esser stata una delle risorse fondamentali dei primi compositori cibernetici,
 è la condizione di partenza su cui Agostino Di Scipio opera per la costruzione dei suoi Ecosistemi Udibili.
@@ -343,33 +356,34 @@ La sostanziale differenza consiste invece nell'aggiunta di un secondo microfono,
 quando viene introdotta questa condizione di disaccoppiamento si 
 permette al meccanismo di essere più responsivo ai piccoli cambiamenti nell'ambiente
 e di rispondere diversamente agli stessi stimoli da diversi punti di osservazione del sistema.
-Nel Signal Flow 1b, due microfoni in ingresso (mic1 e mic2) 
-vengono limitati in banda da un filtro Highpass ed 
-un filtro Lowpass, rispettivamente fra 50 e 6000 Hz; dei due microfoni che escono 
-dal cntrlMic1 e cntrlMic2 ne viene ricavato l'inviluppo d'ampiezza tramite
-l'oggetto \textit{integrator}, poi la curva di questo inviluppo viene amplificata da 
+
+Nel \emph{Signal Flow 1b}, due microfoni in ingresso (\emph{mic1 e mic2}) 
+vengono limitati in banda da un filtro \emph{highpass} ed 
+un filtro \emph{lowpass}, rispettivamente fra $50Hz$ e $6000Hz$; dei due microfoni che escono 
+dal \emph{cntrlMic1} e \emph{cntrlMic2} ne viene ricavato l'inviluppo d'ampiezza tramite
+l'oggetto \emph{integrator}, poi la curva di questo inviluppo viene amplificata da 
 un delay con feedback, e ne viene estratta solamente la componente energetica 
-presente fra i 0 e i 0.5Hz, limitandone il comportamento dell'oscillazione in quel range.
-Più in basso, nel Signal Flow 2a, i stessi microfoni (mic1 e mic2) sempre
-limitati in banda fra 50 e 6000 Hz, vengono attenuati in ampiezza dal segnale
-proveniente dal cntrlMic1 e cntrlMic2, realizzando nella sostanza una 
-versione più sofisticata del controbilanciamento del meccanismo LAR.
-La parte restante: ovvero, la generazione del segnale directLevel e la 
-conseguente attenuazione dei segnali audio in uscita (sig1 e sig2),
-consiste in un secondo controbilanciamento ricavato da un processo di granulazione
+presente fra i $0Hz$ e i $0.5Hz$, limitandone il comportamento dell'oscillazione in quel range.
+Più in basso, nel \emph{Signal Flow 2a}, i stessi microfoni (\emph{mic1 e mic2}) sempre
+limitati in banda fra $50Hz$ e $6000Hz$, vengono attenuati in ampiezza dal segnale
+proveniente dal \emph{cntrlMic1} e \emph{cntrlMic2}, realizzando nella sostanza una 
+versione più sofisticata del contro-bilanciamento del meccanismo \emph{LAR}.
+La parte restante: ovvero, la generazione del segnale \emph{directLevel} e la 
+conseguente attenuazione dei segnali audio in uscita (\emph{sig1 e sig2}),
+consiste in un secondo contro-bilanciamento ricavato da un processo di granulazione
 attivo alla fine del sistema, finché il granulatore non produce segnale in output 
 l'ampiezza dei segnali audio diretti in uscita dal sistema rimane inalterata.
 
 L'inviluppo d'ampiezza ricavato tramite l'oggetto \textit{integrator}, in partitura 
 viene richiesto come segue:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{integrator = returns the average absolute value over a specific 
+\begin{quote}
+\begin{itemize}
+  \item integrator = returns the average absolute value over a specific 
     time frame (one may use RMS measures, instead, or other amplitude-following methods); 
-    output range is [0, 1]}
-    \vspace{0.5cm}
-\end{center}
+    output range is [0, 1]
+\end{itemize}
+\end{quote}
 
 dove sostanzialmente, viene calcolato il valore assoluto di una specifica finestra temporale. 
 A seguito una implementazione di questo tipo di algoritmo, dove \textit{fi.pole} è 
