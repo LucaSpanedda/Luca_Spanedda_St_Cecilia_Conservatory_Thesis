@@ -515,7 +515,7 @@ dei 5 \textit{sample read}, ad esempio: \textit{ratio: (var2 + (diffHL * 1000)) 
       change, hence no frequency shift of the sampled signal; values major of 1 determine shifts to higher frequencies; values
       between 0 and 1 determine shifts to lower frequencies
     \end{itemize}
-    \end{quote}
+\end{quote}
 
 e dove \textit{diffHL} è un segnale
 di controllo variabile in un range fra 0 e 1, che a run time a microfoni chiusi parte da una costante di 0.5.
@@ -546,7 +546,7 @@ lettura e scrittura sono le seguenti:
       as it is also being read: these can be avoided by various means of
       one's own design
     \end{itemize}
-    \end{quote}
+\end{quote}
 
 In Faust non è possibile separare la scrittura e la lettura da un buffer,
 difatti esistono solo 2 tipi di oggetti per questo scopo:
@@ -590,8 +590,7 @@ Mentre alcuni campionatori fanno parte di un circuito di feedback interno al sis
 sia i granulatori che tutti i campionatori utilizzano lo spazio acustico reale per il feedback,
 i granulatori in particolare sono l'ultima trasformazione del suono del sistema, prima di andare a 
 due sommatori con il resto delle uscite e all'output.
-In partitura vengono indicati come a seguito.
-\clearpage
+In partitura vengono indicati come a seguito. \\
 
 \begin{figure}[h!]
 \begin{center}
@@ -605,26 +604,26 @@ In partitura vengono indicati come a seguito.
 Anche in questo caso, oltre alle indicazioni dei segnali di controllo che vengono
 ricevuti dai due \textit{granular sampling}, 
 in partitura sono presenti delle richiste specifiche riguardo l'implementazione 
-dell'oggetto che ne determinano il risultato dei timbri che produce: 
+dell'oggetto che ne determinano il risultato dei timbri che produce: \\
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{"grains" are short sequences of samples read off the memory
-    buffer, enveloped with a pseudo-gaussian function curve \\
-    grain.dur.jitter is a random deviation of the current
+\begin{quote}
+    \begin{itemize}
+    \item "grains" are short sequences of samples read off the memory
+    buffer, enveloped with a pseudo-gaussian function curve 
+    \item grain.dur.jitter is a random deviation of the current
     grain.duration value: the current actual grain duration is:
     grain.duration + (rnd * grain.dur.jitter * grain.duration), with rnd
-    is: random value in the interval (- 1, 1) \\
-    mem.pointer is the pointer to the next location in the memory
+    is: random value in the interval (- 1, 1) 
+    \item mem.pointer is the pointer to the next location in the memory
     buffer; in the present notation, it varies between - 1 (beginning
-    of buffer) and 1 (end of buffer) \\
-    mem.pointer.jitter is a random deviation of the current
+    of buffer) and 1 (end of buffer) 
+    \item mem.pointer.jitter is a random deviation of the current
     mem.pointer value; any viable method can be used to
-    calculate the current actual value of mem.pointer \\
-    density is the average number of sound grains active at any
-    time (1 is: max, 0 is: no grains)}
-    \vspace{0.5cm}
-\end{center}
+    calculate the current actual value of mem.pointer 
+    \item density is the average number of sound grains active at any
+    time (1 is: max, 0 is: no grains)
+\end{itemize}
+\end{quote}
 
 I due granulatori leggono dunque dalla tabella \textit{sample write} dove vengono scritti
 al contempo i Larsen diretti e i campionatori in feedback. 
