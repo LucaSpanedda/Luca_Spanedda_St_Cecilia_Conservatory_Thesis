@@ -347,23 +347,8 @@ nel realizzare un semplice metodo di analisi DFT per i file audio .wav
 tramite alcune librerie nel Linguaggio di programmazione Python3.
 In un secondo momento ho poi modificato il codice per 
 ottenere le liste con il metodo che mi occorreva per informare i filtri di Faust.
-L'algoritmo in Python è il seguente:
-
-\vspace{0.5cm} 
-\lstinputlisting[breaklines, frame=trBL, caption={Algoritmo della DFT in Python}]
-{codes/DFT.py}
-
-Questo codice prende come argomenti:
-un file audio .wav in ingresso, 
-un range compreso fra una frequenza minima e massima, 
-il numero di bin da utilizzare per l'analisi DFT,
-ed infine il numero di picchi ordinati per frequenze dalle più alte in ampiezza
-che si vogliono in output con i relativi valori di ampiezze, 
-con il bandwidth dell'analisi.
-E in queste liste in output: frequenze, ampiezze e bandwidth,
-i valori di frequenza in uscita dall'analisi simili a quelli già salvati 
-in un intervallo di 40Hz, vengono eliminati, 
-e i restanti picchi principali salvati nel file .lib
+Gli algoritmi in Python3 utilizzati per le Analisi dei file audio si trovano nel
+secondo appendice.
 
 \subsection{Feedback Networks}
 \label{Feedback Networks}
