@@ -71,9 +71,16 @@
 \definecolor{light-gray}{gray}{0.98}
 \lstset{backgroundcolor=\color{light-gray}}
 
-
+% GS
 \usepackage{dsfont}
-
+\usepackage{todonotes}
+%\usepackage[
+%%	autostyle,
+%%	italian=guillemets,
+%	% altre opzioni
+%]{csquotes}
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\par\onehalfspacing}
 %% ------------------------------------------------------------------- Inizio --
 \begin{document}
 \pagenumbering{gobble}
