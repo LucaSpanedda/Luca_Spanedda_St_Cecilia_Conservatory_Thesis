@@ -1,3 +1,6 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX root = ../thesisCASes.tex
+
 %% TITOLO
 \section{Ecosistemi Udibili}
 \label{sec:Ecosistemi Udibili}
@@ -8,7 +11,8 @@
 Uno degli esiti musicali più importanti che ha portato con sé 
 il paradigma della complessità, riguarda essenzialmente l'aver smesso di 
 scrivere musica per strumenti interattivi con cui farla (e viceversa), 
-ed esser passati invece al  comporre le interazioni tramite gli strumenti. \\
+ed esser passati invece al  comporre le interazioni tramite gli strumenti.
+
 Da un punto di vista più generale, Heinz Von Foerster in tal senso 
 sviluppò una teoria dell'informazione secondo cui l'informazione è un costrutto relazionale, 
 e non solo un singolo oggetto o un solo segnale, 
@@ -37,7 +41,8 @@ di sistemi che interagiscono con l’ambiente circostante appartenente al mondo 
 e di sistemi che interagiscono con il proprio ambiente nel mondo digitale.
 Prima di entrare nel merito del primo caso qui,
 è doveroso spendere ancora qualche parola su cosa
-si intenda per ambiente. \\
+si intenda per ambiente.
+
 Nessun sistema è separabile e isolabile dall'ambiente circostante, 
 a prescindere dal fatto che il suo spazio vitale, sia nel mondo fisico o digitale. 
 Proprio come ha mostrato Heinz Von Foerster non si può parlare di auto-organizzazione
@@ -51,7 +56,8 @@ secondo delle modalità prettamente lineari,
 ma dall'ambiente, 
 con la capacità di guardare al proprio stato interno per creare autonomamente le interazioni.
 In particolare, nei sistemi auto-osservanti quello che si manifesta quando un sistema entra in interazioni non distruttive
-con il proprio ambiente circostante, che coincide nella sostanza anche nel suo spazio vitale, è un Ecosistema. \\
+con il proprio ambiente circostante, che coincide nella sostanza anche nel suo spazio vitale, è un Ecosistema.
+
 In tal senso, i lavori del ciclo Ecosistemico Udibile di Agostino di Scipio, 
 trovano fondamento a partire da fenomeni e relazioni che possono esistere e manifestarsi solamente nell'ambiente 
 circostante da cui prende vita il sistema, 
@@ -92,14 +98,12 @@ l'una dall'altra.
 \end{center}
 \end{figure} 
 
-\begin{center}
-\vspace{0.5cm}
-\textit{la mossa decisiva è: passare da un lavoro che mira a usare mezzi interattivi per creare forme sonore desiderate ad
+\begin{quote}
+la mossa decisiva è: passare da un lavoro che mira a usare mezzi interattivi per creare forme sonore desiderate ad
 un lavoro che mira a creare le interazioni desiderate e ad ascoltarne le tracce udibili. Nel secondo caso, si tratta
 di progettare, implementare, e rendere operativo un reticolo di componenti interconnesse il cui comportamento
-sonoro emergente si può chiamare musica.} \footcite{discipio_polverisonore_2016}
-\vspace{0.5cm}
-\end{center}
+sonoro emergente si può chiamare musica.\footcite{discipio_polverisonore_2016}
+\end{quote}
 
 La modalità con cui andrò a discutere in questo capitolo la composizione di interazioni ecosistemiche, 
 è ponendo il focus su un lavoro di Agostino Di Scipio, l’Ecosistemico Udibile n.2, studio sul feedback. 
@@ -117,15 +121,15 @@ possiamo citare una definizione che Di Scipio ha esposto in un suo articolo
 pubblicato presso la rivista Online: ECHO dell’ Orpheus Institute, in
 Ghent. \footcite{di_scipio_relational_2022}
 
-\begin{center}
-\vspace{0.5cm}
-\textit{A condenser microphone (M1) and a dynamic loudspeaker (L1) stand in the performance place
+\begin{quote}
+A condenser microphone (M1) and a dynamic loudspeaker (L1) stand in the performance place
 (S), few or several meters apart, maybe not too far from walls (or curtains, or other larger
 surfaces). They are connected (through one or more amplification stages) to realize a very
 basic electroacoustic chain: M1→L1→S. There’s no sound M1 should capture, though, no sound
 source save the minimal, barely audible turbulence of the background noise, in a situation of
 ‘silence’. This ‘sound-of-nothing’ is amplified and heard through L1, whence it comes back in
-S. \\
+S.
+
 If amplification suffices, the L1 sound feeds back into M1 and the chain design closes onto
 itself, making a ‘reinjection’ circuit – a feedback loop. The amplitude level, the
 transductive technical features of M1 and L1, their relative distance, the distance from
@@ -138,10 +142,8 @@ audible but spectrally wide background noise accumulates in the loop and finally
 yields an increasingly louder sustained sound of narrower spectrum – this is often heard as a
 peaking tone of definite pitch, or a tone cluster. That’s the Larsen effect: a self-sustaining
 feedback resonance occasioned by a positive feedback loop (FB+) (‘positive’ here means greater
-than unit gain).}
-\vspace{0.5cm}
-\vspace{0.5cm}
-\end{center}
+than unit gain).
+\end{quote}
 
 \begin{figure}[h!]
     \begin{center}
@@ -165,15 +167,13 @@ come la risonanza acustica o la risonanza per simpatia,
 che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali. \\
 Tornando quindi all'articolo di Agostino Di Scipio:
 
-\begin{center}
-\vspace{0.5cm}
-\textit{In common sound engineering practice, audible feedback phenomena are a nuisance, a problem one
+\begin{quote}
+In common sound engineering practice, audible feedback phenomena are a nuisance, a problem one
 should get rid of or substantially minimize. When direct level manipulation is not enough, one
 resorts to hard-limiting circuits, ‘feedback killers’ and alike devices... 
 In a different attitude, one may instead consider feedback as
-a resource, a deliberately designed sound-making mechanism one can play with.} \footcite{di_scipio_relational_2022}
-\vspace{0.5cm}
-\end{center}
+a resource, a deliberately designed sound-making mechanism one can play with.\footcite{di_scipio_relational_2022}
+\end{quote}
 
 per utilizzare il feedback come una risorsa,
 ora appare chiara la necessità di un intervento sulla sua retroiniezione a guadagno infinito 
@@ -181,12 +181,14 @@ che porta alla saturazione dei sistemi coinvolti,
 in tal senso una delle possibili soluzioni è quella di poter far calcolare
 al computer in tempo reale tramite diverse tecniche di \textit{amplitude following} la stima dell'ampiezza
 del segnale in ingresso, ed utilizzare conseguentemente la \textit{feature extraction} 
-come segnale di controllo in retroazione negativa al sistema di feedback elettroacustico. \\
+come segnale di controllo in retroazione negativa al sistema di feedback elettroacustico.
+
 Questo tipo di meccanismi, provenienti dalla tradizione della Computer Music, appartiene 
 all'ambito del \textit{Music Information Retrieval} (MIR).
 Il MIR è un campo di ricerca multidisciplinare, che nell'area dell’informatica musicale si occupa di
 studiare i metodi e gli strumenti per l’estrazione dell’informazione musicale per mezzo di un
-computer. \\
+computer.
+
 Oltre alle analisi in tempo differito, che sono tipicamente trattate dal MIR
 per le sue applicazioni di ricerca dove viene presa in considerazione
 l’intera lunghezza del segnale su cui si effettua un analisi, 
@@ -200,7 +202,8 @@ Nel contesto di una performance di live electronics, viene chiamata col nome di
 \textit{Audio Information Processing};
 tanto più un sistema è in grado di raccogliere informazioni riguardo
 il suo stato e il suo rapporto con l'ambiente, tanto più sarà in grado di
-processare "cognitivamente" tramite l'informazione il suo prodotto. \\
+processare "cognitivamente" tramite l'informazione il suo prodotto.
+
 Rimandando al prossimo capitolo approfondimenti più dettagliati riguardo il tema 
 dell'\textit{Audio Information Processing}, mi fermerò per il momento a discutere 
 nel dettaglio alcuni fondamentali meccanismi presi da questo brano che sono paradigmatici,
@@ -208,7 +211,7 @@ come il singolo meccanismo di controbilanciamento del guadagno
 del fenomeno di feedback elettroacustico, che viene chiamato da Agostino Di Scipio col nome di 
 LAR: \textit{Audio feedback with self-regulated Gain},
 e che può essere implementato in DSP in diverse modalità e configurazioni,
-ognuna con le sue diverse caratteristiche e che porta a differenti esiti. \\
+ognuna con le sue diverse caratteristiche e che porta a differenti esiti.
 
 \begin{figure}[h!]
 \begin{center}
@@ -231,7 +234,8 @@ automatizzati, che non permettano al feedback di avere un guadagno troppo troppo
 e giungere conseguentemente allo stato di saturazione del sistema.
 Algoritmi di \textit{amplitude-following} possono essere implementati 
 con la media \textit{RMS}, con finestre variabili o fisse, 
-filtri \textit{Peakholder} che mantengano il valore di picco, o di altra natura. \\
+filtri \textit{Peakholder} che mantengano il valore di picco, o di altra natura.
+
 Tratterò a partire da ora nella tesi anche delle parti più operative, 
 discutendo ed illustrando l'implementazione
 di alcune di queste tecniche nel linguaggio di programmazione FAUST (Grame), 
@@ -252,7 +256,8 @@ lo sviluppo di molti di questi codici,
 e poiché nell'ultimo anno ha amorevolmente condiviso con me il suo sapere e le sue tecniche 
 sviluppate nel corso dei suoi studi e delle sue ricerche, 
 spiegandomi sempre con molta pazienza ogni dettaglio e applicazione 
-di queste nei auoi sistemi complessi. \\
+di queste nei auoi sistemi complessi.
+
 Il modo più semplice per mantenere l’effetto Larsen in uno stato stazionario, è attraverso un
 valore costante ricavato dalla crescita del segnale in ingresso,
 che controbilanci l’ampiezza del circuito di feedback come in figura del meccanismo LAR;
@@ -312,7 +317,8 @@ retroazione del \textit{Peakholder} e da altri tipi di implementazioni di tecnic
 \textit{amplitude-following}. Per questi motivi si sceglie più frequentemente di utilizzare algoritmi
 adattivi, proprio come nel contesto del meccanismo LAR implementato nel feedback study,
 dove il comportamento adattivo dell'\textit{amplitude-follower} è cruciale
-per la dinamica adattiva ed auto-regolatoria del sistema.\\
+per la dinamica adattiva ed auto-regolatoria del sistema.
+
 Il meccanismo LAR è essenzialmente nel cuore della live performance del feedback study,
 senza di questo non sarebbe possibile creare una condizione favorevole per procedere alle 
 conseguenti trasformazioni del suono, e conseguentemente ad una condizione favorevole affinché il 
@@ -352,7 +358,8 @@ La parte restante: ovvero, la generazione del segnale directLevel e la
 conseguente attenuazione dei segnali audio in uscita (sig1 e sig2),
 consiste in un secondo controbilanciamento ricavato da un processo di granulazione
 attivo alla fine del sistema, finché il granulatore non produce segnale in output 
-l'ampiezza dei segnali audio diretti in uscita dal sistema rimane inalterata. \\
+l'ampiezza dei segnali audio diretti in uscita dal sistema rimane inalterata.
+
 L'inviluppo d'ampiezza ricavato tramite l'oggetto \textit{integrator}, in partitura 
 viene richiesto come segue:
 
@@ -386,7 +393,8 @@ i filtri utilizzati risultano essere di tipo IIR,
 così da avere nella sostanza una risposta più lenta rispetto ad altre implementazioni come ad esempio 
 quella del calcolo a media mobile.  
 La risposta del filtro nell'implementazione originale è di tipo \textit{tau} 
-e l'inviluppo è assoluto. \\
+e l'inviluppo è assoluto.
+
 Se si desidera utilizzare questo tipo d'implementazione, nella libreria di Faust 
 è possibile trovarla nell'oggetto \verb|an.abs_envelope_tau|.
 Nella loro interezza i meccanismi di cntrlMic1 e cntrlMic2, e la conseguente
@@ -412,7 +420,8 @@ di fatto una serie di nuove possibilità di elaborazione e trasformazione del su
 
 l’Ecosistemico Udibile n.2, studio sul feedback, è costituito
 da due principali meccanismi di feedback, uno nello spazio acustico reale,
-e uno interno al sistema. \\
+e uno interno al sistema.
+
 Il suono proveniente dal meccanismo LAR appena discusso nella precedente sezione,
 passa per una serie di elaborazioni numeriche del segnale prima di essere restituito
 e diffuso dagli altoparlanti nello spazio acustico reale. Queste elaborazioni
@@ -420,20 +429,22 @@ che vengono poi nuovamente intercettate dal microfono e riportate nel Sistema,
 consentono una continua ed incessante trasformazione del suono, che permette
 di cambiarne la morfologia ad ogni istante di tempo e in modo continuo, 
 permettendo al sistema di avere "vita propria" ascoltandosi tramite l'ambiente
-anche senza il contributo apportato da un esecutore. \\
+anche senza il contributo apportato da un esecutore.
+
 Le elaborazioni del suono interne al sistema sono a loro volta di due tipologie,
-\textit{sample read} e \textit{granular sampling}. \\
+\textit{sample read} e \textit{granular sampling}.
+
 L'implementazione di questi due oggetti viene richiesta in partitura come segue:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{sample write = write samples into a memory buffer, in cyclical fashion (wrap-around)} \\
-    \textit{sample read = read samples off the memory buffer, with controls over frequency shift ratios and actual buffer segment being read} \\
-    \textit{granular sampling = read sample sequences off subsequent buffer memory chunks, and envelopes the signal chunk with a pseudo-Gaussian envelope curve; the particular
+\begin{quote}
+\begin{itemize}
+  \item sample write = write samples into a memory buffer, in cyclical fashion (wrap-around)
+  \item sample read = read samples off the memory buffer, with controls over frequency shift ratios and actual buffer segment being read
+  \item granular sampling = read sample sequences off subsequent buffer memory chunks, and envelopes the signal chunk with a pseudo-Gaussian envelope curve; the particular
     implementation should allow for time-stretching (slower memory pointer increments at grain level), as well as for "grain density" controls and slight random deviations ("jitter") on
-    grain parameters; no frequency shift necessary} \\
-    \vspace{0.5cm}
-\end{center}
+    grain parameters; no frequency shift necessary
+\end{itemize}
+\end{quote}
 
 dove \textit{sample write} rappresenta una tabella (buffer o dispositivo di memoria) 
 che viene riscritta in modo continuo da un puntatore alla memoria;
@@ -443,19 +454,20 @@ in partitura utilizzate per inizializzare il sistema, \textit{var1} che definito
 la grandezza della tabella in secondi.
 Le 4 variabili definite per inizializzare il sistema ad ogni performance sono le seguenti:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{var1 = distance (in meters) between the two farthest removed loudspeakers on the left-right axis.} \\
-    \textit{var2 = rough estimate of the center frequency in the spectrum of the room’s background noise (spectral centroid): to evaluate at rehearsal time, in a situation of "silence".} \\
-    \textit{var3 = subjective estimate of how the room revereberance, valued between 0 ("no reverb") and 1 (“very long reverb”).} \\
-    \textit{var4 = distance (in meters) between the two farthest removed loudspeakers on the front-rear axis.}
-    \vspace{0.5cm}
-\end{center}
+\begin{quote}
+\begin{itemize}
+  \item var1 = distance (in meters) between the two farthest removed loudspeakers on the left-right axis.
+  \item var2 = rough estimate of the center frequency in the spectrum of the room’s background noise (spectral centroid): to evaluate at rehearsal time, in a situation of "silence".
+  \item var3 = subjective estimate of how the room revereberance, valued between 0 ("no reverb") and 1 (“very long reverb”).
+  \item var4 = distance (in meters) between the two farthest removed loudspeakers on the front-rear axis.
+\end{itemize}
+\end{quote}
 
 queste 4 variabili hanno un ruolo molto importante, poiché non solo vanno a determinare la velocità del
 comportamento del sistema, ma ne vanno a determinare la sua sensibilità rispetto all'ambiente in cui viene 
 eseguito, come ad esempio nel caso del \textit{sample read} la velocità di lettura dalla tabella \textit{sample write} 
-e la porzione di tabella che ne viene letta. \\
+e la porzione di tabella che ne viene letta.
+
 I \textit{sample read} sono 5 indicati in partitura nella configurazione che segue.
 
 \begin{figure}[h!]
@@ -471,7 +483,8 @@ Il suono del Larsen proveniente da due microfoni e stabilizzato con il meccanism
 illustrato in precedenza, viene a sommarsi per poi venire moltiplicato per un oscillatore a bassa frequenza
 che ne modifica l'inviluppo d'ampiezza. Il risultato di questa operazione viene scritto in memoria
 nella tabella \textit{sample write} e viene letto dai 5 campionatori distribuiti In
-questa sezione del sistema. \\
+questa sezione del sistema.
+
 I parametri esterni e tempo varianti che utilizza il campionatore sono: \textit{ratio} e \textit{mem chunk},
 che corrispondono rispettivamente alla velocità di lettura e al frammento di buffer che viene letto
 dalla tabella \textit{sample write}.
