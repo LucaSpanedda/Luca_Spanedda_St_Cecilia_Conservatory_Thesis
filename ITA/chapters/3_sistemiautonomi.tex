@@ -58,9 +58,8 @@ in partenza. \\
 In alcuni casi, questa idea viene portata alle sue estreme conseguenze con opere in cui la macchina è l'unica 
 ente che esegue, come accade per il brano presentato qui.
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{Order from noise (2017) is based on a time-variant feedback delay network containing a 
+\begin{quote}
+    Order from noise (2017) is based on a time-variant feedback delay network containing a 
     set of entangled nonlinear processing algorithms for audio and information signals. 
     The work is an example of autonomous self-performing system and it is realised by
     feeding the network with one millisecond of background noise from the performance
@@ -69,9 +68,8 @@ ente che esegue, come accade per il brano presentato qui.
     for each different noise impulse. An approach to present the work live is that
     of reinitialising the system a number of times for a period of about three-five minutes
     to show its sensitivity to initial conditions and the long-term divergence between the
-    formal structures.}\footcite{sanfilippo_time-variant_2018}
-    \vspace{0.5cm}
-\end{center}
+    formal structures.\footcite{sanfilippo_time-variant_2018}
+\end{quote}
 
 Rispetto al sistema discusso nel capitolo precedente, 
 come già accennato c'è una sostanziale differenza nel concetto di spazio
@@ -104,14 +102,12 @@ e la loro stretta connessione con l'informazione,
 ha favorito lo sviluppo di techniche algoritmiche per l'\textit{Audio Information Processing} 
 e l'analisi di comportamenti, sia ad alto e basso livello.
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{The low-level algorithms provide a continuous measure of the features and can operate
-with short analysis frames. The high-level algorithms, on the other hand, are original designs informed both perceptually
-and by complexity theory for the analysis of musically meaningful information, both in short sounds or articulated
-streams with long-term nontrivial variations.}\footcite{sanfilippo_time-domain_2021}
-\vspace{0.5cm}
-\end{center}
+\begin{quote}
+    The low-level algorithms provide a continuous measure of the features and can operate
+    with short analysis frames. The high-level algorithms, on the other hand, are original designs informed both perceptually
+    and by complexity theory for the analysis of musically meaningful information, both in short sounds or articulated
+    streams with long-term nontrivial variations.\footcite{sanfilippo_time-domain_2021}
+\end{quote}
 
 Alcuni primi esempi storici,
 sono ad esempio le performance in live electronics di Gordon Mumma, 
@@ -130,9 +126,8 @@ complessità per l'alto livello.
 Che come in questo caso nell'utilizzo specifico di queste tecniche 
 in un suo sistema:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{These signals, often based on
+\begin{quote}
+    These signals, often based on
     their perceptual characteristics and their relationship with the domains of the variables
     in the processing units, are mapped to certain ranges and then used to control the state
     of the components in a large network. (See Di Scipio (2003) for a detailed discussion
@@ -147,9 +142,8 @@ in un suo sistema:
     number of configurations and an even larger number of possible states that a system
     can reach. That, theoretically, could be considered as something that guarantees a good
     variety and complexity in the long-term behaviour of a system, albeit the practical case
-    tends to be much different from the ideal scenario.}\footcite{sanfilippo_time-variant_2018}
-    \vspace{0.5cm}
-\end{center}
+    tends to be much different from the ideal scenario.\footcite{sanfilippo_time-variant_2018}
+\end{quote}
 
 Nel suo articolo su Order From Noise, Sanfilippo discute tutte le unità utilizzate
 nel suo sistema e il loro ruolo all'interno della rete.
@@ -159,8 +153,7 @@ con un particolare focus su tutte tutte quelle \textit{feature extraction}
 che nell'implementazione della rete permettono al sistema 
 (nonostante questo sia chiuso rispetto all'ambiente esterno) 
 di mantenersi in uno stato "emergente" manifestando comportamenti nuovi,
-e di "stabilità" rimanendo sempre in dei range controllati tramite feedback positivi e negativi.\\
-\clearpage
+e di "stabilità" rimanendo sempre in dei range controllati tramite feedback positivi e negativi.
 
 \begin{figure}[h!]
 \begin{center}
@@ -253,9 +246,8 @@ citato precedentemente,\footcite{sanfilippo_time-variant_2018}
 che nel suo blog, dove ne riporta un implementazione fatta nel linguaggio di programmazione
 Pure Data.
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{Recently, I have decided to try the design of a limiter based on a post by IOhannes Zmölnig who, 
+\begin{quote}
+    Recently, I have decided to try the design of a limiter based on a post by IOhannes Zmölnig who, 
     in turn, has based his design on the thesis project by Peter Falkner: 
     Entwicklung eines digitalen Stereo-Limiters mit Hilfe des Signalprozessors DSP56001.
     This design is based on a peak-hold module with an exponential decay curve...
@@ -267,12 +259,10 @@ Pure Data.
     Here, after, the peak-hold module, 
     I am also using a one-pole low-pass filter with a period matching that of the input delay 
     so that peaks and input signal are synchronised and the attack is slightly smoothed out... 
-    The peak envelope can easily be implemented as a single feedback loop through which the detected peaks recirculate}\\
-    \vspace{0.5cm}
-    Lookahead limiting in Pure Data - July 2, 2017
-    \footcite{https://www.dariosanfilippo.com/blog/2017/lookahead-limiting-in-pure-data/}
-    \vspace{0.5cm}
-    \end{center}
+    The peak envelope can easily be implemented as a single feedback loop through which the detected peaks recirculate \\
+    (Lookahead limiting in Pure Data - July 2, 2017
+    \footcite{https://www.dariosanfilippo.com/blog/2017/lookahead-limiting-in-pure-data/})
+\end{quote}
 
 Per implementare il \textit{Lookahead Limiter} 
 sono dunque richieste due unità distinte
@@ -315,6 +305,8 @@ A seguito l'algoritmo in Faust del \textit{Peakenvelope}.
 \vspace{0.5cm}
 \end{figure}
 
+\clearpage
+
 per quanto riguarda invece l'algoritmo del \textit{Peakholder} adattivo, è un po' meno semplice. 
 Il \textit{Peakholder} verificherà se l'ingresso è maggiore o uguale all'uscita e, 
 se la condizione è vera, aggiornerà il picco e ripristinerà un timer. 
@@ -322,19 +314,18 @@ Quando la condizione invece è falsa,
 inizierà il suo countdown e, allo scadere del tempo, se non è stato rilevato alcun nuovo picco, 
 qualsiasi valore nell'ingresso corrente verrà impostato come nuovo picco.
 
-\vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Peakholder} (adattivo) con Timer}]
 {codes/PeakHolderAdaptive.dsp}
-\clearpage
 
 \begin{figure}[h!]
-\begin{center}
-    \includegraphics[width=15cm]{figures/PeakHolderAdaptive.pdf}
-    \caption{Topologia del \textit{Peakholder} (adattivo) con Timer}
-\end{center}
-\vspace{0.5cm}
-\end{figure}
-\clearpage
+    \begin{center}
+        \includegraphics[width=15cm]{figures/PeakHolderAdaptive.pdf}
+        \caption{Topologia del \textit{Peakholder} (adattivo) con Timer}
+    \end{center}
+    \vspace{0.5cm}
+    \end{figure}
+
+\clearpage 
 
 Per concludere infine le unità sono combinate fra loro come a seguito,
 formando nel loro insieme il \textit{Lookahead Limiter}.
@@ -353,13 +344,13 @@ ma a discapito di un tempo di ritardo dovuto all'analisi del valore massimo che 
 solo al termine del \textit{time frame}.
 In partitura viene descritto come segue:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{local max = returns the maximum signal amplitude (absolute value) 
-    in a given time frame; frame duration is dynamically adjusted: 
-    the next frame duration is set at the end of the previous frame} \\
-    \vspace{0.5cm}
-\end{center}
+\begin{quote}
+    \begin{itemize}
+      \item local max = returns the maximum signal amplitude (absolute value) 
+      in a given time frame; frame duration is dynamically adjusted: 
+      the next frame duration is set at the end of the previous frame
+    \end{itemize}
+    \end{quote}
 
 A seguito l'implementazione del \textit{Local Max} in Faust.
 
