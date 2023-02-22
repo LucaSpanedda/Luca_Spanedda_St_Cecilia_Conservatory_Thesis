@@ -509,13 +509,13 @@ che si riflettono in cambiamenti di frequenza del Larsen registrato nel \textit{
 i \textit{ratio} vengono indicati in partitura con delle espressioni diverse per ognuno
 dei 5 \textit{sample read}, ad esempio: \textit{ratio: (var2 + (diffHL * 1000)) / 261}, dove 
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{ratio value sets the sample-read rate as a function of var2 and the control signal diffHL: ratio = 1 causes no rate
-    change, hence no frequency shift of the sampled signal; values major of 1 determine shifts to higher frequencies; values
-    between 0 and 1 determine shifts to lower frequencies}
-    \vspace{0.5cm}
-\end{center}
+\begin{quote}
+    \begin{itemize}
+      \item ratio value sets the sample-read rate as a function of var2 and the control signal diffHL: ratio = 1 causes no rate
+      change, hence no frequency shift of the sampled signal; values major of 1 determine shifts to higher frequencies; values
+      between 0 and 1 determine shifts to lower frequencies
+    \end{itemize}
+    \end{quote}
 
 e dove \textit{diffHL} è un segnale
 di controllo variabile in un range fra 0 e 1, che a run time a microfoni chiusi parte da una costante di 0.5.
@@ -536,17 +536,17 @@ possa tollerare soglie ai due estremi.
 In partitura altre importanti indicazioni sul campionatore che riguardano 
 lettura e scrittura sono le seguenti:
 
-\begin{center}
-    \vspace{0.5cm}
-    \textit{all sample-read processes 
-    should include short fade-in and fade-out
-    ramps when sampling pointers wrap around the buffer, to avoid
-    discontinuities \\
-    more discontinuities may occur because the buffer is being written
-    as it is also being read: these can be avoided by various means of
-    one's own design}
-    \vspace{0.5cm}
-\end{center}
+\begin{quote}
+    \begin{itemize}
+      \item all sample-read processes 
+      should include short fade-in and fade-out
+      ramps when sampling pointers wrap around the buffer, to avoid
+      discontinuities
+      \item more discontinuities may occur because the buffer is being written
+      as it is also being read: these can be avoided by various means of
+      one's own design
+    \end{itemize}
+    \end{quote}
 
 In Faust non è possibile separare la scrittura e la lettura da un buffer,
 difatti esistono solo 2 tipi di oggetti per questo scopo:
