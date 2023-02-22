@@ -1,7 +1,11 @@
 %!TEX encoding = UTF-8 Unicode
 %!TEX root = thesisCASes.tex
 
-\documentclass[12pt]{article}
+\documentclass[
+    12pt,
+    twoside,
+    openright
+    ]{article}
 \usepackage
     [
         a4paper,% other options: a3paper, a5paper, etc
@@ -87,9 +91,8 @@
 
 %% Copertina
 \input{cover}
-\newpage
-\
-\newpage
+
+\cleardoublepage
 
 %% ----------------------------------------------- Dichiarazione di intenti ----
 \vfill
@@ -99,20 +102,18 @@ mi assumo la piena responsabilità del suo contenuto.
 Qualora parti del testo siano tratte da altre fonti, 
 mi impegno a citarle in modo esplicito per rendere onore 
 al lavoro originale e rispettare i diritti d'autore. \\  \\
-\
+
 \hspace*{\fill} \large Luca Spanedda \normalsize
-\
-\newpage
+
+\cleardoublepage
 
 \input{chapters/ringraziamenti}
-\newpage
-\
-\newpage
+
+\cleardoublepage
 
 \input{chapters/abstract}
-\newpage
-\
-\newpage
+
+\cleardoublepage
 
 % conteggio pagine
 \pagenumbering{arabic}
@@ -124,23 +125,36 @@ al lavoro originale e rispettare i diritti d'autore. \\  \\
 \listoffigures
 \lstlistoflistings
 \endgroup
-\newpage
+
+\cleardoublepage
 
 \pagestyle{fancy}
 
 %% --------------------------------------------------- Capitoli ----------------
+\thispagestyle{empty}
 \input{chapters/1_introduzione}
+
 \clearpage
+
+\thispagestyle{empty}
 \input{chapters/2_ecosistemi}
+
 \clearpage
+
+\thispagestyle{empty}
 \input{chapters/3_sistemiautonomi}
+
 \clearpage
+
+\thispagestyle{empty}
 \input{chapters/4_riti}
 \clearpage 
-\newpage
-\
-\newpage
+
+\cleardoublepage
+
 \appendix
+
+\thispagestyle{empty}
 \input{chapters/appendix}
 %% ---------------------------------------------- Bibliografia -----------------
 \clearpage
