@@ -12,12 +12,14 @@ si manifesta infatti sulla soglia della caos.
 Mentre nel mondo fisico la non linearità è insita nella natura
 delle cose, nel mondo digitale, queste non linearità, come abbiamo visto
 anche nei capitoli precedenti, devono essere accuratamente
-programmate ed introdotte all’interno degli algoritmi per raggiungere la complessità. \\
+programmate ed introdotte all’interno degli algoritmi per raggiungere la complessità. 
+
 La teoria del caos postula che esista una classe di fenomeni naturali che
 possano essere modellati da sistemi deterministici non lineari.
 Quando si parla di caos ci si riferisce ad un certo tipo di comportamento di
 un sistema dinamico: determinato dalla sensibilità alle condizioni iniziali,
-imprevedibilità a lungo termine, e orbite periodiche dense. \\ 
+imprevedibilità a lungo termine, e orbite periodiche dense. 
+
 In altri termini un sistema caotico amplifica le piccole differenze: porta i fenomeni microscopici
 a un livello macroscopico. Ed è dunque nell’amplificazione di queste piccole
 deviazioni delle condizioni iniziali che si annida il caso.
@@ -43,7 +45,8 @@ L'idea dell'acronimo RITI deriva dal famoso paper di Agostino Di Scipio
 "Sound is the interface" (SITI), 
 che ha introdotto per la prima volta la prospettiva sistemica 
 sull'auto-organizzazione e sulla capacità di un sistema di auto-osservarsi 
-tramite l'ambiente circostante in musica.\footcite{di_scipio_sound_2003} \\
+tramite l'ambiente circostante in musica.\footcite{di_scipio_sound_2003} 
+
 Il sistema è costruito utilizzando alla base una soluzione 
 delle equazioni differenziali del sistema di Lorenz come motore di sintesi del suono in DSP;
 Le esigenze di questo tipo di applicazioni nel mondo della Computer Music
@@ -143,7 +146,8 @@ il positivo rappresenta il moto in senso orario ed il negativo il senso antiorar
 dove \( y \) è la differenza di temperatura tra i fluidi superiori ed inferiori,
 e dove \( z \) è la distorsione dalla linearità del profilo della temperatura verticale.
 Mentre \( \sigma,  \rho,  \beta \) governano la relazione fra le quantità (e sono maggiori di 0),
-e \( \partial t \) rappresenta lo step d'integrazione. \\
+e \( \partial t \) rappresenta lo step d'integrazione. 
+
 Mentre per una sua rappresentazione in forma di modello discreto,
 può essere scritto un algoritmo in Faust come segue:
 
@@ -175,7 +179,8 @@ Come detto in precedenza, esistono ricerche che si pongono il problema
 di un adattività dei sistemi caotici con il fine di poterli utilizzare per determinati scopi,
 andrò adesso ad illustrare nel dettaglio i modelli che ho preso 
 a riferimento in questo brano per poter utilizzare
-i sistemi caotici per fini musicali di sintesi del segnale. \\
+i sistemi caotici per fini musicali di sintesi del segnale. 
+
 Per poter esplorare un sistema caotico con il fine di creare un segnale udibile in tutte le sue regioni, 
 è necessario dunque porsi dunque un problema di ottimizzazione;
 è necessario chiedersi quali problemi possano verficarsi e quali strumenti possano contrastarli. 
@@ -265,7 +270,8 @@ può essere scritto un algoritmo in Faust come segue:
 Ora il sistema di Lorenz è invece ottimizzato per la sintesi sonora.
 Per concludere, il sistema di Lorenz Modificato passa infine per la sua terza costrizione,
 che consiste in un Banco di Filtri Bandpass dove per un solo termine in ingresso 
-il segnale viene diviso per il numero di banchi di filtri e restituito in uscita. \\
+il segnale viene diviso per il numero di banchi di filtri e restituito in uscita. 
+
 Il banco di filtri Bandpass è costituito da 32 voci parallele informate da 
 4 liste di ricavate da analisi di 4 file audio di note del violocello,
 esplorate durante il corso della performance.
@@ -277,7 +283,8 @@ La particolarità di questo tipo d'implementazione di SVF che ho utilizzato,
 includendo nella maggiorparte dei casi \textit{zero-delay loops}.
 Questi filtri sono chiamati \textit{Topology Preserving Transform filters} o filtri TPT,
 e provengono dal libro "The Art of VA Filter Design" di Vadim Zavalishin,\footcite{Zavalishin_VA_filter_design}
-pubblicato e reperibile gratuitamente in rete. \\
+pubblicato e reperibile gratuitamente in rete. 
+
 A seguito riporto l'implementazione matematica di questo filtro SVF TPT di Vadim Zavalishin
 che ha esposto Will Pirkle in un suo articolo chiamato 
 "Virtual Analog (VA) Filter Implementation and Comparisons v2.0"\footcite{Pirkle_VA_filter_design}
@@ -374,7 +381,7 @@ inferiore rispetto a quello del Larsen proveniente dalla stanza.
 
 \begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=15cm]{figures/RITI4VoiceNetwork.pdf} \\
+    \includegraphics[width=15cm]{figures/RITI4VoiceNetwork.pdf} 
     \caption {Esempio della Rete di RITI compilata con 4 Voci (4 CSGA)}
 \end{center}
 \end{figure}
@@ -395,14 +402,17 @@ Prima di concludere questo elaborato,
 vorrei prima soffermarmi a spiegare alcune delle motivazioni 
 personali che hanno suscitato in me l'interesse per i 
 sistemi complessi adattivi in live electronics, 
-e che mi hanno spinto in particolare alla creazione di questo brano. \\
+e che mi hanno spinto in particolare alla creazione di questo brano. 
+
 In questi ultimi anni di studi musicali, sono emerse nel mio fare musica 
 delle questioni per me di fondamentale importanza che hanno accompagnato il mio operato
-e che hanno mosso il mio interesse verso i le cibernetiche in musica. \\
+e che hanno mosso il mio interesse verso i le cibernetiche in musica. 
+
 In primo luogo indagare rispetto al rapporto che esiste fra l'interprete, la notazione, e lo strumento musicale;
 che può essere vista in qualche modo come una parte contenuta all'interno 
 della relazione fra uomo-macchina-ambiente di cui parla
-Agostino Di Scipio. \\
+Agostino Di Scipio. 
+
 Le prime forme di semiografia musicale possono essere rintracciate in diverse civiltà 
 che risalgono addirittura attorno al 2000 A.C.,
 sin d'allora l'uomo ha posto al centro della sua indagine l'interrogativo sul come fissare sempre meglio 
@@ -418,7 +428,8 @@ diverse accezioni utilizzate nei vari periodi storici.
 Difatti con l'arrivo del XXI Secolo, sono state messe in crisi le nozioni di strumento musicale e di semiografia musicale, 
 in quanto la pratica del comporre non si è più solamente limitata al comporre 
 con i timbri dei diversi strumenti musicali, ma si è aperta anche alla possibilità del comporre stesso nel timbro, 
-spingendo i compositori a cercare vie alternative ed alle volte individuali in cui scrivere musica differente dalla tradizione.\\
+spingendo i compositori a cercare vie alternative ed alle volte individuali in cui scrivere musica differente dalla tradizione.
+
 Riguardo gli strumenti musicali invece, se la voce è difatti il primo strumento dell'uomo in quanto 
 abita il corpo stesso che ne è il custode, la macchina che nel suo senso generico è qualsiasi strumento 
 il cui moto relativo trasmetta o anche amplifichi la forza umana.
@@ -427,7 +438,8 @@ sua intenzione del fare musica secondo l'organizzazione dei parametri esposti pr
 con la composizione nel timbro viene invece a mancare l'idea 
 di una musica composta solamente da queste tipiche relazioni tramite gli strumenti musicali, 
 rivalutando l'idea stessa che si ha di uno strumento musicale, aperta ora di fatto alla possibilità 
-del poter comporre quanto il timbro stesso integrando anche la creazione dello strumento che lo produce. \\
+del poter comporre quanto il timbro stesso integrando anche la creazione dello strumento che lo produce. 
+
 Come dice Trevor Wishart nel suo libro On Sonic Art:
 
 \begin{quote}
@@ -443,7 +455,8 @@ Come dice Trevor Wishart nel suo libro On Sonic Art:
 \end{quote}
 
 Come comportarsi quindi davanti ad una condizione in cui viene messa in crisi l'idea stessa
-che si ha di musica, di notazione musicale, e di strumento musicale?\\
+che si ha di musica, di notazione musicale, e di strumento musicale?
+
 Questa indagine mi ha portato a rivolgere l'attenzione al rapporto con la notazione 
 e gli strumenti musicali in quelle opere dei compositori contemporanei, 
 che raccogliendo le ceneri di questa crisi del XXI Secolo, 
@@ -470,7 +483,8 @@ sul corpo dello strumento e degli esiti acustici del gesto, scendono così tanto
 "ad un basso livello di articolazione" da schiuderne in questo tutta una serie di nuove possibilità
 acustiche, o anche nei lavori stessi di Wishart, come nel ciclo Vox 
 dove la voce viene esplorata in tutte le sue ambiguità rendendo
-complesso il collegamento fra il suono e la sorgente che lo produce. \\
+complesso il collegamento fra il suono e la sorgente che lo produce. 
+
 In senso più generale la storia della musica elettroacustica è fortunatamente costellata 
 di pionieri che hanno messo in crisi il linguaggio musicale e l'impiego degli strumenti musicali,
 ma l'ulteriore scarto che propongo qui, consiste nel fatto che se è vero quindi come 
@@ -479,7 +493,8 @@ essere ricavate dall'osservazione di un sistema,
 la pratica del disegnare un sistema autonomo (la macchina) con cui fare musica,
 ne riflette di conseguenza la quantità di informazione che questo contiene al suo interno,
 e di conseguenza il tipo di relazioni e interazioni con il suo ambiente che 
-ci interessano dal punto di vista compositivo.\\
+ci interessano dal punto di vista compositivo.
+
 In secondo luogo, ho trovato interessante indagare rispetto al rapporto conflittuale che l'uomo ha con la tecnologia
 nella società contemporanea. 
 In effetti, l'uomo ha da sempre un rapporto conflittuale con la tecnologia,
@@ -558,10 +573,12 @@ che si riflettono dal mio punto di vista in una società anestetizzata,
 schiava della tecnologia, e livellata in qualche modo ad una condizione di eterno presente.
 In risposta a questa condizione, disegnare i propri sistemi e di conseguenza riappropriarsi della tecnologia,
 rappresenta per me un modo costruttivista di rispondere ai problemi del mondo contemporaneo
-attraverso la pratica musicale.\\
+attraverso la pratica musicale.
+
 Per concludere infine le motivazioni che mi hanno portato a questo tipo di scrittura musicale, 
 l'ultimo aspetto che ho reputato importante affrontare è la forma,
-nei suoi aspetti Macro-temporali e Micro-temporali. \\
+nei suoi aspetti Macro-temporali e Micro-temporali. 
+
 Se ammettiamo quindi come sostiene François J. Bonnet, ed altri filosofi come Mark Fisher e Slavoj Žižek,
 che la nostra società contemporanea ha in qualche modo normalizzato
 una velocità schizofrenica nelle cose, dove tutto deve essere estremamente funzionale per motivi pratici,
@@ -579,7 +596,8 @@ corrispondono variazioni significative del comportamento futuro.
 Dunque in tal senso è diventato per me un aspetto importante lavorare con
 sistemi emergenti che possano rendere udibili questi processi di continua trasformazione
 del suono, e che non rendano udibile una sola traiettoria possibile nell'evoluzione formale
-di un brano.\\
+di un brano.
+
 È a tal proposito che Stockhausen, nella sua teoria della "Forma unificata del tempo", 
 notò già nel 1960 come in tal senso la differenza fra i Micro-elementi nella forma, 
 e la Macroforma, non consista tanto in diversi ruoli e compiti del comporre,

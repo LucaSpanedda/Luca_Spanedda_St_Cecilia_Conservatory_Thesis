@@ -16,8 +16,7 @@ Da un punto di vista più generale, Heinz Von Foerster in tal senso
 sviluppò la teoria %dell'informazione
 secondo cui l'informazione è un costrutto relazionale, 
 e non solo un singolo oggetto o un solo segnale, 
-e che di conseguenza la quantità di informazione in un sistema è determinata 
-%quindi
+e che di conseguenza la quantità di informazione in un sistema è determinata %quindi
 dalla sua capacità di generare varietà.
 
 Le implicazioni e le conseguenze di questo pensiero applicato alla musica sono enormi.
@@ -79,7 +78,7 @@ per costruirne una storia di relazioni dove il sistema si osserva attraverso lo 
 (ambiente) e si manifesta e vive solo attraverso di esso.
 In questo senso l’interprete, lo spazio, e gli ascoltatori, 
 divengono essi stessi parte integrante del sistema, dove l’ascolto, diviene anche esso
-parte dell’insieme delle cose e delle relazioni che lo costituisce. \\
+parte dell’insieme delle cose e delle relazioni che lo costituisce. 
 
 \subsection{L'interazione Uomo-Macchina-Ambiente}
 \label{sec:L'interazione Uomo-Macchina-Ambiente}
@@ -173,7 +172,8 @@ pick-up di uno strumento musicale elettrico, come una chitarra o un basso, o un 
 altra natura... 
 Esistono anche principi di feedback acustico oltre che elettroacustico, 
 come la risonanza acustica o la risonanza per simpatia,
-che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali. \\
+che sono i principi su cui si basa il funzionamento di quasi tutti gli strumenti musicali. 
+
 Tornando quindi all'articolo di Agostino Di Scipio:
 
 \begin{quote}
@@ -258,7 +258,8 @@ Processing sviluppato da Yann Orlarey, Dominique Fober, e Stephane Letz nel
 2002. Nello specifico, FAUST è un linguaggio di programmazione ad alto livello
 scritto in C++, che permette di tradurre delle istruzioni date e create 
 appositamente per il digital signal processing (DSP), in un largo raggio di linguaggi
-di programmazione non specifici per il dominio dell’Audio Digitale.} \footcite{https://faust.grame.fr/} \\
+di programmazione non specifici per il dominio dell’Audio Digitale.} \footcite{https://faust.grame.fr/} 
+
 Vorrei qui esprimere la mia profonda gratitudine a 
 Dario Sanfilippo per il prezioso supporto che mi ha fornito durante 
 lo sviluppo di molti di questi codici,
@@ -280,7 +281,8 @@ e che può essere espresso matematicamente come
     y_{1}(t) = \max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right) 
 \end{align*}
 
-dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. \\
+dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. 
+
 E utilizzato come algoritmo di controbilanciamento può essere espresso matematicamente come
 
 \begin{align*} 
@@ -585,12 +587,13 @@ la lettura parte solo quando la scrittura è di dimensioni maggiori rispetto al 
 che dovrebbe essere letto.
 Infine, per evitare discontinuità ogni volta che la lettura ricomincia a leggere il buffer da 0, 
 è stata utilizzata una finestratura trapezoidale con un fade-in e fade-out 
-per un valore di campioni costante. \\
+per un valore di campioni costante. 
+
 Mentre alcuni campionatori fanno parte di un circuito di feedback interno al sistema, 
 sia i granulatori che tutti i campionatori utilizzano lo spazio acustico reale per il feedback,
 i granulatori in particolare sono l'ultima trasformazione del suono del sistema, prima di andare a 
 due sommatori con il resto delle uscite e all'output.
-In partitura vengono indicati come a seguito. \\
+In partitura vengono indicati come a seguito. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -604,7 +607,7 @@ In partitura vengono indicati come a seguito. \\
 Anche in questo caso, oltre alle indicazioni dei segnali di controllo che vengono
 ricevuti dai due \textit{granular sampling}, 
 in partitura sono presenti delle richiste specifiche riguardo l'implementazione 
-dell'oggetto che ne determinano il risultato dei timbri che produce: \\
+dell'oggetto che ne determinano il risultato dei timbri che produce: 
 
 \begin{quote}
     \begin{itemize}

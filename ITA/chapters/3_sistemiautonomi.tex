@@ -17,6 +17,7 @@ qualcosa di molto complesso, poiché il concetto stesso di "complessità"
 sta a significare in un sistema che questo sia composto da una rete d'interazioni dinamiche, 
 ma che il comportamento dell'insieme potrebbe non essere prevedibile in base al comportamento 
 dei diversi componenti tipicamente in relazione fra loro.
+
 Mentre, nel caso di Agostino Di Scipio, lo spazio del sistema che ne contiene le sue relazioni 
 è costituito principalmente dal mondo fisico, 
 in questo capitolo osserveremo come, per lo spazio di un sistema, 
@@ -28,10 +29,12 @@ inclusi i metodi per la generazione delle relative non linearità.
 Ho voluto approfondire questo metodo attraverso il lavoro compositivo e gli studi di Dario Sanfilippo, 
 specialista di sistemi di feedback, esecutore e compositore. 
 I suoi lavori riguardano principi di autopoiesi, evolvibilità e costruttivismo radicale nella progettazione 
-di reti di feedback audio complesse. \\
+di reti di feedback audio complesse. 
+
 La modalità con cui andrò a discutere in questo capitolo la composizione di questi
 sistemi autonomi, appartenenti anche questi alla più vasta categoria dei CASes (Complex Adaptive Systems), 
-è ponendo un focus su un particolare lavoro di Dario Sanfilippo, Order From Noise \textit{(Homage to Heinz Von Foerster)}. \\
+è ponendo un focus su un particolare lavoro di Dario Sanfilippo, Order From Noise \textit{(Homage to Heinz Von Foerster)}.
+
 Order From Noise è un progetto che implementa uno 
 dei primi prototipi di Dario Sanfilippo basati sull'idea dell'\textit{adattattività dinamica}. 
 Questo lavoro del compositore si basa sull'idea che i sistemi adattivi complessi, 
@@ -54,7 +57,8 @@ una condizione in cui umano e macchina cooperano per far emergere la performance
 Nel caso delle opere di Dario Sanfilippo, tuttavia, l'estetica dei suoi lavori è interamente subordinata
 al disegno del sistema stesso, che di volta in volta, emerge da fenomeni musicali che sono il risultato
 del tipo d'interazione che viene a crearsi fra il performer e il disegno del sistema che si era reso necessario
-in partenza. \\
+in partenza. 
+
 In alcuni casi, questa idea viene portata alle sue estreme conseguenze con opere in cui la macchina è l'unica 
 ente che esegue, come accade per il brano presentato qui.
 
@@ -88,7 +92,7 @@ ma saprà che per le stesse condizioni iniziali, il sistema qui totalmente
 deterministico, riporterà sempre le stesse evoluzioni formali.
 Proprio come nei sistemi caotici emersi dalla teoria del caos introdotti all'inizio di questa tesi,
 che seppur governati da leggi deterministiche, 
-sono in grado di esibire un'empirica casualità nell'evoluzione delle variabili dinamiche. \\
+sono in grado di esibire un'empirica casualità nell'evoluzione delle variabili dinamiche. 
 
 \subsection{Audio Information Processing}
 \label{sec:Audio Information Processing}
@@ -117,7 +121,8 @@ poi per pilotare parametri nelle unità di generazione del suono.\footcite{sanfi
 Arrivando fino ai sistemi di Agostino Di Scipio, che nello studio del suo
 feedback study ci ha dato modo di approfondire e scoprire
 tutti quei meccanismi e tutte quelle particolari funzioni che hanno la responsabilità
-di generare segnali di controllo nei suoi sistemi. \\
+di generare segnali di controllo nei suoi sistemi. 
+
 Dario Sanfilippo ha discusso in più articoli l'utilizzo dell'\textit{Information Processing} 
 nei CASes, sia in senso generale\footcite{sanfilippo_time-domain_2021}, 
 parlando di implementazioni più tipiche come: 
@@ -165,7 +170,8 @@ e di "stabilità" rimanendo sempre in dei range controllati tramite feedback pos
 La rete di Order From Noise ha sei nodi, ognuno dei quali contiene due unità in cascata, 
 contenenti i seguenti algoritmi di elaborazione audio: 
 \textit{asynchronous granulation, recursive comb filtering, variable high-pass/low-pass filtering, pulse-width mod-
-ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.} \\
+ulation (PWM), resampling and 16th-order feedback delay network (FDN) processing.} 
+
 A parte le unità di elaborazione del suono,
 in questo sistema, l'\textit{Information Processing} utilizzato per generare i 
 segnali di controllo è diverso
@@ -179,7 +185,7 @@ come ad esempio segnali a 0.01Hz, il segnale risultante viene poi processato
 tramite normalizzazione dinamica per essere riportato ad una soglia in ampiezza
 in un range fra [-1; 1],
 viene elevato a una potenza relativamente grande per forzarlo intorno a 0,
-ed infine utilizzato per pilotare la frequenza di un fasore.\\
+ed infine utilizzato per pilotare la frequenza di un fasore.
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={non linearità in Order From Noise}]
@@ -195,11 +201,13 @@ questo tipo di normalizzazione dinamica si basa sulla stima RMS e ha due ingress
 uno è il segnale di riferimento, e l'altro è il segnale che deve essere normalizzato sulla base
 del segnale di riferimento fornito, ovviamente,
 la finestra RMS deve essere abbastanza grande a seconda della lentezza del
-segnale che deve essere normalizzato.\\ 
+segnale che deve essere normalizzato.
+
 Per comprendere meglio i meccanismi alla base
 della normalizzazione dinamica,
 andrò a discutere ora il caso più generico
-di una normalizzazione di picco in DSP. \\
+di una normalizzazione di picco in DSP. 
+
 Partendo dall'algoritmo basilare del \textit{Peakholder} in IIR discusso nel precedente capitolo. 
 L'ampiezza del picco di un segnale può essere normalizzata secondo la seguente espressione 
 
@@ -207,7 +215,8 @@ L'ampiezza del picco di un segnale può essere normalizzata secondo la seguente 
     y_{1}(t) = (1/(\max\left( y_{1}(t\!-\!1), \left\lvert{x(t)}\right\rvert \right))) * x(t) 
 \end{align*}
 
-dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. \\
+dove \textit{x} è il segnale in ingresso, e \textit{y} il segnale sia in uscita che reiterato nella funzione. 
+
 Per prima cosa si calcola con il \textit{Peakholder} il picco massimo del segnale,
 tracciandone il profilo di ampiezza campione per campione,
 e a seguito si divide poi il risultato per 
@@ -275,7 +284,8 @@ e un \textit{Peakenvelope} che ha invece un decadimento
 basato su \textit{tau} all'interno della retroazione; sono entrambe due
 unità ottimizzate del nostro algoritmo \textit{Peakholder} ad 1 campione di ritardo,
 e che combinate fra loro consentono di rilevare sia i transienti di attacco rapidi, 
-che al contempo di avere una lunga fase di decadimento per i suoni sostenuti e lenti.\\
+che al contempo di avere una lunga fase di decadimento per i suoni sostenuti e lenti.
+
 Il \textit{Peakenvelope} può essere ottenuto modificando 
 la retroazione dell'algoritmo \textit{Peakholder}, moltiplicandola per 
 un fattore di decadimento come nella seguente formula 
@@ -292,7 +302,8 @@ dove
 e dove \textit{T} rappresenta il tempo di decadimento desiderato in secondi, 
 mentre \textit{ST} rappresenta la durata di un campione in secondi per la frequenza di campionamento corrente.
 Come nelle altre formule del \textit{Peakholder}, \textit{x} è il segnale in ingresso, 
-e \textit{y} il segnale sia in uscita che reiterato nella funzione stessa. \\
+e \textit{y} il segnale sia in uscita che reiterato nella funzione stessa. 
+
 A seguito l'algoritmo in Faust del \textit{Peakenvelope}.
 
 \vspace{0.5cm} 
