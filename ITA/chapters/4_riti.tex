@@ -74,7 +74,7 @@ per ottenere una complessità costretta dalle risonanze modali di questi filtri.
 Per concludere, ho aggiunto infine alle tre equazioni l'ingresso di un segnale esterno, 
 affidato ai microfoni, 
 che permettesse di perturbare il sistema e generare un ulteriore stato 
-di feedback proveniente dall'ambiente della performance,
+di \emph{feedback} proveniente dall'ambiente della performance,
 rendendo così il sistema di sintesi sensibile alle condizioni esterne.
 L'equazione di Lorenz modificata con le costrizioni esposte,
 costituisce nel suo insieme un singolo agente, a cui ci riferiremo a partire da questo
@@ -90,11 +90,11 @@ della rete a partire da un numero di altoparlanti ridotti nello spazio della per
 senza rinunciare alla complessità derivata da una compilazione con un
 numero di agenti che costituisce la rete superiore al numero di ouput che si vogliono ascoltare, 
 ad esempio: 16 CSGA che costituiscono la rete ma ascoltandone solo 4 dagli Altoparlanti.
-Il feedback globale della rete proveniene da ogni singola voce 
+Il \emph{feedback} globale della rete proveniene da ogni singola voce 
 che va a sommarsi con diversi tempi di ritardo prima della retroiniezione,
 rientrando poi conseguentemente con opportuni tempi di ritardo nelle altre voci del sistema.
 Questo processo crea una decorrelazione ed una perturbazione nei singoli agenti all'interno del sistema,
-ma offre anche la possibilità con opportuni valori di Gain del feedback della FDN, 
+ma offre anche la possibilità con opportuni valori di guadagno del \emph{feedback} della FDN, 
 di lasciar ricirolare del materiale nella rete.
 La performance consiste nell'impostare un insieme iniziale di valori 
 di inizializzazione del sistema, come Dt, Rho, Beta, Sigma, 
@@ -103,7 +103,7 @@ un fattore di Shift in frequenza del banco di filtri,
 Tempi di ritardo della FDN, ecc.
 E a partire da questi, l'obiettivo è di esplorare il sistema 
 finché non si ha l'impressione di aver esaurito tutte le possibilità, 
-con l'obiettivo fondamentale di bilanciare i tre feedback principali: 
+con l'obiettivo fondamentale di bilanciare i tre stati \emph{feedback} principali: 
 quelli provenienti dalle retroazioni delle tre equazioni differenziali 
 di Lorenz, quello della FDN, e quello proveniente dal contributo 
 dell'ambiente di performance.
@@ -111,10 +111,10 @@ Nelle sezioni successive della tesi,
 discuteremo in dettaglio tutti questi aspetti passo per passo
 come fatto fino ad ora con i lavori precedenti. 
 
-\subsection{Complex Sound Generator}
+\subsection{Generatore di suono complesso}
 \label{Complex Sound Generators}
 
-La nozione di Complex Sound Generator è stata ripresa qui a partire dal
+La nozione di Generatore di suono complesso è stata ripresa qui a partire dal
 paper di Dario Sanfilippo\footcite{sanfilippo_constrained_2021},
 tuttavia nella letteratura della Computer Music, primi esempi di applicazioni
 di sistemi caotici per la generazione di suoni nella musica risalgono
@@ -124,7 +124,7 @@ O nel corso degli anni '90 con gli studi di Lorenzo Seno al Centro Di Ricerche m
 di Roma sui modelli fisici ed il Caos, con applicazioni nelle composizioni di Michelangelo Lupone.
 Le radici della sintesi caotica in generale sono multiple e dipendono
 dalla definizione del campo di applicazione, si potrebbe far risalire
-a David Tudor con i suoi esperimenti cibernetici sul feedback elettrico del 1960
+a David Tudor con i suoi esperimenti cibernetici sul \emph{feedback} elettrico del 1960
 così come alle implementazioni specifiche esplorate da molti artisti
 delle equazioni di Rössler nella sintesi video e audio.\footcite{tom_mudd_gutter_synthesis}
 Il modello delle Equazioni utilizate alla base del CSGA si basa sul modello di Lorenz 
@@ -280,7 +280,7 @@ di Lorenz Modificato, consiste in un implementazione \textit{Virtual Analog}
 di un filtro del 2° ordine basato sulla struttura SVF \textit{State Variable Filter}.
 La particolarità di questo tipo d'implementazione di SVF che ho utilizzato,
 è che preserva matematicamente la topologia del filtro analogico,
-includendo nella maggiorparte dei casi \textit{zero-delay loops}.
+includendo nella maggiorparte dei casi \textit{loop} a ritardo zero.
 Questi filtri sono chiamati \textit{Topology Preserving Transform filters} o filtri TPT,
 e provengono dal libro: The Art of VA Filter Design di Vadim Zavalishin,\footcite{Zavalishin_VA_filter_design}
 pubblicato e reperibile gratuitamente in rete. 
@@ -362,12 +362,12 @@ secondo appendice.
 
 Per concludere questa osservazione sulla struttura sistemica di RITI,
 discuterò brevemente, ripetendo alcuni concetti fondamentali illustrati ad inzio capitolo.
-I tre stati di feedback principale su cui si basa questo sistema sono:
-Il feedback interno alle equazioni differenziali, o chiamato anche come fattore di magnificazione; 
+I tre stati di \emph{feedback} principale su cui si basa questo sistema sono:
+Il \emph{feedback} interno alle equazioni differenziali, o chiamato anche come fattore di magnificazione; 
 ne possiamo vedere un implementazione in questo paper\footcite{liang_difference_2013}.
 Questo ci permette di poter portare le equazioni di Lorenz da uno stato di autoscillazione al
 solo funzionamento come funzione di trasferimento (waveshaping) per il segnale in ingresso.
-Il feedback della FDN, permette ai segnali presenti nella rete di ricircolare
+Il \emph{feedback} della FDN, permette ai segnali presenti nella rete di ricircolare
 con opportuni tempi di ritardo, così da avere delle decorrelazioni fra i CSGA, oltre che dei comportamenti del sistema
 che possano avere una loro storia nel tempo, anche nel tornare quando il fattore di magnificazione di Lorenz è pari a 0
 così da poter apprezzare solo la storia del sistema all'interno della rete senza avere nuovi contributi.
@@ -388,7 +388,7 @@ inferiore rispetto a quello del Larsen proveniente dalla stanza.
 
 \vspace{0.5cm}
 
-La possibilità di regolare i tre stati di feedback e di portare il sistema "sulla soglia del caos"
+La possibilità di regolare i tre stati di \emph{feedback} e di portare il sistema "sulla soglia del caos"
 esplorando nella performance tutti i suoi spazi, 
 rivolgendo gli altoparlanti verso le pareti trasformando così l'ambiente stesso
 nello spazio di sistema, rappresenta per me un estensione: del concetto di strumento musicale, 

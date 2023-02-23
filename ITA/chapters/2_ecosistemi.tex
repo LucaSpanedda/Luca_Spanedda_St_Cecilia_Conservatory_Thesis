@@ -68,7 +68,7 @@ I lavori del ciclo Ecosistemico Udibile di Agostino di Scipio,
 trovano fondamento a partire da fenomeni e relazioni che possono esistere e manifestarsi solamente nell'ambiente 
 circostante da cui prende vita il sistema, 
 che nel suo caso diventa proprio lo spazio acustico reale. 
-Lavori come lo studio sul feedback, lo studio sul rumore di fondo, lo studio sulle risposte all'impulso, o
+Lavori come lo studio sul \emph{feedback}, lo studio sul rumore di fondo, lo studio sulle risposte all'impulso, o
 lo studio sul silenzio, sono nella loro essenza dei sistemi che hanno come principio 
 nella loro morfogenesi, un determinato 
 comportamento appartenente allo spazio acustico reale, delimitato in questi studi da una stanza
@@ -112,7 +112,7 @@ sonoro emergente si può chiamare musica.\footcite{discipio_polverisonore_2016}
 \end{quote}
 
 La modalità con cui andrò a discutere in questo capitolo la composizione di interazioni ecosistemiche, 
-è ponendo il focus su un lavoro di Agostino Di Scipio, l’Ecosistemico Udibile n.2, studio sul feedback. 
+è ponendo il focus su un lavoro di Agostino Di Scipio, l’Ecosistemico Udibile n.2, studio sul \emph{feedback}. 
 Partendo dalla partitura e dai suoi scritti, ed implementando e analizzando
 il ruolo ed il compito dei singoli agenti all'interno del sistema 
 che compongono nella loro totalità l'intero ecosistema del brano. 
@@ -120,10 +120,10 @@ che compongono nella loro totalità l'intero ecosistema del brano.
 \subsection{Il Meccanismo LAR}
 \label{sec:Il Meccanismo LAR}
 
-Il feedback elettroacustico, che abbiamo già detto
+Il \emph{feedback} elettroacustico, che abbiamo già detto
 esser stata una delle risorse fondamentali dei primi compositori cibernetici,
 è la condizione di partenza su cui Agostino Di Scipio opera per la costruzione dei suoi Ecosistemi Udibili.
-Addentrandoci ora verso una spiegazione più tecnica del feedback elettroacustico,
+Addentrandoci ora verso una spiegazione più tecnica del \emph{feedback} elettroacustico,
 possiamo citare una definizione che Di Scipio ha esposto in un suo articolo
 pubblicato presso la rivista Online: ECHO dell’ Orpheus Institute, in
 Ghent. \footcite{di_scipio_relational_2022}
@@ -183,13 +183,13 @@ In a different attitude, one may instead consider feedback as
 a resource, a deliberately designed sound-making mechanism one can play with.\footcite{di_scipio_relational_2022}
 \end{quote}
 
-per utilizzare il feedback come una risorsa,
+per utilizzare il \emph{feedback} come una risorsa,
 ora appare chiara la necessità di un intervento sulla sua retroiniezione a guadagno infinito 
 che porta alla saturazione dei sistemi coinvolti, 
 in tal senso una delle possibili soluzioni è quella di poter far calcolare
 al computer in tempo reale tramite diverse tecniche di \textit{amplitude following} la stima dell'ampiezza
 del segnale in ingresso, ed utilizzare conseguentemente la \textit{feature extraction} 
-come segnale di controllo in retroazione negativa al sistema di feedback elettroacustico.
+come segnale di controllo in retroazione negativa al sistema di \emph{feedback} elettroacustico.
 
 Questo tipo di meccanismi, provenienti dalla tradizione della Computer Music, appartiene 
 all'ambito del \textit{Music Information Retrieval} (MIR).
@@ -216,7 +216,7 @@ Rimandando al prossimo capitolo approfondimenti più dettagliati riguardo il tem
 dell'\textit{Audio Information Processing}, mi fermerò per il momento a discutere 
 nel dettaglio alcuni fondamentali meccanismi presi da questo brano che sono paradigmatici,
 come il singolo meccanismo di controbilanciamento del guadagno
-del fenomeno di feedback elettroacustico, che viene chiamato da Agostino Di Scipio col nome di 
+del fenomeno di \emph{feedback} elettroacustico, che viene chiamato da Agostino Di Scipio col nome di 
 LAR: \textit{Audio feedback with self-regulated Gain},
 e che può essere implementato in DSP in diverse modalità e configurazioni,
 ognuna con le sue diverse caratteristiche e che porta a differenti esiti.
@@ -232,13 +232,13 @@ ognuna con le sue diverse caratteristiche e che porta a differenti esiti.
 
 Ci sono in effetti diversi modi per ottenere una \textit{feature extraction} 
 in tempo reale capace di realizzare un algoritmo di controbilanciamento 
-del feedback in tempo reale.
+del \emph{feedback} in tempo reale.
 Alcuni di questi metodi possono riguardare controbilanciamenti 
 applicati nel dominio della frequenza,
 con tecniche di filtraggio automatizzate (adattive) che
 hanno il compito di eliminare dallo spettro la presenza dell'autoscillazione prodotta dal Larsen \textit{Larsen Suppressors},
 o come nel nostro caso d’interesse possono riguardare controbilanciamenti in ampiezza
-automatizzati, che non permettano al feedback di avere un guadagno troppo troppo elevato 
+automatizzati, che non permettano al \emph{feedback} di avere un guadagno troppo troppo elevato 
 e giungere conseguentemente allo stato di saturazione del sistema.
 Algoritmi di \textit{amplitude-following} possono essere implementati 
 con la media \textit{RMS}, con finestre variabili o fisse, 
@@ -256,7 +256,7 @@ in questa tesi e le relative compilazioni, diagrammi e softwares.
 Processing sviluppato da Yann Orlarey, Dominique Fober, e Stephane Letz nel
 2002. Nello specifico, FAUST è un linguaggio di programmazione ad alto livello
 scritto in C++, che permette di tradurre delle istruzioni date e create 
-appositamente per il digital signal processing (DSP), in un largo raggio di linguaggi
+appositamente per il \emph{digital signal processing} (DSP), in un largo raggio di linguaggi
 di programmazione non specifici per il dominio dell’Audio Digitale.} \footcite{https://faust.grame.fr/} 
 
 Vorrei qui esprimere la mia profonda gratitudine a 
@@ -269,7 +269,7 @@ di queste nei auoi sistemi complessi.
 
 Il modo più semplice per mantenere l’effetto Larsen in uno stato stazionario, è attraverso un
 valore costante ricavato dalla crescita del segnale in ingresso,
-che controbilanci l’ampiezza del circuito di feedback come in figura del meccanismo LAR;
+che controbilanci l’ampiezza del circuito di \emph{feedback} come in figura del meccanismo LAR;
 la stima di questa costante avviene tramite un algoritmo di analisi.
 Il modo più semplice per implementare un algoritmo di analisi di questo tipo
 è attraverso un \textit{Peakholder} che nella sua forma basilare consiste in una finestra 
@@ -291,7 +291,7 @@ E utilizzato come algoritmo di controbilanciamento può essere espresso matemati
 questo algoritmo ha il compito di confrontare il valore assoluto del campione in ingresso con il suo precedente,
 e Il maggiore fra i due nella comparazione viene mandato sia in uscita che in ingresso 
 in retroiniezione alla funzione stessa di comparazione, 
-in questo modo si sfrutta un principio di feedback per l'accumulazione
+in questo modo si sfrutta un principio di \emph{feedback} per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
 
 \vspace{0.5cm} 
@@ -323,15 +323,15 @@ Questo tipo di algoritmo presenta comunque alcuni problemi: non avendo
 una funzione di smoothing del segnale, si verificano problemi di segnali di differenza a banda
 molto larga che possono generare aliasing e contributi spuri che tendono a permanere nel
 segnale complessivo.
-Oltre a questo, variazioni del comportamento del feedback sono dipendenti dalla grandezza
-della finestra di osservazione, da eventuali cofficenti di feedback inseriti nella
+Oltre a questo, variazioni del comportamento del \emph{feedback} sono dipendenti dalla grandezza
+della finestra di osservazione, da eventuali cofficenti di \emph{feedback} inseriti nella
 retroazione del \textit{Peakholder} e da altri tipi di implementazioni di tecniche 
 \textit{amplitude-following}. Per questi motivi si sceglie più frequentemente di utilizzare algoritmi
-adattivi, proprio come nel contesto del meccanismo LAR implementato nel feedback study,
+adattivi, proprio come nel contesto del meccanismo LAR implementato nel \emph{feedback study},
 dove il comportamento adattivo dell'\textit{amplitude-follower} è cruciale
 per la dinamica adattiva ed auto-regolatoria del sistema.
 
-Il meccanismo LAR è essenzialmente nel cuore della live performance del feedback study,
+Il meccanismo LAR è essenzialmente nel cuore della live performance del \emph{feedback study},
 senza di questo non sarebbe possibile creare una condizione favorevole per procedere alle 
 conseguenti trasformazioni del suono, e conseguentemente ad una condizione favorevole affinché il 
 sistema possa osservarsi tramite l'ambiente circostante. 
@@ -361,7 +361,7 @@ vengono limitati in banda da un filtro \emph{highpass} ed
 un filtro \emph{lowpass}, rispettivamente fra $50Hz$ e $6000Hz$; dei due microfoni che escono 
 dal \emph{cntrlMic1} e \emph{cntrlMic2} ne viene ricavato l'inviluppo d'ampiezza tramite
 l'oggetto \emph{integrator}, poi la curva di questo inviluppo viene amplificata da 
-un delay con feedback, e ne viene estratta solamente la componente energetica 
+un delay con \emph{feedback}, e ne viene estratta solamente la componente energetica 
 presente fra i $0Hz$ e i $0.5Hz$, limitandone il comportamento dell'oscillazione in quel range.
 Più in basso, nel \emph{Signal Flow 2a}, i stessi microfoni (\emph{mic1 e mic2}) sempre
 limitati in banda fra $50Hz$ e $6000Hz$, vengono attenuati in ampiezza dal segnale
@@ -431,8 +431,8 @@ di fatto una serie di nuove possibilità di elaborazione e trasformazione del su
 \subsection{Trasformazioni del suono}
 \label{sec:Trasformazioni del suono}
 
-l’Ecosistemico Udibile n.2, studio sul feedback, è costituito
-da due principali meccanismi di feedback, uno nello spazio acustico reale,
+l’Ecosistemico Udibile n.2, studio sul \emph{feedback}, è costituito
+da due principali meccanismi di \emph{feedback}, uno nello spazio acustico reale,
 e uno interno al sistema.
 
 Il suono proveniente dal meccanismo LAR appena discusso nella precedente sezione,
@@ -565,7 +565,7 @@ In Faust la grandezza della tabella deve essere espressa in campioni. Per ottene
 una grandezza espressa in secondi, bisogna dunque moltiplicare il numero dei secondi desiderati per
 la frequenza di campionamento, definite entrambi come una costante (predefinita prima del tempo di compilazione).
 Infine per completare le operazioni come richiesto nella partitura, si può sostituire l'oggetto \textit{rwtable}
-con una mandata (send) del segnale destinato ad entrare in feedback ai \textit{sample read} ed in
+con una mandata (send) del segnale destinato ad entrare in \emph{feedback} ai \textit{sample read} ed in
 feedforward al \textit{granular sampling}.
 A seguito una implementazione del campionatore come richiesto in partitura.
 
@@ -588,8 +588,8 @@ Infine, per evitare discontinuità ogni volta che la lettura ricomincia a legger
 è stata utilizzata una finestratura trapezoidale con un fade-in e fade-out 
 per un valore di campioni costante. 
 
-Mentre alcuni campionatori fanno parte di un circuito di feedback interno al sistema, 
-sia i granulatori che tutti i campionatori utilizzano lo spazio acustico reale per il feedback,
+Mentre alcuni campionatori fanno parte di un circuito di \emph{feedback} interno al sistema, 
+sia i granulatori che tutti i campionatori utilizzano lo spazio acustico reale per il \emph{feedback},
 i granulatori in particolare sono l'ultima trasformazione del suono del sistema, prima di andare a 
 due sommatori con il resto delle uscite e all'output.
 In partitura vengono indicati come a seguito. 
@@ -628,7 +628,7 @@ dell'oggetto che ne determinano il risultato dei timbri che produce:
 \end{quote}
 
 I due granulatori leggono dunque dalla tabella \textit{sample write} dove vengono scritti
-al contempo i Larsen diretti e i campionatori in feedback. 
+al contempo i Larsen diretti e i campionatori in \emph{feedback}. 
 Questa letura avviene con due puntatori alla memoria \textit{(mem.pointer)} determinati 
 dai segnali di controllo \textit{timeIndex1} e \textit{timeIndex2}, la grandezza dei grani 
 \textit{(grain.duration)} viene invece determinata dai segnali di controllo 

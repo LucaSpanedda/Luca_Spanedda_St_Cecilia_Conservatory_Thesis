@@ -27,9 +27,9 @@ In questo caso, l'ambiente digitale che racchiude il sistema all'interno e le su
 tra gli agenti è interamente costituito solo dal DSP, 
 inclusi i metodi per la generazione delle relative non linearità.
 Ho voluto approfondire questo metodo attraverso il lavoro compositivo e gli studi di Dario Sanfilippo, 
-specialista di sistemi di feedback, esecutore e compositore. 
+specialista di sistemi di \emph{feedback}, esecutore e compositore. 
 I suoi lavori riguardano principi di autopoiesi, evolvibilità e costruttivismo radicale nella progettazione 
-di reti di feedback audio complesse. 
+di reti di \emph{feedback} audio complesse. 
 
 La modalità con cui andrò a discutere in questo capitolo la composizione di questi
 sistemi autonomi, appartenenti anche questi alla più vasta categoria dei CASes (Complex Adaptive Systems), 
@@ -119,7 +119,7 @@ come: Diastasis, as in Beer (1966), e Hornpipe (1967),
 dove vengono implementate techniche di amplitude following utilizzate 
 poi per pilotare parametri nelle unità di generazione del suono.\footcite{sanfilippo_time-domain_2021}
 Arrivando fino ai sistemi di Agostino Di Scipio, che nello studio del suo
-feedback study ci ha dato modo di approfondire e scoprire
+\emph{feedback study} ci ha dato modo di approfondire e scoprire
 tutti quei meccanismi e tutte quelle particolari funzioni che hanno la responsabilità
 di generare segnali di controllo nei suoi sistemi. 
 
@@ -158,7 +158,7 @@ con un particolare focus su tutte tutte quelle \textit{feature extraction}
 che nell'implementazione della rete permettono al sistema 
 (nonostante questo sia chiuso rispetto all'ambiente esterno) 
 di mantenersi in uno stato emergente manifestando comportamenti nuovi,
-e di stabilità rimanendo sempre in dei range controllati tramite feedback positivi e negativi.
+e di stabilità rimanendo sempre in dei range controllati tramite \emph{feedback positivi} e \emph{negativi}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -246,7 +246,7 @@ complessivo possano permanere contributi spuri che alterino il risultato
 della normalizzazione, e che si possa generare aliasing a causa di una mancata
 funzione di smoothing del segnale.
 Per questi motivi nelle unità della rete di Order From Noise 
-che implementano al proprio interno meccanismi di feedback,
+che implementano al proprio interno meccanismi di \emph{feedback},
 e per raggiungere quindi una stabilità globale della rete,
 è presente un tipo di limiter dinamico chiamato da Dario Sanfilippo
 col nome di \textit{Lookahead Limiter}, che a differenza dell'algoritmo
@@ -348,7 +348,7 @@ formando nel loro insieme il \textit{Lookahead Limiter}.
 {codes/LookaheadLimiter.dsp}
 
 Prima di concludere queste considerazioni a seguito qualche doverosa aggiunta.
-Anche nell'Ecosistemico Udibile n.2, studio sul feedback, di Agostino Di Scipio è presente 
+Anche nell'Ecosistemico Udibile n.2, studio sul \emph{feedback}, di Agostino Di Scipio è presente 
 una versione ottimizzata dell'algoritmo \textit{Peakholder}, che a differenza
 del \textit{Peakholder} con il timer discusso precedentemente, viene chiamato come
 \textit{Local Max}, e riporta l'ampiezza massima solamente al termine del \textit{time frame} che corrisponde
@@ -383,7 +383,7 @@ spazio deterministico interamente costituito solo dal DSP nel software
 (che abbiamo chiamato qui col nome di spazio latente); 
 inclusi metodi e strategie per la generazione delle relative non linearità,
 e meccanismi adattivi per mantenere il sistema in una condizione di stabilità
-controllata tramite algoritmi di feedback positivo e negativo.
+controllata tramite algoritmi di \emph{feedback positivo} e \emph{negativo}.
 Anche qui i meccanismi contenuti all'interno del brano ovviamente non si limitano solamente a questi,
 ma si è cercato di approfondire le parti del sistema che riguardano l'\textit{Audio Information Processing};
 così da fornire alcuni strumenti che rendano possibile affrontare il problema 
