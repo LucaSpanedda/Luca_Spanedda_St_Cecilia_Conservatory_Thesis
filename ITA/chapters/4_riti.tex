@@ -41,8 +41,8 @@ RITI: Room Is The Instrument è un brano che si basa su un Sistema Complesso \te
 in grado di manifestare comportamenti emergenti e caotici,
 dove la personalità acustica della stanza in cui viene eseguito il brano può
 essere riflessa in variazioni del comportamento del sistema stesso.
-L'idea dell'acronimo RITI deriva dal famoso paper di Agostino Di Scipio 
-"Sound is the interface" (SITI), 
+L'idea dell'acronimo RITI deriva dal famoso paper di Agostino Di Scipio: 
+Sound is the interface (SITI), 
 che ha introdotto per la prima volta la prospettiva sistemica 
 sull'auto-organizzazione e sulla capacità di un sistema di auto-osservarsi 
 tramite l'ambiente circostante in musica.\footcite{di_scipio_sound_2003} 
@@ -55,15 +55,15 @@ che questo tipo di sistemi manifesta.
 Il modello delle Equazioni di Lorenz che ho seguito per questo tipo di sistema, si basa
 su delle costrizioni matematiche aggiunte alle risoluzioni
 per esplorare il sistema in regioni instabili, 
-seguendo il metodo descritto nel paper di Dario Sanfilippo 
-"Constrained Differential Equations as Complex Sound Generators".\footcite{sanfilippo_constrained_2021} 
+seguendo il metodo descritto nel paper di Dario Sanfilippo: 
+Constrained Differential Equations as Complex Sound Generators.\footcite{sanfilippo_constrained_2021} 
 Dove vengono illustrate una serie di risoluzioni per alcune 
 equazioni differenziali caotiche,
 modificate inserendo opportunamente all'interno di queste un
 DC Blocker e un Waveshaper (soft clipping) utilizzando la funzione della tangente iperbolica.
 Oltre alle costrizioni proposte da Dario Sanfilippo, 
-ispirato dall'idea che ha avuto Tom Mudd nel suo paper
-"Between Chaotic Synthesis and Physical Modelling: Instrumentalising with Gutter Synthesis",\footcite{tom_mudd_gutter_synthesis}
+ispirato dall'idea che ha avuto Tom Mudd nel suo paper:
+Between Chaotic Synthesis and Physical Modelling: Instrumentalising with Gutter Synthesis,\footcite{tom_mudd_gutter_synthesis}
 di aggiungere alla risoluzione dell'equazione differenziale dell'Oscillatore di Duffing
 un banco di filtri Bandpass che permettesse al sistema di manifestare
 risonanze modali che ricordino il comportamento di uno strumento musicale.
@@ -282,12 +282,12 @@ La particolarità di questo tipo d'implementazione di SVF che ho utilizzato,
 è che preserva matematicamente la topologia del filtro analogico,
 includendo nella maggiorparte dei casi \textit{zero-delay loops}.
 Questi filtri sono chiamati \textit{Topology Preserving Transform filters} o filtri TPT,
-e provengono dal libro "The Art of VA Filter Design" di Vadim Zavalishin,\footcite{Zavalishin_VA_filter_design}
+e provengono dal libro: The Art of VA Filter Design di Vadim Zavalishin,\footcite{Zavalishin_VA_filter_design}
 pubblicato e reperibile gratuitamente in rete. 
 
 A seguito riporto l'implementazione matematica di questo filtro SVF TPT di Vadim Zavalishin
-che ha esposto Will Pirkle in un suo articolo chiamato 
-"Virtual Analog (VA) Filter Implementation and Comparisons v2.0"\footcite{Pirkle_VA_filter_design}
+che ha esposto Will Pirkle in un suo articolo chiamato: 
+Virtual Analog (VA) Filter Implementation and Comparisons v2.0\footcite{Pirkle_VA_filter_design}
 del 2013 e reperibile dal suo sito.
 
 \begin{align*}
