@@ -85,6 +85,16 @@ Prima della performance, in fase di compilazione del sistema,
 è quindi possibile scegliere il numero di CSGA che andranno a costituire 
 la FDN, e di conseguenza il numero di altoparlanti da utilizzare
 per ascoltare l'output da ogni agente della rete.
+
+\clearpage
+
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=12cm]{figures/RITIarranegment.pdf} 
+        \caption {Esempio di messa in scena per la performance della Rete di RITI compilata con 4 Voci}
+    \end{center}
+    \end{figure}
+
 Tuttavia, si può anche decidere di ascoltare solo un certo numero di output
 della rete a partire da un numero di altoparlanti ridotti nello spazio della performance,
 senza rinunciare alla complessità derivata da una compilazione con un
@@ -107,8 +117,34 @@ con l'obiettivo fondamentale di bilanciare i tre stati \emph{feedback} principal
 quelli provenienti dalle retroazioni delle tre equazioni differenziali 
 di Lorenz, quello della FDN, e quello proveniente dal contributo 
 dell'ambiente di performance.
+A seguito una lista contenente: dei valori costanti dei parametri fissati ad inizio performance, e
+dei range di parametri controllabili durante il corso della performance
+
+\begin{quote}
+    \begin{itemize}
+      \item Voci della rete (ex. 4) - valore costante a tempo di compilazione condiviso da tutta la rete
+      \item Tempo in secondi delle linee di ritardo, fisse o variabili durante il corso della performance
+      \item Voci dei filtri Bandpass (ex. 32) - valore costante a tempo di compilazione condiviso da tutta la rete
+      \item Parametri del DC Blocker - valori costanti a tempo di compilazione condivisi da tutta la rete
+      \item 3 valori delle condizioni iniziali per Lorenz X, Y, Z, (impulso di un campione) - valori costanti a tempo di compilazione condivisi da tutta la rete
+      \item Lorenz dt = da -60 a 60 dB - controllo condiviso da tutta la rete
+      \item Lorenz sigma = da 1 a 19 - controllo condiviso da tutta la rete
+      \item Lorenz rho = da 2.8 a 53.2 - controllo condiviso da tutta la rete
+      \item Lorenz beta = da 0.2666 a 5.066 - controllo condiviso da tutta la rete
+      \item fattore di magnificazione di Lorenz = da 0 a 1 - controllo condiviso da tutta la rete
+      \item Master Gain = da -80 a 80 dB - controllo condiviso da tutta la rete
+      \item Master Mics Gain = da -80 a 80 dB - controllo condiviso da tutta la rete
+      \item Gain del Saturatore = da 0 a 100 - controllo condiviso da tutta la rete
+      \item Gain del Bypass dei Filterbank = da 0 a 1 - controllo indipendente per ogni voce
+      \item Gain del segnale passante per i Filterbank = da 0 a 1 - controllo indipendente per ogni voce
+      \item Shift globale delle frequenze dei Filterbank = 16 ^ (da -1 a 1) - controllo indipendente per ogni voce
+      \item Apertura del Bandwidth dei Filterbank = da 1 a 100 - controllo indipendente per ogni Voce
+      \item 2 controlli per le interpolazioni bilineari  = da 0 a 1, da 0 a 1 - controllo indipendente per ogni Voce
+    \end{itemize}
+\end{quote}
+
 Nelle sezioni successive della tesi, 
-discuteremo in dettaglio tutti questi aspetti passo per passo
+discuteremo in dettaglio questi aspetti passo per passo
 come fatto fino ad ora con i lavori precedenti. 
 
 \subsection{Generatore di suono complesso}
@@ -377,11 +413,12 @@ il sistema viene aperto all'ambiente: perturbato dagli stessi segnali che produc
 che ne variano il comportamento nel tempo, e da fenomeni di Larsen che emergono quando il fattore di 
 magnificazione che produce l'autoscillazione in Lorenz ha un contributo energeticamente 
 inferiore rispetto a quello del Larsen proveniente dalla stanza.
+
 \clearpage
 
 \begin{figure}[h!]
 \begin{center}
-    \includegraphics[width=15cm]{figures/RITI4VoiceNetwork.pdf} 
+    \includegraphics[width=14cm]{figures/RITI4VoiceNetwork.pdf} 
     \caption {Esempio della Rete di RITI compilata con 4 Voci (4 CSGA)}
 \end{center}
 \end{figure}
