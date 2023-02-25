@@ -230,8 +230,6 @@ in modo tale che l'ampiezza del picco abbia un valore pari a [1, -1].
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo di normalizzazione di picco tramite \textit{Peakholder} ad 1 campione di ritardo}]
 {codes/PeakNormalizationIIR.dsp}
 
-\clearpage
-
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=14cm]{figures/PeakNormalizationIIR.pdf}
@@ -295,7 +293,7 @@ un fattore di decadimento come nella seguente formula
 \end{align*}
 dove 
 \begin{align*}
-    k_{1} = {0.001}^{\frac{T}{ST}} 
+    k_{1} = {0.001}^{\frac{ST}{T}} 
 \end{align*} 
 
 è la formula del decadimento RT60, 
@@ -317,8 +315,6 @@ A seguito l'algoritmo in Faust del \textit{Peakenvelope}.
 \end{center}
 \vspace{0.5cm}
 \end{figure}
-
-\clearpage
 
 per quanto riguarda invece l'algoritmo del \textit{Peakholder} adattivo, è un po' meno semplice. 
 Il \textit{Peakholder} verificherà se l'ingresso è maggiore o uguale all'uscita e, 

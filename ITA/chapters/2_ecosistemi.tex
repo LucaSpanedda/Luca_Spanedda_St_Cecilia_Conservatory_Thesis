@@ -294,15 +294,14 @@ in retroiniezione alla funzione stessa di comparazione,
 in questo modo si sfrutta un principio di \emph{feedback} per l'accumulazione
 del valore massimo, in un'analisi campione per campione.
 
-\vspace{0.5cm} 
+\clearpage
+
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del \textit{Peakholder} ad 1 campione di ritardo}]
 {codes/PeakholderIIR.dsp}
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del LAR con \textit{Peakholder} ad 1 campione di ritardo}]
 {codes/LARpeakmax.dsp}
-
-\clearpage 
 
 \begin{figure}[h!]
 \begin{center}
@@ -343,7 +342,6 @@ di implementare questo meccanismo.
 \includegraphics[width=14cm]{figures/LARFeedbackstudy2017.pdf}
 \caption{Estratto dalla partitura di \textit{Audible Ecosystemics n.2/ feedback study (2003)}
 revisione del 2017 - Agostino Di Scipio}
-\vspace{0.5cm}
 \end{center}
 \end{figure}
 
@@ -393,6 +391,8 @@ un semplice onepole filter nella forma
 \end{align*}
 
 e \textit{ma.SR} una costante che rappresenta la frequenza di campionamento.
+
+\clearpage
 
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo d'integrazione a media mobile}]
@@ -482,8 +482,6 @@ eseguito, come ad esempio nel caso del \textit{sample read} la velocità di lett
 e la porzione di tabella che ne viene letta.
 
 I \textit{sample read} sono 5 indicati in partitura nella configurazione che segue.
-
-\clearpage
 
 \begin{figure}[h!]
 \begin{center}

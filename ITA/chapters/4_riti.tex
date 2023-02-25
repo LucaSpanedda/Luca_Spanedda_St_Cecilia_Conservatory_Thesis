@@ -187,9 +187,12 @@ e \( \partial t \) rappresenta lo step d'integrazione.
 Mentre per una sua rappresentazione in forma di modello discreto,
 può essere scritto un algoritmo in Faust come segue:
 
+\clearpage
+
 \vspace{0.5cm} 
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Discreto}]
 {codes/LorenzSystem.dsp}
+
 \clearpage
 
 \begin{figure}[h!]
@@ -283,7 +286,6 @@ può essere scritto un algoritmo in Faust come segue:
     \includegraphics[width=14cm]{figures/LorenzSystemFB2.pdf}
     \caption{Topologia del feedback delle Equazioni del Sistema di Lorenz Modificato con DC-blocker e TanH}  
 \end{center}
-\vspace{0.5cm}
 \end{figure}
 
 \begin{figure}[h!] 
@@ -291,16 +293,13 @@ può essere scritto un algoritmo in Faust come segue:
     \includegraphics[width=14cm]{figures/DCblocker.pdf}
     \caption{Topologia dell'Algoritmo DC-blocker} 
 \end{center}
-\vspace{0.5cm}
 \end{figure}
-\clearpage
 
 \begin{figure}[h!] 
 \begin{center}
     \includegraphics[width=10cm]{figures/Saturator.pdf}
     \caption{Topologia dell'Algoritmo TanH} 
 \end{center}
-\vspace{0.5cm}
 \end{figure}
 
 Ora il sistema di Lorenz è invece ottimizzato per la sintesi sonora.
@@ -362,7 +361,8 @@ avremo infine che:
 il CSGA in forma di modello discreto modificato,
 può infine essere scritto in un algoritmo in Faust come segue:
 
-\vspace{0.5cm} 
+\clearpage 
+
 \lstinputlisting[breaklines, frame=trBL, caption={Algoritmo del Sistema di Lorenz Modificato con Filterbak}]
 {codes/CSGA.dsp}
 
@@ -375,6 +375,7 @@ può infine essere scritto in un algoritmo in Faust come segue:
 \end{figure}
 
 \clearpage
+
 \begin{figure}[h!]
 \begin{center}
     \includegraphics[width=15cm]{figures/BPFilterBank.pdf}
@@ -413,8 +414,6 @@ il sistema viene aperto all'ambiente: perturbato dagli stessi segnali che produc
 che ne variano il comportamento nel tempo, e da fenomeni di Larsen che emergono quando il fattore di 
 magnificazione che produce l'autoscillazione in Lorenz ha un contributo energeticamente 
 inferiore rispetto a quello del Larsen proveniente dalla stanza.
-
-\clearpage
 
 \begin{figure}[h!]
 \begin{center}
